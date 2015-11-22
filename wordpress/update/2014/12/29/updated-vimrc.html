@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Updated vimrc</title>
+  <meta name="description" content="My updated vimrclink&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://prashanthr.net/wordpress/update/2014/12/29/updated-vimrc.html">
+  <link rel="alternate" type="application/rss+xml" title="prashanthr.net" href="http://prashanthr.net/feed.xml" />
+</head>
+  <link href='/stylesheets/all-03ff453fa076a2fd3fed36413ab0381d.css' media='all' rel='stylesheet' type='text/css'>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">prashanthr.net</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Updated vimrc</h1>
+    <p class="post-meta">Dec 29, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">My updated vimrc</span><a class="code-highlight-caption-link" href="https://gist.github.com/daf62295eb9c660f46e0">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; use Vim mode instead of pure Vi, it must be the first instruction</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">nocompatible</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">filetype</span> off                  					<span class="c">&quot; required</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; vundle stuff</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">rtp</span><span class="p">+=~</span><span class="sr">/.vim/</span>bundle/Vundle.<span class="k">vim</span>			<span class="c">&quot; set the runtime path to include Vundle and initialize</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">call</span> vundle#begin<span class="p">()</span>					  	    <span class="c">&quot; required</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;gmarik/Vundle.vim&#39;</span>					<span class="c">&quot; let Vundle manage Vundle, required</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;rking/ag.vim&#39;</span>						<span class="c">&quot; https://github.com/rking/ag.vim. A code searching tool similar to ack, with a focus on speed...</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;kien/ctrlp.vim&#39;</span>						<span class="c">&quot; Command-T Successor - F5</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-rails&#39;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-rake&#39;</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-fugitive&#39;</span>					<span class="c">&quot; Git</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-surround&#39;</span>
+</div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;msanders/snipmate.vim&#39;</span>
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;bling/vim-airline&#39;</span>
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;ervandew/supertab&#39;</span>
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;mileszs/ack.vim&#39;</span>
+</div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;scrooloose/nerdcommenter&#39;</span>
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;scrooloose/syntastic&#39;</span>
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;Raimondi/delimitMate&#39;</span>
+</div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;mattn/emmet-vim&#39;</span>
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;vim-scripts/IndexedSearch&#39;</span>
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;vim-scripts/L9.git&#39;</span>
+</div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;vim-scripts/matchit.zip&#39;</span>
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;godlygeek/tabular&#39;</span>
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;git://gist.github.com/287147.git&#39;</span>
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-cucumber&#39;</span>
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-haml&#39;</span>
+</div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;pangloss/vim-javascript&#39;</span>
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;kchmck/vim-coffee-script&#39;</span>
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;tpope/vim-endwise&#39;</span>
+</div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;scrooloose/nerdtree&#39;</span>
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;terryma/vim-multiple-cursors&#39;</span>
+</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line">Plugin <span class="s1">&#39;airblade/vim-gitgutter&#39;</span>
+</div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">call</span> vundle#<span class="k">end</span><span class="p">()</span>						<span class="c">&quot; All of your Plugins must be added before the following line</span>
+</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; general</span>
+</div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">history</span><span class="p">=</span><span class="m">9999</span>						<span class="c">&quot; sets how many lines of history vim has to remember</span>
+</div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">timeoutlen</span><span class="p">=</span><span class="m">300</span>						<span class="c">&quot; super low delay (works for me)</span>
+</div></div><div data-line="47" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">filetype</span> <span class="k">on</span> 							<span class="c">&quot; enable file type detection</span>
+</div></div><div data-line="48" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">filetype</span> plugin <span class="k">on</span> 						<span class="c">&quot; load the plugins for specific file types</span>
+</div></div><div data-line="49" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">filetype</span> indent <span class="k">on</span> 						<span class="c">&quot; automatically indent code</span>
+</div></div><div data-line="50" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">autoread</span> 							<span class="c">&quot; set to auto read when a file is changed from the outside</span>
+</div></div><div data-line="51" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">clipboard</span><span class="p">=</span>unnamed
+</div></div><div data-line="52" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="53" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="54" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; vim user interface</span>
+</div></div><div data-line="55" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="56" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">showcmd</span>							    <span class="c">&quot; show command in bottom bar</span>
+</div></div><div data-line="57" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">cursorline</span>							<span class="c">&quot; highlight current line</span>
+</div></div><div data-line="58" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">wildmenu</span> 							<span class="c">&quot; turn on the wild menu</span>
+</div></div><div data-line="59" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">wildignore</span><span class="p">=</span>*.<span class="k">o</span><span class="p">,</span>*<span class="p">~,</span>*.pyc<span class="p">,</span>*.log<span class="p">,</span>*.exe <span class="c">&quot; ignore compiled files</span>
+</div></div><div data-line="60" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">encoding</span><span class="p">=</span>utf<span class="m">-8</span>						<span class="c">&quot; encoding used for displaying file</span>
+</div></div><div data-line="61" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">ruler</span> 							    <span class="c">&quot; show the cursor position all the time</span>
+</div></div><div data-line="62" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">showmatch</span> 							<span class="c">&quot; highlight matching braces</span>
+</div></div><div data-line="63" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">showmode</span> 							<span class="c">&quot; show insert/replace/visual mode</span>
+</div></div><div data-line="64" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">cmdheight</span><span class="p">=</span><span class="m">1</span>							<span class="c">&quot; height of the command bar</span>
+</div></div><div data-line="65" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">hid</span>								    <span class="c">&quot; a buffer becomes hidden when it is abandoned</span>
+</div></div><div data-line="66" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span><span class="p">,</span>indent			<span class="c">&quot; configure backspace so it acts as it should act</span>
+</div></div><div data-line="67" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">whichwrap</span><span class="p">+=&lt;,&gt;,</span><span class="k">h</span><span class="p">,</span><span class="k">l</span>
+</div></div><div data-line="68" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">hlsearch</span> 							<span class="c">&quot; highlight search results</span>
+</div></div><div data-line="69" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">ignorecase</span> 							<span class="c">&quot; do case insensitive search...</span>
+</div></div><div data-line="70" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">incsearch</span> 							<span class="c">&quot; do incremental search</span>
+</div></div><div data-line="71" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">smartcase</span> 							<span class="c">&quot; ...unless capital letters are used</span>
+</div></div><div data-line="72" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">lazyredraw</span>							<span class="c">&quot; don&#39;t redraw while executing macros (good performance config)</span>
+</div></div><div data-line="73" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">magic</span>							    <span class="c">&quot; for regular expressions turn magic on</span>
+</div></div><div data-line="74" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">mat</span><span class="p">=</span><span class="m">2</span>							    <span class="c">&quot; how many tenths of a second to blink when matching brackets</span>
+</div></div><div data-line="75" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">noerrorbells</span>						<span class="c">&quot; no annoying sound on errors</span>
+</div></div><div data-line="76" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">novisualbell</span>						<span class="c">&quot; no annoying sound on errors</span>
+</div></div><div data-line="77" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">t_vb</span><span class="p">=</span>							    <span class="c">&quot; no annoying sound on errors</span>
+</div></div><div data-line="78" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">tm</span><span class="p">=</span><span class="m">500</span>							    <span class="c">&quot; no annoying sound on errors</span>
+</div></div><div data-line="79" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="80" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="81" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; code folding</span>
+</div></div><div data-line="82" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="83" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">foldenable</span>							<span class="c">&quot; enable folding</span>
+</div></div><div data-line="84" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">foldlevelstart</span><span class="p">=</span><span class="m">10</span>					<span class="c">&quot; open most folds by default</span>
+</div></div><div data-line="85" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">foldnestmax</span><span class="p">=</span><span class="m">10</span>						<span class="c">&quot; 10 nested fold max</span>
+</div></div><div data-line="86" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>space<span class="p">&gt;</span> za						<span class="c">&quot; space open/closes folds</span>
+</div></div><div data-line="87" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">foldmethod</span><span class="p">=</span>indent					<span class="c">&quot; fold based on indent level</span>
+</div></div><div data-line="88" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="89" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="90" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; colors and fonts</span>
+</div></div><div data-line="91" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="92" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">syntax</span> enable							<span class="c">&quot; enable syntax highlighting</span>
+</div></div><div data-line="93" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">number</span>
+</div></div><div data-line="94" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">colorscheme</span> lucario
+</div></div><div data-line="95" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">syntax</span> enable 							<span class="c">&quot; enable syntax highlighting</span>
+</div></div><div data-line="96" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">encoding</span><span class="p">=</span>utf8						<span class="c">&quot; set utf8 as standard encoding and en_us as the standard language</span>
+</div></div><div data-line="97" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">ffs</span><span class="p">=</span>unix<span class="p">,</span>dos<span class="p">,</span>mac					<span class="c">&quot; use unix as the standard file type</span>
+</div></div><div data-line="98" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">if</span> has<span class="p">(</span><span class="s1">&#39;gui_running&#39;</span><span class="p">)</span>					<span class="c">&quot; set extra options when running in gui mode</span>
+</div></div><div data-line="99" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">set</span> <span class="nb">guitablabel</span><span class="p">=</span>%<span class="k">m</span>\ %<span class="k">t</span>
+</div></div><div data-line="100" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">set</span> t_co<span class="p">=</span><span class="m">256</span>
+</div></div><div data-line="101" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">set</span> <span class="nb">guioptions</span><span class="p">+=</span><span class="k">e</span>
+</div></div><div data-line="102" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">set</span> <span class="nb">clipboard</span><span class="p">=</span>unnamed
+</div></div><div data-line="103" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">set</span> <span class="nb">columns</span><span class="p">=</span><span class="m">84</span> <span class="nb">lines</span><span class="p">=</span><span class="m">48</span>				<span class="c">&quot; gui window geometry</span>
+</div></div><div data-line="104" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">set</span> <span class="k">number</span>						    <span class="c">&quot; show line numbers</span>
+</div></div><div data-line="105" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">set</span> <span class="nb">guioptions</span><span class="p">-=</span><span class="k">t</span>
+</div></div><div data-line="106" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">let</span> <span class="k">g</span>:airline_powerline_fonts <span class="p">=</span> <span class="m">1</span>
+</div></div><div data-line="107" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">if</span> <span class="p">!</span>exists<span class="p">(</span><span class="s1">&#39;g:airline_symbols&#39;</span><span class="p">)</span>
+</div></div><div data-line="108" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">let</span> <span class="k">g</span>:airline_symbols <span class="p">=</span> &#x7b;&#x7d;
+</div></div><div data-line="109" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">endif</span>
+</div></div><div data-line="110" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">let</span> <span class="k">g</span>:airline_symbols.space <span class="p">=</span> <span class="s2">&quot;\ua0&quot;</span>
+</div></div><div data-line="111" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">endif</span>
+</div></div><div data-line="112" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="113" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="114" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; files, backups and undo</span>
+</div></div><div data-line="115" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="116" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">nowb</span>
+</div></div><div data-line="117" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">noswapfile</span>
+</div></div><div data-line="118" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">confirm</span> 							<span class="c">&quot; confirm :q in case of unsaved changes</span>
+</div></div><div data-line="119" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">fileencoding</span><span class="p">=</span>utf<span class="m">-8</span> 					<span class="c">&quot; encoding used when saving file</span>
+</div></div><div data-line="120" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">nobackup</span> 							<span class="c">&quot; do not keep the backup~ file</span>
+</div></div><div data-line="121" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="122" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="123" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; edit settings</span>
+</div></div><div data-line="124" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="125" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>			<span class="c">&quot; backspacing over everything in insert mode</span>
+</div></div><div data-line="126" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">expandtab</span>							<span class="c">&quot; fill tabs with spaces</span>
+</div></div><div data-line="127" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">nojoinspaces</span>						<span class="c">&quot; no extra space after &#39;.&#39; when joining lines</span>
+</div></div><div data-line="128" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">2</span>						<span class="c">&quot; set indentation depth to 2 columns</span>
+</div></div><div data-line="129" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">softtabstop</span><span class="p">=</span><span class="m">2</span>						<span class="c">&quot; backspacing over 2 spaces</span>
+</div></div><div data-line="130" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">2</span>							<span class="c">&quot; set tabulator length to 2 columns</span>
+</div></div><div data-line="131" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">wrap</span> 							    <span class="c">&quot; wrap lines</span>
+</div></div><div data-line="132" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">ai</span>								    <span class="c">&quot; auto indent</span>
+</div></div><div data-line="133" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="k">si</span>								    <span class="c">&quot; smart indent</span>
+</div></div><div data-line="134" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="135" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="136" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; visual mode related</span>
+</div></div><div data-line="137" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="138" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">vnoremap</span> <span class="p">&lt;</span><span class="k">silent</span><span class="p">&gt;</span> * :<span class="k">call</span> visualselection<span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)&lt;</span><span class="k">cr</span><span class="p">&gt;</span>		<span class="c">&quot; visual mode pressing * or # searches for the current selection</span>
+</div></div><div data-line="139" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">vnoremap</span> <span class="p">&lt;</span><span class="k">silent</span><span class="p">&gt;</span> # :<span class="k">call</span> visualselection<span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</div></div><div data-line="140" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="141" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="142" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; show invisible stuff</span>
+</div></div><div data-line="143" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="144" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">list</span>
+</div></div><div data-line="145" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">set</span> <span class="nb">listchars</span><span class="p">=</span><span class="k">tab</span>:▸\ <span class="p">,</span><span class="nb">eol</span>:¬
+</div></div><div data-line="146" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;invisible character colors </span>
+</div></div><div data-line="147" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">highlight</span> nontext guifg<span class="p">=</span><span class="mh">#4a4a59</span>
+</div></div><div data-line="148" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">highlight</span> specialkey guifg<span class="p">=</span><span class="mh">#4a4a59</span>
+</div></div><div data-line="149" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="150" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="151" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; misc</span>
+</div></div><div data-line="152" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="153" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="154" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">noremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">m</span> mmhmt:%<span class="k">s</span><span class="sr">/&lt;c-v&gt;&lt;cr&gt;/</span>/ge<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span><span class="s1">&#39;tzt&#39;</span><span class="k">m</span>		<span class="c">&quot; remove the windows ^m - when the encodings gets messed up</span>
+</div></div><div data-line="155" class="code-highlight-row numbered"><div class="code-highlight-line">map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">q</span> :<span class="k">e</span> <span class="p">~</span>/buffer<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>					<span class="c">&quot; quickly open a buffer for scripbble</span>
+</div></div><div data-line="156" class="code-highlight-row numbered"><div class="code-highlight-line">map <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">pp</span> :<span class="k">setlocal</span> <span class="nb">paste</span><span class="p">!&lt;</span><span class="k">cr</span><span class="p">&gt;</span>				<span class="c">&quot; toggle paste mode on and off</span>
+</div></div><div data-line="157" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="158" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="159" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; automatic commands</span>
+</div></div><div data-line="160" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="161" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">if</span> has<span class="p">(</span><span class="s1">&#39;autocmd&#39;</span><span class="p">)</span>						                <span class="c">&quot; file type specific automatic commands</span>
+</div></div><div data-line="162" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">autocmd</span> <span class="k">filetype</span> java <span class="k">setlocal</span> <span class="nb">textwidth</span><span class="p">=</span><span class="m">132</span>		<span class="c">&quot; tuning textwidth for java code</span>
+</div></div><div data-line="163" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">if</span> has<span class="p">(</span><span class="s1">&#39;gui_running&#39;</span><span class="p">)</span>
+</div></div><div data-line="164" class="code-highlight-row numbered"><div class="code-highlight-line">		<span class="k">autocmd</span> <span class="k">filetype</span> java <span class="k">setlocal</span> <span class="nb">columns</span><span class="p">=</span><span class="m">136</span>
+</div></div><div data-line="165" class="code-highlight-row numbered"><div class="code-highlight-line">	<span class="k">endif</span>
+</div></div><div data-line="166" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="k">autocmd</span> <span class="k">filetype</span> makefile <span class="k">setlocal</span> <span class="nb">noexpandtab</span>	<span class="c">&quot; don&#39;t replace tabs with spaces when editing makefiles</span>
+</div></div><div data-line="167" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="k">autocmd</span> <span class="k">filetype</span> tex<span class="p">,</span>xml <span class="k">setlocal</span> <span class="nb">indentexpr</span><span class="p">=</span>	<span class="c">&quot; disable automatic code indentation when editing tex and xml files</span>
+</div></div><div data-line="168" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="k">autocmd</span> bufwritepre * :%<span class="k">s</span><span class="sr">/\(\s*\n\)\&#x7b;3,&#x7d;/</span>\<span class="k">r</span>\<span class="k">r</span>/ge&quot; replace groups of empty or whitespaces<span class="p">-</span><span class="k">only</span> <span class="nb">lines</span> with one empty line
+</div></div><div data-line="169" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">endif</span>
+</div></div><div data-line="170" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="171" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="172" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; center view on the search result</span>
+</div></div><div data-line="173" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="174" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">noremap</span> <span class="k">n</span> nzz
+</div></div><div data-line="175" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">noremap</span> <span class="k">n</span> nzz
+</div></div><div data-line="176" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="177" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="178" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; press f4 to fix indentation in whole file; overwrites marker &#39;q&#39; position</span>
+</div></div><div data-line="179" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="180" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">noremap</span> <span class="p">&lt;</span>f4<span class="p">&gt;</span> mqggvg<span class="p">=</span>`qzz
+</div></div><div data-line="181" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">inoremap</span> <span class="p">&lt;</span>f4<span class="p">&gt;</span> <span class="p">&lt;</span>esc<span class="p">&gt;</span>mqggvg<span class="p">=</span>`qzza
+</div></div><div data-line="182" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="183" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="184" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; press f5 to sort selection or paragraph</span>
+</div></div><div data-line="185" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="186" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">vnoremap</span> <span class="p">&lt;</span>f6<span class="p">&gt;</span> :<span class="k">sort</span> <span class="k">i</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</div></div><div data-line="187" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>f6<span class="p">&gt;</span> vip:<span class="k">sort</span> <span class="k">i</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</div></div><div data-line="188" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="189" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="190" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; press f8 to turn the search results highlight off</span>
+</div></div><div data-line="191" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="192" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">noremap</span> <span class="p">&lt;</span>f8<span class="p">&gt;</span> :<span class="k">nohl</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</div></div><div data-line="193" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">inoremap</span> <span class="p">&lt;</span>f8<span class="p">&gt;</span> <span class="p">&lt;</span>esc<span class="p">&gt;</span>:<span class="k">nohl</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span><span class="k">a</span>
+</div></div><div data-line="194" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="195" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="196" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; =&gt; plugin configs</span>
+</div></div><div data-line="197" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="198" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">autocmd</span> stdinreadpre * <span class="k">let</span> <span class="k">s</span>:std_in<span class="p">=</span><span class="m">1</span>						<span class="c">&quot; nerdtree automatically when vim starts up</span>
+</div></div><div data-line="199" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">autocmd</span> vimenter * <span class="k">if</span> argc<span class="p">()</span> <span class="p">==</span> <span class="m">0</span> &amp;&amp; <span class="p">!</span>exists<span class="p">(</span><span class="s2">&quot;s:std_in&quot;</span><span class="p">)</span> <span class="p">|</span> nerdtree <span class="p">|</span> <span class="k">endif</span>	<span class="c">&quot; nerdtree automatically when vim starts up</span>
+</div></div><div data-line="200" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:airline_powerline_fonts <span class="p">=</span> <span class="m">1</span>
+</div></div><div data-line="201" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">if</span> <span class="p">!</span>exists<span class="p">(</span><span class="s1">&#39;g:airline_symbols&#39;</span><span class="p">)</span>
+</div></div><div data-line="202" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">let</span> <span class="k">g</span>:airline_symbols <span class="p">=</span> &#x7b;&#x7d;
+</div></div><div data-line="203" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">endif</span>
+</div></div><div data-line="204" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:airline_symbols.space <span class="p">=</span> <span class="s2">&quot;\ua0&quot;</span>
+</div></div><div data-line="205" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:multi_cursor_use_default_mapping<span class="p">=</span><span class="m">0</span>
+</div></div><div data-line="206" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:multi_cursor_next_key<span class="p">=</span><span class="s1">&#39;&lt;c-d&gt;&#39;</span>
+</div></div><div data-line="207" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:multi_cursor_prev_key<span class="p">=</span><span class="s1">&#39;&lt;c-f&gt;&#39;</span>
+</div></div><div data-line="208" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:multi_cursor_skip_key<span class="p">=</span><span class="s1">&#39;&lt;c-x&gt;&#39;</span>
+</div></div><div data-line="209" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:multi_cursor_quit_key<span class="p">=</span><span class="s1">&#39;&lt;esc&gt;&#39;</span>
+</div></div><div data-line="210" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:gitgutter_max_signs<span class="p">=</span><span class="m">5000</span>
+</div></div><div data-line="211" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:gitgutter_sign_column_always<span class="p">=</span><span class="m">1</span>            <span class="c">&quot;always show the gitgutter column on left</span>
+</div></div><div data-line="212" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:gitgutter_map_keys<span class="p">=</span><span class="m">0</span>                      <span class="c">&quot;gitgutter no key mapings at all</span>
+</div></div><div data-line="213" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:gitgutter_enabled<span class="p">=</span><span class="m">1</span>
+</div></div><div data-line="214" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:gitgutter_highlight_lines<span class="p">=</span><span class="m">1</span>
+</div></div><div data-line="215" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">let</span> <span class="k">g</span>:gitgutter_signs<span class="p">=</span><span class="m">1</span>
+</div></div><div data-line="216" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="217" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="218" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot; my custom bindings</span>
+</div></div><div data-line="219" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="c">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
+</div></div><div data-line="220" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">:</span>map <span class="p">&lt;</span><span class="k">c</span><span class="p">-</span><span class="k">a</span><span class="p">&gt;</span> <span class="p">&lt;</span>home<span class="p">&gt;</span>						        <span class="c">&quot; map ctrl-a -&gt; start of line</span>
+</div></div><div data-line="221" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">:</span>map <span class="p">&lt;</span><span class="k">c</span><span class="p">-</span><span class="k">e</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="k">end</span><span class="p">&gt;</span>						        <span class="c">&quot; map ctrl-e -&gt; end of line</span>
+</div></div><div data-line="222" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">u</span> :gundotoggle<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>				<span class="c">&quot; toggle gundo</span>
+</div></div><div data-line="223" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>ev :<span class="k">vsp</span> $myvimrc<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>			<span class="c">&quot; edit vimrc/zshrc and load vimrc bindings</span>
+</div></div><div data-line="224" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>ez :<span class="k">vsp</span> <span class="p">~</span>/.zshrc<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</div></div><div data-line="225" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">sv</span> :source $myvimrc<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</div></div><div data-line="226" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span><span class="k">s</span> :<span class="k">mksession</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>				<span class="c">&quot; save session</span>
+</div></div><div data-line="227" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="nb">nnoremap</span> <span class="p">&lt;</span>f3<span class="p">&gt;</span> :ag						        <span class="c">&quot; open ag.vim</span>
+</div></div><div data-line="228" class="code-highlight-row numbered"><div class="code-highlight-line">map <span class="p">&lt;</span><span class="k">c</span><span class="p">-</span><span class="k">n</span><span class="p">&gt;</span> :nerdtreetoggle<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>					<span class="c">&quot; ctrl-n toggle nerd tree</span></div></div></pre></div></figure>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">prashanthr.net</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>prashanthr.net</li>
+          <li><a href="mailto:"></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/prashanthrajagopal">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">prashanthrajagopal</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/prash_raj">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">prash_raj</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Random things I work upon
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+  </body>
+
+</html>

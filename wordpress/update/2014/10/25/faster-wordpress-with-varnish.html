@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Faster WordPress with Varnish 3</title>
+  <meta name="description" content="  Note: This post has not been updated for Varnish 4 yet.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://prashanthr.net/wordpress/update/2014/10/25/faster-wordpress-with-varnish.html">
+  <link rel="alternate" type="application/rss+xml" title="prashanthr.net" href="http://prashanthr.net/feed.xml" />
+</head>
+  <link href='/stylesheets/all-03ff453fa076a2fd3fed36413ab0381d.css' media='all' rel='stylesheet' type='text/css'>
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">prashanthr.net</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Faster WordPress with Varnish 3</h1>
+    <p class="post-meta">Oct 25, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <ul>
+  <li>Note: This post has not been updated for Varnish 4 yet.</li>
+</ul>
+
+<p>This post is a guide to increase responsiveness and page load times for those who host WordPress on their own machines. Caching helps reduce page load times dramatically and handle traffic spikes to a certain extent.</p>
+
+<p>Varnish is a reverse caching proxy which I use to cache all static content and my pages. This returns cached pages from instead of asking php to render the pages for us each time which can bring down the server at high loads.</p>
+
+<p><strong>Installing Varnish</strong></p>
+
+<p>I run the entire setup on Ubuntu 14.04.</p>
+
+<p>Varnish runs on port 80 which is exposed to the web. Apache listens to Varnish on port 8888. Only port 80 and my SSH port are exposed to the outside world(refer AWS Security Groups).</p>
+
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">Install Varnish</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line">sudo apt-get install varnish</div></div></pre></div></figure>
+
+<p><strong>Varnish Config Files:</strong></p>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">/etc/varnish/default.vcl</span><a class="code-highlight-caption-link" href="https://gist.github.com/9791d4bc3993a6eeebce">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"># Adapted from https://gist.github.com/4651531.git with a few mods according to my needs
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">backend default &#x7b;
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  .host = "127.0.0.1";
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  .port = "8888";
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  .connect_timeout = 60s;
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  .first_byte_timeout = 60s;
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  .between_bytes_timeout = 60s;
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  .max_connections = 800;
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">acl purge &#x7b;
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">  "127.0.0.1";
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">  "localhost";
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">sub vcl_recv &#x7b;
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  set req.grace = 2m;
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="19" class="code-highlight-row numbered"><div class="code-highlight-line">  # Set X-Forwarded-For header for logging in nginx
+</div></div><div data-line="20" class="code-highlight-row numbered"><div class="code-highlight-line">  remove req.http.X-Forwarded-For;
+</div></div><div data-line="21" class="code-highlight-row numbered"><div class="code-highlight-line">  set    req.http.X-Forwarded-For = client.ip;
+</div></div><div data-line="22" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="23" class="code-highlight-row numbered"><div class="code-highlight-line">  # Remove has_js and CloudFlare/Google Analytics __* cookies and statcounter is_unique
+</div></div><div data-line="24" class="code-highlight-row numbered"><div class="code-highlight-line">  set req.http.Cookie = regsuball(req.http.Cookie, "(^|;\s*)(_[_a-z]+|has_js|is_unique)=[^;]*", "");
+</div></div><div data-line="25" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="26" class="code-highlight-row numbered"><div class="code-highlight-line">  # Remove a ";" prefix, if present.
+</div></div><div data-line="27" class="code-highlight-row numbered"><div class="code-highlight-line">  set req.http.Cookie = regsub(req.http.Cookie, "^;\s*", "");
+</div></div><div data-line="28" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="29" class="code-highlight-row numbered"><div class="code-highlight-line">  # Either the admin pages or the login, don't cache
+</div></div><div data-line="30" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.url ~ "/wp-(login|admin|cron)") &#x7b;
+</div></div><div data-line="31" class="code-highlight-row numbered"><div class="code-highlight-line">    return (pass);
+</div></div><div data-line="32" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="33" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="34" class="code-highlight-row numbered"><div class="code-highlight-line">  # Remove the wp-settings-1 cookie
+</div></div><div data-line="35" class="code-highlight-row numbered"><div class="code-highlight-line">  set req.http.Cookie = regsuball(req.http.Cookie, "wp-settings-1=[^;]+(; )?", "");
+</div></div><div data-line="36" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="37" class="code-highlight-row numbered"><div class="code-highlight-line">  # Remove the wp-settings-time-1 cookie
+</div></div><div data-line="38" class="code-highlight-row numbered"><div class="code-highlight-line">  set req.http.Cookie = regsuball(req.http.Cookie, "wp-settings-time-1=[^;]+(; )?", "");
+</div></div><div data-line="39" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="40" class="code-highlight-row numbered"><div class="code-highlight-line">  # Remove the wp test cookie
+</div></div><div data-line="41" class="code-highlight-row numbered"><div class="code-highlight-line">  set req.http.Cookie = regsuball(req.http.Cookie, "wordpress_test_cookie=[^;]+(; )?", "");
+</div></div><div data-line="42" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="43" class="code-highlight-row numbered"><div class="code-highlight-line">  # Static content can be cached (so no user uploaded images)
+</div></div><div data-line="44" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.url ~ "wp-content/themes/" &amp;&amp; req.url ~ "\.(css|js|png|gif|jp(e)?g)") &#x7b;
+</div></div><div data-line="45" class="code-highlight-row numbered"><div class="code-highlight-line">    unset req.http.cookie;
+</div></div><div data-line="46" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="47" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="48" class="code-highlight-row numbered"><div class="code-highlight-line">  # Check the cookies for wordpress-specific items
+</div></div><div data-line="49" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.http.Cookie ~ "wordpress_" || req.http.Cookie ~ "comment_") &#x7b;
+</div></div><div data-line="50" class="code-highlight-row numbered"><div class="code-highlight-line">    # A wordpress specific cookie has been set
+</div></div><div data-line="51" class="code-highlight-row numbered"><div class="code-highlight-line">    return (pass);
+</div></div><div data-line="52" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="53" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="54" class="code-highlight-row numbered"><div class="code-highlight-line">  # allow PURGE from localhost
+</div></div><div data-line="55" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.request == "PURGE") &#x7b;
+</div></div><div data-line="56" class="code-highlight-row numbered"><div class="code-highlight-line">    if (!client.ip ~ purge) &#x7b;
+</div></div><div data-line="57" class="code-highlight-row numbered"><div class="code-highlight-line">      error 405 "Not allowed.";
+</div></div><div data-line="58" class="code-highlight-row numbered"><div class="code-highlight-line">    &#x7d;
+</div></div><div data-line="59" class="code-highlight-row numbered"><div class="code-highlight-line">    return (lookup);
+</div></div><div data-line="60" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="61" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="62" class="code-highlight-row numbered"><div class="code-highlight-line">  # Force lookup if the request is a no-cache request from the client
+</div></div><div data-line="63" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.http.Cache-Control ~ "no-cache") &#x7b;
+</div></div><div data-line="64" class="code-highlight-row numbered"><div class="code-highlight-line">    return (pass);
+</div></div><div data-line="65" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="66" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="67" class="code-highlight-row numbered"><div class="code-highlight-line">  # Try a cache-lookup
+</div></div><div data-line="68" class="code-highlight-row numbered"><div class="code-highlight-line">  return (lookup);
+</div></div><div data-line="69" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;
+</div></div><div data-line="70" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="71" class="code-highlight-row numbered"><div class="code-highlight-line">sub vcl_fetch &#x7b;
+</div></div><div data-line="72" class="code-highlight-row numbered"><div class="code-highlight-line">  #set obj.grace = 5m;
+</div></div><div data-line="73" class="code-highlight-row numbered"><div class="code-highlight-line">  set beresp.grace = 2m;
+</div></div><div data-line="74" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="75" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;
+</div></div><div data-line="76" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="77" class="code-highlight-row numbered"><div class="code-highlight-line">sub vcl_hit &#x7b;
+</div></div><div data-line="78" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.request == "PURGE") &#x7b;
+</div></div><div data-line="79" class="code-highlight-row numbered"><div class="code-highlight-line">    purge;
+</div></div><div data-line="80" class="code-highlight-row numbered"><div class="code-highlight-line">    error 200 "Purged.";
+</div></div><div data-line="81" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="82" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;
+</div></div><div data-line="83" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="84" class="code-highlight-row numbered"><div class="code-highlight-line">sub vcl_miss &#x7b;
+</div></div><div data-line="85" class="code-highlight-row numbered"><div class="code-highlight-line">  if (req.request == "PURGE") &#x7b;
+</div></div><div data-line="86" class="code-highlight-row numbered"><div class="code-highlight-line">    purge;
+</div></div><div data-line="87" class="code-highlight-row numbered"><div class="code-highlight-line">    error 200 "Purged.";
+</div></div><div data-line="88" class="code-highlight-row numbered"><div class="code-highlight-line">  &#x7d;
+</div></div><div data-line="89" class="code-highlight-row numbered"><div class="code-highlight-line">&#x7d;</div></div></pre></div></figure>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">/etc/default/varnish</span><a class="code-highlight-caption-link" href="https://gist.github.com/4df711376369972a37ff">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"># Should we start varnishd at boot?  Set to "no" to disable.
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">START=yes
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"># Maximum number of open files (for ulimit -n)
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">NFILES=131072
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line"># Maximum locked memory size (for ulimit -l)
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line"># Used for locking the shared memory log in memory.  If you increase log size,
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"># you need to increase this number as well
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">MEMLOCK=82000
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">DAEMON_OPTS="-a :80 \
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">             -T localhost:6082 \
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">             -f /etc/varnish/default.vcl \
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">             -S /etc/varnish/secret \
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">             -t 120 \
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">             -s malloc,256m"</div></div></pre></div></figure>
+
+<p>Configure Apache to listen to a different port</p>
+
+<p>In the file,
+<code>/etc/apache2/ports.conf</code>, edit the Listen line the following line to <code>Listen 8888</code></p>
+
+<p>You will need to update your Virtual Hosts file. In my case, the file is <code>/etc/apache2/sites-enabled/100-default.conf</code></p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">prashanthr.net</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>prashanthr.net</li>
+          <li><a href="mailto:"></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/prashanthrajagopal">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">prashanthrajagopal</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/prash_raj">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">prash_raj</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Random things I work upon
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+  </body>
+
+</html>
