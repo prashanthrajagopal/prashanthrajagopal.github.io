@@ -1,14 +1,11 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: prashanthr.net
+description: >
+  Random things I work upon
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://prashanthr.net" # the base hostname & protocol for your site
+twitter_username: prash_raj
+github_username:  prashanthrajagopal
 
 # Build settings
 markdown: kramdown
@@ -19,20 +16,8 @@ gems:
   - octopress-quote-tag # {% quote author:"Bob McAwesome" url:http://example.com title:"Great Wisdom" %} --------- {% endquote %}
   - octopress-solarized
   - octopress-social # https://github.com/octopress/social
-#  - octopress-linkblog # https://github.com/octopress/linkblog
+  - octopress-gist
   - octopress-filter-tag # https://github.com/octopress/filter-tag
   - octopress-filters # https://github.com/octopress/filters
   - octopress-comment-tag # {% _ This is a comment! %}
   - jekyll-sitemap
-
-linkblog:
-  linkpost:
-    marker: →
-    marker_position: after
-  posts:
-    marker: false
-    marker_position: before
-
-  titlecase: true
-  unorphan: true
-  permalink_label: Permalink

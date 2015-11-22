@@ -9,7 +9,7 @@ group :jekyll_plugins do
   gem 'octopress-quote-tag'
   gem 'octopress-solarized'
   gem 'octopress-social'
-#  gem 'octopress-linkblog'
+  gem 'octopress-gist'
   gem 'octopress-filter-tag'
   gem 'octopress-filters'
   gem 'octopress-comment-tag'

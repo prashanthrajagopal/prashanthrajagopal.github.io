@@ -4,8 +4,15 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am Prashanth Rajagopal, an engineer with a masters major in Intelligent Systems, graduated from University of Sussex. I work as a Platform Engineer at Browserstack. Previously I worked as a DevOps Engineer at Infibeam.com and CourseMonster as a software engineer.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+I have experience in working with
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+* Ruby and Bash to write scripts for mundane tasks
+* Puppet for server automation and management
+* Monitoring with Nagios
+* Graphite, gdash and statsd for aggregration and graphing
+* AWS – EC2, VPC, S3, Route53
+* Web development with Ruby on Rails
+* Ubuntu, CentOS
+* Apache, Mysql, Git
