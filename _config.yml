@@ -7,6 +7,10 @@ url: "http://prashanthr.net" # the base hostname & protocol for your site
 twitter_username: prash_raj
 github_username:  prashanthrajagopal
 
+#
+google_universal_analytics: "UA-47879801-1"
+google_universal_analytics_cookiedomain: auto
+
 # Build settings
 markdown: kramdown
 gems:
