@@ -6,8 +6,8 @@
 </description>
     <link>http://prashanthr.net/</link>
     <atom:link href="http://prashanthr.net/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2015 14:07:24 +0530</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2015 14:07:24 +0530</lastBuildDate>
+    <pubDate>Thu, 17 Dec 2015 14:09:19 +0530</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2015 14:09:19 +0530</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -17,7 +17,7 @@
 &lt;ul&gt;
   &lt;li&gt;Install &lt;a href=&quot;http://www.perian.org&quot;&gt;Perian&lt;/a&gt; (&lt;a href=&quot;http://perian.cachefly.net/Perian_1.2.3.dmg&quot;&gt;download link&lt;/a&gt;).&lt;/li&gt;
   &lt;li&gt;Connect your digital audio receiver. I use an optical connection to my Logitech receiver.&lt;/li&gt;
-  &lt;li&gt;Change to audio output to 48000.0Hz, 2ch-16bit.&lt;/li&gt;
+  &lt;li&gt;Change to audio output to 48000.0Hz, 2ch-16bit in ‘Audio Midi Setup’.&lt;/li&gt;
   &lt;li&gt;Enable DTS and AC3 passthrough from terminal
     &lt;ul&gt;
       &lt;li&gt;Enable AC3 passthrough
