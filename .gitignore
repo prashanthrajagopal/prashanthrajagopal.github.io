@@ -2,3 +2,5 @@ _site
 .sass-cache
 .code-highlighter-cache
 _deploy.yml
+.deploy
+.ruby-version
