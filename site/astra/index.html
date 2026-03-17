@@ -8,34 +8,36 @@
       
       
       
-        <link rel="canonical" href="https://prashanthrajagopal.github.io/wiki/astra/deployment/gcp/">
+        <link rel="canonical" href="https://prashanthrajagopal.github.io/astra/">
       
       
-        <link rel="prev" href="../macos/">
+        <link rel="prev" href="../blog/">
       
+      
+        <link rel="next" href="../wiki/astra/getting-started/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="zensical-0.0.27">
     
     
       
-        <title>GCP Deployment - Prashanth</title>
+        <title>Astra - Prashanth</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="../../../../assets/stylesheets/modern/main.50057488.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.50057488.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
 
@@ -54,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/prashantr-theme.css">
+      <link rel="stylesheet" href="../stylesheets/prashantr-theme.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gcp-deployment" class="md-skip">
+        <a href="#astra" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +97,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Prashanth" class="md-header__button md-logo" aria-label="Prashanth" data-md-component="logo">
+    <a href="./.." title="Prashanth" class="md-header__button md-logo" aria-label="Prashanth" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCP Deployment
+              Astra
             
           </span>
         </div>
@@ -175,7 +177,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="./.." class="md-tabs__link">
         
   
   Home
@@ -191,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../blog/" class="md-tabs__link">
+      <a href="../blog/" class="md-tabs__link">
         
   
   Blog
@@ -211,7 +213,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../astra/" class="md-tabs__link">
+        <a href="././" class="md-tabs__link">
           
   
   Astra
@@ -244,7 +246,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Prashanth" class="md-nav__button md-logo" aria-label="Prashanth" data-md-component="logo">
+    <a href="./.." title="Prashanth" class="md-nav__button md-logo" aria-label="Prashanth" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -262,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="./.." class="md-nav__link">
         
   
   
@@ -289,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../blog/" class="md-nav__link">
+      <a href="../blog/" class="md-nav__link">
         
   
   
@@ -354,7 +356,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../astra/" class="md-nav__link ">
+            <a href="././" class="md-nav__link md-nav__link--active">
               
   
   
@@ -372,7 +374,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -398,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../wiki/astra/getting-started/" class="md-nav__link">
         
   
   
@@ -470,7 +472,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../architecture/" class="md-nav__link ">
+            <a href="../wiki/astra/architecture/" class="md-nav__link ">
               
   
   
@@ -514,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/overview/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/overview/" class="md-nav__link">
         
   
   
@@ -542,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/kernel/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/kernel/" class="md-nav__link">
         
   
   
@@ -570,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/actor-framework/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/actor-framework/" class="md-nav__link">
         
   
   
@@ -598,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/task-graph/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/task-graph/" class="md-nav__link">
         
   
   
@@ -626,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/scheduler/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/scheduler/" class="md-nav__link">
         
   
   
@@ -654,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/services/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/services/" class="md-nav__link">
         
   
   
@@ -682,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/memory/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/memory/" class="md-nav__link">
         
   
   
@@ -710,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/llm-routing/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/llm-routing/" class="md-nav__link">
         
   
   
@@ -738,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/multi-tenancy/" class="md-nav__link">
+      <a href="../wiki/astra/architecture/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -814,7 +816,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../reference/" class="md-nav__link ">
+            <a href="../wiki/astra/reference/" class="md-nav__link ">
               
   
   
@@ -858,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/grpc-contracts/" class="md-nav__link">
+      <a href="../wiki/astra/reference/grpc-contracts/" class="md-nav__link">
         
   
   
@@ -886,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/database-schema/" class="md-nav__link">
+      <a href="../wiki/astra/reference/database-schema/" class="md-nav__link">
         
   
   
@@ -914,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/redis-keys/" class="md-nav__link">
+      <a href="../wiki/astra/reference/redis-keys/" class="md-nav__link">
         
   
   
@@ -942,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/message-types/" class="md-nav__link">
+      <a href="../wiki/astra/reference/message-types/" class="md-nav__link">
         
   
   
@@ -970,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/api-endpoints/" class="md-nav__link">
+      <a href="../wiki/astra/reference/api-endpoints/" class="md-nav__link">
         
   
   
@@ -998,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/metrics/" class="md-nav__link">
+      <a href="../wiki/astra/reference/metrics/" class="md-nav__link">
         
   
   
@@ -1026,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/slas/" class="md-nav__link">
+      <a href="../wiki/astra/reference/slas/" class="md-nav__link">
         
   
   
@@ -1096,7 +1098,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../operations/" class="md-nav__link ">
+            <a href="../wiki/astra/operations/" class="md-nav__link ">
               
   
   
@@ -1140,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/runbook-worker-lost/" class="md-nav__link">
+      <a href="../wiki/astra/operations/runbook-worker-lost/" class="md-nav__link">
         
   
   
@@ -1168,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/runbook-high-error-rate/" class="md-nav__link">
+      <a href="../wiki/astra/operations/runbook-high-error-rate/" class="md-nav__link">
         
   
   
@@ -1196,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/runbook-postgres-outage/" class="md-nav__link">
+      <a href="../wiki/astra/operations/runbook-postgres-outage/" class="md-nav__link">
         
   
   
@@ -1224,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/runbook-cost-spike/" class="md-nav__link">
+      <a href="../wiki/astra/operations/runbook-cost-spike/" class="md-nav__link">
         
   
   
@@ -1257,8 +1259,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1286,15 +1286,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../wiki/astra/deployment/" class="md-nav__link ">
               
   
   
@@ -1318,7 +1318,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1338,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../local/" class="md-nav__link">
+      <a href="../wiki/astra/deployment/local/" class="md-nav__link">
         
   
   
@@ -1366,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../macos/" class="md-nav__link">
+      <a href="../wiki/astra/deployment/macos/" class="md-nav__link">
         
   
   
@@ -1391,37 +1391,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GCP
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../wiki/astra/deployment/gcp/" class="md-nav__link">
         
   
   
@@ -1437,93 +1410,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#script" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Script
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flags
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#provisioned-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Provisioned resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#helm-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Helm deployment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1565,80 +1451,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#script" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Script
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flags
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#provisioned-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Provisioned resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#helm-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Helm deployment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1652,128 +1464,12 @@
                 
                   
 
-<h1 id="gcp-deployment">GCP Deployment<a class="headerlink" href="#gcp-deployment" title="Permanent link">&para;</a></h1>
-<p>Astra on GCP uses managed services for all infrastructure. No self-managed Postgres, Redis, or Memcached in production GCP.</p>
-<h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h2>
-<p>Run <code>./scripts/gcp-deploy.sh</code> with the appropriate flags. <strong>Not</strong> <code>scripts/deploy.sh</code> — that's local only.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Copy <code>scripts/.env.gcp.example</code> to <code>.env.gcp</code>. The required variables are:</p>
-<ul>
-<li><code>GCP_PROJECT</code> — your GCP project ID</li>
-<li><code>GCP_REGION</code> — deployment region (e.g. <code>us-central1</code>)</li>
-<li><code>GCP_CLUSTER</code> — GKE cluster name</li>
-<li><code>POSTGRES_PASSWORD</code> — strong password for Cloud SQL</li>
-<li><code>GCS_WORKSPACE_BUCKET</code> — GCS bucket name (optional; defaults to <code>${GCP_PROJECT}-astra-workspace</code>)</li>
-</ul>
-<p>See <code>.env.gcp.example</code> in the Astra repo.</p>
-<h2 id="flags">Flags<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Flag</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>--setup</code></td>
-<td>First-time provision: creates GKE, Cloud SQL, Memorystore, Artifact Registry, GCS bucket</td>
-</tr>
-<tr>
-<td><code>--dev</code></td>
-<td>Deploy with <code>values-gke-dev.yaml</code> (lower resource limits)</td>
-</tr>
-<tr>
-<td><code>--prod</code></td>
-<td>Deploy with <code>values-gke-prod.yaml</code> (production sizing)</td>
-</tr>
-<tr>
-<td><code>--build-only</code></td>
-<td>Build and push Docker images only, no deploy</td>
-</tr>
-<tr>
-<td><code>--deploy-only</code></td>
-<td>Run migrations + Helm without rebuilding images</td>
-</tr>
-</tbody>
-</table>
-<h2 id="provisioned-resources">Provisioned resources<a class="headerlink" href="#provisioned-resources" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Resource</th>
-<th>Service</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Kubernetes</td>
-<td>GKE Autopilot</td>
-</tr>
-<tr>
-<td>Postgres</td>
-<td>Cloud SQL (PostgreSQL 15), HA instance</td>
-</tr>
-<tr>
-<td>Redis</td>
-<td>Memorystore for Redis</td>
-</tr>
-<tr>
-<td>Memcached</td>
-<td>Memorystore for Memcached</td>
-</tr>
-<tr>
-<td>Container registry</td>
-<td>Artifact Registry</td>
-</tr>
-<tr>
-<td>Object storage</td>
-<td>GCS bucket (<code>gs://${GCP_PROJECT}-astra-workspace</code>)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Object storage policy:</strong> On GCP, workspace and artifact storage is GCS. MinIO is for local/docker-compose only. Do not reference MinIO in production GCP configs.</p>
-<h2 id="helm-deployment">Helm deployment<a class="headerlink" href="#helm-deployment" title="Permanent link">&para;</a></h2>
-<p>Each service is deployed individually via <code>helm upgrade --install</code>, specifying the service name, Artifact Registry image path, and git SHA image tag. The full chart configuration is in <code>deployments/helm/astra/values.yaml</code>. See <code>deployments/helm/astra/</code> in the Astra repo.</p>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>README.md</code> — GCP section</li>
-<li><code>deployments/helm/astra/README.md</code> — Helm chart reference</li>
-<li><code>docs/deployment-design.md</code> — deployment design decisions (Astra repo)</li>
-</ul>
+<h1 id="astra">Astra<a class="headerlink" href="#astra" title="Permanent link">&para;</a></h1>
+<p>An <strong>operating system for autonomous agents</strong> — microkernel, actor runtime, task graph, scheduling, memory, LLM routing. Not a framework.</p>
+<p>The full wiki (architecture, reference, runbooks, deployment) lives here:</p>
+<p><strong><a href="wiki/astra/">→ Open the Astra wiki</a></strong></p>
+<p>Quick links: <a href="wiki/astra/getting-started/">Getting started</a> · <a href="wiki/astra/architecture/">Architecture</a> · <a href="wiki/astra/reference/">Reference</a> · <a href="wiki/astra/operations/">Operations</a> · <a href="wiki/astra/deployment/">Deployment</a></p>
 
-
-  <nav class="md-tags" >
-    
-      
-      
-      
-      
-        <span class="md-tag">astra</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">deployment</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">gcp</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">kubernetes</span>
-      
-    
-  </nav>
 
 
 
@@ -1860,14 +1556,14 @@
       
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["navigation.tabs","navigation.sections","navigation.top","navigation.indexes","search.highlight","search.share","content.code.copy","content.code.annotate"],"search":"../../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.tabs","navigation.sections","navigation.top","navigation.indexes","search.highlight","search.share","content.code.copy","content.code.annotate"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.5fd3284f.min.js"></script>
+      <script src="../assets/javascripts/bundle.5fd3284f.min.js"></script>
       
-        <script src="../../../../javascripts/header-brand.js"></script>
+        <script src="../javascripts/header-brand.js"></script>
       
-        <script src="../../../../javascripts/blog-filter.js"></script>
+        <script src="../javascripts/blog-filter.js"></script>
       
     
   </body>
