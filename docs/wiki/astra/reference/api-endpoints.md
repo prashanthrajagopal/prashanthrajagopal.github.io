@@ -9,68 +9,46 @@ tags:
 
 # API Endpoints
 
-All REST endpoints are served by `cmd/api-gateway` on port 8080.
+The **API gateway** exposes **REST** (and **WebSocket** for chat). **Internal-only** routes are **not** listed here. Full detail: **PRD** (gateway sections).
+
+**Auth:** most routes require **JWT**; health and login are exceptions. **Rate limits** depend on deployment.
 
 ## Authentication
 
-| URL | Auth |
-|---|---|
-| `GET /health` | None |
-| `POST /users/login` | None |
-| All other routes | JWT (`Authorization: Bearer <token>`) |
+| Pattern | Auth |
+|---------|------|
+| Health / login | None (login returns token) |
+| Everything else | `Authorization: Bearer <JWT>` |
 
-JWT tokens issued by `identity` service carry: `user_id`, `email`, `is_super_admin`, `scopes`.
-
-## Agents
+## Agents (examples)
 
 | Method | Path | Description |
-|---|---|---|
+|--------|------|-------------|
 | `POST` | `/agents` | Create agent |
 | `GET` | `/agents/{id}` | Get agent |
-| `PATCH` | `/agents/{id}` | Update agent profile (system_prompt, config) |
-| `GET` | `/agents/{id}/profile` | Get agent profile (Redis cache, 5min TTL) |
-| `POST` | `/agents/{id}/documents` | Attach document to agent |
-| `GET` | `/agents/{id}/documents` | List agent documents (`?doc_type=rule|skill|context_doc|reference`) |
-| `DELETE` | `/agents/{id}/documents/{doc_id}` | Remove document |
+| `PATCH` | `/agents/{id}` | Update profile |
+| `GET` | `/agents/{id}/profile` | Profile (cached) |
+| Document routes | `/agents/{id}/documents` | Attach / list / remove docs |
 
-## Goals & Tasks
+## Goals & tasks (examples)
 
 | Method | Path | Description |
-|---|---|---|
-| `POST` | `/agents/{id}/goals` | Submit goal (accepts optional `documents` array) |
-| `GET` | `/tasks/{id}` | Get task state |
-| `GET` | `/graphs/{id}` | Get full task graph |
-| `POST` | `/tasks/{id}/complete` | Mark task completed (internal) |
+|--------|------|-------------|
+| `POST` | `/agents/{id}/goals` | Submit goal |
+| `GET` | `/tasks/{id}` | Task state |
+| `GET` | `/graphs/{id}` | Task graph |
 
-## Chat (Phase 10)
+## Chat
 
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/chat/sessions` | Create chat session (`agent_id`, `title`) |
-| `GET` | `/chat/sessions` | List chat sessions |
-| `GET` | `/chat/sessions/{id}` | Get chat session |
-| `GET` | `/chat/ws` | WebSocket upgrade for streaming chat |
+Session and **WebSocket** streaming paths are specified in **PRD** (chat / Phase 10).
 
 ## Dashboard
 
-| Method | Path | Auth | Description |
-|---|---|---|---|
-| `GET` | `/superadmin/dashboard/` | super_admin JWT | Platform dashboard UI |
-| `GET` | `/superadmin/api/dashboard/snapshot` | JWT | Service health, workers, agents, approvals, cost, logs |
-| `GET` | `/superadmin/api/dashboard/goals/{id}` | JWT | Goal detail with tasks |
-
-## Internal
-
-| Method | Path | Auth | Description |
-|---|---|---|---|
-| `POST` | `/internal/slack/post` | `X-Slack-Internal-Secret` header | Proactive Slack post (Phase 12) |
-| `POST` | `/internal/apply-plan/{approval_id}` | Internal | Execute approved plan |
+Super-admin **dashboard** and snapshot APIs exist under the gateway; see **PRD** for paths and roles.
 
 ## Identity
 
-| Method | Path | Description |
-|---|---|---|
-| `POST` | `/users/login` | Email + password → JWT |
-| `POST` | `/users` | Create user |
-| `GET` | `/users/{id}` | Get user |
-| `PATCH` | `/users/{id}` | Update user |
+Login, user CRUD — **PRD** and deployment docs.
+
+!!! note
+    **Exact** path lists and internal callbacks are omitted on this wiki.

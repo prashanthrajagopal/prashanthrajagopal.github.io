@@ -7,14 +7,71 @@ tags:
 
 # Astra
 
-Astra is an operating system for autonomous agents. Not a framework. Not a wrapper. An actual OS — microkernel, actor runtime, distributed task graph, sandboxed tool execution, layered memory, LLM routing as infrastructure.
+**Astra** is an operating system for autonomous agents: a **microkernel** (actors, task graph, scheduler, messaging, state), **sixteen microservices**, sandboxed tools, layered memory, and LLM routing as infrastructure — not a single-model chat wrapper or a UI product.
 
-**Target:** Millions of persistent agents, 100M+ tasks/day, no hot-path API call over 10ms.
+**Executive summary:** Persistent agents submit **goals**; the **planner** materialises **DAGs** of **tasks**; the **scheduler** dispatches work via **Redis Streams**; **workers** run tasks inside **sandboxes**; **Postgres** is the source of truth and **Redis/Memcached** enforce the **≤10ms** read path. Everything external talks through **JWT**; services talk over **mTLS**; dangerous work passes **policy and approval** gates.
 
-The kernel/SDK/application boundary is strict by design. The kernel does exactly four things: run actors, execute task DAGs, route messages, manage state. Everything else lives outside it via well-defined APIs. Tight kernel = composable system.
+```mermaid
+flowchart LR
+  U[Client] --> GW[API gateway]
+  GW --> GS[goal-service]
+  GS --> PL[planner]
+  PL --> TS[task-service]
+  TS --> SCH[scheduler]
+  SCH --> R[(Redis)]
+  R --> EW[execution-worker]
+  EW --> TR[tool-runtime]
+```
 
-!!! warning "Under construction"
-    This wiki is a work in progress. Astra is being actively built — content will be expanded and made public as the project matures.
+## Goals
+
+| Goal | Target |
+|------|--------|
+| **Scale** | Millions of agents, 100M+ tasks/day (PRD §1). |
+| **Latency** | No hot-path API read over **10ms** p99; scheduling median **≤50ms**, P95 **≤500ms** (PRD §25). |
+| **Safety** | Sandboxed tools, RBAC, approvals, secrets in Vault, mTLS everywhere between services. |
+| **Operability** | Metrics, traces, runbooks, rolling upgrades with backward-compatible schema. |
+
+## Non-goals
+
+- **Not** building foundation models — Astra integrates providers.
+- **Not** replacing every data platform — it composes Postgres, Redis, object storage, etc.
+- **Not** embedding app logic in the kernel — strict kernel/SDK/app boundary (PRD §2).
+- **Not** only a chat product — chat is one surface on the gateway; core is the task graph and actor runtime.
+
+## Who should read what
+
+| Role | Start with |
+|------|------------|
+| **New contributor** | [Getting started](getting-started/index.md) → [Glossary](glossary.md) → [Architecture overview](architecture/overview.md) |
+| **Backend engineer** | [Kernel](architecture/kernel.md), [Task graph](architecture/task-graph.md), [Services](architecture/services.md) |
+| **Operator** | [Operations](operations/index.md), [Deployment](deployment/index.md), runbooks |
+| **Security reviewer** | [Security](security.md), PRD §18 |
+
+## Reading order
+
+1. This page → [Glossary](glossary.md) if terms are unfamiliar.  
+2. [Architecture overview](architecture/overview.md) — layers and goal→task flow.  
+3. [Services](architecture/services.md) — all sixteen services.  
+4. [Reference](reference/index.md) — contracts, schema, Redis, APIs.  
+5. [Operations](operations/index.md) when you’re on call.
+
+## At a glance
+
+| Dimension | Value |
+|-----------|-------|
+| Language | Go (primary), Python tooling |
+| Kernel | Microkernel + actor runtime |
+| Tasks | Distributed DAG, transactional state |
+| Bus | Redis Streams + consumer groups |
+| Source of truth | Postgres (+ pgvector) |
+| Hot cache | Redis, Memcached |
+| Sandboxing | WASM / Docker / Firecracker |
+| Services | 16 canonical microservices |
+| Spec | [PRD](https://github.com/prashanthrajagopal/astra/blob/main/docs/PRD.md) in the Astra repo |
+
+!!! note "Maturity"
+    Astra is under active implementation. Wiki pages track the PRD; some features are phased per PRD §26–27. When in doubt, read the PRD section cited on each page.
 
 ---
 
@@ -26,15 +83,31 @@ The kernel/SDK/application boundary is strict by design. The kernel does exactly
 
     ---
 
-    Local setup, quickstart, and what you need to know before touching any code.
+    Repo layout, prerequisites, local paths.
 
     [:octicons-arrow-right-24: Getting started](getting-started/index.md)
+
+-   :material-book-alphabet:{ .lg } **Glossary**
+
+    ---
+
+    Terms and acronyms.
+
+    [:octicons-arrow-right-24: Glossary](glossary.md)
+
+-   :material-shield-lock:{ .lg } **Security**
+
+    ---
+
+    mTLS, JWT, sandbox, Vault, approvals.
+
+    [:octicons-arrow-right-24: Security](security.md)
 
 -   :material-layers:{ .lg } **Architecture**
 
     ---
 
-    Kernel design, actor framework, task graph engine, scheduler, services, memory, and LLM routing.
+    Kernel, actors, scheduler, memory, LLM routing.
 
     [:octicons-arrow-right-24: Architecture](architecture/index.md)
 
@@ -42,7 +115,7 @@ The kernel/SDK/application boundary is strict by design. The kernel does exactly
 
     ---
 
-    gRPC contracts, database schema, Redis keys, message types, REST API surface, metrics.
+    gRPC, schema, Redis, APIs, metrics, SLAs.
 
     [:octicons-arrow-right-24: Reference](reference/index.md)
 
@@ -50,7 +123,7 @@ The kernel/SDK/application boundary is strict by design. The kernel does exactly
 
     ---
 
-    Runbooks, oncall rotations, incident lifecycle, alerts.
+    Runbooks and incident flow.
 
     [:octicons-arrow-right-24: Operations](operations/index.md)
 
@@ -58,31 +131,8 @@ The kernel/SDK/application boundary is strict by design. The kernel does exactly
 
     ---
 
-    Local dev, Kubernetes/Helm, GCP managed services, macOS production.
+    K8s, local, macOS, GCP.
 
     [:octicons-arrow-right-24: Deployment](deployment/index.md)
 
-
 </div>
-
----
-
-## At a glance
-
-| Dimension | Value |
-|---|---|
-| Language | Go (84%), Python tooling |
-| Kernel model | Microkernel + actor runtime |
-| Task model | Distributed DAG with transactional state |
-| Message bus | Redis Streams with consumer groups |
-| Source of truth | Postgres (primary + replicas) |
-| Hot-path cache | Redis (actor state, profiles, locks), Memcached (LLM/embedding responses) |
-| Tool sandboxing | WASM / Docker / Firecracker |
-| Memory | Redis (working), Postgres + pgvector (episodic/semantic) |
-| LLM routing | Cost-aware model selection, Memcached response cache |
-| Deployment targets | macOS (Metal/ANE) + Linux (CUDA/k8s) |
-| Services | 16 canonical microservices |
-| API latency SLA | ≤ 10ms (p99) for all reads |
-
-!!! note "PRD is the source of truth"
-    These wiki pages are derived from `docs/PRD.md` in the Astra repo. When there's a conflict, the PRD wins. Update the PRD in the same PR as the code change.

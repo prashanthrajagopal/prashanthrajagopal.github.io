@@ -4,9 +4,14 @@ title: Ruby & Rails
 
 # Ruby & Rails
 
-Rails internals, ActiveRecord patterns, Rack middleware, Hotwire, and the broader Ruby ecosystem.
+Notes on Rails internals, patterns, and how they relate to systems like **Astra** (convention, actor-like isolation, clear boundaries).
 
-I've been writing Rails since the late 2000s. The framework's best idea — convention over configuration enforced by a shared culture, not a type system — still influences how I design systems. Astra's actor model borrows that instinct directly.
+## Subpages
 
-!!! note "Work in progress"
-    Pages added as I write them.
+| Page | Focus |
+|------|--------|
+| [Philosophy](philosophy.md) | Convention over configuration vs explicit kernels |
+| [Active Record](active-record.md) | ORM patterns and performance |
+| [Hotwire](hotwire.md) | Turbo/Stimulus vs API-first agents |
+
+I've shipped Rails since the late 2000s. The framework's best idea — **shared culture as contract** — still shapes how I draw boundaries between kernel, services, and apps.

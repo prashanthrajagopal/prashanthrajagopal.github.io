@@ -7,10 +7,64 @@
         <loc>https://prashanthr.net/blog/</loc>
       </url>
       <url>
+        <loc>https://prashanthr.net/wiki/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/rails/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/rails/philosophy/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/rails/active-record/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/rails/hotwire/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/systems/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/systems/caching/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/systems/streaming/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/systems/consistency/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/systems/observability/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/tools/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/tools/editor/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/tools/zensical/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/tools/git/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/tools/cli-debugging/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/getting-started/</loc>
+      </url>
+      <url>
         <loc>https://prashanthr.net/astra/</loc>
       </url>
       <url>
         <loc>https://prashanthr.net/wiki/astra/getting-started/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/astra/glossary/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/astra/security/</loc>
       </url>
       <url>
         <loc>https://prashanthr.net/wiki/astra/architecture/</loc>
@@ -79,10 +133,16 @@
         <loc>https://prashanthr.net/wiki/astra/operations/runbook-postgres-outage/</loc>
       </url>
       <url>
+        <loc>https://prashanthr.net/wiki/astra/operations/runbook-redis-failure/</loc>
+      </url>
+      <url>
         <loc>https://prashanthr.net/wiki/astra/operations/runbook-cost-spike/</loc>
       </url>
       <url>
         <loc>https://prashanthr.net/wiki/astra/deployment/</loc>
+      </url>
+      <url>
+        <loc>https://prashanthr.net/wiki/astra/deployment/kubernetes/</loc>
       </url>
       <url>
         <loc>https://prashanthr.net/wiki/astra/deployment/local/</loc>

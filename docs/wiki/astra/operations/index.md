@@ -8,7 +8,21 @@ tags:
 
 # Operations
 
-Runbooks, oncall procedures, and incident response for Astra. The authoritative runbooks also live in `docs/runbooks/` in the Astra repo — these pages are the wiki summary. For step-by-step shell commands during an incident, use the repo runbooks.
+Runbooks, oncall procedures, and incident response for Astra. The authoritative runbooks also live in **`docs/runbooks/`** in the Astra repo — these pages are the wiki summary. For step-by-step shell commands during an incident, use the repo runbooks.
+
+## Severity levels
+
+| Level | Meaning | Example |
+|-------|---------|---------|
+| **SEV1** | Platform down or data loss risk | Postgres primary unreachable for all traffic |
+| **SEV2** | Major degradation | Single region Redis loss, elevated task failures |
+| **SEV3** | Minor / isolated | One worker pool stuck, non-prod only |
+
+## Communication
+
+- Post in the designated **incident channel**; nominate **incident commander** for SEV1/2.  
+- Update **status page** (if configured) when user-visible.  
+- **Stakeholders:** product owner for sustained SEV1; security for auth or data exposure.
 
 ## Runbooks
 
