@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://prashanthrajagopal.github.io/</loc>
+        <loc>https://prashanthr.net/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/blog/</loc>
+        <loc>https://prashanthr.net/blog/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/astra/</loc>
+        <loc>https://prashanthr.net/astra/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/getting-started/</loc>
+        <loc>https://prashanthr.net/wiki/astra/getting-started/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/overview/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/overview/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/kernel/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/kernel/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/actor-framework/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/actor-framework/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/task-graph/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/task-graph/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/scheduler/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/scheduler/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/services/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/services/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/memory/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/memory/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/llm-routing/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/llm-routing/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/architecture/multi-tenancy/</loc>
+        <loc>https://prashanthr.net/wiki/astra/architecture/multi-tenancy/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/grpc-contracts/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/grpc-contracts/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/database-schema/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/database-schema/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/redis-keys/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/redis-keys/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/message-types/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/message-types/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/api-endpoints/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/api-endpoints/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/metrics/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/metrics/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/reference/slas/</loc>
+        <loc>https://prashanthr.net/wiki/astra/reference/slas/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/operations/</loc>
+        <loc>https://prashanthr.net/wiki/astra/operations/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/operations/runbook-worker-lost/</loc>
+        <loc>https://prashanthr.net/wiki/astra/operations/runbook-worker-lost/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/operations/runbook-high-error-rate/</loc>
+        <loc>https://prashanthr.net/wiki/astra/operations/runbook-high-error-rate/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/operations/runbook-postgres-outage/</loc>
+        <loc>https://prashanthr.net/wiki/astra/operations/runbook-postgres-outage/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/operations/runbook-cost-spike/</loc>
+        <loc>https://prashanthr.net/wiki/astra/operations/runbook-cost-spike/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/deployment/</loc>
+        <loc>https://prashanthr.net/wiki/astra/deployment/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/deployment/local/</loc>
+        <loc>https://prashanthr.net/wiki/astra/deployment/local/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/deployment/macos/</loc>
+        <loc>https://prashanthr.net/wiki/astra/deployment/macos/</loc>
       </url>
       <url>
-        <loc>https://prashanthrajagopal.github.io/wiki/astra/deployment/gcp/</loc>
+        <loc>https://prashanthr.net/wiki/astra/deployment/gcp/</loc>
       </url>
 </urlset>
