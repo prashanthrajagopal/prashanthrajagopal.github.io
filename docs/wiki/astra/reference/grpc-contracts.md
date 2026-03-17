@@ -9,22 +9,18 @@ tags:
 
 # gRPC Contracts
 
-Protobuf definitions live in `/proto/`. Generated Go stubs are in `proto/kernel/` and `proto/tasks/` (via `buf generate`).
+Service contracts are defined in **Protobuf** and described in **PRD §10**. **Service-to-service** calls use **mTLS**; definitions and generation steps live **inside the Astra repo** for contributors.
 
-## kernel.proto — `astra.kernel.KernelService`
+This wiki does **not** list RPC signatures, package paths, or ports.
 
-`KernelService` (package `astra.kernel`) exposes five RPCs: `SpawnActor` (takes actor type and config bytes, returns an actor ID), `SendMessage` (takes target actor ID, message type, source, and payload bytes; returns empty), `QueryState` (takes entity type string and a string map of filters; returns a list of serialized result bytes), `SubscribeStream` (takes stream name, consumer group, and consumer ID; returns a server-streaming `Event`), and `PublishEvent` (takes stream name, event type, actor ID, and payload bytes; returns an event ID string).
+## Summary
 
-The `Event` message carries an ID, type, actor ID, payload bytes, and a Unix timestamp.
+- **Kernel-oriented** APIs cover actors, messages, and stream subscription patterns.  
+- **Task-oriented** APIs cover graph creation, scheduling hints, completion, and failure.  
+- Other services expose their own gRPC surfaces as documented in the PRD.
 
-Server: `cmd/agent-service`, port `AGENT_GRPC_PORT` (default 9091). See `proto/kernel.proto` in the Astra repo.
+## Related
 
-## task.proto — `astra.tasks.TaskService`
-
-`TaskService` (package `astra.tasks`) exposes six RPCs: `CreateTask` (takes graph ID, agent ID, task type, payload bytes, priority, and a list of dependency task IDs; returns a task ID), `ScheduleTask` (takes a task ID; returns empty), `CompleteTask` (takes task ID and result bytes; returns empty), `FailTask` (takes task ID and error string; returns empty), `GetTask` (takes task ID; returns full task details including ID, graph ID, agent ID, type, status, payload, result, priority, retries, and timestamps), and `GetGraph` (takes graph ID; returns all tasks in the graph along with their dependency edges as `TaskDependency` messages).
-
-Server: `cmd/task-service`, port `TASK_GRPC_PORT` (default 9090). See `proto/task.proto` in the Astra repo.
-
-## Generating stubs
-
-Run `buf generate` from the repo root to regenerate Go stubs. Configuration is in `buf.yaml` and `buf.gen.yaml`. Output is written to `proto/kernel/*.pb.go` and `proto/tasks/*.pb.go`.
+- [Security](../security.md)  
+- [API endpoints](api-endpoints.md) — public REST surface  
+- **PRD §10** — full contract detail  

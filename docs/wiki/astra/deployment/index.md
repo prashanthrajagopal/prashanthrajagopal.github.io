@@ -10,12 +10,20 @@ tags:
 
 Astra supports four deployment targets. All use the same codebase; backend selection (Metal, CUDA, CPU) is explicit via environment config.
 
+## Environments
+
+| Environment | Typical target | Secrets |
+|-------------|----------------|---------|
+| **Local dev** | Docker Compose + native services | `.env` / local only — not for prod secrets |
+| **Staging** | Smaller k8s or single node | Vault or sealed secrets |
+| **Production** | GKE / EKS / bare metal + managed data | **Vault** at runtime (PRD §18) |
+
 ## Targets
 
 | Page | Target |
 |---|---|
 | [Local (docker-compose)](local.md) | Development — infra in Docker, services native |
-| [Kubernetes / Helm](kubernetes.md) | Cloud production — GKE, EKS, bare metal k8s |
+| [Kubernetes / Helm](kubernetes.md) | Cloud production — Helm, namespaces, mTLS |
 | [GCP Managed Services](gcp.md) | GCP production — Cloud SQL, Memorystore, GCS |
 | [macOS Production](macos.md) | Mac Mini / Mac Studio production deployments |
 
@@ -24,7 +32,7 @@ Astra supports four deployment targets. All use the same codebase; backend selec
 | Namespace | Services |
 |---|---|
 | `control-plane` | `api-gateway`, `identity`, `access-control` |
-| `kernel` | `scheduler-service`, `task-service`, `agent-service`, `goal-service`, `memory-service` |
+| `kernel` | `scheduler-service`, `task-service`, `agent-service`, `goal-service`, `planner-service`, `memory-service` |
 | `workers` | `execution-worker`, `browser-worker`, `tool-runtime`, `worker-manager`, `llm-router`, `prompt-manager`, `evaluation-service` |
 | `infrastructure` | Postgres, Redis, Memcached, MinIO (local) |
 | `observability` | Prometheus, Grafana, OpenTelemetry collector, Loki |

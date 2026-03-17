@@ -12,7 +12,8 @@ hide:
   </p>
   <div class="pr-hero-ctas">
     <a class="pr-btn-primary" href="wiki/astra/">Explore Astra <span aria-hidden="true">→</span></a>
-    <a class="pr-btn-ghost" href="blog/">Read the blog <span aria-hidden="true">↗</span></a>
+    <a class="pr-btn-ghost" href="wiki/">Wiki <span aria-hidden="true">→</span></a>
+    <a class="pr-btn-ghost" href="blog/">Blog <span aria-hidden="true">↗</span></a>
   </div>
 </div>
 

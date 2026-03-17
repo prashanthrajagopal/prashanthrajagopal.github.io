@@ -11,15 +11,15 @@ tags:
 
 ## Production SLAs
 
-| SLA | Target |
-|---|---|
-| Control plane API availability | 99.9% |
-| API read response time (p99) | ≤ 10ms |
-| Task scheduling latency (median) | ≤ 50ms |
-| Task scheduling latency (p95) | ≤ 500ms |
-| Task execution correctness | ≥ 99% pass rate |
-| Worker failure detection | ≤ 30s |
-| Event durability (persist to Postgres) | ≤ 1s |
+| SLA | Target | Measurement |
+|-----|--------|-------------|
+| Control plane API availability | 99.9% | Uptime checks + gateway health |
+| API read response time (p99) | ≤ 10ms | Histogram on cached read paths |
+| Task scheduling latency (median) | ≤ 50ms | Ready detection → dispatch |
+| Task scheduling latency (p95) | ≤ 500ms | End-to-end scheduling path |
+| Task execution correctness | ≥ 99% pass rate | Task success / (success + failure) |
+| Worker failure detection | ≤ 30s | Heartbeat stream gap |
+| Event durability | ≤ 1s | Async path to durable audit log |
 
 The 10ms read SLA is the hardest constraint in the system. It is the reason the cache architecture exists. Any code path that reads from Postgres synchronously on a hot API endpoint is a bug — not a performance issue, a correctness issue.
 
@@ -44,4 +44,4 @@ The 10ms read SLA is the hardest constraint in the system. It is the reason the 
 | No single API call > | 10ms |
 | Worker failure detection | ≤ 30s |
 
-These are design targets, not load-tested results. Load test harness lives in `tests/load/` (k6). Run the staging soak scenario before any major release.
+These are **design targets**. Load-testing procedures live **in the Astra repo**.

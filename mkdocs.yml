@@ -35,7 +35,11 @@ plugins:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.tasklist
@@ -52,9 +56,31 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Blog: blog/index.md
+  - Wiki:
+    - Overview: wiki/index.md
+    - Ruby & Rails:
+      - wiki/rails/index.md
+      - Philosophy: wiki/rails/philosophy.md
+      - Active Record: wiki/rails/active-record.md
+      - Hotwire: wiki/rails/hotwire.md
+    - Systems:
+      - wiki/systems/index.md
+      - Caching: wiki/systems/caching.md
+      - Streaming: wiki/systems/streaming.md
+      - Consistency: wiki/systems/consistency.md
+      - Observability: wiki/systems/observability.md
+    - Tools:
+      - wiki/tools/index.md
+      - Editor: wiki/tools/editor.md
+      - Zensical: wiki/tools/zensical.md
+      - Git: wiki/tools/git.md
+      - CLI debugging: wiki/tools/cli-debugging.md
+    - Site contributing: wiki/getting-started.md
   - Astra:
     - astra/index.md
     - Getting Started: wiki/astra/getting-started/index.md
+    - Glossary: wiki/astra/glossary.md
+    - Security: wiki/astra/security.md
     - Architecture:
       - wiki/astra/architecture/index.md
       - Overview: wiki/astra/architecture/overview.md
@@ -80,9 +106,11 @@ nav:
       - Runbook — Worker Lost: wiki/astra/operations/runbook-worker-lost.md
       - Runbook — High Error Rate: wiki/astra/operations/runbook-high-error-rate.md
       - Runbook — Postgres Outage: wiki/astra/operations/runbook-postgres-outage.md
+      - Runbook — Redis Failure: wiki/astra/operations/runbook-redis-failure.md
       - Runbook — Cost Spike: wiki/astra/operations/runbook-cost-spike.md
     - Deployment:
       - wiki/astra/deployment/index.md
+      - Kubernetes / Helm: wiki/astra/deployment/kubernetes.md
       - Local: wiki/astra/deployment/local.md
       - macOS: wiki/astra/deployment/macos.md
       - GCP: wiki/astra/deployment/gcp.md
@@ -96,6 +124,9 @@ extra_javascript:
 
 extra:
   generator: false
+  analytics:
+    provider: google
+    property: G-FBH4Q1PWKS
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/prashanthrajagopal

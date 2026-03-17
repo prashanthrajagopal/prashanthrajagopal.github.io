@@ -8,64 +8,88 @@ tags:
 
 # Architecture Overview
 
-Astra is a production-grade, microkernel-style autonomous agent platform. The entire system is designed around one hard constraint: **no API call may take more than 10ms to respond**. All hot-path reads serve from cache (Redis or Memcached). Synchronous Postgres reads on the request path are a bug.
+Astra is built around a hard product constraint: **hot-path reads must stay fast** (see **PRD §25**). Cached layers back that goal; synchronous database reads on latency-sensitive user paths are avoided by design.
 
-## Component diagram
+## Layers
 
-The system is layered top-to-bottom. Applications use the Astra SDK (`pkg/sdk`), which calls into the Astra Kernel (microkernel). The kernel comprises five components: the Actor Runtime (`internal/actors`), Task Graph Engine (`internal/tasks`), Scheduler (`internal/scheduler`), Message Bus (`internal/messaging`), and State Manager (`internal/events`). Below the kernel sits Infrastructure: Postgres (primary + replicas, pgvector), Redis (streams, ephemeral state, locks), Memcached (LLM/embedding/tool cache), and MinIO / GCS (object storage).
+Applications use the **Astra SDK**, which talks to a **microkernel-style core** (actors, task graph, scheduler, messaging, state). Below that: **Postgres**, **Redis**, **Memcached**, and **object storage**.
 
-## Kubernetes namespaces
+```mermaid
+flowchart TB
+  subgraph apps [Applications]
+    SDK[Astra SDK]
+  end
+  subgraph kern [Kernel]
+    AR[Actor runtime]
+    TG[Task graph]
+    SCH[Scheduler]
+    BUS[Messaging]
+    ST[State / events]
+  end
+  subgraph infra [Infrastructure]
+    PG[(Postgres)]
+    RD[(Redis)]
+    MC[(Memcached)]
+    OBJ[Object storage]
+  end
+  SDK --> AR
+  AR --> BUS
+  TG --> PG
+  SCH --> RD
+  BUS --> RD
+  ST --> PG
+  SDK --> TG
+```
 
-| Namespace | Services |
-|---|---|
-| `control-plane` | `api-gateway`, `identity`, `access-control` |
-| `kernel` | `scheduler-service`, `task-service`, `agent-service`, `goal-service`, `memory-service` |
-| `workers` | `execution-worker`, `browser-worker`, `tool-runtime`, `worker-manager`, `llm-router`, `prompt-manager`, `evaluation-service` |
-| `infrastructure` | Postgres, Redis, Memcached, MinIO (local) / Cloud SQL, Memorystore, GCS (GCP) |
-| `observability` | Prometheus, Grafana, OpenTelemetry collector, Loki |
+## Security and data plane
 
-## Data flow: goal → task → result
+**Clients** use **TLS** to the **API gateway** with **JWT** auth. **Service-to-service** traffic uses **mTLS**. **Tool execution** is **sandboxed**; **secrets** are injected via **Vault** (or equivalent), not baked into images. See [Security](../security.md) and **PRD §18**.
 
-The request flows through the following stages in order:
+## Kubernetes namespaces (summary)
 
-1. A user submits `POST /agents/{id}/goals`.
-2. The `goal-service` validates the request, assembles agent context, and routes to the planner.
-3. The `planner-service` uses an LLM-backed call to generate a DAG.
-4. The `task-service` receives a `CreateGraph` call and persists the DAG to Postgres.
-5. The `scheduler-service` detects ready tasks on its 100ms poll cycle.
-6. The scheduler publishes to `XADD astra:tasks:shard:N` (a Redis stream).
-7. An `execution-worker` claims the task from the stream and sets its status to `running`.
-8. The `tool-runtime` executes the task in a sandbox.
-9. `CompleteTask` is called: the result is persisted, a `TaskCompleted` event is emitted, and the scheduler unlocks dependent child tasks.
+| Namespace | Role |
+|-----------|------|
+| `control-plane` | Gateway, identity, access control |
+| `kernel` | Scheduler, tasks, agents, goals, planner, memory |
+| `workers` | Execution, browser, tools, LLM routing, prompts, evaluation, worker manager |
+| `infrastructure` | Data stores and supporting services |
+| `observability` | Metrics, logs, traces |
 
-Every arrow is either a gRPC call or a Redis Streams publish/consume. No direct database calls across service boundaries.
+## Goal → task → result (flow)
 
-## The 10ms SLA
+1. Client submits a **goal** for an agent.  
+2. **Goal** path validates and assembles context, then **planning** produces a **task DAG**.  
+3. **Task service** persists the graph; **scheduler** finds ready tasks and **dispatches** to queues.  
+4. **Workers** claim work, run **tool/sandbox** steps, then **complete** or **fail** tasks.  
+5. Dependent tasks unlock; the cycle continues until the graph finishes.
 
-The hard constraint shapes the entire cache strategy:
+```mermaid
+sequenceDiagram
+  participant C as Client
+  participant GW as API gateway
+  participant GS as Goal path
+  participant PL as Planner
+  participant TS as Task service
+  participant SCH as Scheduler
+  participant Q as Work queues
+  participant W as Workers
+  C->>GW: Goal
+  GW->>GS: Forward
+  GS->>PL: Plan
+  PL->>TS: Persist graph
+  SCH->>TS: Ready tasks
+  SCH->>Q: Dispatch
+  W->>Q: Claim
+  W->>TS: Complete / fail
+```
 
-| Read type | Cache layer | TTL |
-|---|---|---|
-| Actor working state | Redis Hash `actor:state:{id}` | 5m |
-| Agent profile | Redis Hash `agent:profile:{id}` | 5m |
-| Agent documents | Redis JSON `agent:docs:{id}` | 5m |
-| Task reads | Redis via `CachedStore` | short-lived |
-| LLM responses | Memcached `llm:resp:{model}:{hash}` | 24h |
-| Embeddings | Memcached `embed:{hash}` | 7-30d |
+## Caching (10ms read path)
 
-Write path: Postgres transaction → Redis Stream event → async cache update. Reads that miss fall through to Postgres and populate the cache for next time.
+Hot reads use **Redis** and **Memcached** with TTLs described in **PRD §13**. Writes go **durable first**, then **events**, then **cache refresh** — so caches can lag slightly behind the database by design.
 
 !!! warning "Tradeoff"
-    This architecture accepts eventual consistency between Postgres and cache. Cache misses add latency. Write-through caching adds complexity. The alternative — synchronous Postgres reads on the hot path — doesn't meet the 10ms SLA at scale.
+    **Eventual consistency** on cached fields is accepted so the **10ms** read target stays achievable at scale.
 
 ## Hardware targets
 
-Astra runs on both macOS and Linux in production.
-
-| Platform | Acceleration |
-|---|---|
-| macOS (Apple Silicon) | Metal (GPU), Neural Engine (ANE), native `darwin/arm64` binaries |
-| macOS (Intel) | Metal where available, native `darwin/amd64` binaries |
-| Linux | CUDA (NVIDIA GPUs), CPU fallback |
-
-Backend selection is explicit via config (`ASTRA_USE_METAL=true`, `ASTRA_USE_CUDA=false`) with graceful fallback to CPU. The codebase uses a single abstraction layer for backend selection — no platform-specific code in the kernel.
+**macOS** (Apple Silicon / Intel) and **Linux** (including GPU paths where configured) are supported deployment shapes; see **PRD §20** and [Deployment](../deployment/index.md).

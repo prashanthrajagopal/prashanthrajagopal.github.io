@@ -12,8 +12,17 @@ tags:
 
 Multi-tenancy is being added in Phase 11. The platform is a single shared platform with organisations (tenants), teams, users, and role-based access control. One org's data is never visible to another org.
 
+## Isolation dimensions
+
+| Dimension | Mechanism |
+|-----------|-----------|
+| **Data** | Org-scoped rows and JWT claims; queries filtered by org membership. |
+| **Identity** | `identity` issues tokens with org and role claims. |
+| **Policy** | `access-control` enforces RBAC and approvals per agent/org. |
+| **Network** | In Kubernetes, network policies can segregate namespaces per environment; production uses private networking to data stores. |
+
 !!! note "Phase 11 status"
-    Phase 11 is in progress. The schema (migration 0018) is specified but not all sub-phases are complete. See [Phase 11 roadmap](../roadmap/phase-11.md).
+    Phase 11 is in progress. The schema (migration 0018) is specified but not all sub-phases are complete. See the PRD Phase 11 / dashboard sections for current scope.
 
 ## Entity model
 
@@ -45,24 +54,21 @@ Multi-tenancy is being added in Phase 11. The platform is a single shared platfo
 | `team` | Team members and org admins only. |
 | `private` | Only the owner and explicitly added collaborators. |
 
-## JWT claims
+## JWT and context
 
-The `Claims` struct (defined in the identity/auth package) embeds `jwt.RegisteredClaims` and adds `user_id`, `email`, `is_super_admin` (boolean), and `scopes` (string slice). Post-Phase-11 claims will also carry `org_id`, `org_role`, and `team_ids`. These propagate via gRPC metadata headers (`x-user-id`, `x-org-id`, `x-org-role`, `x-team-ids`, `x-is-super-admin`) to all downstream services. See `internal/identity/` in the Astra repo.
+Tokens carry **user identity**, **org/team context**, and **roles** as described in **PRD §18–19**. Downstream services receive that context through **standard internal headers** — exact header names and claim layouts are **not** documented on this wiki.
 
 ## Super-admin data redaction
 
 `redactForSuperAdmin()` strips: `system_prompt`, `config`, `payload`, `result`, `goal_text`, code output, file contents, shell output, and chat messages before returning data to super-admin endpoints. Super-admins see names and counts, not execution details.
 
-## Key schema additions (migration 0018)
+## Schema
 
-New tables: `users`, `organizations`, `org_memberships`, `teams`, `team_memberships`, `agent_collaborators`, `agent_admins`.
-
-Columns added to existing tables: `org_id` on `agents`, `goals`, `tasks`, `workers`, `events`, `memories`, `llm_usage`, `approval_requests`, `chat_sessions`. Also `owner_id`, `team_id`, `visibility` on `agents`.
+Orgs, teams, memberships, and agent visibility are backed by **additional tables and columns** on core entities. Full DDL is **PRD §11 / §19**.
 
 ## Workspace isolation
 
-- Global agents: `WORKSPACE_ROOT/_global/{goal_id}/`
-- Org agents (Phase 11+): `WORKSPACE_ROOT/{org_slug}/{goal_id}/`
+On-disk workspace layout is **partitioned** so org-scoped work does not collide with other tenants; paths follow **PRD §19**.
 
 !!! warning "Tradeoff"
     Single-platform architecture means services query across the full dataset unless `WHERE org_id = $orgID` is consistently applied. This is a correctness requirement, not a performance hint. Missing an `org_id` filter in any service query is a data isolation bug.

@@ -9,28 +9,62 @@ tags:
 
 # Services — 16 Canonical Microservices
 
-Each service is an independent process in the monorepo (`cmd/<service>/main.go`). Each scales horizontally. Services communicate via gRPC (internal) or REST (external via api-gateway).
+Each service is an **independently scalable process**. Services communicate over **gRPC** (internal, with **mTLS**) and expose **REST/WebSocket** only at the **API gateway** edge.
+
+**External API surface:** Humans and integrations call **REST/WebSocket** on `api-gateway` only, with **JWT** auth. **Internal API:** services call each other over **gRPC with mTLS** — no direct Postgres access across arbitrary service boundaries; each service owns its integration pattern with the DB or cache.
+
+```mermaid
+flowchart TB
+  subgraph cp [control-plane]
+    GW[api-gateway]
+    ID[identity]
+    AC[access-control]
+  end
+  subgraph kern [kernel]
+    AG[agent-service]
+    GL[goal-service]
+    PL[planner-service]
+    SCH[scheduler-service]
+    TK[task-service]
+    MEM[memory-service]
+  end
+  subgraph wrk [workers]
+    LLM[llm-router]
+    PM[prompt-manager]
+    EV[evaluation-service]
+    WM[worker-manager]
+    EX[execution-worker]
+    BR[browser-worker]
+    TR[tool-runtime]
+  end
+  GW --> AG
+  GW --> GL
+  GL --> PL
+  PL --> TK
+  SCH --> EX
+  EX --> TR
+```
 
 ## Service catalogue
 
-| # | Service | Namespace | Port | Responsibility |
-|---|---|---|---|---|
-| 1 | `api-gateway` | control-plane | 8080 | REST/gRPC gateway, auth middleware, rate limiting, versioning; chat sessions, WebSocket streaming |
-| 2 | `identity` | control-plane | 8085 | User management (CRUD, login, password reset), JWT tokens, service-to-service tokens |
-| 3 | `access-control` | control-plane | 8086 | Policy engine (RBAC, super_admin), approval workflows, approval assignment |
-| 4 | `agent-service` | kernel | 9091 | Agent lifecycle (spawn/stop/inspect), actor supervisor integration, agent profile & document management |
-| 5 | `goal-service` | kernel | 8088 | Goal ingestion, validation, routing to planner, context assembly (system_prompt + documents) |
-| 6 | `planner-service` | kernel | 8087 | Core planner: goals → TaskGraphs using LLM |
-| 7 | `scheduler-service` | kernel | — | Distributed scheduler, shard manager, ready-task dispatch |
-| 8 | `task-service` | kernel | 9090 | Task CRUD, dependency engine API, state queries |
-| 9 | `llm-router` | workers | 9093 | Model routing (local/premium/code), response caching, rate limiting, usage metrics |
-| 10 | `prompt-manager` | workers | — | Prompt templates, versions, A/B prompt experiments |
-| 11 | `evaluation-service` | workers | 8089 | Result validators, test harnesses, auto-evaluators |
-| 12 | `worker-manager` | workers | 8082 | Worker registration, health monitoring, scaling hints, orphan task recovery |
-| 13 | `execution-worker` | workers | — | General worker runtime (consumes tasks from Redis streams) |
-| 14 | `browser-worker` | workers | — | Headless browser automation (Playwright/Puppeteer); consumes `astra:tasks:browser` stream |
-| 15 | `tool-runtime` | workers | 8083 | Tool sandbox controller (WASM/Docker/Firecracker lifecycle), `POST /execute` |
-| 16 | `memory-service` | kernel | 9092 | Episodic/semantic memory, embedding pipeline, pgvector search |
+| # | Service | Namespace | Responsibility |
+|---|---------|-----------|----------------|
+| 1 | `api-gateway` | control-plane | REST/WebSocket gateway, auth, rate limits, versioning |
+| 2 | `identity` | control-plane | Users, JWT, service identity |
+| 3 | `access-control` | control-plane | RBAC, approvals |
+| 4 | `agent-service` | kernel | Agent lifecycle, profile & documents |
+| 5 | `goal-service` | kernel | Goals, context to planner |
+| 6 | `planner-service` | kernel | Goals → task graphs (LLM) |
+| 7 | `scheduler-service` | kernel | Ready tasks, dispatch |
+| 8 | `task-service` | kernel | Task/graph API |
+| 9 | `llm-router` | workers | Model routing, cache, cost |
+| 10 | `prompt-manager` | workers | Prompt templates & experiments |
+| 11 | `evaluation-service` | workers | Validation & eval |
+| 12 | `worker-manager` | workers | Worker registry & health |
+| 13 | `execution-worker` | workers | General task execution |
+| 14 | `browser-worker` | workers | Browser automation tasks |
+| 15 | `tool-runtime` | workers | Sandboxed tool execution |
+| 16 | `memory-service` | kernel | Episodic / semantic memory |
 
 **Chat (v1):** Chat capability is built into `api-gateway`. No separate chat service for Phase 10.
 
@@ -42,23 +76,15 @@ External → api-gateway (REST/WebSocket)
            agent-service, task-service, goal-service (kernel services)
            ↓ gRPC
            llm-router, memory-service, planner-service
-           ↓ Redis Streams
+           ↓ stream queues
            execution-worker, browser-worker
-           ↓ HTTP
-           tool-runtime (sandbox execution)
+           ↓
+           tool-runtime (sandbox)
 ```
 
-## Agent lifecycle flow
+## Agent lifecycle flow (summary)
 
-```
-POST /agents/{id}/goals
-→ goal-service: validate + assemble agent context (system_prompt + rules + skills + context_docs)
-→ planner-service: LLM-backed goal → DAG (each task payload embeds agent_context)
-→ task-service: CreateGraph (persist tasks + dependencies to Postgres)
-→ scheduler-service: detect ready tasks → XADD astra:tasks:shard:N
-→ execution-worker: claim task → tool-runtime for execution → CompleteTask/FailTask
-→ evaluation-service: validate result
-```
+**Goal submitted** → **context assembled** → **planner** builds **DAG** → **task service** persists graph → **scheduler** dispatches → **workers** run steps (including **sandbox** where needed) → **evaluation** where configured. Details: **PRD §9, §15**.
 
 ## Chat API (Phase 10)
 
@@ -69,14 +95,14 @@ POST /agents/{id}/goals
 | `GET` | `/chat/sessions/{id}` | Get chat session details |
 | `GET` | `/chat/ws` | WebSocket upgrade for streaming chat |
 
-WebSocket protocol: JSON frames with types `chunk`, `message_start`, `message_end`, `tool_call`, `tool_result`, `done`, `error`, `pong`, `session`.
+WebSocket framing: **JSON message types** per **PRD** (streaming, tools, errors).
 
-## Agent profile and documents API (Phase 9)
+## Agent profile and documents (summary)
 
 | Method | Path | Description |
 |---|---|---|
-| `PATCH` | `/agents/{id}` | Update agent profile (system_prompt, config) |
-| `GET` | `/agents/{id}/profile` | Get agent profile (Redis cache, 5min TTL) |
+| `PATCH` | `/agents/{id}` | Update agent profile |
+| `GET` | `/agents/{id}/profile` | Cached profile |
 | `POST` | `/agents/{id}/documents` | Attach document (rule/skill/context_doc/reference) |
 | `GET` | `/agents/{id}/documents` | List agent documents, optional `?doc_type=` filter |
 | `DELETE` | `/agents/{id}/documents/{doc_id}` | Remove document |

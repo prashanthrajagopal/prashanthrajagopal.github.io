@@ -8,47 +8,45 @@ tags:
 
 # Kernel Design
 
-The Astra kernel is intentionally minimal. It does exactly four things and refuses to do anything else. This constraint is not a limitation — it's what makes the system composable.
+The Astra kernel is intentionally **minimal**. It focuses on actors, task graphs, scheduling, messaging, and transactional state — not product or LLM logic.
 
 ## Responsibilities
 
-1. **Actor Runtime** — run millions of actors efficiently (goroutine-per-actor, mailbox model)
-2. **Task Graph Engine** — persist and coordinate DAGs, dependency resolution, partial execution
-3. **Scheduler** — shard-aware distributed scheduler, capability matching, priority
-4. **Message Bus** — Redis Streams + local in-memory mailboxes
-5. **State Manager** — transactional persistence in Postgres, event sourcing, snapshots
+1. **Actor runtime** — many concurrent actors with mailboxes and message delivery.  
+2. **Task graph** — DAG persistence, dependencies, lifecycle.  
+3. **Scheduler** — ready-task detection and dispatch to workers.  
+4. **Message bus** — stream-based coordination between components.  
+5. **State** — durable writes and event history aligned with task transitions.
 
-## Kernel invariants
+## Non-responsibilities
 
-- Kernel must remain small and stable. Adding features to the kernel requires explicit architectural justification.
-- All non-kernel services run in user-space (SDK/services). They interact with the kernel only via its published gRPC API.
-- Kernel guarantees: message delivery within configured SLAs, consistent task state, transactionally consistent state writes.
-- Kernel packages (`internal/actors`, `internal/kernel`, `internal/tasks`, `internal/scheduler`, `internal/messaging`, `internal/events`) must not import service-layer packages.
+The kernel does **not** own HTTP ingress, user-facing dashboards, OAuth, or prompt design. Those sit in **services** and the **SDK**. Long-term semantic memory orchestration is a **memory service** concern on top of kernel primitives, not inside the kernel.
 
-## Kernel gRPC API
+## Message path (conceptual)
 
-Defined in `proto/kernel.proto` (`astra.kernel.KernelService`):
+```mermaid
+flowchart LR
+  S[Sender] --> K[Kernel]
+  K --> M[Mailbox]
+  M --> R[Actor]
+```
 
-| RPC | Input | Output | Description |
-|---|---|---|---|
-| `SpawnActor` | `actor_type`, `config` | `ActorID` | Create and start a new actor goroutine |
-| `SendMessage` | `actorID`, `Message` | `ack` | Deliver message to actor mailbox |
-| `CreateTask` | `task_spec` | `TaskID` | Create task node in a graph |
-| `ScheduleTask` | `taskID` | `ack` | Mark task ready, push to worker queue |
-| `CompleteTask` | `taskID`, `result` | `ack` | Mark task completed, store result, unlock children |
-| `FailTask` | `taskID`, `error` | `ack` | Mark task failed, increment retries or dead-letter |
-| `QueryState` | `entity`, `filters` | `state` | Query entity state (agents, tasks, workers) |
-| `SubscribeStream` | `stream`, `consumer_group` | stream `Event` | Subscribe to Redis stream |
-| `PublishEvent` | `event` | `ack` | Publish event to a stream |
+| Interaction | Role of kernel |
+|-------------|----------------|
+| **Spawn** | Register and start an actor |
+| **Send** | Deliver a message to an actor’s mailbox |
+| **Tasks** | Coordinate graph state and scheduling with the database and streams |
+| **Events** | Align durable events with state changes |
 
-## Kernel manager implementation
+## Invariants
 
-The `Kernel` struct in `internal/kernel/kernel.go` holds a `sync.RWMutex`-protected map of actor IDs to `Actor` instances. The `Spawn` method acquires a write lock and registers a new actor in the map. The `Send` method acquires a read lock, looks up the target actor by ID, and calls `Receive` on it. If the actor is not found, `Send` returns an error. See `internal/kernel/kernel.go` in the Astra repo.
+- The kernel stays **small and stable**; growth requires explicit design review.  
+- Services talk to the kernel through **published APIs**, not by reaching into implementation details.  
+- **Durable task state** and **event history** stay consistent with the transactional model described in the PRD.
 
-The kernel is a registry and a dispatcher. It doesn't know what actors do; it just knows where they are.
+## API surface
 
-!!! note "Design note"
-    The kernel manager uses a `sync.RWMutex` rather than a channel-based dispatcher. This is a deliberate choice: a mutex gives O(1) actor lookup with negligible contention at normal read rates (most operations are reads). A channel-based dispatcher would add a goroutine per send and create a bottleneck at high message rates.
+Kernel-oriented RPCs (spawn, send, task lifecycle, streams) are specified in **PRD §10**. This wiki does not reproduce full protobuf definitions.
 
-!!! question "Open"
-    At millions of actors, the single `actors` map will become a bottleneck even with RWMutex. Sharded kernel instances (one per CPU or per shard) are the likely solution. Not yet designed.
+!!! note
+    For exact messages and service boundaries, use **`docs/PRD.md`** in the Astra repository.

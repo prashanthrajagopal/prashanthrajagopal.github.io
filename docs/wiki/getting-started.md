@@ -1,57 +1,67 @@
 ---
-title: Getting Started
-tags:
-  - setup
-  - reference
+title: Site contributing
+description: How to author and publish prashanthr.net
 ---
 
-# Getting Started
+# Contributing to this site
 
-## Local Development
+This site is built with **Zensical** (MkDocs Material) and deploys from **GitHub Actions** on push to `main`.
 
-```bash
-# Install
-pip install zensical
+## Directory layout
 
-# Serve with live reload
-zensical serve
+| Path | Purpose |
+|------|---------|
+| `docs/index.md` | Home page |
+| `docs/blog/` | Blog posts under `posts/` |
+| `docs/wiki/` | Wiki (Astra, Rails, Systems, Tools) |
+| `docs/astra/` | Short Astra landing (nav entry) |
+| `mkdocs.yml` | Site config, nav, theme |
+| `docs/stylesheets/` | Custom CSS |
+| `docs/javascripts/` | Custom JS |
+| `.github/workflows/publish.yml` | Build + GitHub Pages |
 
-# Build static site
-zensical build
-```
-
-## Writing Content
-
-- **Blog posts** go in `docs/blog/posts/` with a date in the frontmatter
-- **Wiki pages** go in `docs/wiki/`
-
-### Blog post frontmatter
+## Frontmatter
 
 ```yaml
 ---
-title: My Post Title
-date: 2026-01-15
-authors:
-  - your-name
-categories:
-  - Category
+title: Page title
+description: Optional SEO
 tags:
   - tag1
-  - tag2
-draft: false
 ---
 ```
 
-### Wiki page frontmatter
+Blog posts additionally need `date`, `authors`, `categories`, `draft`.
 
-```yaml
----
-title: Page Title
-tags:
-  - topic
----
+## Mermaid diagrams
+
+Use a fenced block with language `mermaid`:
+
+````markdown
+```mermaid
+flowchart LR
+  A --> B
 ```
+````
 
-## Deployment
+Prefer **flowchart**, **sequenceDiagram**, **stateDiagram-v2**, **erDiagram**. Avoid spaces in node IDs (use camelCase).
 
-The site deploys automatically to GitHub Pages via the `publish` workflow when you push to `main`.
+## Images
+
+Static assets: place under `docs/` and reference with relative paths, e.g. `../assets/diagram.png` from a wiki page, or configure `extra` in `mkdocs.yml` if you add a dedicated assets dir.
+
+## Preview & CI
+
+- Local: `zensical serve`  
+- CI: workflow runs `zensical build --clean`, adds `.nojekyll` and `CNAME`, uploads `site/`.
+
+## Style
+
+- **Headings:** sentence case or title case — stay consistent within a page.  
+- **Spelling:** British or US — pick one per document.  
+- **Links:** use relative paths within `docs/` so builds stay portable.
+
+## Related
+
+- [Zensical](tools/zensical.md)  
+- [Wiki overview](index.md)

@@ -1,46 +1,33 @@
 ---
-title: "Runbook: Postgres Outage"
+title: "Runbook — Postgres Outage"
 tags:
   - astra
   - operations
   - runbook
   - postgres
-  - database
 ---
 
-# Runbook: Postgres Outage
+# Runbook — Postgres outage
 
-**Alert:** DB connection errors platform-wide. Services failing to write state.
+**Trigger:** Widespread **database connectivity** errors; control plane and workers cannot persist state.
 
-## Detection
+## Symptoms
 
-1. Test connectivity by running `psql -c "SELECT 1;"`.
-2. Check the Postgres pod or process: run `kubectl get pods -n infrastructure | grep postgres` for Kubernetes, or `pg_isready -h localhost -p 5432` for native deployments.
+- Health checks fail across **kernel** and **worker** tiers.  
+- APIs return **5xx**; scheduling and task completion stop.  
+- Dashboards show **DB down** or connection pool exhaustion.
 
-## Immediate response
+## Impact
 
-**If primary is down:**
+**Severe:** the system cannot **commit** task or agent state until the database is reachable or a **replica** is promoted.
 
-1. Promote the read replica by running `pg_ctl promote -D /var/lib/postgresql/data` (for Postgres streaming replication).
-2. Switch services to read-only mode while promoting. The `api-gateway` can serve cached reads from Redis during the outage. New writes (goals, task transitions) will fail — this is acceptable for the duration of promotion.
-3. Update `POSTGRES_DSN` for all services to point to the promoted replica, then do a rolling restart: use `kubectl set env deployment -n kernel POSTGRES_DSN="postgres://..." --all`, `kubectl set env deployment -n workers POSTGRES_DSN="postgres://..." --all`, and `kubectl set env deployment -n control-plane POSTGRES_DSN="postgres://..." --all`.
+## What operators do (summary)
 
-**For GCP (Cloud SQL):**
+1. **Confirm** primary vs replica status with your **DBA / cloud console**.  
+2. **Fail over** to a healthy instance per your **provider runbook**.  
+3. **Update connection config** for all dependent services and **roll** restarts in a controlled order (**internal playbook**).  
+4. **Verify** writes and reads; watch **event backlog** if any async consumers lagged.  
+5. **Post-incident:** replication lag, data window, and whether **event log** replay is needed — documented in **private** runbooks.
 
-Cloud SQL automatic failover to the HA replica is immediate. Monitor failover status in GCP Console → Cloud SQL → Operations. No manual promotion is needed.
-
-## Verify recovery
-
-1. Confirm the write path is operational: run `psql -c "INSERT INTO events (event_type, actor_id) VALUES ('HealthCheck', uuid_generate_v4()) RETURNING id;"`.
-2. Check for missed events during the outage — events are buffered in the `astra:events` Redis stream and can be replayed after recovery.
-
-## Event replay after recovery
-
-During the outage, Redis Streams continued buffering events. After Postgres recovery:
-
-1. Events stream consumers will automatically retry with exponential backoff.
-2. Verify no messages are stuck by running `redis-cli XPENDING astra:events astra-consumers - + 100`.
-3. If messages are stuck (more than 3 failed attempts), they are in dead-letter and require manual replay.
-
-!!! warning "Data loss risk"
-    If the primary failed without replication lag, the replica may be behind. Check `SELECT pg_last_wal_receive_lsn()` on the replica vs the primary's last known LSN. Events in `events` table are the canonical audit trail — if rows are missing, they may need replay from application logs.
+!!! note
+    **No SQL, kubectl, or psql recipes** on this public wiki.
