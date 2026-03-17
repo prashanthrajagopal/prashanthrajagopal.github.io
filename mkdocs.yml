@@ -1,0 +1,103 @@
+site_name: Prashanth
+site_url: https://prashanthrajagopal.github.io
+docs_dir: docs
+site_dir: site
+copyright: Built by Prashanth Rajagopal · Made with <a href="https://zensical.org/">Zensical</a>
+
+theme:
+  name: material
+  font:
+    text: DM Sans
+    code: JetBrains Mono
+  palette:
+    scheme: slate
+    primary: custom
+    accent: custom
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+plugins:
+  - search
+  - blog:
+      blog_dir: blog
+      post_url_format: "{date}/{slug}"
+      post_date_format: long
+      archive: true
+      categories: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Blog: blog/index.md
+  - Astra:
+    - wiki/astra/index.md
+    - Getting Started: wiki/astra/getting-started/index.md
+    - Architecture:
+      - wiki/astra/architecture/index.md
+      - Overview: wiki/astra/architecture/overview.md
+      - Kernel: wiki/astra/architecture/kernel.md
+      - Actor Framework: wiki/astra/architecture/actor-framework.md
+      - Task Graph: wiki/astra/architecture/task-graph.md
+      - Scheduler: wiki/astra/architecture/scheduler.md
+      - Services: wiki/astra/architecture/services.md
+      - Memory: wiki/astra/architecture/memory.md
+      - LLM Routing: wiki/astra/architecture/llm-routing.md
+      - Multi-Tenancy: wiki/astra/architecture/multi-tenancy.md
+    - Reference:
+      - wiki/astra/reference/index.md
+      - gRPC Contracts: wiki/astra/reference/grpc-contracts.md
+      - Database Schema: wiki/astra/reference/database-schema.md
+      - Redis Keys: wiki/astra/reference/redis-keys.md
+      - Message Types: wiki/astra/reference/message-types.md
+      - API Endpoints: wiki/astra/reference/api-endpoints.md
+      - Metrics: wiki/astra/reference/metrics.md
+      - SLAs: wiki/astra/reference/slas.md
+    - Operations:
+      - wiki/astra/operations/index.md
+      - Runbook — Worker Lost: wiki/astra/operations/runbook-worker-lost.md
+      - Runbook — High Error Rate: wiki/astra/operations/runbook-high-error-rate.md
+      - Runbook — Postgres Outage: wiki/astra/operations/runbook-postgres-outage.md
+      - Runbook — Cost Spike: wiki/astra/operations/runbook-cost-spike.md
+    - Deployment:
+      - wiki/astra/deployment/index.md
+      - Local: wiki/astra/deployment/local.md
+      - macOS: wiki/astra/deployment/macos.md
+      - GCP: wiki/astra/deployment/gcp.md
+
+extra_css:
+  - stylesheets/prashantr-theme.css
+
+extra_javascript:
+  - javascripts/header-brand.js
+  - javascripts/blog-filter.js
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/prashanthrajagopal
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/prashanthrajagopal
