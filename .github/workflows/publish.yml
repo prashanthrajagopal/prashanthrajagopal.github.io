@@ -34,7 +34,9 @@ jobs:
         run: zensical build --clean
 
       - name: GitHub Pages extras
-        run: touch site/.nojekyll
+        run: |
+          touch site/.nojekyll
+          echo prashanthr.net > site/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
