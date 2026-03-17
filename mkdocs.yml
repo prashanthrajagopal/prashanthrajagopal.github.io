@@ -53,7 +53,7 @@ nav:
   - Home: index.md
   - Blog: blog/index.md
   - Astra:
-    - wiki/astra/index.md
+    - astra/index.md
     - Getting Started: wiki/astra/getting-started/index.md
     - Architecture:
       - wiki/astra/architecture/index.md
