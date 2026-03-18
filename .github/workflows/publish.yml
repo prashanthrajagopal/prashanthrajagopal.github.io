@@ -36,6 +36,12 @@ jobs:
       - name: Build site
         run: zensical build --clean
 
+      - name: Sitemap and robots.txt
+        run: python scripts/generate_sitemap.py
+        env:
+          SITE_URL: https://prashanthr.net
+          SITE_DIR: site
+
       - name: GitHub Pages extras
         run: |
           touch site/.nojekyll
