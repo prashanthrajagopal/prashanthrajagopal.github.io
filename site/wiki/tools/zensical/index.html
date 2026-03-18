@@ -2289,10 +2289,12 @@
 
 <h1 id="zensical">Zensical<a class="headerlink" href="#zensical" title="Permanent link">&para;</a></h1>
 <p><a href="https://zensical.org/">Zensical</a> builds this site — a MkDocs + Material stack.</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>zensical
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>zensical<span class="w"> </span>pyyaml
+python<span class="w"> </span>scripts/sync_latest_blog.py<span class="w">   </span><span class="c1"># homepage “Latest” = newest post by date</span>
 zensical<span class="w"> </span>serve<span class="w">    </span><span class="c1"># live reload at http://127.0.0.1:8000</span>
 zensical<span class="w"> </span>build<span class="w"> </span>--clean<span class="w">   </span><span class="c1"># output in site/</span>
 </code></pre></div>
+<p><strong>Homepage blog card:</strong> <code>scripts/sync_latest_blog.py</code> updates <code>docs/index.md</code> between <code>LATEST_BLOG_AUTOGEN</code> markers from the latest <code>docs/blog/posts/*.md</code> (by frontmatter <code>date:</code>). GitHub Actions runs this before every deploy.</p>
 <ul>
 <li><strong>Config:</strong> root <code>mkdocs.yml</code> — <code>docs_dir: docs</code>, nav, theme, <strong>Mermaid</strong> via <code>pymdownx.superfences</code> custom fence <code>mermaid</code>.  </li>
 <li><strong>Content:</strong> <code>docs/wiki/</code>, <code>docs/blog/</code>, <code>docs/index.md</code>.  </li>
