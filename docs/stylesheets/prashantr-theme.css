@@ -735,6 +735,34 @@ body:has(.pr-home-hero) article.md-content__inner > :first-child {
   color: var(--pr-blue);
 }
 
+.tag-rails {
+  background: rgba(200, 80, 90, 0.12);
+  color: #c45c68;
+}
+
+.blog-queue-section {
+  margin-top: 2.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--pr-border);
+}
+
+.blog-queue-heading {
+  font-family: var(--pr-font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+  color: var(--pr-text);
+}
+
+.blog-queue-intro {
+  font-size: 0.9rem;
+  color: var(--pr-text-secondary);
+  margin: 0 0 1.25rem;
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 700px) {
   .blog-post-row {
     grid-template-columns: 1fr;
