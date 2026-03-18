@@ -7,10 +7,13 @@ title: Zensical (this site)
 [Zensical](https://zensical.org/) builds this site — a MkDocs + Material stack.
 
 ```bash
-pip install zensical
+pip install zensical pyyaml
+python scripts/sync_latest_blog.py   # homepage “Latest” = newest post by date
 zensical serve    # live reload at http://127.0.0.1:8000
 zensical build --clean   # output in site/
 ```
+
+**Homepage blog card:** `scripts/sync_latest_blog.py` updates `docs/index.md` between `LATEST_BLOG_AUTOGEN` markers from the latest `docs/blog/posts/*.md` (by frontmatter `date:`). GitHub Actions runs this before every deploy.
 
 - **Config:** root `mkdocs.yml` — `docs_dir: docs`, nav, theme, **Mermaid** via `pymdownx.superfences` custom fence `mermaid`.  
 - **Content:** `docs/wiki/`, `docs/blog/`, `docs/index.md`.  

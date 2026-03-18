@@ -28,7 +28,10 @@ jobs:
           python-version: "3.x"
 
       - name: Install Zensical
-        run: pip install zensical
+        run: pip install zensical pyyaml
+
+      - name: Sync latest blog on homepage
+        run: python scripts/sync_latest_blog.py
 
       - name: Build site
         run: zensical build --clean
