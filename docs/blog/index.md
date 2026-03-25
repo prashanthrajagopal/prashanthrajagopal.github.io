@@ -1,5 +1,6 @@
 ---
-title: Blog
+title: Blog — Prashanth Rajagopal
+description: Long-form writing on distributed systems, agent infrastructure, Rails, Go, and Astra by Prashanth Rajagopal at prashanthr.net.
 hide:
   - toc
 ---

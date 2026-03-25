@@ -1,5 +1,6 @@
 ---
-title: Home
+title: Prashanth Rajagopal — prashanthr.net
+description: Prashanth Rajagopal's site on distributed systems, agent infrastructure, and Astra. Blog, wiki, and architecture notes from 15+ years of building production software.
 hide:
   - toc
 ---
