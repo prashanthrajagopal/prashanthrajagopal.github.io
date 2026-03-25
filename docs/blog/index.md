@@ -85,4 +85,51 @@ hide:
     </a>
   </div>
 
+  <div class="blog-queue-section">
+    <h2 class="blog-queue-heading">Coming up</h2>
+    <p class="blog-queue-intro">Posts I'm working on. No dates — they ship when they're honest.</p>
+    <div class="blog-posts-list">
+      <div class="blog-post-row pr-blog-soon" data-tags="astra agents memory">
+        <span class="post-date">Soon</span>
+        <div>
+          <h3>Agents don't need memory — they need amnesia</h3>
+          <p>Everyone's building "memory for agents" as append-only context stuffing. The harder problem is forgetting — deliberately.</p>
+        </div>
+        <span class="post-tag tag-astra">Astra</span>
+      </div>
+      <div class="blog-post-row pr-blog-soon" data-tags="astra task-graph dag distributed-systems">
+        <span class="post-date">Soon</span>
+        <div>
+          <h3>The task graph is not a pipeline</h3>
+          <p>You hear "DAG" and think Airflow. Astra's task graph is dynamic, runtime-mutable, and evaluated under scheduling pressure. The pipeline metaphor breaks.</p>
+        </div>
+        <span class="post-tag tag-astra">Astra</span>
+      </div>
+      <div class="blog-post-row pr-blog-soon" data-tags="astra llm routing architecture">
+        <span class="post-date">Soon</span>
+        <div>
+          <h3>Routing LLM calls like you'd route traffic</h3>
+          <p>Cost caps, response caching, provider failover — the same instincts from load balancing HTTP apply, and the same mistakes show up again.</p>
+        </div>
+        <span class="post-tag tag-architecture">Architecture</span>
+      </div>
+      <div class="blog-post-row pr-blog-soon" data-tags="astra multi-tenancy security architecture">
+        <span class="post-date">Soon</span>
+        <div>
+          <h3>Multi-tenancy is a trust boundary, not a database column</h3>
+          <p>Adding org_id to every query is where multi-tenancy starts, not where it ends. Real isolation survives a confused-deputy attack.</p>
+        </div>
+        <span class="post-tag tag-astra">Astra</span>
+      </div>
+      <div class="blog-post-row pr-blog-soon" data-tags="go ruby astra languages">
+        <span class="post-date">Soon</span>
+        <div>
+          <h3>What Go took from me (and what it gave back)</h3>
+          <p>A Ruby loyalist's honest trade ledger after building a kernel in Go. Not a language war — an accounting.</p>
+        </div>
+        <span class="post-tag tag-architecture">Architecture</span>
+      </div>
+    </div>
+  </div>
+
 </div>

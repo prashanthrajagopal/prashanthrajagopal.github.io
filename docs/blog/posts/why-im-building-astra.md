@@ -1,6 +1,7 @@
 ---
 title: Why I'm building Astra
 date: 2026-03-09
+description: Fifteen years of shipping production systems, and agents still don't have a real OS. Astra is a microkernel-style substrate for autonomous agents.
 authors:
   - prashanth
 categories:

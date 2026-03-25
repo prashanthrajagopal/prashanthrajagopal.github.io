@@ -1,6 +1,7 @@
 ---
 title: Sandboxes aren't security theater
 date: 2026-03-24
+description: WASM, Docker, Firecracker — the spectrum of sandboxing when agents run tools you didn't write. Deny by default, allow by exception.
 authors:
   - prashanth
 categories:

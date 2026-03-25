@@ -1,6 +1,7 @@
 ---
 title: The kernel's first 10ms
 date: 2026-03-19
+description: What runs between process alive and message delivered in Astra's actor kernel — and why what you keep out of the hot path matters more than what you put in.
 authors:
   - prashanth
 categories:

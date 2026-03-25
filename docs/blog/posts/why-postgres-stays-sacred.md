@@ -1,6 +1,7 @@
 ---
 title: Why Postgres stays sacred
 date: 2026-03-24
+description: Caches lie with TTLs, replicas lie with lag. Postgres is where the lies stop — why the source of truth stays in a database that means what it says.
 authors:
   - prashanth
 categories:

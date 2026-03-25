@@ -1,6 +1,7 @@
 ---
 title: What Rails taught me about supervision
 date: 2026-03-24
+description: Puma, Sidekiq, and the art of not staying dead — how a decade of Rails taught me that restart is the first answer, not the last resort.
 authors:
   - prashanth
 categories:
