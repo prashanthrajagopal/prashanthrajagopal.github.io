@@ -44,13 +44,13 @@ hide:
     <a class="pr-section-link" href="blog/">All posts <span aria-hidden="true">→</span></a>
   </div>
   <!-- LATEST_BLOG_AUTOGEN_START -->
-  <a class="pr-latest-card" href="blog/posts/sandboxes-arent-security-theater/">
+  <a class="pr-latest-card" href="blog/posts/litellm-and-the-trust-chain-nobody-audits/">
     <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem;">
-      <span class="post-date">24 Mar 2026</span>
-      <span class="post-tag tag-astra">Astra</span>
+      <span class="post-date">26 Mar 2026</span>
+      <span class="post-tag tag-architecture">Security</span>
     </div>
-    <h3 class="post-title" style="margin:0 0 0.35rem;font-family:var(--pr-font-display);font-size:1.25rem;font-weight:400;letter-spacing:-0.01em;color:var(--pr-text);">Sandboxes aren&#x27;t security theater</h3>
-    <p class="post-excerpt" style="margin:0;font-size:0.92rem;color:var(--pr-text-secondary);line-height:1.65;max-width:640px;">The first time someone tells you &quot;we sandbox the tools,&quot; your follow-up should be: how? Because the distance between &quot;we run it in a container&quot; and &quot;we run it in a process that shares the host network and mounts `/var/run/docker.sock`&quot; is the distance…</p>
+    <h3 class="post-title" style="margin:0 0 0.35rem;font-family:var(--pr-font-display);font-size:1.25rem;font-weight:400;letter-spacing:-0.01em;color:var(--pr-text);">LiteLLM and the trust chain nobody audits</h3>
+    <p class="post-excerpt" style="margin:0;font-size:0.92rem;color:var(--pr-text-secondary);line-height:1.65;max-width:640px;">On Monday, someone pushed two compromised versions of `litellm` to PyPI. They were live for about three hours. In that window, any `pip install litellm` — or any CI pipeline that didn&#x27;t pin versions — pulled a package that harvested SSH keys, cloud…</p>
     <span class="post-read-more" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.45rem;font-size:0.82rem;font-weight:600;color:var(--pr-accent);">Read post <span aria-hidden="true">→</span></span>
   </a>
   <!-- LATEST_BLOG_AUTOGEN_END -->

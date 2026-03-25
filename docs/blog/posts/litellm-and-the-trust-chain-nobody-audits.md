@@ -12,7 +12,7 @@ tags:
   - astra
   - agents
   - sandboxing
-draft: true
+draft: false
 ---
 
 On Monday, someone pushed two compromised versions of `litellm` to PyPI. They were live for about three hours. In that window, any `pip install litellm` — or any CI pipeline that didn't pin versions — pulled a package that harvested SSH keys, cloud credentials, Kubernetes configs, crypto wallets, database passwords, and anything else worth stealing from the machine it landed on. Then it encrypted the haul, exfiltrated it to a spoofed domain, installed a systemd backdoor, set up C2 beaconing, and — if it found Kubernetes service account tokens — spawned privileged pods on every node in the cluster.

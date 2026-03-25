@@ -17,9 +17,18 @@ hide:
     <button type="button" class="pr-filter-chip" data-filter="agents">Agents</button>
     <button type="button" class="pr-filter-chip" data-filter="go">Go</button>
     <button type="button" class="pr-filter-chip" data-filter="rails">Rails</button>
+    <button type="button" class="pr-filter-chip" data-filter="security">Security</button>
   </div>
 
   <div class="blog-posts-list">
+    <a class="blog-post-row" href="posts/litellm-and-the-trust-chain-nobody-audits/" data-tags="security supply-chain astra agents sandboxing">
+      <span class="post-date">26 Mar 2026</span>
+      <div>
+        <h3>LiteLLM and the trust chain nobody audits</h3>
+        <p>A compromised security scanner, stolen PyPI credentials, and a .pth file that ran on every Python startup. Three hours, 3.4 million daily downloads.</p>
+      </div>
+      <span class="post-tag tag-architecture">Security</span>
+    </a>
     <a class="blog-post-row" href="posts/the-10ms-lie-we-all-tell/" data-tags="architecture caching astra">
       <span class="post-date">24 Mar 2026</span>
       <div>
