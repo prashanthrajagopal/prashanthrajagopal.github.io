@@ -4,14 +4,15 @@
 
 ## Blog
 
-- [Why I'm building Astra](https://prashanthr.net/blog/2026/03/09/why-im-building-astra/): Manifesto for building an OS-shaped substrate for autonomous agents — microkernel, actors, planet-scale task graph.
-- [The kernel's first 10ms](https://prashanthr.net/blog/2026/03/19/kernels-first-10ms/): What belongs on the hot path between Send and Receive in an actor kernel, and what gets kicked out.
-- [Why I didn't use Kubernetes](https://prashanthr.net/blog/2026/03/15/why-i-didnt-use-kubernetes/): Docker Compose for infrastructure, native Go for services — why premature orchestration crystallizes the wrong boundaries.
-- [The 10ms lie we all tell](https://prashanthr.net/blog/2026/03/24/the-10ms-lie-we-all-tell/): Cache discipline as architecture discipline — every cache is a bet, and we only count the wins.
-- [What Rails taught me about supervision](https://prashanthr.net/blog/2026/03/24/what-rails-taught-me-about-supervision/): How Puma, Sidekiq, and a decade of Rails shaped Astra's actor supervision tree.
-- [Sandboxes aren't security theater](https://prashanthr.net/blog/2026/03/24/sandboxes-arent-security-theater/): WASM, Docker, Firecracker — choosing the right isolation when agents run untrusted tools.
-- [Why Postgres stays sacred](https://prashanthr.net/blog/2026/03/24/why-postgres-stays-sacred/): Caches lie with TTLs, replicas lie with lag. Postgres is where the lies stop.
-- [Scheduling without losing your mind](https://prashanthr.net/blog/2026/03/24/scheduling-without-losing-your-mind/): Heartbeats, sharded schedulers, and at-least-once delivery in distributed task scheduling.
+- [LiteLLM and the trust chain nobody audits](https://prashanthr.net/blog/posts/litellm-and-the-trust-chain-nobody-audits/): A compromised security scanner led to malicious PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.
+- [Why I'm building Astra](https://prashanthr.net/blog/posts/why-im-building-astra/): Manifesto for building an OS-shaped substrate for autonomous agents — microkernel, actors, planet-scale task graph.
+- [The kernel's first 10ms](https://prashanthr.net/blog/posts/kernels-first-10ms/): What belongs on the hot path between Send and Receive in an actor kernel, and what gets kicked out.
+- [Why I didn't use Kubernetes](https://prashanthr.net/blog/posts/why-i-didnt-use-kubernetes/): Docker Compose for infrastructure, native Go for services — why premature orchestration crystallizes the wrong boundaries.
+- [The 10ms lie we all tell](https://prashanthr.net/blog/posts/the-10ms-lie-we-all-tell/): Cache discipline as architecture discipline — every cache is a bet, and we only count the wins.
+- [What Rails taught me about supervision](https://prashanthr.net/blog/posts/what-rails-taught-me-about-supervision/): How Puma, Sidekiq, and a decade of Rails shaped Astra's actor supervision tree.
+- [Sandboxes aren't security theater](https://prashanthr.net/blog/posts/sandboxes-arent-security-theater/): WASM, Docker, Firecracker — choosing the right isolation when agents run untrusted tools.
+- [Why Postgres stays sacred](https://prashanthr.net/blog/posts/why-postgres-stays-sacred/): Caches lie with TTLs, replicas lie with lag. Postgres is where the lies stop.
+- [Scheduling without losing your mind](https://prashanthr.net/blog/posts/scheduling-without-losing-your-mind/): Heartbeats, sharded schedulers, and at-least-once delivery in distributed task scheduling.
 
 ## Wiki
 
