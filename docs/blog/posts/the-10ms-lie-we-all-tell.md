@@ -1,6 +1,7 @@
 ---
 title: The 10ms lie we all tell
 date: 2026-03-24
+description: That cache hit on the whiteboard is measuring the wrong thing. Cache discipline is architecture discipline — every cache is a bet, and we only count the wins.
 authors:
   - prashanth
 categories:

@@ -1,6 +1,7 @@
 ---
 title: Why I didn't use Kubernetes
 date: 2026-03-15
+description: Kubernetes solves fleet-scale orchestration. I was still deleting wrong ideas. Docker Compose for infra, native Go for services — sequence matters.
 authors:
   - prashanth
 categories:

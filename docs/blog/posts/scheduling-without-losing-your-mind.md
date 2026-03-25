@@ -1,6 +1,7 @@
 ---
 title: Scheduling without losing your mind
 date: 2026-03-24
+description: Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.
 authors:
   - prashanth
 categories:
