@@ -1,5 +1,10 @@
 /* prashantr.net — aligned with site-redesign prototype */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
+/* Fonts loaded via overrides/main.html (preload, non-blocking) */
+
+/* Reduce CLS from font swap by sizing fallbacks close to web fonts */
+html {
+  font-size-adjust: from-font;
+}
 
 :root {
   --pr-bg: #0a0a0b;
@@ -9,8 +14,8 @@
   --pr-border: rgba(255, 255, 255, 0.06);
   --pr-border-hover: rgba(255, 255, 255, 0.12);
   --pr-text: #f0efe9;
-  --pr-text-secondary: rgba(240, 239, 233, 0.55);
-  --pr-text-tertiary: rgba(240, 239, 233, 0.32);
+  --pr-text-secondary: rgba(240, 239, 233, 0.65);
+  --pr-text-tertiary: rgba(240, 239, 233, 0.42);
   --pr-accent: #c8ff00;
   --pr-accent-dim: rgba(200, 255, 0, 0.12);
   --pr-blue: #5b9aff;
