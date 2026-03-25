@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Prashanth Rajagopal's blog and wiki on distributed systems, agent infrastructure, and Astra — an autonomous agent OS.">
+        <meta name="description" content="A compromised security scanner led to malicious LiteLLM PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.">
       
       
       
-        <link rel="canonical" href="https://prashanthr.net/wiki/rails/hotwire/">
+        <link rel="canonical" href="https://prashanthr.net/blog/posts/litellm-and-the-trust-chain-nobody-audits/">
       
       
-        <link rel="prev" href="../active-record/">
-      
-      
-        <link rel="next" href="../../systems/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Hotwire - Prashanth Rajagopal — prashanthr.net</title>
+        <title>LiteLLM and the trust chain nobody audits - Prashanth Rajagopal — prashanthr.net</title>
       
     
     
@@ -93,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hotwire" class="md-skip">
+        <a href="#how-the-trust-chain-broke" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hotwire
+              LiteLLM and the trust chain nobody audits
             
           </span>
         </div>
@@ -203,7 +199,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../blog/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
   Blog
@@ -217,13 +213,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../wiki/" class="md-tabs__link">
           
   
   Wiki
@@ -320,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -344,8 +338,6 @@
       
   
   
-    
-  
   
   
     
@@ -367,23 +359,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../wiki/" class="md-nav__link ">
               
   
   
@@ -401,13 +390,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -424,8 +413,6 @@
                 
   
   
-    
-  
   
   
     
@@ -447,21 +434,18 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../wiki/rails/" class="md-nav__link ">
               
   
   
@@ -479,13 +463,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -505,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../philosophy/" class="md-nav__link">
+      <a href="../../../wiki/rails/philosophy/" class="md-nav__link">
         
   
   
@@ -533,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../active-record/" class="md-nav__link">
+      <a href="../../../wiki/rails/active-record/" class="md-nav__link">
         
   
   
@@ -558,19 +542,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../wiki/rails/hotwire/" class="md-nav__link">
         
   
   
@@ -586,7 +561,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -627,13 +601,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -641,7 +612,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../systems/" class="md-nav__link ">
+            <a href="../../../wiki/systems/" class="md-nav__link ">
               
   
   
@@ -659,7 +630,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -685,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/caching/" class="md-nav__link">
+      <a href="../../../wiki/systems/caching/" class="md-nav__link">
         
   
   
@@ -713,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/streaming/" class="md-nav__link">
+      <a href="../../../wiki/systems/streaming/" class="md-nav__link">
         
   
   
@@ -741,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/consistency/" class="md-nav__link">
+      <a href="../../../wiki/systems/consistency/" class="md-nav__link">
         
   
   
@@ -769,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/observability/" class="md-nav__link">
+      <a href="../../../wiki/systems/observability/" class="md-nav__link">
         
   
   
@@ -825,13 +796,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -839,7 +807,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/" class="md-nav__link ">
+            <a href="../../../wiki/tools/" class="md-nav__link ">
               
   
   
@@ -857,7 +825,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -883,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/editor/" class="md-nav__link">
+      <a href="../../../wiki/tools/editor/" class="md-nav__link">
         
   
   
@@ -911,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/zensical/" class="md-nav__link">
+      <a href="../../../wiki/tools/zensical/" class="md-nav__link">
         
   
   
@@ -939,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/git/" class="md-nav__link">
+      <a href="../../../wiki/tools/git/" class="md-nav__link">
         
   
   
@@ -967,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/cli-debugging/" class="md-nav__link">
+      <a href="../../../wiki/tools/cli-debugging/" class="md-nav__link">
         
   
   
@@ -1003,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../../wiki/getting-started/" class="md-nav__link">
         
   
   
@@ -1119,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/getting-started/" class="md-nav__link">
+      <a href="../../../wiki/astra/getting-started/" class="md-nav__link">
         
   
   
@@ -1147,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/glossary/" class="md-nav__link">
+      <a href="../../../wiki/astra/glossary/" class="md-nav__link">
         
   
   
@@ -1175,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/security/" class="md-nav__link">
+      <a href="../../../wiki/astra/security/" class="md-nav__link">
         
   
   
@@ -1244,7 +1212,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/architecture/" class="md-nav__link ">
+            <a href="../../../wiki/astra/architecture/" class="md-nav__link ">
               
   
   
@@ -1288,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/overview/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/overview/" class="md-nav__link">
         
   
   
@@ -1316,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/kernel/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/kernel/" class="md-nav__link">
         
   
   
@@ -1344,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/actor-framework/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/actor-framework/" class="md-nav__link">
         
   
   
@@ -1372,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/task-graph/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/task-graph/" class="md-nav__link">
         
   
   
@@ -1400,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/scheduler/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/scheduler/" class="md-nav__link">
         
   
   
@@ -1428,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/services/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/services/" class="md-nav__link">
         
   
   
@@ -1456,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/memory/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/memory/" class="md-nav__link">
         
   
   
@@ -1484,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/llm-routing/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/llm-routing/" class="md-nav__link">
         
   
   
@@ -1512,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/multi-tenancy/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -1585,7 +1553,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/reference/" class="md-nav__link ">
+            <a href="../../../wiki/astra/reference/" class="md-nav__link ">
               
   
   
@@ -1629,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/grpc-contracts/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/grpc-contracts/" class="md-nav__link">
         
   
   
@@ -1657,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/database-schema/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/database-schema/" class="md-nav__link">
         
   
   
@@ -1685,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/redis-keys/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/redis-keys/" class="md-nav__link">
         
   
   
@@ -1713,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/message-types/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/message-types/" class="md-nav__link">
         
   
   
@@ -1741,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/api-endpoints/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/api-endpoints/" class="md-nav__link">
         
   
   
@@ -1769,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/metrics/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/metrics/" class="md-nav__link">
         
   
   
@@ -1797,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/slas/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/slas/" class="md-nav__link">
         
   
   
@@ -1866,7 +1834,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/operations/" class="md-nav__link ">
+            <a href="../../../wiki/astra/operations/" class="md-nav__link ">
               
   
   
@@ -1910,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-worker-lost/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-worker-lost/" class="md-nav__link">
         
   
   
@@ -1938,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-high-error-rate/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-high-error-rate/" class="md-nav__link">
         
   
   
@@ -1966,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-postgres-outage/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-postgres-outage/" class="md-nav__link">
         
   
   
@@ -1994,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-redis-failure/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-redis-failure/" class="md-nav__link">
         
   
   
@@ -2022,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-cost-spike/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-cost-spike/" class="md-nav__link">
         
   
   
@@ -2089,7 +2057,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/deployment/" class="md-nav__link ">
+            <a href="../../../wiki/astra/deployment/" class="md-nav__link ">
               
   
   
@@ -2133,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/kubernetes/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/kubernetes/" class="md-nav__link">
         
   
   
@@ -2161,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/local/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/local/" class="md-nav__link">
         
   
   
@@ -2189,7 +2157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/macos/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/macos/" class="md-nav__link">
         
   
   
@@ -2217,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/gcp/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/gcp/" class="md-nav__link">
         
   
   
@@ -2271,8 +2239,80 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-trust-chain-broke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the trust chain broke
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pth-trick-deserves-its-own-paragraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The .pth trick deserves its own paragraph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#six-stages-of-were-fine-this-is-fine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Six stages of "we're fine, this is fine"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-means-for-agent-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this means for agent infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-astra-has-to-get-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Astra has to get right
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-trust-chain-is-the-attack-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The trust chain is the attack surface
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2287,10 +2327,86 @@
                 
                   
 
-<h1 id="hotwire">Hotwire<a class="headerlink" href="#hotwire" title="Permanent link">&para;</a></h1>
-<p><strong>Turbo</strong> (HTML over the wire) and <strong>Stimulus</strong> suit server-rendered apps with sprinkles of JS. <strong>Astra's dashboard</strong> is intentionally vanilla HTML/CSS/JS for the super-admin surface (per PRD) — similar spirit: no heavy SPA unless the problem demands it.</p>
-<p>API-first <strong>agent systems</strong> still need <strong>WebSocket</strong> streaming for chat; that's a different axis from Hotwire's document model. Choose per surface: human CRUD vs long-lived agent sessions.</p>
+  <h1 id="__skip">LiteLLM and the trust chain nobody audits</h1>
 
+<p>On Monday, someone pushed two compromised versions of <code>litellm</code> to PyPI. They were live for about three hours. In that window, any <code>pip install litellm</code> — or any CI pipeline that didn't pin versions — pulled a package that harvested SSH keys, cloud credentials, Kubernetes configs, crypto wallets, database passwords, and anything else worth stealing from the machine it landed on. Then it encrypted the haul, exfiltrated it to a spoofed domain, installed a systemd backdoor, set up C2 beaconing, and — if it found Kubernetes service account tokens — spawned privileged pods on every node in the cluster.</p>
+<p>Three hours. 3.4 million daily downloads. That's the math.</p>
+<!-- more -->
+
+<h2 id="how-the-trust-chain-broke">How the trust chain broke<a class="headerlink" href="#how-the-trust-chain-broke" title="Permanent link">&para;</a></h2>
+<p>The attack didn't start at PyPI. It started in a security scanner — Trivy, the tool you run <em>to find vulnerabilities</em> — compromised via stolen credentials in late February. A poisoned Trivy GitHub Action shipped as v0.69.4 on March 19. That action ran in LiteLLM's CI/CD pipeline. The attacker harvested PyPI publisher credentials from the CI environment, then used those credentials to publish two malicious versions of <code>litellm</code> on March 24.</p>
+<p>Read that again: <strong>the security tool was the attack vector.</strong> The thing you install to audit your dependencies was itself a compromised dependency. The trust chain here is: you trust PyPI, which trusts the publisher, whose credentials came from CI, which trusted a GitHub Action, which trusted its maintainer's credentials, which were stolen. Five links. Nobody audits the full chain.</p>
+<h2 id="the-pth-trick-deserves-its-own-paragraph">The .pth trick deserves its own paragraph<a class="headerlink" href="#the-pth-trick-deserves-its-own-paragraph" title="Permanent link">&para;</a></h2>
+<p>Version 1.82.7 hid the payload in <code>proxy_server.py</code> — base64-encoded, executed on import. Ugly but at least you had to import the package. Version 1.82.8, published thirteen minutes later, escalated. It dropped a <code>.pth</code> file — <code>litellm_init.pth</code> — into <code>site-packages</code>.</p>
+<p>Here's the thing about <code>.pth</code> files: Python executes them automatically during interpreter initialization. Not on import. On <em>startup</em>. Running <code>pip install something-else</code> would trigger it. Running <code>python --version</code> would trigger it. The payload ran before your code did. And it passed pip's hash verification because it was signed with legitimate stolen credentials. The package was <em>authentic</em>. It was also hostile.</p>
+<h2 id="six-stages-of-were-fine-this-is-fine">Six stages of "we're fine, this is fine"<a class="headerlink" href="#six-stages-of-were-fine-this-is-fine" title="Permanent link">&para;</a></h2>
+<p>The payload wasn't a smash-and-grab. It was a six-stage operation:</p>
+<ol>
+<li><strong>Harvest everything.</strong> SSH keys, AWS/GCP/Azure credentials, kubeconfigs, Docker configs, shell history, <code>.env</code> files, even AWS Secrets Manager and SSM Parameter Store. If it was on disk and worth stealing, it was collected.</li>
+<li><strong>Encrypt.</strong> AES-256 with RSA-4096 key wrapping. The attacker's operational security was better than most companies'.</li>
+<li><strong>Exfiltrate.</strong> Encrypted payload sent to <code>models.litellm.cloud</code> — a domain that looks like it belongs to the project. Header: <code>X-Filename: tpcp.tar.gz</code>. Subtle.</li>
+<li><strong>Persist.</strong> Wrote <code>~/.config/sysmon/sysmon.py</code>, installed a systemd service. Survives reboots. Survives "we removed the bad package."</li>
+<li><strong>Beacon.</strong> Polled <code>checkmarx.zone/raw</code> for follow-up payloads. Downloaded to <code>/tmp/pglog</code>, executed. The initial compromise was the door; C2 was the hallway.</li>
+<li><strong>Spread.</strong> If Kubernetes service account tokens were available, spawned privileged <code>node-setup-*</code> pods on every node. One compromised CI runner becomes an entire cluster.</li>
+</ol>
+<p>This wasn't a script kiddie. This was TeamPCP — the same group that hit 45+ npm packages, OpenVSX extensions, and Checkmarx's own tooling in the same campaign. They even checked timezone and locale to decide behavior: destructive kamikaze containers for Iranian systems, persistent backdoors elsewhere.</p>
+<h2 id="what-this-means-for-agent-infrastructure">What this means for agent infrastructure<a class="headerlink" href="#what-this-means-for-agent-infrastructure" title="Permanent link">&para;</a></h2>
+<p>LiteLLM is an LLM proxy. It's the kind of library that sits in the dependency tree of agent platforms, orchestration frameworks, and tool-calling pipelines. Nine projects — DSPy, MLflow, OpenHands, CrewAI, and others — had to immediately publish patches pinning away from the compromised versions.</p>
+<p>This is the supply chain problem for agents, stated plainly: <strong>agents run tools, tools have dependencies, dependencies have CI/CD pipelines, those pipelines trust other dependencies, and nobody audits the full chain.</strong> The blast radius isn't "one package is bad." It's "one package's CI trusted a security scanner that trusted a GitHub Action that trusted a credential that was stolen, and now your agent's Kubernetes cluster is running attacker pods."</p>
+<p>I <a href="../sandboxes-arent-security-theater/">wrote two days ago</a> that the right mental model for tool execution is to treat every tool as untrusted. That post was about sandboxing the tool itself — containers, WASM, microVMs. That's necessary but not sufficient. The LiteLLM attack didn't happen inside a sandbox. It happened during <code>pip install</code>. It happened in the supply chain <em>before</em> your sandbox even existed.</p>
+<h2 id="what-astra-has-to-get-right">What Astra has to get right<a class="headerlink" href="#what-astra-has-to-get-right" title="Permanent link">&para;</a></h2>
+<p>This changes — or rather sharpens — how I think about Astra's security posture. Sandboxing tool execution is still the right call. But the dependency graph that builds the sandbox is also a threat surface. The CI pipeline that produces the artifact is a threat surface. The package manager that delivers the artifact is a threat surface.</p>
+<p>Concretely:</p>
+<ul>
+<li><strong>Pin everything, verify everything.</strong> Hashes, not just version numbers. LiteLLM's Docker images weren't affected because they pinned dependencies. That's the lesson.</li>
+<li><strong>Treat <code>pip install</code> as code execution</strong> — because it literally is, as the <code>.pth</code> trick demonstrated. Package installation in a build pipeline deserves the same isolation as running user-submitted code.</li>
+<li><strong>Assume your security tools are compromised.</strong> That's not paranoia; it's what happened. Trivy was the entry point. The scanner was the attack.</li>
+<li><strong>Blast radius is the design constraint.</strong> If one compromised dependency can reach your cloud credentials, your Kubernetes API, and your database passwords, your architecture has a blast radius problem regardless of how good your sandboxes are.</li>
+</ul>
+<h2 id="the-trust-chain-is-the-attack-surface">The trust chain is the attack surface<a class="headerlink" href="#the-trust-chain-is-the-attack-surface" title="Permanent link">&para;</a></h2>
+<p>Package managers are built on a trust model that assumes the publisher is who they say they are and the artifact is what it claims to be. Both assumptions failed here. The publisher credentials were stolen. The artifact was malicious. And the delivery mechanism — PyPI, pip, <code>.pth</code> files — faithfully executed the attacker's code because that's what it's designed to do.</p>
+<p>The agent ecosystem is building on top of this. Every agent framework, every tool library, every LLM integration pulls from the same registries with the same trust model. The trust chain is longer than it's ever been — your agent trusts your platform, which trusts its dependencies, which trust their CI, which trusts its tools, which trust their maintainers' credentials — and <strong>the length of the chain is the attack surface.</strong></p>
+<p>Three hours. That's all it took. The question isn't whether this will happen again. It's whether your architecture survives it when it does.</p>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">security</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">supply-chain</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">astra</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agents</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sandboxing</span>
+      
+    
+  </nav>
 
 
 

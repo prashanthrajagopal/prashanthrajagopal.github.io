@@ -7,9 +7,8 @@ copyright: Built by Prashanth Rajagopal · Made with <a href="https://zensical.o
 
 theme:
   name: material
-  font:
-    text: DM Sans
-    code: JetBrains Mono
+  custom_dir: overrides
+  font: false
   palette:
     scheme: slate
     primary: custom

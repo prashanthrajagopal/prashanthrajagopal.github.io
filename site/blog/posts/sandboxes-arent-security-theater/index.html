@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Prashanth Rajagopal's blog and wiki on distributed systems, agent infrastructure, and Astra — an autonomous agent OS.">
+        <meta name="description" content="WASM, Docker, Firecracker — the spectrum of sandboxing when agents run tools you didn't write. Deny by default, allow by exception.">
       
       
       
-        <link rel="canonical" href="https://prashanthr.net/wiki/rails/hotwire/">
+        <link rel="canonical" href="https://prashanthr.net/blog/posts/sandboxes-arent-security-theater/">
       
       
-        <link rel="prev" href="../active-record/">
-      
-      
-        <link rel="next" href="../../systems/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Hotwire - Prashanth Rajagopal — prashanthr.net</title>
+        <title>Sandboxes aren't security theater - Prashanth Rajagopal — prashanthr.net</title>
       
     
     
@@ -93,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hotwire" class="md-skip">
+        <a href="#the-spectrum-nobody-talks-about" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hotwire
+              Sandboxes aren't security theater
             
           </span>
         </div>
@@ -203,7 +199,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../blog/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
   Blog
@@ -217,13 +213,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../wiki/" class="md-tabs__link">
           
   
   Wiki
@@ -320,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -344,8 +338,6 @@
       
   
   
-    
-  
   
   
     
@@ -367,23 +359,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../wiki/" class="md-nav__link ">
               
   
   
@@ -401,13 +390,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -424,8 +413,6 @@
                 
   
   
-    
-  
   
   
     
@@ -447,21 +434,18 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../wiki/rails/" class="md-nav__link ">
               
   
   
@@ -479,13 +463,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -505,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../philosophy/" class="md-nav__link">
+      <a href="../../../wiki/rails/philosophy/" class="md-nav__link">
         
   
   
@@ -533,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../active-record/" class="md-nav__link">
+      <a href="../../../wiki/rails/active-record/" class="md-nav__link">
         
   
   
@@ -558,19 +542,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../wiki/rails/hotwire/" class="md-nav__link">
         
   
   
@@ -586,7 +561,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -627,13 +601,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -641,7 +612,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../systems/" class="md-nav__link ">
+            <a href="../../../wiki/systems/" class="md-nav__link ">
               
   
   
@@ -659,7 +630,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -685,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/caching/" class="md-nav__link">
+      <a href="../../../wiki/systems/caching/" class="md-nav__link">
         
   
   
@@ -713,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/streaming/" class="md-nav__link">
+      <a href="../../../wiki/systems/streaming/" class="md-nav__link">
         
   
   
@@ -741,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/consistency/" class="md-nav__link">
+      <a href="../../../wiki/systems/consistency/" class="md-nav__link">
         
   
   
@@ -769,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/observability/" class="md-nav__link">
+      <a href="../../../wiki/systems/observability/" class="md-nav__link">
         
   
   
@@ -825,13 +796,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -839,7 +807,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/" class="md-nav__link ">
+            <a href="../../../wiki/tools/" class="md-nav__link ">
               
   
   
@@ -857,7 +825,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -883,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/editor/" class="md-nav__link">
+      <a href="../../../wiki/tools/editor/" class="md-nav__link">
         
   
   
@@ -911,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/zensical/" class="md-nav__link">
+      <a href="../../../wiki/tools/zensical/" class="md-nav__link">
         
   
   
@@ -939,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/git/" class="md-nav__link">
+      <a href="../../../wiki/tools/git/" class="md-nav__link">
         
   
   
@@ -967,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/cli-debugging/" class="md-nav__link">
+      <a href="../../../wiki/tools/cli-debugging/" class="md-nav__link">
         
   
   
@@ -1003,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../../wiki/getting-started/" class="md-nav__link">
         
   
   
@@ -1119,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/getting-started/" class="md-nav__link">
+      <a href="../../../wiki/astra/getting-started/" class="md-nav__link">
         
   
   
@@ -1147,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/glossary/" class="md-nav__link">
+      <a href="../../../wiki/astra/glossary/" class="md-nav__link">
         
   
   
@@ -1175,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/security/" class="md-nav__link">
+      <a href="../../../wiki/astra/security/" class="md-nav__link">
         
   
   
@@ -1244,7 +1212,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/architecture/" class="md-nav__link ">
+            <a href="../../../wiki/astra/architecture/" class="md-nav__link ">
               
   
   
@@ -1288,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/overview/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/overview/" class="md-nav__link">
         
   
   
@@ -1316,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/kernel/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/kernel/" class="md-nav__link">
         
   
   
@@ -1344,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/actor-framework/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/actor-framework/" class="md-nav__link">
         
   
   
@@ -1372,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/task-graph/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/task-graph/" class="md-nav__link">
         
   
   
@@ -1400,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/scheduler/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/scheduler/" class="md-nav__link">
         
   
   
@@ -1428,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/services/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/services/" class="md-nav__link">
         
   
   
@@ -1456,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/memory/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/memory/" class="md-nav__link">
         
   
   
@@ -1484,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/llm-routing/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/llm-routing/" class="md-nav__link">
         
   
   
@@ -1512,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/multi-tenancy/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -1585,7 +1553,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/reference/" class="md-nav__link ">
+            <a href="../../../wiki/astra/reference/" class="md-nav__link ">
               
   
   
@@ -1629,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/grpc-contracts/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/grpc-contracts/" class="md-nav__link">
         
   
   
@@ -1657,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/database-schema/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/database-schema/" class="md-nav__link">
         
   
   
@@ -1685,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/redis-keys/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/redis-keys/" class="md-nav__link">
         
   
   
@@ -1713,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/message-types/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/message-types/" class="md-nav__link">
         
   
   
@@ -1741,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/api-endpoints/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/api-endpoints/" class="md-nav__link">
         
   
   
@@ -1769,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/metrics/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/metrics/" class="md-nav__link">
         
   
   
@@ -1797,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/slas/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/slas/" class="md-nav__link">
         
   
   
@@ -1866,7 +1834,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/operations/" class="md-nav__link ">
+            <a href="../../../wiki/astra/operations/" class="md-nav__link ">
               
   
   
@@ -1910,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-worker-lost/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-worker-lost/" class="md-nav__link">
         
   
   
@@ -1938,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-high-error-rate/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-high-error-rate/" class="md-nav__link">
         
   
   
@@ -1966,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-postgres-outage/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-postgres-outage/" class="md-nav__link">
         
   
   
@@ -1994,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-redis-failure/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-redis-failure/" class="md-nav__link">
         
   
   
@@ -2022,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-cost-spike/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-cost-spike/" class="md-nav__link">
         
   
   
@@ -2089,7 +2057,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/deployment/" class="md-nav__link ">
+            <a href="../../../wiki/astra/deployment/" class="md-nav__link ">
               
   
   
@@ -2133,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/kubernetes/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/kubernetes/" class="md-nav__link">
         
   
   
@@ -2161,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/local/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/local/" class="md-nav__link">
         
   
   
@@ -2189,7 +2157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/macos/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/macos/" class="md-nav__link">
         
   
   
@@ -2217,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/gcp/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/gcp/" class="md-nav__link">
         
   
   
@@ -2271,8 +2239,69 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-spectrum-nobody-talks-about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The spectrum nobody talks about
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#astras-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Astra's position
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-just-use-docker-isnt-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why "just use Docker" isn't enough
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-wasm-promise-and-its-current-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The WASM promise (and its current limits)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-theater-vs-security-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security theater vs security engineering
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2287,10 +2316,81 @@
                 
                   
 
-<h1 id="hotwire">Hotwire<a class="headerlink" href="#hotwire" title="Permanent link">&para;</a></h1>
-<p><strong>Turbo</strong> (HTML over the wire) and <strong>Stimulus</strong> suit server-rendered apps with sprinkles of JS. <strong>Astra's dashboard</strong> is intentionally vanilla HTML/CSS/JS for the super-admin surface (per PRD) — similar spirit: no heavy SPA unless the problem demands it.</p>
-<p>API-first <strong>agent systems</strong> still need <strong>WebSocket</strong> streaming for chat; that's a different axis from Hotwire's document model. Choose per surface: human CRUD vs long-lived agent sessions.</p>
+  <h1 id="__skip">Sandboxes aren't security theater</h1>
 
+<p>The first time someone tells you "we sandbox the tools," your follow-up should be: <strong>how?</strong> Because the distance between "we run it in a container" and "we run it in a process that shares the host network and mounts <code>/var/run/docker.sock</code>" is the distance between security and a blog post you'll regret.</p>
+<!-- more -->
+
+<h2 id="the-spectrum-nobody-talks-about">The spectrum nobody talks about<a class="headerlink" href="#the-spectrum-nobody-talks-about" title="Permanent link">&para;</a></h2>
+<p>Sandboxing isn't a binary. It's a spectrum, and most of it is more honest than people admit:</p>
+<ul>
+<li><strong>No sandbox:</strong> Your agent's tool runs as your process, with your permissions, on your machine. This is fine for local dev. It's negligent for multi-tenant production.</li>
+<li><strong>Container (Docker/OCI):</strong> Process isolation, filesystem isolation, network namespace. Better. But the container runtime is a shared surface, the kernel is shared, and if you're mounting host paths or running privileged, you've built a sandbox with the door open.</li>
+<li><strong>microVM (Firecracker, Cloud Hypervisor):</strong> Separate kernel, minimal device model, fast boot. This is where isolation starts to feel real. You're not sharing a kernel with the workload. The blast radius of a compromised VM is the VM.</li>
+<li><strong>WASM (Wasmtime, WasmEdge):</strong> Capability-based, no filesystem by default, no network by default, millisecond startup. The sandbox is the <em>absence</em> of permissions, not a wall built around them. You opt <em>in</em> to what the guest can do.</li>
+</ul>
+<p>Each step trades convenience for isolation. The question isn't which is "best" — it's which matches the threat model you actually have.</p>
+<h2 id="astras-position">Astra's position<a class="headerlink" href="#astras-position" title="Permanent link">&para;</a></h2>
+<p>Agents run tools. Tools run code. Code that an LLM decided to run, based on input that a user provided, in a context that changes per request. If that sentence doesn't make you nervous, read it again.</p>
+<p>In Astra, tool execution is designed with the assumption that <strong>the tool is untrusted.</strong> Not because every tool is malicious — because the combination of LLM-generated arguments and arbitrary code execution is a surface area that deserves respect.</p>
+<p>The current architecture supports Docker-based sandboxing with a path toward WASM for lightweight tools and Firecracker for heavier workloads. The choice depends on what the tool needs:</p>
+<ul>
+<li><strong>Pure computation, no I/O?</strong> WASM. Fast, locked down, disposable.</li>
+<li><strong>Needs filesystem, network, or specific runtimes?</strong> Container with a restrictive security profile. No host mounts. No privileged mode. Ephemeral.</li>
+<li><strong>Needs full OS, untrusted provenance?</strong> microVM. Burn it after use.</li>
+</ul>
+<h2 id="why-just-use-docker-isnt-enough">Why "just use Docker" isn't enough<a class="headerlink" href="#why-just-use-docker-isnt-enough" title="Permanent link">&para;</a></h2>
+<p>Docker is a packaging format that happens to provide isolation. The isolation is real but conditional — it depends on your configuration, your kernel version, your seccomp profile, whether someone added <code>--privileged</code> to the compose file six months ago and nobody noticed.</p>
+<p>I've seen production systems where the "sandboxed" container could:</p>
+<ul>
+<li>Read the host's environment variables (including database credentials)</li>
+<li>Connect to the Docker socket and spawn sibling containers</li>
+<li>Write to shared volumes that other services read from</li>
+</ul>
+<p>That's not a sandbox. That's a suggestion.</p>
+<p>The fix isn't to abandon containers. It's to treat the container configuration as a security boundary and review it like one. Seccomp profiles. AppArmor or SELinux. Read-only root filesystem. No new privileges. Drop all capabilities, add back only what's needed. This is boring work. It's also the work.</p>
+<h2 id="the-wasm-promise-and-its-current-limits">The WASM promise (and its current limits)<a class="headerlink" href="#the-wasm-promise-and-its-current-limits" title="Permanent link">&para;</a></h2>
+<p>WASM is the closest thing we have to a sandbox that's secure by default. A WASM module starts with nothing — no filesystem, no network, no system calls. You grant capabilities explicitly through WASI. The mental model is right: <strong>deny by default, allow by exception.</strong></p>
+<p>The limits are real: WASI is still maturing, language support varies, and if your tool needs to <code>pip install</code> something at runtime, WASM isn't your answer today. But for a defined set of tools — data transformation, validation, formatting, lightweight computation — it's compelling. Millisecond cold starts, tiny memory footprint, and an isolation boundary that doesn't depend on getting your Linux kernel configuration right.</p>
+<p>Astra is betting that more tools will fit this profile over time, not fewer.</p>
+<h2 id="security-theater-vs-security-engineering">Security theater vs security engineering<a class="headerlink" href="#security-theater-vs-security-engineering" title="Permanent link">&para;</a></h2>
+<p>Security theater is a checkbox. "Do we sandbox? Yes." Filed, forgotten, breached.</p>
+<p>Security engineering is asking uncomfortable questions. What can escape this boundary? What happens if it does? Who reviews the configuration? How do we know it hasn't drifted?</p>
+<p>Sandboxes aren't theater when they're built with the same discipline as the rest of the system. They're theater when they exist to satisfy an audit rather than to contain a failure.</p>
+<p>The agent ecosystem is young enough that we get to set these norms. I'd rather set them honestly than optimistically.</p>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">security</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">wasm</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">docker</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sandboxing</span>
+      
+    
+  </nav>
 
 
 

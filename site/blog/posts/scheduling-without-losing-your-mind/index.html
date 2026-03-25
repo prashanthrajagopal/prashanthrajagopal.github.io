@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Prashanth Rajagopal's blog and wiki on distributed systems, agent infrastructure, and Astra — an autonomous agent OS.">
+        <meta name="description" content="Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.">
       
       
       
-        <link rel="canonical" href="https://prashanthr.net/wiki/rails/hotwire/">
+        <link rel="canonical" href="https://prashanthr.net/blog/posts/scheduling-without-losing-your-mind/">
       
       
-        <link rel="prev" href="../active-record/">
-      
-      
-        <link rel="next" href="../../systems/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Hotwire - Prashanth Rajagopal — prashanthr.net</title>
+        <title>Scheduling without losing your mind - Prashanth Rajagopal — prashanthr.net</title>
       
     
     
@@ -93,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hotwire" class="md-skip">
+        <a href="#the-problem-is-not-assignment" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hotwire
+              Scheduling without losing your mind
             
           </span>
         </div>
@@ -203,7 +199,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../blog/" class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
   Blog
@@ -217,13 +213,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../wiki/" class="md-tabs__link">
           
   
   Wiki
@@ -320,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -344,8 +338,6 @@
       
   
   
-    
-  
   
   
     
@@ -367,23 +359,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../wiki/" class="md-nav__link ">
               
   
   
@@ -401,13 +390,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -424,8 +413,6 @@
                 
   
   
-    
-  
   
   
     
@@ -447,21 +434,18 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../wiki/rails/" class="md-nav__link ">
               
   
   
@@ -479,13 +463,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -505,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../philosophy/" class="md-nav__link">
+      <a href="../../../wiki/rails/philosophy/" class="md-nav__link">
         
   
   
@@ -533,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../active-record/" class="md-nav__link">
+      <a href="../../../wiki/rails/active-record/" class="md-nav__link">
         
   
   
@@ -558,19 +542,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../wiki/rails/hotwire/" class="md-nav__link">
         
   
   
@@ -586,7 +561,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -627,13 +601,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -641,7 +612,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../systems/" class="md-nav__link ">
+            <a href="../../../wiki/systems/" class="md-nav__link ">
               
   
   
@@ -659,7 +630,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -685,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/caching/" class="md-nav__link">
+      <a href="../../../wiki/systems/caching/" class="md-nav__link">
         
   
   
@@ -713,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/streaming/" class="md-nav__link">
+      <a href="../../../wiki/systems/streaming/" class="md-nav__link">
         
   
   
@@ -741,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/consistency/" class="md-nav__link">
+      <a href="../../../wiki/systems/consistency/" class="md-nav__link">
         
   
   
@@ -769,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../systems/observability/" class="md-nav__link">
+      <a href="../../../wiki/systems/observability/" class="md-nav__link">
         
   
   
@@ -825,13 +796,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -839,7 +807,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tools/" class="md-nav__link ">
+            <a href="../../../wiki/tools/" class="md-nav__link ">
               
   
   
@@ -857,7 +825,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -883,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/editor/" class="md-nav__link">
+      <a href="../../../wiki/tools/editor/" class="md-nav__link">
         
   
   
@@ -911,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/zensical/" class="md-nav__link">
+      <a href="../../../wiki/tools/zensical/" class="md-nav__link">
         
   
   
@@ -939,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/git/" class="md-nav__link">
+      <a href="../../../wiki/tools/git/" class="md-nav__link">
         
   
   
@@ -967,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tools/cli-debugging/" class="md-nav__link">
+      <a href="../../../wiki/tools/cli-debugging/" class="md-nav__link">
         
   
   
@@ -1003,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/" class="md-nav__link">
+      <a href="../../../wiki/getting-started/" class="md-nav__link">
         
   
   
@@ -1119,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/getting-started/" class="md-nav__link">
+      <a href="../../../wiki/astra/getting-started/" class="md-nav__link">
         
   
   
@@ -1147,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/glossary/" class="md-nav__link">
+      <a href="../../../wiki/astra/glossary/" class="md-nav__link">
         
   
   
@@ -1175,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/security/" class="md-nav__link">
+      <a href="../../../wiki/astra/security/" class="md-nav__link">
         
   
   
@@ -1244,7 +1212,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/architecture/" class="md-nav__link ">
+            <a href="../../../wiki/astra/architecture/" class="md-nav__link ">
               
   
   
@@ -1288,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/overview/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/overview/" class="md-nav__link">
         
   
   
@@ -1316,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/kernel/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/kernel/" class="md-nav__link">
         
   
   
@@ -1344,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/actor-framework/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/actor-framework/" class="md-nav__link">
         
   
   
@@ -1372,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/task-graph/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/task-graph/" class="md-nav__link">
         
   
   
@@ -1400,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/scheduler/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/scheduler/" class="md-nav__link">
         
   
   
@@ -1428,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/services/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/services/" class="md-nav__link">
         
   
   
@@ -1456,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/memory/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/memory/" class="md-nav__link">
         
   
   
@@ -1484,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/llm-routing/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/llm-routing/" class="md-nav__link">
         
   
   
@@ -1512,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/architecture/multi-tenancy/" class="md-nav__link">
+      <a href="../../../wiki/astra/architecture/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -1585,7 +1553,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/reference/" class="md-nav__link ">
+            <a href="../../../wiki/astra/reference/" class="md-nav__link ">
               
   
   
@@ -1629,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/grpc-contracts/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/grpc-contracts/" class="md-nav__link">
         
   
   
@@ -1657,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/database-schema/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/database-schema/" class="md-nav__link">
         
   
   
@@ -1685,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/redis-keys/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/redis-keys/" class="md-nav__link">
         
   
   
@@ -1713,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/message-types/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/message-types/" class="md-nav__link">
         
   
   
@@ -1741,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/api-endpoints/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/api-endpoints/" class="md-nav__link">
         
   
   
@@ -1769,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/metrics/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/metrics/" class="md-nav__link">
         
   
   
@@ -1797,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/reference/slas/" class="md-nav__link">
+      <a href="../../../wiki/astra/reference/slas/" class="md-nav__link">
         
   
   
@@ -1866,7 +1834,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/operations/" class="md-nav__link ">
+            <a href="../../../wiki/astra/operations/" class="md-nav__link ">
               
   
   
@@ -1910,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-worker-lost/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-worker-lost/" class="md-nav__link">
         
   
   
@@ -1938,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-high-error-rate/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-high-error-rate/" class="md-nav__link">
         
   
   
@@ -1966,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-postgres-outage/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-postgres-outage/" class="md-nav__link">
         
   
   
@@ -1994,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-redis-failure/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-redis-failure/" class="md-nav__link">
         
   
   
@@ -2022,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/operations/runbook-cost-spike/" class="md-nav__link">
+      <a href="../../../wiki/astra/operations/runbook-cost-spike/" class="md-nav__link">
         
   
   
@@ -2089,7 +2057,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../astra/deployment/" class="md-nav__link ">
+            <a href="../../../wiki/astra/deployment/" class="md-nav__link ">
               
   
   
@@ -2133,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/kubernetes/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/kubernetes/" class="md-nav__link">
         
   
   
@@ -2161,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/local/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/local/" class="md-nav__link">
         
   
   
@@ -2189,7 +2157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/macos/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/macos/" class="md-nav__link">
         
   
   
@@ -2217,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../astra/deployment/gcp/" class="md-nav__link">
+      <a href="../../../wiki/astra/deployment/gcp/" class="md-nav__link">
         
   
   
@@ -2271,8 +2239,80 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-is-not-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem is not assignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heartbeats-necessary-insufficient-annoying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heartbeats: necessary, insufficient, annoying
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharding-the-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sharding the scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#at-least-once-is-the-only-honest-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        At-least-once is the only honest guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-shedding-is-not-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Load shedding is not optional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-part-where-you-dont-lose-your-mind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The part where you don't lose your mind
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2287,10 +2327,79 @@
                 
                   
 
-<h1 id="hotwire">Hotwire<a class="headerlink" href="#hotwire" title="Permanent link">&para;</a></h1>
-<p><strong>Turbo</strong> (HTML over the wire) and <strong>Stimulus</strong> suit server-rendered apps with sprinkles of JS. <strong>Astra's dashboard</strong> is intentionally vanilla HTML/CSS/JS for the super-admin surface (per PRD) — similar spirit: no heavy SPA unless the problem demands it.</p>
-<p>API-first <strong>agent systems</strong> still need <strong>WebSocket</strong> streaming for chat; that's a different axis from Hotwire's document model. Choose per surface: human CRUD vs long-lived agent sessions.</p>
+  <h1 id="__skip">Scheduling without losing your mind</h1>
 
+<p>Scheduling is the part of a system where optimism goes to die. On paper, it's simple: you have work, you have workers, assign the former to the latter. In practice, it's a swamp of partial failures, stale heartbeats, uneven load, and the quiet dread of realizing your scheduler just assigned a task to a node that died forty seconds ago but hasn't been declared dead yet.</p>
+<!-- more -->
+
+<h2 id="the-problem-is-not-assignment">The problem is not assignment<a class="headerlink" href="#the-problem-is-not-assignment" title="Permanent link">&para;</a></h2>
+<p>Most people think scheduling is the assignment problem. It's not. Assignment is a function call: given work W and workers {A, B, C}, pick one. You can round-robin it, hash it, score it, or throw a dart. The assignment itself is cheap.</p>
+<p>The hard parts are everything around the assignment:</p>
+<ul>
+<li><strong>Liveness.</strong> Is worker B actually alive, or is it just slow? Heartbeats tell you what was true a few seconds ago. The gap between "last heartbeat received" and "actually dead" is where duplicate execution lives.</li>
+<li><strong>State after assignment.</strong> You assigned task T to worker B. B acknowledged. Then B's process died between acknowledgment and execution. Who knows? Who retries? How do you avoid running the task twice?</li>
+<li><strong>Load awareness.</strong> Worker A has three tasks. Worker C has three hundred. Your round-robin doesn't know and doesn't care. Now A is idle and C is backpressuring into the queue.</li>
+<li><strong>Ordering and dependencies.</strong> Task T2 depends on T1. T1 is running. Do you enqueue T2 now and let the worker block? Or do you hold T2 in the scheduler until T1 completes? Both answers are wrong in different ways.</li>
+</ul>
+<h2 id="heartbeats-necessary-insufficient-annoying">Heartbeats: necessary, insufficient, annoying<a class="headerlink" href="#heartbeats-necessary-insufficient-annoying" title="Permanent link">&para;</a></h2>
+<p>Astra uses heartbeats because there is no alternative that's both simple and honest. Workers send periodic pings. The scheduler tracks last-seen timestamps. If a worker misses enough heartbeats, it's presumed dead and its tasks are eligible for reassignment.</p>
+<p>The tuning is where you lose your mind:</p>
+<ul>
+<li><strong>Heartbeat interval too short?</strong> You're generating noise. Network hiccups look like deaths. The scheduler spends more time processing heartbeats than scheduling work.</li>
+<li><strong>Heartbeat interval too long?</strong> A dead worker holds tasks hostage for seconds or minutes. The system looks alive in the dashboard but work isn't moving.</li>
+<li><strong>Threshold too aggressive?</strong> Healthy-but-busy workers get declared dead because they were 200ms late on a heartbeat while processing a heavy task.</li>
+<li><strong>Threshold too generous?</strong> Actually-dead workers keep their task assignments while the scheduler politely waits for a response that will never come.</li>
+</ul>
+<p>There's no perfect setting. There's a setting that matches your tolerance for false positives (unnecessary reassignment) vs false negatives (stuck tasks). I've landed on a heartbeat interval that's short enough to detect real failures within a few seconds and a threshold that tolerates brief network jitter without panicking.</p>
+<h2 id="sharding-the-scheduler">Sharding the scheduler<a class="headerlink" href="#sharding-the-scheduler" title="Permanent link">&para;</a></h2>
+<p>A single scheduler is a single point of failure and, eventually, a bottleneck. Astra's design shards scheduling by partition — each shard owns a subset of the work and the workers assigned to it. Shards are independent; a failure in shard 2 doesn't affect shard 1.</p>
+<p>The tricky part is rebalancing. When a shard fails, its work needs to be redistributed. When a new shard comes online, it needs to pick up a portion of the load. This is a consensus problem wearing a scheduling costume, and I've treated it as such — shard assignment is coordinated through Postgres (the source of truth, as always) rather than through a gossip protocol that might eventually agree.</p>
+<p>Is it slower than gossip? Yes. Do I wake up at 3am because two shards both think they own the same partition? No.</p>
+<h2 id="at-least-once-is-the-only-honest-guarantee">At-least-once is the only honest guarantee<a class="headerlink" href="#at-least-once-is-the-only-honest-guarantee" title="Permanent link">&para;</a></h2>
+<p>You will run a task twice. Accept it.</p>
+<p>The question isn't whether duplicates happen — it's whether your system handles them gracefully. Astra's task execution is designed for at-least-once delivery with idempotency at the handler level. The scheduler might assign a task that's already running if a heartbeat was late. The task runner checks execution state before starting, and the handler is expected to tolerate being called again.</p>
+<p>Exactly-once is a distributed systems unicorn. People claim it in whitepapers and disclaim it in production postmortems. At-least-once with idempotent handlers is less elegant on a slide and more honest in an incident review.</p>
+<h2 id="load-shedding-is-not-optional">Load shedding is not optional<a class="headerlink" href="#load-shedding-is-not-optional" title="Permanent link">&para;</a></h2>
+<p>A scheduler that accepts all work unconditionally is a scheduler that will eventually drown. Astra implements backpressure at the queue level — when a shard's pending queue reaches capacity, new submissions get a explicit rejection rather than a silent enqueue into an ever-growing list.</p>
+<p>This feels wrong the first time you implement it. Rejecting work? Sending back errors? But the alternative is worse: accepting work you can't process, growing memory unboundedly, and eventually crashing — at which point you've rejected <em>all</em> work, not just the overflow.</p>
+<p>Backpressure is honesty. "I can't do this right now" is a better answer than "sure" followed by silence.</p>
+<h2 id="the-part-where-you-dont-lose-your-mind">The part where you don't lose your mind<a class="headerlink" href="#the-part-where-you-dont-lose-your-mind" title="Permanent link">&para;</a></h2>
+<p>Scheduling becomes manageable when you stop pretending it's a solved problem and start treating it as an ongoing negotiation between your system and reality. The scheduler doesn't know the future. It doesn't know if a worker will die in three seconds. It doesn't know if the next task will take 10ms or 10 minutes.</p>
+<p>What it can do is make reasonable decisions with current information, detect when those decisions were wrong, and correct them quickly. That's it. That's the whole job.</p>
+<p>Build for that, and you'll keep your mind. Build for perfection, and the 3am pages will take it from you.</p>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">scheduling</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">distributed-systems</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">astra</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">architecture</span>
+      
+    
+  </nav>
 
 
 
