@@ -68,7 +68,12 @@ def main() -> None:
 
     robots = SITE / "robots.txt"
     robots.write_text(
+        "# prashanthr.net\n"
         "User-agent: *\nAllow: /\n\n"
+        "# AI crawlers welcome\n"
+        "User-agent: GPTBot\nAllow: /\n\n"
+        "User-agent: ClaudeBot\nAllow: /\n\n"
+        "User-agent: PerplexityBot\nAllow: /\n\n"
         f"Sitemap: {BASE}/sitemap.xml\n",
         encoding="utf-8",
     )

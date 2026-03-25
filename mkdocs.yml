@@ -1,4 +1,5 @@
-site_name: Prashanth
+site_name: Prashanth Rajagopal — prashanthr.net
+site_description: Prashanth Rajagopal's blog and wiki on distributed systems, agent infrastructure, and Astra — an autonomous agent OS.
 site_url: https://prashanthr.net
 docs_dir: docs
 site_dir: site
@@ -122,6 +123,7 @@ extra_css:
 extra_javascript:
   - javascripts/header-brand.js
   - javascripts/blog-filter.js
+  - javascripts/structured-data.js
 
 extra:
   generator: false
