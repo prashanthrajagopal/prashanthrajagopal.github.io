@@ -374,6 +374,18 @@
       "accessCount": 1,
       "lastAccessed": 1775078265691,
       "type": "file"
+    },
+    {
+      "path": "site/sitemap.xml",
+      "accessCount": 1,
+      "lastAccessed": 1775078639917,
+      "type": "file"
+    },
+    {
+      "path": "scripts/generate_sitemap.py",
+      "accessCount": 1,
+      "lastAccessed": 1775078652104,
+      "type": "file"
     }
   ],
   "userDirectives": []
