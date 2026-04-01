@@ -1,0 +1,15 @@
+# prashanthr.net
+User-agent: *
+Allow: /
+
+# AI crawlers welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://prashanthr.net/sitemap.xml
