@@ -343,6 +343,28 @@ article.md-content__inner.md-typeset:not(:has(.pr-home-hero)) .blog-post-row p {
   color: var(--pr-text-secondary) !important;
 }
 
+.pr-footer-links {
+  text-align: center;
+  padding: 0.75rem 1.5rem 0;
+  font-size: 0.78rem;
+}
+
+.pr-footer-links a {
+  color: var(--pr-text-tertiary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.pr-footer-links a:hover {
+  color: var(--pr-accent);
+}
+
+.pr-footer-sep {
+  color: var(--pr-text-tertiary);
+  opacity: 0.4;
+  margin: 0 0.3rem;
+}
+
 /* ========== Home (pr-home) — compact vertical rhythm ========== */
 body:has(.pr-home-hero) .md-main__inner {
   padding-top: 0.1rem !important;
