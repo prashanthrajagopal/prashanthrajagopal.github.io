@@ -1,6 +1,6 @@
 ---
 title: Prashanth Rajagopal — prashanthr.net
-description: Prashanth Rajagopal's site on distributed systems, agent infrastructure, and Astra. Blog, wiki, and architecture notes from 15+ years of building production software.
+description: Prashanth Rajagopal — software architect building Astra, an autonomous agent OS. Blog on distributed systems, Go, Rails, IoT, and agent infrastructure.
 hide:
   - toc
 ---
@@ -15,7 +15,7 @@ hide:
       </p>
       <div class="pr-hero-ctas">
         <a class="pr-btn-primary" href="wiki/astra/">Explore Astra <span aria-hidden="true">→</span></a>
-        <a class="pr-btn-ghost" href="wiki/">Wiki <span aria-hidden="true">→</span></a>
+        <a class="pr-btn-ghost" href="blog/">Blog <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="pr-hero-right">
