@@ -6,52 +6,30 @@ hide:
 ---
 
 <div class="pr-home-hero" markdown="0">
-  <div class="pr-eyebrow">Building infrastructure for agents</div>
-  <h1 class="pr-hero-title">Systems that<br><em>survive</em> production</h1>
-  <p class="pr-hero-intro">
-    I'm Prashanth. Fifteen years building software — mostly the kind that has to work when you're asleep. Currently designing <strong>Astra</strong>, an operating system for autonomous agents: microkernel, actor runtime, planet-scale task graph, 100M+ tasks/day.
-  </p>
-  <div class="pr-hero-ctas">
-    <a class="pr-btn-primary" href="wiki/astra/">Explore Astra <span aria-hidden="true">→</span></a>
-    <a class="pr-btn-ghost" href="wiki/">Wiki <span aria-hidden="true">→</span></a>
-    <a class="pr-btn-ghost" href="blog/">Blog <span aria-hidden="true">↗</span></a>
-  </div>
-</div>
-
-<div class="pr-home-section" markdown="0">
-  <div class="pr-section-head">
-    <h2 class="pr-section-title">What I'm working on</h2>
-  </div>
-  <div class="pr-project-grid">
-    <a class="pr-project-card" href="wiki/astra/">
-      <span class="pr-badge pr-badge-astra">Astra</span>
-      <span class="pr-project-arrow" aria-hidden="true">↗</span>
-      <h3>An OS for autonomous agents</h3>
-      <p>Microkernel, actor runtime, distributed task graph, sandboxed tools, layered memory, LLM routing. Not a framework — an actual operating system.</p>
-    </a>
-    <a class="pr-project-card" href="blog/">
-      <span class="pr-badge pr-badge-blog">Blog</span>
-      <span class="pr-project-arrow" aria-hidden="true">↗</span>
-      <h3>Writing from the trenches</h3>
-      <p>Rails internals, Go concurrency, agent design, and the gap between "works in theory" and "survives 2am on-call."</p>
-    </a>
-  </div>
-</div>
-
-<div class="pr-home-section" markdown="0">
-  <div class="pr-section-head">
-    <h2 class="pr-section-title">Latest from the blog</h2>
-    <a class="pr-section-link" href="blog/">All posts <span aria-hidden="true">→</span></a>
-  </div>
-  <!-- LATEST_BLOG_AUTOGEN_START -->
-  <a class="pr-latest-card" href="blog/posts/litellm-and-the-trust-chain-nobody-audits/">
-    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem;">
-      <span class="post-date">26 Mar 2026</span>
-      <span class="post-tag tag-architecture">Security</span>
+  <div class="pr-hero-split">
+    <div class="pr-hero-left">
+      <div class="pr-eyebrow">Building infrastructure for agents</div>
+      <h1 class="pr-hero-title">Systems that<br><em>survive</em> production</h1>
+      <p class="pr-hero-intro">
+        I'm Prashanth. Fifteen years building software — mostly the kind that has to work when you're asleep. Currently designing <strong>Astra</strong>, an operating system for autonomous agents: microkernel, actor runtime, planet-scale task graph, 100M+ tasks/day.
+      </p>
+      <div class="pr-hero-ctas">
+        <a class="pr-btn-primary" href="wiki/astra/">Explore Astra <span aria-hidden="true">→</span></a>
+        <a class="pr-btn-ghost" href="wiki/">Wiki <span aria-hidden="true">→</span></a>
+      </div>
     </div>
-    <h3 class="post-title" style="margin:0 0 0.35rem;font-family:var(--pr-font-display);font-size:1.25rem;font-weight:400;letter-spacing:-0.01em;color:var(--pr-text);">LiteLLM and the trust chain nobody audits</h3>
-    <p class="post-excerpt" style="margin:0;font-size:0.92rem;color:var(--pr-text-secondary);line-height:1.65;max-width:640px;">On Monday, someone pushed two compromised versions of `litellm` to PyPI. They were live for about three hours. In that window, any `pip install litellm` — or any CI pipeline that didn&#x27;t pin versions — pulled a package that harvested SSH keys, cloud…</p>
-    <span class="post-read-more" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.45rem;font-size:0.82rem;font-weight:600;color:var(--pr-accent);">Read post <span aria-hidden="true">→</span></span>
-  </a>
+    <div class="pr-hero-right">
+      <div class="pr-recent-head">
+        <h2 class="pr-recent-title">Recent posts</h2>
+        <a class="pr-section-link" href="blog/">All posts <span aria-hidden="true">→</span></a>
+      </div>
+      <!-- LATEST_BLOG_AUTOGEN_START -->
+      <a class="pr-recent-row" href="blog/posts/litellm-and-the-trust-chain-nobody-audits/"><span class="post-date">26 Mar 2026</span><span class="pr-recent-title-text">LiteLLM and the trust chain nobody audits</span><span class="post-tag tag-architecture">Security</span></a>
+      <a class="pr-recent-row" href="blog/posts/sandboxes-arent-security-theater/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">Sandboxes aren&#x27;t security theater</span><span class="post-tag tag-astra">Astra</span></a>
+      <a class="pr-recent-row" href="blog/posts/scheduling-without-losing-your-mind/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">Scheduling without losing your mind</span><span class="post-tag tag-astra">Astra</span></a>
+      <a class="pr-recent-row" href="blog/posts/the-10ms-lie-we-all-tell/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">The 10ms lie we all tell</span><span class="post-tag tag-architecture">Architecture</span></a>
+      <a class="pr-recent-row" href="blog/posts/what-rails-taught-me-about-supervision/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">What Rails taught me about supervision</span><span class="post-tag tag-architecture">Rails</span></a>
   <!-- LATEST_BLOG_AUTOGEN_END -->
+    </div>
+  </div>
 </div>

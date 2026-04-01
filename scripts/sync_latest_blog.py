@@ -89,23 +89,25 @@ def load_post(path: Path) -> dict | None:
     }
 
 
-def build_card(p: dict) -> str:
-    href = html.escape(f"blog/posts/{p['slug']}/", quote=True)
-    title_e = html.escape(p["title"])
-    excerpt_e = html.escape(p["excerpt"])
-    cat_e = html.escape(p["category"])
-    tag = _tag_class(p["category"])
-    return f"""  {MARK_START}
-  <a class="pr-latest-card" href="{href}">
-    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.45rem;">
-      <span class="post-date">{html.escape(p["date_display"])}</span>
-      <span class="post-tag {tag}">{cat_e}</span>
-    </div>
-    <h3 class="post-title" style="margin:0 0 0.35rem;font-family:var(--pr-font-display);font-size:1.25rem;font-weight:400;letter-spacing:-0.01em;color:var(--pr-text);">{title_e}</h3>
-    <p class="post-excerpt" style="margin:0;font-size:0.92rem;color:var(--pr-text-secondary);line-height:1.65;max-width:640px;">{excerpt_e}</p>
-    <span class="post-read-more" style="display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.45rem;font-size:0.82rem;font-weight:600;color:var(--pr-accent);">Read post <span aria-hidden="true">→</span></span>
-  </a>
-  {MARK_END}"""
+NUM_RECENT = 5
+
+
+def build_card(posts: list[dict]) -> str:
+    lines = [f"  {MARK_START}"]
+    for p in posts[:NUM_RECENT]:
+        href = html.escape(f"blog/posts/{p['slug']}/", quote=True)
+        title_e = html.escape(p["title"])
+        cat_e = html.escape(p["category"])
+        tag = _tag_class(p["category"])
+        lines.append(
+            f'      <a class="pr-recent-row" href="{href}">'
+            f'<span class="post-date">{html.escape(p["date_display"])}</span>'
+            f'<span class="pr-recent-title-text">{title_e}</span>'
+            f'<span class="post-tag {tag}">{cat_e}</span>'
+            f"</a>"
+        )
+    lines.append(f"  {MARK_END}")
+    return "\n".join(lines)
 
 
 def main() -> None:
@@ -118,8 +120,7 @@ def main() -> None:
         print("sync_latest_blog.py: no posts in", POSTS_DIR, file=sys.stderr)
         sys.exit(1)
     posts.sort(key=lambda x: x["sort_key"], reverse=True)
-    latest = posts[0]
-    card = build_card(latest)
+    card = build_card(posts)
 
     index = INDEX.read_text(encoding="utf-8")
     if MARK_START in index and MARK_END in index:
@@ -135,7 +136,8 @@ def main() -> None:
         sys.exit(1)
 
     INDEX.write_text(new_index, encoding="utf-8")
-    print(f"sync_latest_blog.py: featured '{latest['title']}' ({latest['date_display']})")
+    titles = [p["title"] for p in posts[:NUM_RECENT]]
+    print(f"sync_latest_blog.py: {NUM_RECENT} recent posts → index.md ({titles[0]}, ...)")
 
 
 if __name__ == "__main__":
