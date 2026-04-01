@@ -24,6 +24,14 @@ hide:
   </div>
 
   <div class="blog-posts-list">
+    <a class="blog-post-row" href="posts/the-100kmph-build-list/" data-tags="diy rc-cars electronics india">
+      <span class="post-date">2 Apr 2026</span>
+      <div>
+        <h3>The 100km/h build list: every part I'm buying</h3>
+        <p>The complete component list for a 1/8 scale brushless desert buggy that should hit 100km/h, sourced entirely from India.</p>
+      </div>
+      <span class="post-tag tag-diy">DIY</span>
+    </a>
     <a class="blog-post-row" href="posts/litellm-and-the-trust-chain-nobody-audits/" data-tags="security supply-chain astra agents sandboxing">
       <span class="post-date">26 Mar 2026</span>
       <div>
