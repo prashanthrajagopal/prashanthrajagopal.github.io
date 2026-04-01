@@ -16,3 +16,14 @@
 {"t":0,"agent":"a0d2e3b","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":79492}
 {"t":0,"agent":"a6d2c92","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":164180}
 {"t":0,"agent":"ac4956f","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":302243}
+{"t":0,"agent":"system","event":"skill_invoked","skill_name":"superpowers:dispatching-parallel-agents"}
+{"t":0,"agent":"ae2c088","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a29caab","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a65b1ac","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"af93eb8","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aa4bb8b","agent_type":"executor","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ae2c088","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":105491}
+{"t":0,"agent":"a29caab","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":123534}
+{"t":0,"agent":"a65b1ac","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":112737}
+{"t":0,"agent":"af93eb8","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":122500}
+{"t":0,"agent":"aa4bb8b","agent_type":"executor","event":"agent_stop","success":true,"duration_ms":121592}

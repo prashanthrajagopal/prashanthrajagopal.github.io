@@ -202,6 +202,66 @@
       "type": "file"
     },
     {
+      "path": "docs/blog/posts/why-i-didnt-use-kubernetes.md",
+      "accessCount": 3,
+      "lastAccessed": 1775078240788,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/why-postgres-stays-sacred.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078212045,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/what-rails-taught-me-about-supervision.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078212601,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/the-10ms-lie-we-all-tell.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078240374,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/chat-is-the-easy-part.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078257191,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/agent-memory-is-not-a-vector-database.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078258041,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/ruby-in-2026.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078312413,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/rc-cars-and-the-india-parts-problem.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078312918,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/esp32-mqtt-and-the-4-dollar-sensor.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078340796,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/what-electronics-taught-me-about-debugging.md",
+      "accessCount": 2,
+      "lastAccessed": 1775078341114,
+      "type": "file"
+    },
+    {
       "path": "docs/wiki/astra/architecture/index.md",
       "accessCount": 1,
       "lastAccessed": 1775076831136,
@@ -283,6 +343,36 @@
       "path": "docs/wiki/astra/operations/runbook-worker-lost.md",
       "accessCount": 1,
       "lastAccessed": 1775076838086,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/scheduling-without-losing-your-mind.md",
+      "accessCount": 1,
+      "lastAccessed": 1775078137238,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/dead-letters-are-a-feature.md",
+      "accessCount": 1,
+      "lastAccessed": 1775078179530,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/why-astra-runs-on-a-mac-mini.md",
+      "accessCount": 1,
+      "lastAccessed": 1775078217280,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/the-approval-gate-nobody-wants.md",
+      "accessCount": 1,
+      "lastAccessed": 1775078218185,
+      "type": "file"
+    },
+    {
+      "path": "docs/blog/posts/home-assistant-ruined-my-light-switches.md",
+      "accessCount": 1,
+      "lastAccessed": 1775078265691,
       "type": "file"
     }
   ],
