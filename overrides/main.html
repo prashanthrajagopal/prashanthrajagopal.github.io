@@ -33,3 +33,20 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
   <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
 {% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  <div class="pr-footer-links">
+    <a href="/wiki/">Wiki</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/wiki/rails/">Rails</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/wiki/systems/">Systems</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/wiki/tools/">Tools</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/wiki/astra/">Astra</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/blog/">Blog</a>
+  </div>
+{% endblock %}
