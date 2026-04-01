@@ -2243,10 +2243,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#hardware-acceleration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Hardware acceleration
       
     </span>
   </a>
@@ -2344,10 +2344,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#hardware-acceleration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Hardware acceleration
       
     </span>
   </a>
@@ -2382,8 +2382,35 @@
 
 <h1 id="macos-production">macOS production<a class="headerlink" href="#macos-production" title="Permanent link">&para;</a></h1>
 <p><strong>Apple Silicon</strong> (and Intel) Macs are a <strong>supported</strong> deployment shape for edge or small-scale production — e.g. <strong>Mac Mini / Studio</strong> with <strong>Metal</strong> / <strong>Neural Engine</strong> for inference-heavy workloads.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<p>Backend selection (<strong>Metal</strong>, <strong>ANE</strong>, <strong>CPU</strong>) is controlled via <strong>environment</strong> as described in <strong>PRD §20</strong>. The kernel stays <strong>platform-agnostic</strong>; acceleration applies in <strong>inference / embedding</strong> paths.</p>
+<h2 id="hardware-acceleration">Hardware acceleration<a class="headerlink" href="#hardware-acceleration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Backend</th>
+<th>When used</th>
+<th>Config</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Metal</strong></td>
+<td>GPU-accelerated inference, embeddings, compute-heavy paths</td>
+<td><code>ASTRA_USE_METAL=true</code></td>
+</tr>
+<tr>
+<td><strong>Neural Engine (ANE)</strong></td>
+<td>When exposed via Core ML or stable framework APIs</td>
+<td>Detected automatically; explicit fallback to Metal or CPU</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>Default fallback when accelerators unavailable or disabled</td>
+<td>Always available</td>
+</tr>
+</tbody>
+</table>
+<p>Detection via <code>runtime.GOOS == "darwin"</code> or build tags. Backend selection is explicit; fallback always to a working path. <code>ASTRA_USE_CUDA</code> is ignored on macOS.</p>
+<p>Native binaries built for <code>darwin/arm64</code> and <code>darwin/amd64</code> — no emulation on Apple Silicon.</p>
 <h2 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h2>
 <p>Services can run under <strong>launchd</strong>, a <strong>process supervisor</strong>, or your org’s standard <strong>macOS server</strong> practice. <strong>Infrastructure</strong> (Postgres, Redis, etc.) may still run in <strong>containers</strong> on the same host.</p>
 <div class="admonition note">

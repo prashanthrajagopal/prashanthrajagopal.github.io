@@ -1817,10 +1817,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#themes" class="md-nav__link">
+  <a href="#metric-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Themes
+        Metric catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert thresholds
       
     </span>
   </a>
@@ -2355,10 +2366,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#themes" class="md-nav__link">
+  <a href="#metric-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Themes
+        Metric catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alert-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alert thresholds
       
     </span>
   </a>
@@ -2403,35 +2425,88 @@
                   
 
 <h1 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h1>
-<p>Observability follows <strong>RED</strong> (rate, errors, duration) and <strong>USE</strong> (utilization, saturation, errors) patterns. <strong>Prometheus</strong>-style metrics cover <strong>tasks</strong>, <strong>workers</strong>, <strong>LLM usage</strong>, <strong>scheduling depth</strong>, and <strong>actors</strong>. Exact <strong>metric names</strong>, <strong>dashboard JSON</strong>, and <strong>alert rule files</strong> are <strong>internal</strong> to the Astra repo (<strong>PRD §17</strong>).</p>
-<h2 id="themes">Themes<a class="headerlink" href="#themes" title="Permanent link">&para;</a></h2>
+<p>Observability follows <strong>RED</strong> (rate, errors, duration) and <strong>USE</strong> (utilization, saturation, errors) patterns. Metrics are <strong>Prometheus</strong>-style. Dashboard JSON and alert rule files are internal to the Astra repo (<strong>PRD §17</strong>).</p>
+<h2 id="metric-catalog">Metric catalog<a class="headerlink" href="#metric-catalog" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Theme</th>
-<th>Examples</th>
+<th>Metric</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Task path</td>
-<td>Latency, success/failure counts</td>
+<td><code>astra_task_latency_seconds</code></td>
+<td>Histogram</td>
+<td>End-to-end task execution duration</td>
 </tr>
 <tr>
-<td>Workers</td>
-<td>Heartbeats, availability</td>
+<td><code>astra_task_success_total</code></td>
+<td>Counter</td>
+<td>Tasks completed successfully</td>
 </tr>
 <tr>
-<td>Scheduler</td>
-<td>Queue depth per shard</td>
+<td><code>astra_task_failure_total</code></td>
+<td>Counter</td>
+<td>Tasks that failed or timed out</td>
 </tr>
 <tr>
-<td>LLM</td>
-<td>Tokens, cost</td>
+<td><code>astra_events_processed_total</code></td>
+<td>Counter</td>
+<td>Events processed by the event loop</td>
 </tr>
 <tr>
-<td>Inference</td>
-<td>Active backend (CPU vs accelerated)</td>
+<td><code>astra_actor_count</code></td>
+<td>Gauge</td>
+<td>Active actor / agent count</td>
+</tr>
+<tr>
+<td><code>astra_worker_heartbeat_total</code></td>
+<td>Counter</td>
+<td>Worker heartbeat signals received</td>
+</tr>
+<tr>
+<td><code>astra_llm_token_usage_total</code></td>
+<td>Counter</td>
+<td>Total LLM tokens consumed (label: <code>model</code>)</td>
+</tr>
+<tr>
+<td><code>astra_llm_cost_dollars</code></td>
+<td>Counter</td>
+<td>Cumulative LLM cost in USD (label: <code>model</code>)</td>
+</tr>
+<tr>
+<td><code>astra_scheduler_ready_queue_depth</code></td>
+<td>Gauge</td>
+<td>Tasks waiting in the ready queue (per shard)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alert-thresholds">Alert thresholds<a class="headerlink" href="#alert-thresholds" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Alert</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High task failure rate</td>
+<td><code>astra_task_failure_total / (astra_task_success_total + astra_task_failure_total) &gt; 5%</code> over 5 min</td>
+</tr>
+<tr>
+<td>High queue depth</td>
+<td><code>astra_scheduler_ready_queue_depth &gt; 10000</code> pending tasks</td>
+</tr>
+<tr>
+<td>Low worker availability</td>
+<td>Registered workers &lt; 50% of expected pool</td>
+</tr>
+<tr>
+<td>LLM cost spike</td>
+<td>Daily <code>astra_llm_cost_dollars</code> rate &gt; 2× rolling daily average</td>
 </tr>
 </tbody>
 </table>

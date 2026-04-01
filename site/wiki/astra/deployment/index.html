@@ -2407,11 +2407,11 @@
 </tr>
 <tr>
 <td><code>workers</code></td>
-<td><code>execution-worker</code>, <code>browser-worker</code>, <code>tool-runtime</code>, <code>worker-manager</code>, <code>llm-router</code>, <code>prompt-manager</code>, <code>evaluation-service</code></td>
+<td><code>execution-worker</code>, <code>browser-worker</code>, <code>tool-runtime</code>, <code>worker-manager</code>, <code>llm-router</code>, <code>prompt-manager</code>, <code>evaluation-service</code>, <code>slack-adapter</code> (optional), <code>webhook-ingest</code> (optional), <code>cost-tracker</code></td>
 </tr>
 <tr>
 <td><code>infrastructure</code></td>
-<td>Postgres, Redis, Memcached, MinIO (local)</td>
+<td>Postgres, Redis, Memcached; local: optional MinIO; GCP: Cloud Storage bucket</td>
 </tr>
 <tr>
 <td><code>observability</code></td>

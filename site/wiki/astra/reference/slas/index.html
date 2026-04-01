@@ -1856,6 +1856,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mvp-milestone-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP Milestone Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mvp-functional-acceptance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2366,6 +2377,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mvp-milestone-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MVP Milestone Map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mvp-functional-acceptance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2451,6 +2473,88 @@
 </tbody>
 </table>
 <p>The 10ms read SLA is the hardest constraint in the system. It is the reason the cache architecture exists. Any code path that reads from Postgres synchronously on a hot API endpoint is a bug — not a performance issue, a correctness issue.</p>
+<h2 id="mvp-milestone-map">MVP Milestone Map<a class="headerlink" href="#mvp-milestone-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Capability</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 0</td>
+<td>Prep — repo scaffolding, infra, migrations</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 1</td>
+<td>Kernel MVP — actors, state, messaging, task graph, scheduler</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 2</td>
+<td>Workers &amp; Tool Runtime — execution, Docker sandbox, worker manager</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 3</td>
+<td>Memory &amp; LLM Routing — pgvector, LLM router, Memcached caching</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 4</td>
+<td>Orchestration, Eval, Security — planner, goal-service, identity, access-control, approvals</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 5</td>
+<td>Scale &amp; Production Hardening — load tests, Grafana, alerts, runbooks, cost tracking</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 6</td>
+<td>SDK &amp; Applications — AgentContext, MemoryClient, ToolClient, examples</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 7</td>
+<td>Security Compliance — gRPC/HTTP TLS, Vault integration</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 8</td>
+<td>Platform Dashboard — embedded UI, snapshot API, auto-refresh</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 9</td>
+<td>Agent Profile &amp; Context — system_prompt, agent_documents, context propagation</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 10</td>
+<td>Chat Agents — WebSocket streaming, sessions, tool invocation</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>P0-P2</td>
+<td>Platform Stability — agent restore, dead-letter, circuit breakers, idempotency, sharding</td>
+<td><strong>COMPLETE</strong></td>
+</tr>
+<tr>
+<td>Phase 11</td>
+<td>Multi-tenancy — orgs, teams, RBAC, visibility, data isolation</td>
+<td>In progress</td>
+</tr>
+<tr>
+<td>Phase 12</td>
+<td>Slack integration — adapter, proactive posting, platform secrets</td>
+<td>Partial</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mvp-functional-acceptance">MVP functional acceptance<a class="headerlink" href="#mvp-functional-acceptance" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -784,3 +784,40 @@ body:has(.pr-home-hero) article.md-content__inner > :first-child {
   border: 1px solid var(--pr-border);
   background: var(--pr-bg-card);
 }
+
+/* ========== Accessibility & interaction (UI UX Pro Max checklist) ========== */
+
+/* Cursor on all clickable elements */
+a,
+button,
+[role="button"],
+.pr-filter-chip,
+.pr-btn-primary,
+.pr-btn-ghost,
+.pr-project-card,
+.pr-latest-card,
+.blog-post-row:not(.pr-blog-soon) {
+  cursor: pointer;
+}
+
+/* Focus-visible ring for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+.pr-filter-chip:focus-visible {
+  outline: 2px solid var(--pr-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

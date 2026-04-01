@@ -2269,6 +2269,61 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisioned-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisioned resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-storage-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object storage policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application deploy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#themes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2331,6 +2386,61 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisioned-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisioned resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-storage-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object storage policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application deploy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#themes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2358,10 +2468,99 @@
 
 <h1 id="gcp-deployment">GCP deployment<a class="headerlink" href="#gcp-deployment" title="Permanent link">&para;</a></h1>
 <p>Production on <strong>GCP</strong> typically uses <strong>GKE</strong> plus <strong>managed</strong> Postgres, Redis, and related services. <strong>Helm values</strong>, <strong>scripts</strong>, and <strong>environment templates</strong> live <strong>only in the Astra repo</strong>.</p>
+<h2 id="entry-point">Entry point<a class="headerlink" href="#entry-point" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script</strong></td>
+<td><code>scripts/gcp-deploy.sh</code> (not <code>scripts/deploy.sh</code>, which is local-only)</td>
+</tr>
+<tr>
+<td><strong>Config</strong></td>
+<td>Optional <code>.env.gcp</code>; template at <code>scripts/.env.gcp.example</code></td>
+</tr>
+<tr>
+<td><strong>Env vars</strong></td>
+<td><code>GCP_PROJECT</code>, <code>GCP_REGION</code>, <code>GCP_CLUSTER</code>, <code>POSTGRES_PASSWORD</code>, optional <code>GCS_WORKSPACE_BUCKET</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="flags">Flags<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--setup</code></td>
+<td>First-time provision (creates all GCP resources)</td>
+</tr>
+<tr>
+<td><code>--dev</code> / <code>--prod</code></td>
+<td>Tier selection (<code>values-gke-dev.yaml</code> vs <code>values-gke-prod.yaml</code>)</td>
+</tr>
+<tr>
+<td><code>--build-only</code></td>
+<td>Build container images only</td>
+</tr>
+<tr>
+<td><code>--deploy-only</code></td>
+<td>Migrate + Helm deploy without rebuilding images</td>
+</tr>
+</tbody>
+</table>
+<h2 id="provisioned-resources">Provisioned resources<a class="headerlink" href="#provisioned-resources" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GKE Autopilot</strong></td>
+<td>Kubernetes cluster</td>
+</tr>
+<tr>
+<td><strong>Cloud SQL</strong></td>
+<td>PostgreSQL 15 (primary)</td>
+</tr>
+<tr>
+<td><strong>Memorystore</strong></td>
+<td>Redis</td>
+</tr>
+<tr>
+<td><strong>Memorystore</strong></td>
+<td>Memcached</td>
+</tr>
+<tr>
+<td><strong>Artifact Registry</strong></td>
+<td>Container image storage</td>
+</tr>
+<tr>
+<td><strong>Cloud Storage</strong></td>
+<td><code>gs://${GCP_PROJECT}-astra-workspace</code> (override via <code>GCS_WORKSPACE_BUCKET</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-storage-policy">Object storage policy<a class="headerlink" href="#object-storage-policy" title="Permanent link">&para;</a></h2>
+<p>On the GCP deploy path, workspace/artifact storage is <strong>GCS</strong>. MinIO is for local/docker-compose only — do not rely on MinIO in production GCP.</p>
+<h2 id="application-deploy">Application deploy<a class="headerlink" href="#application-deploy" title="Permanent link">&para;</a></h2>
+<p>Per-service <code>helm upgrade --install astra-&lt;service&gt;</code> using chart <code>deployments/helm/astra</code> with <code>--set service.name=&lt;service&gt;</code> and images from Artifact Registry.</p>
 <h2 id="themes">Themes<a class="headerlink" href="#themes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Private networking</strong> between workloads and data stores.  </li>
-<li><strong>Secrets</strong> via <strong>Vault</strong> or cloud secret managers — not in git.  </li>
+<li><strong>Private networking</strong> between workloads and data stores.</li>
+<li><strong>Secrets</strong> via <strong>Vault</strong> or cloud secret managers — not in git.</li>
 <li><strong>Scaling</strong> per <strong>PRD §20</strong>.</li>
 </ul>
 <p>See also <a href="../kubernetes/">Kubernetes / Helm</a> for namespace layout at a high level.</p>

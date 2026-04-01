@@ -1405,6 +1405,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#platform-stability-p0p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform stability (P0–P2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform stability (P0–P2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0-core-correctness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0 — Core correctness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — Resilience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-scale-and-clarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2 — Scale and clarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-surface" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2421,6 +2471,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#platform-stability-p0p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform stability (P0–P2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform stability (P0–P2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#p0-core-correctness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P0 — Core correctness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p1-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P1 — Resilience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2-scale-and-clarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P2 — Scale and clarity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#api-surface" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2495,6 +2595,77 @@
 <li>Services talk to the kernel through <strong>published APIs</strong>, not by reaching into implementation details.  </li>
 <li><strong>Durable task state</strong> and <strong>event history</strong> stay consistent with the transactional model described in the PRD.</li>
 </ul>
+<h2 id="platform-stability-p0p2">Platform stability (P0–P2)<a class="headerlink" href="#platform-stability-p0p2" title="Permanent link">&para;</a></h2>
+<p>Completed hardening across three priority tiers. All items are implemented and validated.</p>
+<h3 id="p0-core-correctness">P0 — Core correctness<a class="headerlink" href="#p0-core-correctness" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent restore on startup</strong></td>
+<td><code>agent-service</code> loads all agents with <code>status = 'active'</code> from DB at startup, spawns into kernel via <code>NewFromExisting</code>. No manual re-spawn needed after restart.</td>
+</tr>
+<tr>
+<td><strong>Dead-letter tasks</strong></td>
+<td>When <code>retries &gt;= max_retries</code>, task transitions to <code>dead_letter</code> status. Optionally published to <code>astra:dead_letter</code> stream for alerting/repair.</td>
+</tr>
+<tr>
+<td><strong>Redis consumer retry</strong></td>
+<td><code>XAck</code> only on handler success. Per-message retry count in Redis hash (1h TTL). After N failures, publish to <code>astra:dead_letter</code> then <code>XAck</code>. <code>XAutoClaim</code> reclaims pending messages after 30s <code>MinIdle</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p1-resilience">P1 — Resilience<a class="headerlink" href="#p1-resilience" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Readiness vs liveness</strong></td>
+<td><code>GET /health</code> = liveness. <code>GET /ready</code> = DB + Redis ping. Helm <code>readinessProbe</code> uses <code>/ready</code>; LB stops traffic on failure.</td>
+</tr>
+<tr>
+<td><strong>Gateway circuit breakers</strong></td>
+<td>Protects goal-service, agent-service, access-control (gRPC). 5 failures in 30s opens circuit → 503 + optional <code>Retry-After</code>. 10s half-open cooldown.</td>
+</tr>
+<tr>
+<td><strong>Goal idempotency</strong></td>
+<td><code>Idempotency-Key</code> header on <code>POST /goals</code>. Redis-backed, 24h TTL. Duplicate key returns same <code>goal_id</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="p2-scale-and-clarity">P2 — Scale and clarity<a class="headerlink" href="#p2-scale-and-clarity" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shard ownership</strong></td>
+<td>Configurable <code>TASK_SHARD_COUNT</code>. Streams: <code>astra:tasks:shard:{0..N-1}</code>. Hash: <code>FNV-1a(agent_id) % count</code>. Workers consume all shards.</td>
+</tr>
+<tr>
+<td><strong>Supervision wiring</strong></td>
+<td>Supervisor connected to agent actors in <code>agent-service</code>. Handler wrapper recovers panics → <code>HandleFailure</code>. On <code>Terminate</code>, <code>kernel.Stop(agentID)</code>.</td>
+</tr>
+<tr>
+<td><strong>Mailbox full handling</strong></td>
+<td><code>ErrMailboxFull</code> returned on overflow. gRPC <code>ResourceExhausted</code> status with <code>retry-after</code> trailer (seconds). Client backs off.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="api-surface">API surface<a class="headerlink" href="#api-surface" title="Permanent link">&para;</a></h2>
 <p>Kernel-oriented RPCs (spawn, send, task lifecycle, streams) are specified in <strong>PRD §10</strong>. This wiki does not reproduce full protobuf definitions.</p>
 <div class="admonition note">

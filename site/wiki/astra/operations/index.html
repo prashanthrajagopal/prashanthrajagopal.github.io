@@ -2307,6 +2307,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#failure-modes-p0p2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure modes (P0–P2)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#oncall-rotations" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2417,6 +2428,60 @@
 <tr>
 <td><a href="runbook-cost-spike/">LLM Cost Spike</a></td>
 <td>Cost &gt;2x daily average</td>
+</tr>
+<tr>
+<td>Shard Scaling</td>
+<td>Shard imbalance or scaling event — update <code>TASK_SHARD_COUNT</code>, restart scheduler + workers</td>
+</tr>
+<tr>
+<td>TLS Rotation</td>
+<td>Certificate expiration — generate new certs, update K8s secrets, roll services</td>
+</tr>
+<tr>
+<td>Vault Setup</td>
+<td>Initial or reconfigured — set <code>ASTRA_VAULT_ADDR</code>/<code>TOKEN</code>/<code>PATH</code>, load secrets to KV-v2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="failure-modes-p0p2">Failure modes (P0–P2)<a class="headerlink" href="#failure-modes-p0p2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Detection</th>
+<th>Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Task final failure (max retries)</td>
+<td><code>FailTask</code> with <code>retries &gt;= maxRetries</code></td>
+<td>Status → <code>dead_letter</code>; optional publish to <code>astra:dead_letter</code> for alerting/repair</td>
+</tr>
+<tr>
+<td>Agent-service restart</td>
+<td>Process restart</td>
+<td>Agent restore loads active agents from DB, spawns into kernel automatically</td>
+</tr>
+<tr>
+<td>Downstream overload</td>
+<td>Circuit breaker opens</td>
+<td>Gateway returns 503 + <code>Retry-After</code>; clients back off</td>
+</tr>
+<tr>
+<td>Duplicate <code>POST /goals</code></td>
+<td>Same <code>Idempotency-Key</code> within TTL</td>
+<td>Goal-service returns cached 201 with same <code>goal_id</code></td>
+</tr>
+<tr>
+<td>Scheduler shard imbalance</td>
+<td>Monitoring</td>
+<td>Rebalance via <code>TASK_SHARD_COUNT</code>; see shard-scaling runbook</td>
+</tr>
+<tr>
+<td>Actor mailbox full</td>
+<td>Kernel returns <code>ResourceExhausted</code></td>
+<td>Client backs off; <code>retry-after</code> in gRPC trailer</td>
 </tr>
 </tbody>
 </table>

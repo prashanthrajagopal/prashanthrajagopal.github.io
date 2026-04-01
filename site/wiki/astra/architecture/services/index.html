@@ -1481,6 +1481,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Service catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional services
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1510,6 +1527,17 @@
     <span class="md-ellipsis">
       
         Chat API (Phase 10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-api-phase-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard API (Phase 11)
       
     </span>
   </a>
@@ -2385,6 +2413,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Service catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional services
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2414,6 +2459,17 @@
     <span class="md-ellipsis">
       
         Chat API (Phase 10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-api-phase-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard API (Phase 11)
       
     </span>
   </a>
@@ -2588,6 +2644,33 @@
 </tbody>
 </table>
 <p><strong>Chat (v1):</strong> Chat capability is built into <code>api-gateway</code>. No separate chat service for Phase 10.</p>
+<h3 id="optional-services">Optional services<a class="headerlink" href="#optional-services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Namespace</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>slack-adapter</code></td>
+<td>workers</td>
+<td>Receives Slack Events API, verifies signing secret, resolves org/agent/user, enqueues to <code>astra:slack:incoming</code> Redis stream. Worker consumes stream, calls chat API, posts replies via Slack API.</td>
+</tr>
+<tr>
+<td><code>webhook-ingest</code></td>
+<td>workers</td>
+<td>Accepts external events via <code>POST /webhooks/{source_id}</code> with HMAC-SHA256 validation. Publishes to Redis streams for downstream processing.</td>
+</tr>
+<tr>
+<td><code>cost-tracker</code></td>
+<td>workers</td>
+<td>LLM cost aggregation and budget enforcement.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="inter-service-communication">Inter-service communication<a class="headerlink" href="#inter-service-communication" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>External → api-gateway (REST/WebSocket)
            ↓ gRPC
@@ -2633,7 +2716,32 @@
 </tr>
 </tbody>
 </table>
-<p>WebSocket framing: <strong>JSON message types</strong> per <strong>PRD</strong> (streaming, tools, errors).</p>
+<p>WebSocket framing: JSON types include <code>chunk</code>, <code>message_start</code>, <code>message_end</code>, <code>tool_call</code>, <code>tool_result</code>, <code>done</code>, <code>error</code>, <code>pong</code>, <code>session</code>. Config: <code>CHAT_ENABLED</code>, <code>CHAT_MAX_MSG_LENGTH</code>, <code>CHAT_RATE_LIMIT</code>, <code>CHAT_TOKEN_CAP</code>.</p>
+<p>| <code>POST</code> | <code>/chat/sessions/{id}/inject</code> | External message injection (e.g., from Slack adapter) |</p>
+<h2 id="dashboard-api-phase-11">Dashboard API (Phase 11)<a class="headerlink" href="#dashboard-api-phase-11" title="Permanent link">&para;</a></h2>
+<p>Dashboard served at <code>/superadmin/dashboard/</code>. APIs under <code>/superadmin/api/dashboard/</code> and <code>/superadmin/api/slack/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stack</strong></td>
+<td>Vanilla HTML/CSS/JS. Fonts: Inter, Roboto Mono. Chart.js for charts.</td>
+</tr>
+<tr>
+<td><strong>Visual</strong></td>
+<td>Pastel palette (lavender accent, mint/sky/butter/rose/peach). Glass-style topnav. Light/dark theme toggle (persisted in <code>localStorage</code>).</td>
+</tr>
+<tr>
+<td><strong>Sections</strong></td>
+<td>Stats grid, charts (tasks, goals, service health, agents), agents table with pagination, goals, tasks, workers, approvals, cost, logs, Slack config tab, optional chat widget.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="agent-profile-and-documents-summary">Agent profile and documents (summary)<a class="headerlink" href="#agent-profile-and-documents-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2671,6 +2779,15 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Context propagation flow:</strong></p>
+<ol>
+<li><code>goal-service</code> receives goal with optional inline documents → persists goal-scoped documents.</li>
+<li><code>goal-service</code> assembles full agent context: <code>system_prompt</code> + rules (priority-sorted) + skills + context_docs.</li>
+<li><code>goal-service</code> passes assembled <code>agent_context</code> to <code>planner-service</code>.</li>
+<li><code>planner-service</code> embeds <code>agent_context</code> in each task payload.</li>
+<li><code>execution-worker</code> includes <code>agent_context</code> when building LLM prompts for task execution.</li>
+</ol>
+<p>Profile and document reads served from Redis cache (<code>agent:profile:{id}</code>, <code>agent:docs:{id}</code>, 5min TTL).</p>
 
 
   <nav class="md-tags" >

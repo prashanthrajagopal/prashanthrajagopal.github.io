@@ -1,0 +1,290 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1775076698291,
+  "projectRoot": "/Users/prashanth/Developer/prashanthrajagopal.github.io",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "scripts"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 3,
+      "lastAccessed": 1775076698272,
+      "keyFiles": [
+        "index.md",
+        "llms.txt"
+      ]
+    },
+    "overrides": {
+      "path": "overrides",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1775076698273,
+      "keyFiles": [
+        "main.html"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 3,
+      "lastAccessed": 1775076698273,
+      "keyFiles": [
+        "generate_sitemap.py",
+        "ping_search_engines.py",
+        "sync_latest_blog.py"
+      ]
+    },
+    "site": {
+      "path": "site",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1775076698274,
+      "keyFiles": [
+        "404.html",
+        "index.html",
+        "llms.txt",
+        "objects.inv",
+        "search.json"
+      ]
+    },
+    "site/assets": {
+      "path": "site/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1775076698275,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "docs/wiki/astra/index.md",
+      "accessCount": 7,
+      "lastAccessed": 1775077366297,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/glossary.md",
+      "accessCount": 7,
+      "lastAccessed": 1775077417025,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/services.md",
+      "accessCount": 7,
+      "lastAccessed": 1775077509365,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/overview.md",
+      "accessCount": 6,
+      "lastAccessed": 1775077449160,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/multi-tenancy.md",
+      "accessCount": 6,
+      "lastAccessed": 1775077536813,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/slas.md",
+      "accessCount": 6,
+      "lastAccessed": 1775077583476,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/kernel.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077472875,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/security.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077544511,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/api-endpoints.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077544768,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/message-types.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077545976,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/redis-keys.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077546006,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/database-schema.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077554305,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/metrics.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077555191,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/operations/index.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077610349,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/deployment/index.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077617073,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/deployment/gcp.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077634415,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/deployment/kubernetes.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077642795,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/deployment/macos.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077654769,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/getting-started/index.md",
+      "accessCount": 5,
+      "lastAccessed": 1775077672622,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/index.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076831136,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/actor-framework.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076831773,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/task-graph.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076831984,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/scheduler.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076832167,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/memory.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076832641,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/architecture/llm-routing.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076832793,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/index.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076833877,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/reference/grpc-contracts.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076834247,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/deployment/local.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076835980,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/operations/runbook-postgres-outage.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076837027,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/operations/runbook-cost-spike.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076837238,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/operations/runbook-high-error-rate.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076837656,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/operations/runbook-redis-failure.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076837855,
+      "type": "file"
+    },
+    {
+      "path": "docs/wiki/astra/operations/runbook-worker-lost.md",
+      "accessCount": 1,
+      "lastAccessed": 1775076838086,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

@@ -1377,6 +1377,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chat-flow-phase-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat flow (Phase 10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#caching-10ms-read-path" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2432,6 +2454,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chat-flow-phase-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chat flow (Phase 10)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#caching-10ms-read-path" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2531,12 +2575,16 @@
 </table>
 <h2 id="goal-task-result-flow">Goal → task → result (flow)<a class="headerlink" href="#goal-task-result-flow" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Client submits a <strong>goal</strong> for an agent.  </li>
-<li><strong>Goal</strong> path validates and assembles context, then <strong>planning</strong> produces a <strong>task DAG</strong>.  </li>
-<li><strong>Task service</strong> persists the graph; <strong>scheduler</strong> finds ready tasks and <strong>dispatches</strong> to queues.  </li>
-<li><strong>Workers</strong> claim work, run <strong>tool/sandbox</strong> steps, then <strong>complete</strong> or <strong>fail</strong> tasks.  </li>
+<li>Client submits a <strong>goal</strong> for an agent (with optional inline documents).</li>
+<li><strong>Goal</strong> path validates, assembles <strong>agent context</strong> (system_prompt + rules + skills + context_docs), then <strong>planning</strong> produces a <strong>task DAG</strong> with context embedded.</li>
+<li><strong>Task service</strong> persists the graph; <strong>scheduler</strong> finds ready tasks and <strong>dispatches</strong> to shard queues.</li>
+<li><strong>Workers</strong> claim work, run <strong>tool/sandbox</strong> steps, then <strong>complete</strong> or <strong>fail</strong> tasks. Failed tasks retry or move to <strong>dead letter</strong>.</li>
 <li>Dependent tasks unlock; the cycle continues until the graph finishes.</li>
 </ol>
+<h2 id="chat-flow-phase-10">Chat flow (Phase 10)<a class="headerlink" href="#chat-flow-phase-10" title="Permanent link">&para;</a></h2>
+<p>Users can also interact via <strong>WebSocket chat</strong> on the api-gateway. Chat sessions connect to chat-capable agents with streaming responses, optional tool invocation, and memory context. The <strong>Slack adapter</strong> bridges Slack Events API to the chat/goal pipeline for workspace-based interactions.</p>
+<h2 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h2>
+<p>The <strong>super-admin dashboard</strong> at <code>/superadmin/dashboard/</code> provides platform-wide visibility: service health, agents, goals, workers, approvals, cost, and Slack configuration. Pastel glass-style design with light/dark theme toggle.</p>
 <pre class="mermaid"><code>sequenceDiagram
   participant C as Client
   participant GW as API gateway
@@ -2561,7 +2609,28 @@
 <p><strong>Eventual consistency</strong> on cached fields is accepted so the <strong>10ms</strong> read target stays achievable at scale.</p>
 </div>
 <h2 id="hardware-targets">Hardware targets<a class="headerlink" href="#hardware-targets" title="Permanent link">&para;</a></h2>
-<p><strong>macOS</strong> (Apple Silicon / Intel) and <strong>Linux</strong> (including GPU paths where configured) are supported deployment shapes; see <strong>PRD §20</strong> and <a href="../../deployment/">Deployment</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Acceleration</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>macOS</strong> (Apple Silicon / Intel)</td>
+<td>Metal, Neural Engine (ANE), CPU</td>
+<td>Supported production target (Mac Mini, Mac Studio). <code>ASTRA_USE_METAL=true</code>.</td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td>CUDA, CPU</td>
+<td>Primary cloud/K8s target. <code>ASTRA_USE_CUDA=true</code> when GPUs available.</td>
+</tr>
+</tbody>
+</table>
+<p>Single codebase; graceful CPU fallback when accelerators unavailable. Detection via <code>runtime.GOOS</code> or build tags. See <strong>PRD §20</strong> and <a href="../../deployment/">Deployment</a>.</p>
 
 
   <nav class="md-tags" >
