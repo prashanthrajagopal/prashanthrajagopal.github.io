@@ -39,7 +39,7 @@ The ATOM 6S ships RTR (ready to run) but **without batteries** — which is actu
 
 **Batteries: 2× Gens Ace 3S 5000mAh 60C LiPo (Hard Case)**
 
-- [Available on Amazon.in](https://www.amazon.in/5000mAh-Battery-HardCase-Approved-Traxxas/dp/B00WQXKDW4) — Gens Ace has decent India distribution
+- [Available on Amazon.in](https://www.amazon.in/Gens-ace-5000mAh-Battery-T-REX550/dp/B06Y4BRD2B) — Gens Ace has decent India distribution
 - **Hard case is non-negotiable** — a pouch LiPo at 100km/h in a crash is a fire waiting to happen
 - **60C continuous discharge** means 300A burst capacity — more than the 150A ESC will ever draw
 - **XT90 connectors** — I'm re-soldering everything to XT90 for the current handling. XT60 is marginal at 6S loads
