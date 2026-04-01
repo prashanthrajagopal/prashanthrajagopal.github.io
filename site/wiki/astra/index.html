@@ -2260,6 +2260,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#core-capabilities-prd-v30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core capabilities (PRD v3.0)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#non-goals" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2330,8 +2341,8 @@
                   
 
 <h1 id="astra">Astra<a class="headerlink" href="#astra" title="Permanent link">&para;</a></h1>
-<p><strong>Astra</strong> is an operating system for autonomous agents: a <strong>microkernel</strong> (actors, task graph, scheduler, messaging, state), <strong>sixteen microservices</strong>, sandboxed tools, layered memory, and LLM routing as infrastructure — not a single-model chat wrapper or a UI product.</p>
-<p><strong>Executive summary:</strong> Persistent agents submit <strong>goals</strong>; the <strong>planner</strong> materialises <strong>DAGs</strong> of <strong>tasks</strong>; the <strong>scheduler</strong> dispatches work via <strong>Redis Streams</strong>; <strong>workers</strong> run tasks inside <strong>sandboxes</strong>; <strong>Postgres</strong> is the source of truth and <strong>Redis/Memcached</strong> enforce the <strong>≤10ms</strong> read path. Everything external talks through <strong>JWT</strong>; services talk over <strong>mTLS</strong>; dangerous work passes <strong>policy and approval</strong> gates.</p>
+<p><strong>Astra</strong> is an operating system for autonomous agents: a <strong>microkernel</strong> (actors, task graph, scheduler, messaging, state), <strong>sixteen microservices</strong>, sandboxed tools, layered memory, LLM routing, <strong>real-time chat</strong>, and <strong>platform stability infrastructure</strong> — not a single-model chat wrapper or a UI product.</p>
+<p><strong>Executive summary:</strong> Persistent agents submit <strong>goals</strong>; the <strong>planner</strong> materialises <strong>DAGs</strong> of <strong>tasks</strong>; the <strong>scheduler</strong> dispatches work via <strong>Redis Streams</strong>; <strong>workers</strong> run tasks inside <strong>sandboxes</strong>; <strong>Postgres</strong> is the source of truth and <strong>Redis/Memcached</strong> enforce the <strong>≤10ms</strong> read path. Everything external talks through <strong>JWT</strong>; services talk over <strong>mTLS</strong>; dangerous work passes <strong>policy and approval</strong> gates. Agents can have <strong>profiles</strong> (system prompts, attached documents) that propagate through planning to execution, and users can interact via <strong>WebSocket chat</strong> or <strong>Slack</strong>.</p>
 <pre class="mermaid"><code>flowchart LR
   U[Client] --&gt; GW[API gateway]
   GW --&gt; GS[goal-service]
@@ -2366,8 +2377,21 @@
 <td><strong>Operability</strong></td>
 <td>Metrics, traces, runbooks, rolling upgrades with backward-compatible schema.</td>
 </tr>
+<tr>
+<td><strong>Resilience</strong></td>
+<td>Agent restore on startup, dead-letter tasks, circuit breakers, consumer retry, goal idempotency (PRD §21, P0-P2).</td>
+</tr>
 </tbody>
 </table>
+<h2 id="core-capabilities-prd-v30">Core capabilities (PRD v3.0)<a class="headerlink" href="#core-capabilities-prd-v30" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Platform stability (P0-P2):</strong> Agent restore on startup, task dead-letter queue, Redis consumer retry/reclaim, readiness vs liveness probes, gateway circuit breakers, goal idempotency, configurable task-stream sharding, supervisor wiring, mailbox-full handling.</li>
+<li><strong>Agent profile &amp; context (Phase 9):</strong> System prompts, attached documents (rules, skills, context docs, references), context propagation through planning and execution pipeline.</li>
+<li><strong>Real-time chat agents (Phase 10):</strong> WebSocket streaming with tool invocation, session management, message injection.</li>
+<li><strong>Slack integration (Phase 12):</strong> Connect chat agents to Slack workspaces, proactive posting, platform-configurable Slack app secrets.</li>
+<li><strong>Hardware acceleration:</strong> Metal/Neural Engine on macOS, CUDA on Linux, graceful CPU fallback. macOS is a supported production target.</li>
+<li><strong>Olympus application layer:</strong> External agent adapter framework, webhook ingest, goal-level dependencies, agent-to-agent goal posting, dual-approval, trust scores.</li>
+</ul>
 <h2 id="non-goals">Non-goals<a class="headerlink" href="#non-goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Not</strong> building foundation models — Astra integrates providers.</li>
@@ -2459,7 +2483,7 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Maturity</p>
-<p>Astra is under active implementation. Wiki pages track the PRD; some features are phased per PRD §26–27. When in doubt, read the PRD section cited on each page.</p>
+<p>Astra tracks <strong>Engineering Specification v3.0</strong> (PRD). Phases 0–10 are complete; Phase 11 (multi-tenancy) is in progress; Phase 12 (Slack) is partial. When in doubt, read the PRD section cited on each page.</p>
 </div>
 <hr />
 <h2 id="sections">Sections<a class="headerlink" href="#sections" title="Permanent link">&para;</a></h2>

@@ -1226,6 +1226,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#approval-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approval system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plan-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risky-task-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risky task approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-approval-two-person-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-approval (two-person rule)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super-admin-data-redaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Super-admin data redaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit &amp; compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-to-look-in-the-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2364,6 +2458,100 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#approval-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval system
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approval system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plan-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risky-task-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risky task approval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-approval-two-person-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-approval (two-person rule)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approval-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approval routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#super-admin-data-redaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Super-admin data redaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit &amp; compliance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-to-look-in-the-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2413,7 +2601,7 @@
 <tbody>
 <tr>
 <td><strong>Service-to-service</strong></td>
-<td><strong>mTLS</strong> on all inter-service gRPC/HTTP — no plaintext between services.</td>
+<td><strong>mTLS</strong> on all inter-service gRPC/HTTP — no plaintext between services. Validated in <code>scripts/validate.sh</code> (S1).</td>
 </tr>
 <tr>
 <td><strong>External API</strong></td>
@@ -2429,7 +2617,7 @@
 </tr>
 <tr>
 <td><strong>Secrets</strong></td>
-<td><strong>Vault</strong> (or equivalent) at runtime — nothing long-lived in repo, logs, or events.</td>
+<td><strong>Vault</strong> at runtime — nothing long-lived in repo, logs, or events. Validated in <code>scripts/validate.sh</code> (S5).</td>
 </tr>
 <tr>
 <td><strong>Dangerous actions</strong></td>
@@ -2437,6 +2625,60 @@
 </tr>
 </tbody>
 </table>
+<h2 id="approval-system">Approval system<a class="headerlink" href="#approval-system" title="Permanent link">&para;</a></h2>
+<p>Two distinct approval types exist.</p>
+<h3 id="plan-approval">Plan approval<a class="headerlink" href="#plan-approval" title="Permanent link">&para;</a></h3>
+<p>When <code>AUTO_APPROVE_PLANS=false</code>, goal-service creates an <code>approval_requests</code> record for the implementation plan <strong>before</strong> the task graph is created. Access-control calls <code>POST /internal/apply-plan</code> on goal-service when the approval decision is made.</p>
+<h3 id="risky-task-approval">Risky task approval<a class="headerlink" href="#risky-task-approval" title="Permanent link">&para;</a></h3>
+<p>Dangerous tool execution (e.g. <code>terraform apply</code>, <code>shell_exec</code>) creates <code>approval_requests</code> with <code>request_type=’risky_task’</code>. tool-runtime polls or subscribes and waits for an approved decision before proceeding.</p>
+<h3 id="dual-approval-two-person-rule">Dual-approval (two-person rule)<a class="headerlink" href="#dual-approval-two-person-rule" title="Permanent link">&para;</a></h3>
+<p><code>approval_requests.required_approvals</code> sets the minimum number of approvers needed. Individual approver decisions are tracked in the <code>approvals</code> JSONB array. Both plan and risky-task approvals support this.</p>
+<h3 id="approval-routing">Approval routing<a class="headerlink" href="#approval-routing" title="Permanent link">&para;</a></h3>
+<p>Requests route to <strong>agent_admins</strong> first (users designated for a specific agent). Falls back to <strong>org_admins</strong> if no agent_admins are configured.</p>
+<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>super_admin</strong></td>
+<td>Platform-wide visibility; sees metrics and agent/worker metadata but never execution content (see redaction below).</td>
+</tr>
+<tr>
+<td><strong>org_admin</strong></td>
+<td>Manages org members, teams, agents within their org. Fallback approver for risky tasks and plans.</td>
+</tr>
+<tr>
+<td><strong>agent_admin</strong></td>
+<td>Designated per-agent; receives approve/reject requests for that agent’s plans and risky tasks.</td>
+</tr>
+<tr>
+<td><strong>member</strong></td>
+<td>Normal user within an org.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="super-admin-data-redaction">Super-admin data redaction<a class="headerlink" href="#super-admin-data-redaction" title="Permanent link">&para;</a></h2>
+<p><code>redactForSuperAdmin()</code> strips the following fields before returning data to super-admin API callers:</p>
+<ul>
+<li><code>system_prompt</code>, <code>config</code> — agent configuration</li>
+<li><code>payload</code>, <code>result</code> — task I/O</li>
+<li><code>goal_text</code> — goal content</li>
+<li><code>code</code>, file contents, shell output — tool artifacts</li>
+<li><code>chat_messages</code> — chat session content</li>
+</ul>
+<p>Super-admins <strong>see</strong>: agent names, worker names, counts, cost totals, platform-wide aggregate metrics.
+Super-admins <strong>never see</strong>: execution details, prompts, results, or any content produced by tool execution.</p>
+<h2 id="audit-compliance">Audit &amp; compliance<a class="headerlink" href="#audit-compliance" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Immutable event log</strong> (<code>events</code> table) records: <code>TaskScheduled</code>, <code>TaskStarted</code>, <code>TaskCompleted</code>, <code>TaskFailed</code>, <code>PhaseStarted</code>, <code>PhaseCompleted</code>, <code>PhaseFailed</code>, <code>PhaseSummary</code>, <code>LLMUsage</code>.</li>
+<li><strong>Per-request LLM usage</strong> is returned in API responses and persisted async to the <code>llm_usage</code> table via the <code>astra:usage</code> Redis stream.</li>
+<li>Security compliance checks S1 (mTLS) and S5 (Vault) are automated in <code>scripts/validate.sh</code>.</li>
+</ul>
 <h2 id="where-to-look-in-the-repo">Where to look in the repo<a class="headerlink" href="#where-to-look-in-the-repo" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Gateway</strong> — JWT middleware, rate limits, versioning.</li>

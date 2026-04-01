@@ -1181,6 +1181,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#key-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key surfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-api-smoke-test" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2386,6 +2397,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#key-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key surfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-api-smoke-test" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2432,6 +2454,14 @@
 <li>Read the <a href="../glossary/">Glossary</a> and <a href="../architecture/overview/">Architecture overview</a>.  </li>
 <li>Follow the <strong>contributor onboarding and tooling</strong> in the private Astra repository (local run, tests, migrations).</li>
 </ol>
+<h2 id="key-surfaces">Key surfaces<a class="headerlink" href="#key-surfaces" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Goal-based agents:</strong> Submit goals via REST; the planner builds a task DAG, the scheduler dispatches, workers execute in sandboxes, and results persist to Postgres.</li>
+<li><strong>Agent profiles (Phase 9):</strong> Agents can have system prompts and attached documents (rules, skills, context docs, references) that propagate through planning to execution. See <a href="../architecture/services/">Services</a>.</li>
+<li><strong>Chat agents (Phase 10):</strong> Users interact with chat-capable agents via WebSocket streaming — real-time responses with optional tool invocation and memory context.</li>
+<li><strong>Slack integration (Phase 12, partial):</strong> Connect agents to Slack workspaces for chat via DMs and channels. Proactive posting supported.</li>
+<li><strong>16 canonical microservices</strong> plus optional services (slack-adapter, webhook-ingest, cost-tracker). See the <a href="../architecture/services/">full service catalogue</a>.</li>
+</ul>
 <h2 id="public-api-smoke-test">Public API smoke test<a class="headerlink" href="#public-api-smoke-test" title="Permanent link">&para;</a></h2>
 <p>If you have a running environment, health and basic flows are described at a high level in <strong>PRD §15</strong> and the <a href="../reference/api-endpoints/">API endpoints</a> summary. Exact request bodies and port defaults may change — verify against your deployment.</p>
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
@@ -2458,6 +2488,14 @@
 <tr>
 <td>Deployment</td>
 <td><a href="../deployment/">Deployment</a></td>
+</tr>
+<tr>
+<td>Multi-tenancy</td>
+<td><a href="../architecture/multi-tenancy/">Multi-tenancy</a></td>
+</tr>
+<tr>
+<td>Reference</td>
+<td><a href="../reference/api-endpoints/">API endpoints</a>, <a href="../reference/slas/">SLAs</a></td>
 </tr>
 </tbody>
 </table>

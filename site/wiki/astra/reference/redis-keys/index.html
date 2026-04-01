@@ -1733,10 +1733,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#families-purpose-level" class="md-nav__link">
+  <a href="#cache-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Families (purpose-level)
+        Cache keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budget-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget counters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordination-keys-operational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordination keys (operational)
       
     </span>
   </a>
@@ -1748,17 +1770,6 @@
     <span class="md-ellipsis">
       
         Streams
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Caching
       
     </span>
   </a>
@@ -2355,10 +2366,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#families-purpose-level" class="md-nav__link">
+  <a href="#cache-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Families (purpose-level)
+        Cache keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budget-counters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget counters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordination-keys-operational" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordination keys (operational)
       
     </span>
   </a>
@@ -2370,17 +2403,6 @@
     <span class="md-ellipsis">
       
         Streams
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Caching
       
     </span>
   </a>
@@ -2403,8 +2425,75 @@
                   
 
 <h1 id="redis-keys">Redis Keys<a class="headerlink" href="#redis-keys" title="Permanent link">&para;</a></h1>
-<p>Redis is used for <strong>caches</strong>, <strong>locks</strong>, <strong>streams</strong>, and <strong>ephemeral coordination</strong>. Exact key strings and TTLs evolve — <strong>PRD §12–13</strong> is authoritative.</p>
-<h2 id="families-purpose-level">Families (purpose-level)<a class="headerlink" href="#families-purpose-level" title="Permanent link">&para;</a></h2>
+<p>Redis is used for <strong>caches</strong>, <strong>locks</strong>, <strong>streams</strong>, and <strong>ephemeral coordination</strong>. <strong>PRD §12–13</strong> is authoritative for MAXLEN, lock algorithms, and any unlisted keys.</p>
+<h2 id="cache-keys">Cache keys<a class="headerlink" href="#cache-keys" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key pattern</th>
+<th>Type</th>
+<th>TTL</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent:profile:&lt;agent_id&gt;</code></td>
+<td>Hash</td>
+<td>5 min</td>
+<td>Cached agent profile (system_prompt, config, metadata)</td>
+</tr>
+<tr>
+<td><code>agent:docs:&lt;agent_id&gt;</code></td>
+<td>String (JSON)</td>
+<td>5 min</td>
+<td>Cached agent document list</td>
+</tr>
+<tr>
+<td><code>user:&lt;user_id&gt;</code></td>
+<td>Hash</td>
+<td>5 min</td>
+<td>Cached user profile</td>
+</tr>
+<tr>
+<td><code>user:orgs:&lt;user_id&gt;</code></td>
+<td>String (JSON)</td>
+<td>5 min</td>
+<td>Cached org memberships for user</td>
+</tr>
+<tr>
+<td><code>org:members:&lt;org_id&gt;</code></td>
+<td>String (JSON)</td>
+<td>5 min</td>
+<td>Cached org member list</td>
+</tr>
+<tr>
+<td><code>org:teams:&lt;org_id&gt;</code></td>
+<td>String (JSON)</td>
+<td>5 min</td>
+<td>Cached team list for org</td>
+</tr>
+</tbody>
+</table>
+<p>Cache writes <strong>invalidate</strong> relevant keys on mutation so callers do not see stale data beyond the TTL.</p>
+<h2 id="budget-counters">Budget counters<a class="headerlink" href="#budget-counters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key pattern</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent:{id}:tokens:YYYY-MM-DD</code></td>
+<td>String (counter)</td>
+<td>Daily token budget counter — O(1) admission check via INCR/GET against <code>daily_token_budget</code> limit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="coordination-keys-operational">Coordination keys (operational)<a class="headerlink" href="#coordination-keys-operational" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2414,39 +2503,59 @@
 </thead>
 <tbody>
 <tr>
-<td>Actor / agent</td>
-<td>Working state, profiles, document list cache</td>
-</tr>
-<tr>
 <td>Task / graph</td>
-<td>Short-lived read cache, claim coordination</td>
+<td>Short-lived claim locks, read cache</td>
 </tr>
 <tr>
 <td>Worker</td>
-<td>Liveness / heartbeat</td>
+<td>Liveness / heartbeat tracking</td>
 </tr>
 <tr>
-<td>User / org</td>
-<td>Membership caches where used</td>
-</tr>
-<tr>
-<td>Streams</td>
-<td>Task dispatch, worker events, usage fan-out</td>
-</tr>
-<tr>
-<td>Cost / quota</td>
-<td>Token or budget counters</td>
+<td>Actor / agent</td>
+<td>Working state during task execution</td>
 </tr>
 </tbody>
 </table>
 <h2 id="streams">Streams<a class="headerlink" href="#streams" title="Permanent link">&para;</a></h2>
-<p><strong>Task dispatch</strong> uses <strong>sharded streams</strong> so workers scale horizontally. <strong>Heartbeats</strong> and <strong>usage</strong> events use separate streams. Consumer groups process messages with <strong>ack</strong> semantics; <strong>retries</strong> and <strong>dead-letter</strong> behaviour follow platform policy in the PRD.</p>
-<h2 id="caching">Caching<a class="headerlink" href="#caching" title="Permanent link">&para;</a></h2>
-<p>Cache entries have <strong>TTLs</strong>; writes <strong>invalidate</strong> relevant keys so users don’t see stale profile/doc data indefinitely.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Exact key patterns, MAXLEN, and lock algorithms</strong> are internal — see PRD / private ops docs.</p>
-</div>
+<table>
+<thead>
+<tr>
+<th>Stream</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>astra:tasks:&lt;shard&gt;</code></td>
+<td>Sharded task dispatch to workers</td>
+</tr>
+<tr>
+<td><code>astra:workers:heartbeat</code></td>
+<td>Worker liveness signals</td>
+</tr>
+<tr>
+<td><code>astra:dead_letter</code></td>
+<td>Dead-lettered tasks (exhausted retries)</td>
+</tr>
+<tr>
+<td><code>astra:usage</code></td>
+<td>Async LLM usage fan-out to <code>llm_usage</code> table</td>
+</tr>
+<tr>
+<td><code>astra:goals:completed</code></td>
+<td>Goal completion events for cascade tracking</td>
+</tr>
+<tr>
+<td><code>astra:slack:incoming</code></td>
+<td>Slack inbound events from slack-adapter</td>
+</tr>
+<tr>
+<td><code>olympus:triggers:raw</code></td>
+<td>Webhook trigger events from Olympus ingest</td>
+</tr>
+</tbody>
+</table>
+<p>Consumer groups process messages with <strong>ack</strong> semantics. Unacked messages that exceed retry policy are moved to <code>astra:dead_letter</code>.</p>
 
 
   <nav class="md-tags" >

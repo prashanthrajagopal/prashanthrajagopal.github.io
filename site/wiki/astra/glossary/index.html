@@ -2307,12 +2307,32 @@
 <td>Lightweight concurrent unit with mailbox; goroutine-based in the Go implementation (PRD §6).</td>
 </tr>
 <tr>
+<td><strong>Adapter</strong></td>
+<td>Integration bridge between Astra and an external agent platform (e.g., D.TEC). Implements DispatchGoal, PollStatus, HandleCallback, ListCapabilities, HealthCheck. Thread-safe registry.</td>
+</tr>
+<tr>
 <td><strong>Agent</strong></td>
 <td>Long-lived entity users spawn; backed by <code>agent-service</code> and actor supervision (PRD §16).</td>
 </tr>
 <tr>
+<td><strong>Agent document</strong></td>
+<td>Context attached to an agent: <code>rule</code>, <code>skill</code>, <code>context_doc</code>, or <code>reference</code>. Priority-sorted and assembled into agent context for planning/execution. Stored in <code>agent_documents</code> table (PRD §11).</td>
+</tr>
+<tr>
 <td><strong>API gateway</strong></td>
 <td>Edge REST/gRPC, JWT, rate limits, WebSocket chat (PRD §9).</td>
+</tr>
+<tr>
+<td><strong>Cascade</strong></td>
+<td>Chain of goals linked by <code>cascade_id</code>; completing one goal triggers dependent goals. Used in Olympus for multi-step event response workflows.</td>
+</tr>
+<tr>
+<td><strong>Chat session</strong></td>
+<td>WebSocket-backed conversation between a user and a chat-capable agent. Created via REST, upgraded at <code>/chat/ws</code>, stores message history with streaming responses (PRD §9, §16).</td>
+</tr>
+<tr>
+<td><strong>Circuit breaker</strong></td>
+<td>Gateway pattern that opens after repeated downstream failures (5 in 30s), returning 503 + Retry-After. 10s half-open cooldown. Protects goal-service, agent-service, access-control (PRD §21).</td>
 </tr>
 <tr>
 <td><strong>Consumer group</strong></td>
@@ -2321,6 +2341,14 @@
 <tr>
 <td><strong>DAG</strong></td>
 <td>Directed acyclic graph of tasks and dependencies (PRD §7).</td>
+</tr>
+<tr>
+<td><strong>Dead letter</strong></td>
+<td>Terminal task status when retries exhausted (<code>retries &gt;= max_retries</code>). Optionally published to <code>astra:dead_letter</code> stream for alerting/repair (PRD §7, §21).</td>
+</tr>
+<tr>
+<td><strong>Dual-approval</strong></td>
+<td>Two-person approval rule. <code>required_approvals</code> count on approval_requests; individual decisions tracked in <code>approvals</code> JSONB array (PRD §18).</td>
 </tr>
 <tr>
 <td><strong>Episodic memory</strong></td>
@@ -2333,6 +2361,10 @@
 <tr>
 <td><strong>Hot path</strong></td>
 <td>Request paths that must meet sub-10ms read SLAs — cache-only reads (PRD §25).</td>
+</tr>
+<tr>
+<td><strong>Idempotency key</strong></td>
+<td>Client header (<code>Idempotency-Key</code>) on <code>POST /goals</code> preventing duplicate creation. Redis-backed, 24h TTL; duplicates return same <code>goal_id</code> (PRD §21).</td>
 </tr>
 <tr>
 <td><strong>Identity</strong></td>
@@ -2359,6 +2391,10 @@
 <td>Service that expands goals into task graphs using LLM (PRD §9).</td>
 </tr>
 <tr>
+<td><strong>Proactive posting</strong></td>
+<td>Astra posting to Slack without a prior user message (e.g., "Plan pending approval"). Uses <code>POST /internal/slack/post</code> with <code>X-Slack-Internal-Secret</code> auth (PRD §16).</td>
+</tr>
+<tr>
 <td><strong>Sandbox</strong></td>
 <td>WASM / Docker / Firecracker environment for tool execution (PRD §14).</td>
 </tr>
@@ -2375,16 +2411,28 @@
 <td>Partition of scheduling / stream traffic for horizontal scale (PRD §8).</td>
 </tr>
 <tr>
+<td><strong>Shard ownership</strong></td>
+<td>Task streams partitioned by <code>hash(agent_id) % TASK_SHARD_COUNT</code>. Configurable count; consistent hashing for rebalancing; workers consume all shards (PRD §8).</td>
+</tr>
+<tr>
 <td><strong>Task</strong></td>
-<td>Unit of work in the graph; states include pending, queued, running, completed, failed (PRD §7).</td>
+<td>Unit of work in the graph; states include pending, queued, running, completed, failed, dead_letter (PRD §7).</td>
 </tr>
 <tr>
 <td><strong>Task service</strong></td>
 <td>CRUD and dependency API for tasks and graphs (PRD §9).</td>
 </tr>
 <tr>
+<td><strong>Trust score</strong></td>
+<td>Numeric reliability score on agents (<code>agents.trust_score</code>). Used for policy gating, e.g., requiring approval below a threshold (PRD §26).</td>
+</tr>
+<tr>
 <td><strong>Vault</strong></td>
 <td>Runtime secret injection; no secrets in code or logs (PRD §18).</td>
+</tr>
+<tr>
+<td><strong>Webhook ingest</strong></td>
+<td>Service accepting external events via <code>POST /webhooks/{source_id}</code> with HMAC-SHA256 validation. Publishes normalized events to Redis streams (PRD §26).</td>
 </tr>
 <tr>
 <td><strong>Worker</strong></td>

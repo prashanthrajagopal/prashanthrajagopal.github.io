@@ -1772,10 +1772,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#categories-high-level" class="md-nav__link">
+  <a href="#event-types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Categories (high level)
+        Event types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis streams
       
     </span>
   </a>
@@ -2355,10 +2427,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#categories-high-level" class="md-nav__link">
+  <a href="#event-types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Categories (high level)
+        Event types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#llm-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis-streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis streams
       
     </span>
   </a>
@@ -2385,37 +2529,155 @@
 <h2 id="event-bus-vs-streams">Event bus vs streams<a class="headerlink" href="#event-bus-vs-streams" title="Permanent link">&para;</a></h2>
 <p><strong>Durable audit</strong> for many lifecycle events lives in the <strong>database event log</strong>. <strong>Redis streams</strong> carry <strong>operational</strong> traffic: dispatch, worker signals, async usage recording. Encoding (JSON vs binary) is an implementation detail.</p>
 <p><strong>Partitioning:</strong> dispatch traffic is <strong>sharded</strong> so no single stream becomes the only scalability bottleneck.</p>
-<h2 id="categories-high-level">Categories (high level)<a class="headerlink" href="#categories-high-level" title="Permanent link">&para;</a></h2>
+<p><strong>Multi-tenancy:</strong> all streams carry <code>org_id</code> in the payload when available.</p>
+<h2 id="event-types">Event types<a class="headerlink" href="#event-types" title="Permanent link">&para;</a></h2>
+<h3 id="task-lifecycle">Task lifecycle<a class="headerlink" href="#task-lifecycle" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Area</th>
-<th>Examples</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Goal / plan</td>
-<td>Goal created, plan generated</td>
+<td><code>TaskScheduled</code></td>
+<td>Task added to ready queue</td>
 </tr>
 <tr>
-<td>Task</td>
-<td>Scheduled, started, completed, failed</td>
+<td><code>TaskStarted</code></td>
+<td>Worker claimed and began execution</td>
 </tr>
 <tr>
-<td>Worker</td>
-<td>Heartbeat, register</td>
+<td><code>TaskCompleted</code></td>
+<td>Worker returned success result</td>
 </tr>
 <tr>
-<td>LLM</td>
-<td>Usage / cost audit (async path)</td>
+<td><code>TaskFailed</code></td>
+<td>Worker returned failure or timed out</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Exact type names and JSON shapes</strong> are in the PRD — not listed here.</p>
-</div>
+<h3 id="phase-lifecycle">Phase lifecycle<a class="headerlink" href="#phase-lifecycle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PhaseStarted</code></td>
+<td>Execution phase began (e.g. planning, execution, review)</td>
+</tr>
+<tr>
+<td><code>PhaseCompleted</code></td>
+<td>Phase finished successfully</td>
+</tr>
+<tr>
+<td><code>PhaseFailed</code></td>
+<td>Phase ended in failure</td>
+</tr>
+<tr>
+<td><code>PhaseSummary</code></td>
+<td>Aggregate summary emitted at phase end</td>
+</tr>
+</tbody>
+</table>
+<h3 id="llm-audit">LLM audit<a class="headerlink" href="#llm-audit" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LLMUsage</code></td>
+<td>Per-request LLM audit record: <code>model</code>, <code>tokens_in</code>, <code>tokens_out</code>, <code>latency_ms</code>, <code>cost_dollars</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="worker">Worker<a class="headerlink" href="#worker" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WorkerHeartbeat</code></td>
+<td>Liveness signal from worker</td>
+</tr>
+<tr>
+<td><code>WorkerRegistered</code></td>
+<td>Worker joined the pool</td>
+</tr>
+</tbody>
+</table>
+<h3 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GoalCreated</code></td>
+<td>New goal submitted</td>
+</tr>
+<tr>
+<td><code>GoalCompleted</code></td>
+<td>Goal finished; emitted to <code>astra:goals:completed</code> for cascade tracking</td>
+</tr>
+</tbody>
+</table>
+<h2 id="redis-streams">Redis streams<a class="headerlink" href="#redis-streams" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Stream</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>astra:tasks:&lt;shard&gt;</code></td>
+<td>Sharded task dispatch to workers</td>
+</tr>
+<tr>
+<td><code>astra:workers:heartbeat</code></td>
+<td>Worker liveness signals</td>
+</tr>
+<tr>
+<td><code>astra:dead_letter</code></td>
+<td>Tasks that exhausted all retries</td>
+</tr>
+<tr>
+<td><code>astra:usage</code></td>
+<td>Async LLM usage persistence fan-out (<code>request_id</code>, <code>agent_id</code>, <code>task_id</code>, <code>org_id</code>, <code>user_id</code>, <code>model</code>, <code>tokens_in</code>, <code>tokens_out</code>, <code>latency_ms</code>, <code>cost_dollars</code>, <code>timestamp</code>)</td>
+</tr>
+<tr>
+<td><code>astra:goals:completed</code></td>
+<td><code>GoalCompleted</code> events for cascade / dependency tracking</td>
+</tr>
+<tr>
+<td><code>astra:slack:incoming</code></td>
+<td>Normalized Slack events from slack-adapter</td>
+</tr>
+<tr>
+<td><code>olympus:triggers:raw</code></td>
+<td>Normalized trigger events from webhook ingest</td>
+</tr>
+</tbody>
+</table>
+<p>Consumer groups process messages with <strong>ack</strong> semantics. Messages that exceed retry limits are moved to <code>astra:dead_letter</code>.</p>
 
 
   <nav class="md-tags" >
