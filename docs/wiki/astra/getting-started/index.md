@@ -20,6 +20,14 @@ Applications use the **Astra SDK**, which talks to a **small kernel**: actor run
 2. Read the [Glossary](../glossary.md) and [Architecture overview](../architecture/overview.md).  
 3. Follow the **contributor onboarding and tooling** in the private Astra repository (local run, tests, migrations).
 
+## Key surfaces
+
+- **Goal-based agents:** Submit goals via REST; the planner builds a task DAG, the scheduler dispatches, workers execute in sandboxes, and results persist to Postgres.
+- **Agent profiles (Phase 9):** Agents can have system prompts and attached documents (rules, skills, context docs, references) that propagate through planning to execution. See [Services](../architecture/services.md).
+- **Chat agents (Phase 10):** Users interact with chat-capable agents via WebSocket streaming — real-time responses with optional tool invocation and memory context.
+- **Slack integration (Phase 12, partial):** Connect agents to Slack workspaces for chat via DMs and channels. Proactive posting supported.
+- **16 canonical microservices** plus optional services (slack-adapter, webhook-ingest, cost-tracker). See the [full service catalogue](../architecture/services.md).
+
 ## Public API smoke test
 
 If you have a running environment, health and basic flows are described at a high level in **PRD §15** and the [API endpoints](../reference/api-endpoints.md) summary. Exact request bodies and port defaults may change — verify against your deployment.
@@ -32,3 +40,5 @@ If you have a running environment, health and basic flows are described at a hig
 | Security | [Security](../security.md) |
 | Operations | [Operations](../operations/index.md) |
 | Deployment | [Deployment](../deployment/index.md) |
+| Multi-tenancy | [Multi-tenancy](../architecture/multi-tenancy.md) |
+| Reference | [API endpoints](../reference/api-endpoints.md), [SLAs](../reference/slas.md) |

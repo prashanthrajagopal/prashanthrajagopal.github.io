@@ -44,6 +44,34 @@ flowchart LR
 - Services talk to the kernel through **published APIs**, not by reaching into implementation details.  
 - **Durable task state** and **event history** stay consistent with the transactional model described in the PRD.
 
+## Platform stability (P0–P2)
+
+Completed hardening across three priority tiers. All items are implemented and validated.
+
+### P0 — Core correctness
+
+| Feature | Behavior |
+|---------|----------|
+| **Agent restore on startup** | `agent-service` loads all agents with `status = 'active'` from DB at startup, spawns into kernel via `NewFromExisting`. No manual re-spawn needed after restart. |
+| **Dead-letter tasks** | When `retries >= max_retries`, task transitions to `dead_letter` status. Optionally published to `astra:dead_letter` stream for alerting/repair. |
+| **Redis consumer retry** | `XAck` only on handler success. Per-message retry count in Redis hash (1h TTL). After N failures, publish to `astra:dead_letter` then `XAck`. `XAutoClaim` reclaims pending messages after 30s `MinIdle`. |
+
+### P1 — Resilience
+
+| Feature | Behavior |
+|---------|----------|
+| **Readiness vs liveness** | `GET /health` = liveness. `GET /ready` = DB + Redis ping. Helm `readinessProbe` uses `/ready`; LB stops traffic on failure. |
+| **Gateway circuit breakers** | Protects goal-service, agent-service, access-control (gRPC). 5 failures in 30s opens circuit → 503 + optional `Retry-After`. 10s half-open cooldown. |
+| **Goal idempotency** | `Idempotency-Key` header on `POST /goals`. Redis-backed, 24h TTL. Duplicate key returns same `goal_id`. |
+
+### P2 — Scale and clarity
+
+| Feature | Behavior |
+|---------|----------|
+| **Shard ownership** | Configurable `TASK_SHARD_COUNT`. Streams: `astra:tasks:shard:{0..N-1}`. Hash: `FNV-1a(agent_id) % count`. Workers consume all shards. |
+| **Supervision wiring** | Supervisor connected to agent actors in `agent-service`. Handler wrapper recovers panics → `HandleFailure`. On `Terminate`, `kernel.Stop(agentID)`. |
+| **Mailbox full handling** | `ErrMailboxFull` returned on overflow. gRPC `ResourceExhausted` status with `retry-after` trailer (seconds). Client backs off. |
+
 ## API surface
 
 Kernel-oriented RPCs (spawn, send, task lifecycle, streams) are specified in **PRD §10**. This wiki does not reproduce full protobuf definitions.

@@ -68,6 +68,14 @@ flowchart TB
 
 **Chat (v1):** Chat capability is built into `api-gateway`. No separate chat service for Phase 10.
 
+### Optional services
+
+| Service | Namespace | Responsibility |
+|---------|-----------|----------------|
+| `slack-adapter` | workers | Receives Slack Events API, verifies signing secret, resolves org/agent/user, enqueues to `astra:slack:incoming` Redis stream. Worker consumes stream, calls chat API, posts replies via Slack API. |
+| `webhook-ingest` | workers | Accepts external events via `POST /webhooks/{source_id}` with HMAC-SHA256 validation. Publishes to Redis streams for downstream processing. |
+| `cost-tracker` | workers | LLM cost aggregation and budget enforcement. |
+
 ## Inter-service communication
 
 ```
@@ -95,7 +103,19 @@ External → api-gateway (REST/WebSocket)
 | `GET` | `/chat/sessions/{id}` | Get chat session details |
 | `GET` | `/chat/ws` | WebSocket upgrade for streaming chat |
 
-WebSocket framing: **JSON message types** per **PRD** (streaming, tools, errors).
+WebSocket framing: JSON types include `chunk`, `message_start`, `message_end`, `tool_call`, `tool_result`, `done`, `error`, `pong`, `session`. Config: `CHAT_ENABLED`, `CHAT_MAX_MSG_LENGTH`, `CHAT_RATE_LIMIT`, `CHAT_TOKEN_CAP`.
+
+| `POST` | `/chat/sessions/{id}/inject` | External message injection (e.g., from Slack adapter) |
+
+## Dashboard API (Phase 11)
+
+Dashboard served at `/superadmin/dashboard/`. APIs under `/superadmin/api/dashboard/` and `/superadmin/api/slack/`.
+
+| Area | Detail |
+|------|--------|
+| **Stack** | Vanilla HTML/CSS/JS. Fonts: Inter, Roboto Mono. Chart.js for charts. |
+| **Visual** | Pastel palette (lavender accent, mint/sky/butter/rose/peach). Glass-style topnav. Light/dark theme toggle (persisted in `localStorage`). |
+| **Sections** | Stats grid, charts (tasks, goals, service health, agents), agents table with pagination, goals, tasks, workers, approvals, cost, logs, Slack config tab, optional chat widget. |
 
 ## Agent profile and documents (summary)
 
@@ -106,3 +126,13 @@ WebSocket framing: **JSON message types** per **PRD** (streaming, tools, errors)
 | `POST` | `/agents/{id}/documents` | Attach document (rule/skill/context_doc/reference) |
 | `GET` | `/agents/{id}/documents` | List agent documents, optional `?doc_type=` filter |
 | `DELETE` | `/agents/{id}/documents/{doc_id}` | Remove document |
+
+**Context propagation flow:**
+
+1. `goal-service` receives goal with optional inline documents → persists goal-scoped documents.
+2. `goal-service` assembles full agent context: `system_prompt` + rules (priority-sorted) + skills + context_docs.
+3. `goal-service` passes assembled `agent_context` to `planner-service`.
+4. `planner-service` embeds `agent_context` in each task payload.
+5. `execution-worker` includes `agent_context` when building LLM prompts for task execution.
+
+Profile and document reads served from Redis cache (`agent:profile:{id}`, `agent:docs:{id}`, 5min TTL).
