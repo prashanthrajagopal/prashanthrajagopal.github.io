@@ -455,7 +455,7 @@ body:has(.pr-home-hero) article.md-content__inner > :first-child {
 }
 
 .pr-recent-title-text {
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: var(--pr-text);
   line-height: 1.35;
