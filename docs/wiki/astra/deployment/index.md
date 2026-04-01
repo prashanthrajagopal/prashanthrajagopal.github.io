@@ -33,8 +33,8 @@ Astra supports four deployment targets. All use the same codebase; backend selec
 |---|---|
 | `control-plane` | `api-gateway`, `identity`, `access-control` |
 | `kernel` | `scheduler-service`, `task-service`, `agent-service`, `goal-service`, `planner-service`, `memory-service` |
-| `workers` | `execution-worker`, `browser-worker`, `tool-runtime`, `worker-manager`, `llm-router`, `prompt-manager`, `evaluation-service` |
-| `infrastructure` | Postgres, Redis, Memcached, MinIO (local) |
+| `workers` | `execution-worker`, `browser-worker`, `tool-runtime`, `worker-manager`, `llm-router`, `prompt-manager`, `evaluation-service`, `slack-adapter` (optional), `webhook-ingest` (optional), `cost-tracker` |
+| `infrastructure` | Postgres, Redis, Memcached; local: optional MinIO; GCP: Cloud Storage bucket |
 | `observability` | Prometheus, Grafana, OpenTelemetry collector, Loki |
 
 ## Scaling model

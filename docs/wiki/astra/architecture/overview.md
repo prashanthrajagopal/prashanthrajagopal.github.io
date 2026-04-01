@@ -57,11 +57,19 @@ flowchart TB
 
 ## Goal → task → result (flow)
 
-1. Client submits a **goal** for an agent.  
-2. **Goal** path validates and assembles context, then **planning** produces a **task DAG**.  
-3. **Task service** persists the graph; **scheduler** finds ready tasks and **dispatches** to queues.  
-4. **Workers** claim work, run **tool/sandbox** steps, then **complete** or **fail** tasks.  
+1. Client submits a **goal** for an agent (with optional inline documents).
+2. **Goal** path validates, assembles **agent context** (system_prompt + rules + skills + context_docs), then **planning** produces a **task DAG** with context embedded.
+3. **Task service** persists the graph; **scheduler** finds ready tasks and **dispatches** to shard queues.
+4. **Workers** claim work, run **tool/sandbox** steps, then **complete** or **fail** tasks. Failed tasks retry or move to **dead letter**.
 5. Dependent tasks unlock; the cycle continues until the graph finishes.
+
+## Chat flow (Phase 10)
+
+Users can also interact via **WebSocket chat** on the api-gateway. Chat sessions connect to chat-capable agents with streaming responses, optional tool invocation, and memory context. The **Slack adapter** bridges Slack Events API to the chat/goal pipeline for workspace-based interactions.
+
+## Dashboard
+
+The **super-admin dashboard** at `/superadmin/dashboard/` provides platform-wide visibility: service health, agents, goals, workers, approvals, cost, and Slack configuration. Pastel glass-style design with light/dark theme toggle.
 
 ```mermaid
 sequenceDiagram
@@ -92,4 +100,9 @@ Hot reads use **Redis** and **Memcached** with TTLs described in **PRD §13**. W
 
 ## Hardware targets
 
-**macOS** (Apple Silicon / Intel) and **Linux** (including GPU paths where configured) are supported deployment shapes; see **PRD §20** and [Deployment](../deployment/index.md).
+| Platform | Acceleration | Notes |
+|----------|-------------|-------|
+| **macOS** (Apple Silicon / Intel) | Metal, Neural Engine (ANE), CPU | Supported production target (Mac Mini, Mac Studio). `ASTRA_USE_METAL=true`. |
+| **Linux** | CUDA, CPU | Primary cloud/K8s target. `ASTRA_USE_CUDA=true` when GPUs available. |
+
+Single codebase; graceful CPU fallback when accelerators unavailable. Detection via `runtime.GOOS` or build tags. See **PRD §20** and [Deployment](../deployment/index.md).

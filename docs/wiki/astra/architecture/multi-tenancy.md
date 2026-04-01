@@ -54,9 +54,28 @@ Multi-tenancy is being added in Phase 11. The platform is a single shared platfo
 | `team` | Team members and org admins only. |
 | `private` | Only the owner and explicitly added collaborators. |
 
-## JWT and context
+## Agent collaborators and admins
 
-Tokens carry **user identity**, **org/team context**, and **roles** as described in **PRD §18–19**. Downstream services receive that context through **standard internal headers** — exact header names and claim layouts are **not** documented on this wiki.
+- **Collaborators** grant access to private/team agents. A collaborator can be a user or a team. Permission levels: `use`, `edit`, `admin`.
+- **Agent admins** receive approve/reject requests for a specific agent's plans and risky tasks. Falls back to org admins if no agent admins are set.
+
+## JWT claims
+
+```
+user_id, email, is_super_admin, scopes
+```
+
+Login: `POST /users/login` with email + password → JWT. gRPC metadata propagation: `x-user-id`, `x-org-id`, `x-org-role`, `x-team-ids`, `x-is-super-admin`.
+
+## URL structure
+
+| URL | Purpose | Auth |
+|-----|---------|------|
+| `/` | Landing/login page | None |
+| `/login` | Login form | None |
+| `/superadmin/dashboard` | Super-admin dashboard | `super_admin` JWT |
+| `/superadmin/api/*` | Dashboard API (snapshot, approvals, goals, agents, chat, Slack config) | JWT |
+| `/health` | Health check | None |
 
 ## Super-admin data redaction
 
@@ -66,9 +85,16 @@ Tokens carry **user identity**, **org/team context**, and **roles** as described
 
 Orgs, teams, memberships, and agent visibility are backed by **additional tables and columns** on core entities. Full DDL is **PRD §11 / §19**.
 
-## Workspace isolation
+## Super-admin dashboard
 
-On-disk workspace layout is **partitioned** so org-scoped work does not collide with other tenants; paths follow **PRD §19**.
+Shows platform-wide **redacted** data: service health, workers (names/status), agents (names/status), goal/task counts, LLM cost totals. **Organizations** section (create/edit/delete, add org admins). **Users** section (paginated table, search/filter, suspend/activate/reset-password/role-change/move-org actions, detail modal). Org filter dropdown.
+
+## Privacy and data isolation
+
+1. **Authentication:** All dashboard and agent APIs require a valid JWT.
+2. **Super-admin redaction:** `redactForSuperAdmin()` strips `system_prompt`, `config`, `payload`, `result`, `goal_text`, code, file contents, shell output, and chat messages.
+3. **Single platform:** All services operate on one platform. Agent-service `QueryState` returns all agents. Service queries use `WHERE org_id = $orgID` for isolation.
+4. **Workspace isolation:** `WORKSPACE_ROOT/_global/{goal_id}/` for global agents; `WORKSPACE_ROOT/{org_slug}/{goal_id}/` for org agents.
 
 !!! warning "Tradeoff"
     Single-platform architecture means services query across the full dataset unless `WHERE org_id = $orgID` is consistently applied. This is a correctness requirement, not a performance hint. Missing an `org_id` filter in any service query is a data isolation bug.

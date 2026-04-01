@@ -33,6 +33,20 @@ Runbooks, oncall procedures, and incident response for Astra. The authoritative 
 | [Postgres Outage](runbook-postgres-outage.md) | DB connection errors platform-wide |
 | [Redis Failure](runbook-redis-failure.md) | Redis connection errors or data loss |
 | [LLM Cost Spike](runbook-cost-spike.md) | Cost >2x daily average |
+| Shard Scaling | Shard imbalance or scaling event — update `TASK_SHARD_COUNT`, restart scheduler + workers |
+| TLS Rotation | Certificate expiration — generate new certs, update K8s secrets, roll services |
+| Vault Setup | Initial or reconfigured — set `ASTRA_VAULT_ADDR`/`TOKEN`/`PATH`, load secrets to KV-v2 |
+
+## Failure modes (P0–P2)
+
+| Failure | Detection | Recovery |
+|---------|-----------|----------|
+| Task final failure (max retries) | `FailTask` with `retries >= maxRetries` | Status → `dead_letter`; optional publish to `astra:dead_letter` for alerting/repair |
+| Agent-service restart | Process restart | Agent restore loads active agents from DB, spawns into kernel automatically |
+| Downstream overload | Circuit breaker opens | Gateway returns 503 + `Retry-After`; clients back off |
+| Duplicate `POST /goals` | Same `Idempotency-Key` within TTL | Goal-service returns cached 201 with same `goal_id` |
+| Scheduler shard imbalance | Monitoring | Rebalance via `TASK_SHARD_COUNT`; see shard-scaling runbook |
+| Actor mailbox full | Kernel returns `ResourceExhausted` | Client backs off; `retry-after` in gRPC trailer |
 
 ## Oncall rotations
 

@@ -7,9 +7,9 @@ tags:
 
 # Astra
 
-**Astra** is an operating system for autonomous agents: a **microkernel** (actors, task graph, scheduler, messaging, state), **sixteen microservices**, sandboxed tools, layered memory, and LLM routing as infrastructure — not a single-model chat wrapper or a UI product.
+**Astra** is an operating system for autonomous agents: a **microkernel** (actors, task graph, scheduler, messaging, state), **sixteen microservices**, sandboxed tools, layered memory, LLM routing, **real-time chat**, and **platform stability infrastructure** — not a single-model chat wrapper or a UI product.
 
-**Executive summary:** Persistent agents submit **goals**; the **planner** materialises **DAGs** of **tasks**; the **scheduler** dispatches work via **Redis Streams**; **workers** run tasks inside **sandboxes**; **Postgres** is the source of truth and **Redis/Memcached** enforce the **≤10ms** read path. Everything external talks through **JWT**; services talk over **mTLS**; dangerous work passes **policy and approval** gates.
+**Executive summary:** Persistent agents submit **goals**; the **planner** materialises **DAGs** of **tasks**; the **scheduler** dispatches work via **Redis Streams**; **workers** run tasks inside **sandboxes**; **Postgres** is the source of truth and **Redis/Memcached** enforce the **≤10ms** read path. Everything external talks through **JWT**; services talk over **mTLS**; dangerous work passes **policy and approval** gates. Agents can have **profiles** (system prompts, attached documents) that propagate through planning to execution, and users can interact via **WebSocket chat** or **Slack**.
 
 ```mermaid
 flowchart LR
@@ -31,6 +31,16 @@ flowchart LR
 | **Latency** | No hot-path API read over **10ms** p99; scheduling median **≤50ms**, P95 **≤500ms** (PRD §25). |
 | **Safety** | Sandboxed tools, RBAC, approvals, secrets in Vault, mTLS everywhere between services. |
 | **Operability** | Metrics, traces, runbooks, rolling upgrades with backward-compatible schema. |
+| **Resilience** | Agent restore on startup, dead-letter tasks, circuit breakers, consumer retry, goal idempotency (PRD §21, P0-P2). |
+
+## Core capabilities (PRD v3.0)
+
+- **Platform stability (P0-P2):** Agent restore on startup, task dead-letter queue, Redis consumer retry/reclaim, readiness vs liveness probes, gateway circuit breakers, goal idempotency, configurable task-stream sharding, supervisor wiring, mailbox-full handling.
+- **Agent profile & context (Phase 9):** System prompts, attached documents (rules, skills, context docs, references), context propagation through planning and execution pipeline.
+- **Real-time chat agents (Phase 10):** WebSocket streaming with tool invocation, session management, message injection.
+- **Slack integration (Phase 12):** Connect chat agents to Slack workspaces, proactive posting, platform-configurable Slack app secrets.
+- **Hardware acceleration:** Metal/Neural Engine on macOS, CUDA on Linux, graceful CPU fallback. macOS is a supported production target.
+- **Olympus application layer:** External agent adapter framework, webhook ingest, goal-level dependencies, agent-to-agent goal posting, dual-approval, trust scores.
 
 ## Non-goals
 
@@ -71,7 +81,7 @@ flowchart LR
 | Spec | [PRD](https://github.com/prashanthrajagopal/astra/blob/main/docs/PRD.md) in the Astra repo |
 
 !!! note "Maturity"
-    Astra is under active implementation. Wiki pages track the PRD; some features are phased per PRD §26–27. When in doubt, read the PRD section cited on each page.
+    Astra tracks **Engineering Specification v3.0** (PRD). Phases 0–10 are complete; Phase 11 (multi-tenancy) is in progress; Phase 12 (Slack) is partial. When in doubt, read the PRD section cited on each page.
 
 ---
 

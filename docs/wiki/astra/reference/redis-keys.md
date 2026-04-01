@@ -9,26 +9,45 @@ tags:
 
 # Redis Keys
 
-Redis is used for **caches**, **locks**, **streams**, and **ephemeral coordination**. Exact key strings and TTLs evolve — **PRD §12–13** is authoritative.
+Redis is used for **caches**, **locks**, **streams**, and **ephemeral coordination**. **PRD §12–13** is authoritative for MAXLEN, lock algorithms, and any unlisted keys.
 
-## Families (purpose-level)
+## Cache keys
+
+| Key pattern | Type | TTL | Description |
+|-------------|------|-----|-------------|
+| `agent:profile:<agent_id>` | Hash | 5 min | Cached agent profile (system_prompt, config, metadata) |
+| `agent:docs:<agent_id>` | String (JSON) | 5 min | Cached agent document list |
+| `user:<user_id>` | Hash | 5 min | Cached user profile |
+| `user:orgs:<user_id>` | String (JSON) | 5 min | Cached org memberships for user |
+| `org:members:<org_id>` | String (JSON) | 5 min | Cached org member list |
+| `org:teams:<org_id>` | String (JSON) | 5 min | Cached team list for org |
+
+Cache writes **invalidate** relevant keys on mutation so callers do not see stale data beyond the TTL.
+
+## Budget counters
+
+| Key pattern | Type | Description |
+|-------------|------|-------------|
+| `agent:{id}:tokens:YYYY-MM-DD` | String (counter) | Daily token budget counter — O(1) admission check via INCR/GET against `daily_token_budget` limit |
+
+## Coordination keys (operational)
 
 | Family | Purpose |
 |--------|---------|
-| Actor / agent | Working state, profiles, document list cache |
-| Task / graph | Short-lived read cache, claim coordination |
-| Worker | Liveness / heartbeat |
-| User / org | Membership caches where used |
-| Streams | Task dispatch, worker events, usage fan-out |
-| Cost / quota | Token or budget counters |
+| Task / graph | Short-lived claim locks, read cache |
+| Worker | Liveness / heartbeat tracking |
+| Actor / agent | Working state during task execution |
 
 ## Streams
 
-**Task dispatch** uses **sharded streams** so workers scale horizontally. **Heartbeats** and **usage** events use separate streams. Consumer groups process messages with **ack** semantics; **retries** and **dead-letter** behaviour follow platform policy in the PRD.
+| Stream | Purpose |
+|--------|---------|
+| `astra:tasks:<shard>` | Sharded task dispatch to workers |
+| `astra:workers:heartbeat` | Worker liveness signals |
+| `astra:dead_letter` | Dead-lettered tasks (exhausted retries) |
+| `astra:usage` | Async LLM usage fan-out to `llm_usage` table |
+| `astra:goals:completed` | Goal completion events for cascade tracking |
+| `astra:slack:incoming` | Slack inbound events from slack-adapter |
+| `olympus:triggers:raw` | Webhook trigger events from Olympus ingest |
 
-## Caching
-
-Cache entries have **TTLs**; writes **invalidate** relevant keys so users don’t see stale profile/doc data indefinitely.
-
-!!! note
-    **Exact key patterns, MAXLEN, and lock algorithms** are internal — see PRD / private ops docs.
+Consumer groups process messages with **ack** semantics. Unacked messages that exceed retry policy are moved to `astra:dead_letter`.

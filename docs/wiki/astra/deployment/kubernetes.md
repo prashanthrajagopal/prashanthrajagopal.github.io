@@ -16,8 +16,8 @@ Production Astra on Kubernetes uses **namespaces** for isolation, **Helm** (char
 |-----------|----------|
 | `control-plane` | `api-gateway`, `identity`, `access-control` |
 | `kernel` | `scheduler-service`, `task-service`, `agent-service`, `goal-service`, `memory-service`, `planner-service` |
-| `workers` | `execution-worker`, `browser-worker`, `tool-runtime`, `worker-manager`, `llm-router`, `prompt-manager`, `evaluation-service` |
-| `infrastructure` | Postgres, Redis, Memcached, MinIO (or managed equivalents outside cluster) |
+| `workers` | `execution-worker`, `browser-worker`, `tool-runtime`, `worker-manager`, `llm-router`, `prompt-manager`, `evaluation-service`, `slack-adapter` (optional), `webhook-ingest` (optional), `cost-tracker` |
+| `infrastructure` | Postgres, Redis, Memcached, MinIO (local) or managed equivalents (GCP: Cloud Storage) |
 | `observability` | Prometheus, Grafana, OTel collector, Loki |
 
 ```mermaid
