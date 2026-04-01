@@ -1,9 +1,10 @@
 // JSON-LD structured data for prashanthr.net
-// Establishes entity identity for Google Knowledge Graph
+// Person, WebSite, Blog, BlogPosting schemas for Google
 (function () {
   var defined = [];
+  var path = window.location.pathname;
 
-  // Person + WebSite — disambiguates "prashanthr.net" from "prashanth.net"
+  // Person + WebSite — always present
   defined.push({
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -11,7 +12,8 @@
     "alternateName": "Prashanth Rajagopal",
     "url": "https://prashanthr.net",
     "description":
-      "Prashanth Rajagopal's blog and wiki on distributed systems, agent infrastructure, and Astra.",
+      "Prashanth Rajagopal — software architect building Astra, an autonomous agent OS. Blog on distributed systems, Go, Rails, IoT, and agent infrastructure.",
+    "inLanguage": "en",
     "author": {
       "@type": "Person",
       "name": "Prashanth Rajagopal",
@@ -24,26 +26,32 @@
       "knowsAbout": [
         "Distributed Systems",
         "Agent Infrastructure",
+        "Autonomous Agents",
         "Ruby on Rails",
         "Go",
-        "Kubernetes",
-        "PostgreSQL"
+        "PostgreSQL",
+        "IoT",
+        "Home Automation",
+        "Electronics"
       ]
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://prashanthr.net/search/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   });
 
-  // Blog schema
-  if (
-    window.location.pathname === "/blog/" ||
-    window.location.pathname.startsWith("/blog/")
-  ) {
+  // Blog listing page
+  if (path === "/blog/" || path === "/blog") {
     defined.push({
       "@context": "https://schema.org",
       "@type": "Blog",
       "name": "Prashanth Rajagopal's Blog",
       "url": "https://prashanthr.net/blog/",
       "description":
-        "Long-form writing on distributed systems, architecture, and agent infrastructure by Prashanth Rajagopal.",
+        "Long-form writing on distributed systems, architecture, agent infrastructure, Rails, Go, IoT, and electronics.",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
         "name": "Prashanth Rajagopal",
@@ -54,6 +62,66 @@
         "name": "Prashanth Rajagopal",
         "url": "https://prashanthr.net"
       }
+    });
+  }
+
+  // Individual blog post — extract from page meta
+  if (path.match(/^\/blog\/posts\/[^/]+\/?$/) || path.match(/^\/blog\/\d{4}\/\d{2}\/\d{2}\/[^/]+\/?$/)) {
+    var title = document.querySelector("h1");
+    var desc = document.querySelector('meta[name="description"]');
+    var dateEl = document.querySelector(".md-source-date, time, .post-date");
+    var post = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": window.location.href
+      },
+      "headline": title ? title.textContent.trim() : document.title,
+      "url": window.location.href,
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Prashanth Rajagopal",
+        "url": "https://prashanthr.net"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Prashanth Rajagopal",
+        "url": "https://prashanthr.net"
+      }
+    };
+    if (desc) post.description = desc.content;
+    if (dateEl) {
+      var dateText = dateEl.getAttribute("datetime") || dateEl.textContent.trim();
+      post.datePublished = dateText;
+    }
+    defined.push(post);
+  }
+
+  // BreadcrumbList for all pages
+  var crumbs = path.split("/").filter(Boolean);
+  if (crumbs.length > 0) {
+    var items = [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://prashanthr.net/"
+    }];
+    var built = "https://prashanthr.net";
+    for (var i = 0; i < crumbs.length; i++) {
+      built += "/" + crumbs[i];
+      items.push({
+        "@type": "ListItem",
+        "position": i + 2,
+        "name": crumbs[i].replace(/-/g, " ").replace(/\b\w/g, function(l){ return l.toUpperCase(); }),
+        "item": built + "/"
+      });
+    }
+    defined.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": items
     });
   }
 

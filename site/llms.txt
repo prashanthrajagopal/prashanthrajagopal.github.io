@@ -1,28 +1,47 @@
 # Prashanth Rajagopal
 
-> Software architect writing about distributed systems, agent infrastructure, and the technology behind Astra — an autonomous agent operating system.
+> Software architect building Astra, an autonomous agent OS. Blog on distributed systems, Go, Rails, IoT, electronics, and agent infrastructure. 15+ years building production software.
 
 ## Blog
 
 - [LiteLLM and the trust chain nobody audits](https://prashanthr.net/blog/posts/litellm-and-the-trust-chain-nobody-audits/): A compromised security scanner led to malicious PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.
-- [Why I'm building Astra](https://prashanthr.net/blog/posts/why-im-building-astra/): Manifesto for building an OS-shaped substrate for autonomous agents — microkernel, actors, planet-scale task graph.
-- [The kernel's first 10ms](https://prashanthr.net/blog/posts/kernels-first-10ms/): What belongs on the hot path between Send and Receive in an actor kernel, and what gets kicked out.
-- [Why I didn't use Kubernetes](https://prashanthr.net/blog/posts/why-i-didnt-use-kubernetes/): Docker Compose for infrastructure, native Go for services — why premature orchestration crystallizes the wrong boundaries.
 - [The 10ms lie we all tell](https://prashanthr.net/blog/posts/the-10ms-lie-we-all-tell/): Cache discipline as architecture discipline — every cache is a bet, and we only count the wins.
 - [What Rails taught me about supervision](https://prashanthr.net/blog/posts/what-rails-taught-me-about-supervision/): How Puma, Sidekiq, and a decade of Rails shaped Astra's actor supervision tree.
 - [Sandboxes aren't security theater](https://prashanthr.net/blog/posts/sandboxes-arent-security-theater/): WASM, Docker, Firecracker — choosing the right isolation when agents run untrusted tools.
 - [Why Postgres stays sacred](https://prashanthr.net/blog/posts/why-postgres-stays-sacred/): Caches lie with TTLs, replicas lie with lag. Postgres is where the lies stop.
 - [Scheduling without losing your mind](https://prashanthr.net/blog/posts/scheduling-without-losing-your-mind/): Heartbeats, sharded schedulers, and at-least-once delivery in distributed task scheduling.
+- [Chat is the easy part](https://prashanthr.net/blog/posts/chat-is-the-easy-part/): What it actually took to bolt WebSocket streaming onto a task-graph agent system.
+- [The kernel's first 10ms](https://prashanthr.net/blog/posts/kernels-first-10ms/): What belongs on the hot path between Send and Receive in an actor kernel, and what gets kicked out.
+- [The approval gate nobody wants](https://prashanthr.net/blog/posts/the-approval-gate-nobody-wants/): Building dual-approval and plan gates into an autonomous agent system.
+- [Why Astra runs on a Mac Mini](https://prashanthr.net/blog/posts/why-astra-runs-on-a-mac-mini/): macOS as a production deployment target — Metal acceleration, native binaries, no emulation.
+- [Why I didn't use Kubernetes](https://prashanthr.net/blog/posts/why-i-didnt-use-kubernetes/): Docker Compose for infrastructure, native Go for services — why premature orchestration crystallizes the wrong boundaries.
+- [Agent memory is not a vector database](https://prashanthr.net/blog/posts/agent-memory-is-not-a-vector-database/): Working memory, episodic memory, and semantic search are three different things. pgvector is one layer.
+- [Dead letters are a feature, not a failure](https://prashanthr.net/blog/posts/dead-letters-are-a-feature/): Designing for task exhaustion with dead-letter queues and retry budgets.
+- [Why I'm building Astra](https://prashanthr.net/blog/posts/why-im-building-astra/): Manifesto for building an OS-shaped substrate for autonomous agents.
+- [My first RC car build: an engineer's guide to pain in India](https://prashanthr.net/blog/posts/rc-cars-and-the-india-parts-problem/): Choosing a platform, brushless ESCs, LiPo safety, and the uniquely Indian challenge of getting parts at all.
+- [Ruby in 2026: still boring, still right](https://prashanthr.net/blog/posts/ruby-in-2026/): Rails isn't trendy and it isn't dead. Boring technology choices compound.
+- [ESP32, MQTT, and the $4 sensor that replaced a $200 one](https://prashanthr.net/blog/posts/esp32-mqtt-and-the-4-dollar-sensor/): Building DIY IoT sensors with ESP32 and ESPHome — why commercial IoT is overpriced.
+- [Home Assistant ruined my light switches](https://prashanthr.net/blog/posts/home-assistant-ruined-my-light-switches/): From smart bulbs to a full Home Assistant setup — MQTT, Zigbee, automations that work.
+- [What electronics taught me about debugging software](https://prashanthr.net/blog/posts/what-electronics-taught-me-about-debugging/): Oscilloscopes, multimeters, and tracing signals — the hardware debugging mindset that transfers to distributed systems.
+
+## Astra
+
+- [Architecture overview](https://prashanthr.net/wiki/astra/architecture/overview/): Microkernel design, actor framework, task graph, scheduler, memory subsystem, LLM routing.
+- [Kernel design](https://prashanthr.net/wiki/astra/architecture/kernel/): Actor runtime, task graphs, scheduling, messaging, P0-P2 platform stability.
+- [Services](https://prashanthr.net/wiki/astra/architecture/services/): 16 canonical microservices plus optional Slack adapter, webhook ingest, cost tracker.
+- [Security](https://prashanthr.net/wiki/astra/security/): mTLS, JWT, RBAC, sandbox, Vault, approval system, dual-approval, super-admin redaction.
+- [SLAs](https://prashanthr.net/wiki/astra/reference/slas/): 10ms p99 reads, 50ms median scheduling, 99.9% availability. Phases 0-10 complete.
 
 ## Wiki
 
-- [Astra Architecture](https://prashanthr.net/wiki/astra/architecture/overview/): Microkernel design, actor framework, task graph, scheduler, memory subsystem, LLM routing.
 - [Systems](https://prashanthr.net/wiki/systems/): Caching, streaming, consistency, observability reference notes.
 - [Ruby & Rails](https://prashanthr.net/wiki/rails/): Philosophy, Active Record, Hotwire reference.
 
 ## Key facts
 
 - Author: Prashanth Rajagopal, software architect with 15+ years building production systems
-- Astra: autonomous agent OS — microkernel, actor model, DAG-based task graph, multi-tenant
-- Tech stack: Go (Astra kernel), Ruby/Rails (background), Python, TypeScript
+- Astra: autonomous agent OS — microkernel, actor model, DAG-based task graph, 16 microservices, chat agents, Slack integration
+- Tech stack: Go (Astra kernel), Ruby/Rails, Python, TypeScript
+- Interests: distributed systems, IoT, Home Assistant, RC cars, electronics, ESP32
 - Site built with Zensical (MkDocs Material)
+- Location: India
