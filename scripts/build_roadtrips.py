@@ -451,6 +451,7 @@ def validate(t: dict, f: Path):
 
 
 def home_card(t: dict) -> str:
+    set_canvas(len(t["waypoints"]))  # route SVG height varies with the number of stops
     kv = [f"<b>{t['totalKm']}</b> km", f"<b>{esc(t['hours'])}</b>"]
     if t.get("hairpins"):
         kv.append(f"<b>{t['hairpins']}</b> hairpins")
