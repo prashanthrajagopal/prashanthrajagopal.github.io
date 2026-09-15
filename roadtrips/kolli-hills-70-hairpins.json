@@ -1,0 +1,82 @@
+{
+  "slug": "kolli-hills-70-hairpins",
+  "title": "Kolli Hills — 70 Hairpins",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bangalore → Krishnagiri → Salem → Rasipuram → Karavalli → 70 continuous hairpins to Semmedu → Agaya Gangai falls → Namakkal → Dharmapuri → Bangalore. ~620 km over two days to the 'Mountain of Death'.",
+  "summary": "Kolli Malai in the Eastern Ghats is named for Kolli Paavai, the goddess said to guard the hill with an unforgiving hand — and the ghat road from Karavalli is her handiwork: 70 numbered hairpins in 27 km, stacked on top of each other so tightly the drone shots look fake. On top it's a different world: jackfruit and coffee, the Arapaleeswarar temple, and Agaya Gangai, a 300-foot fall reached by a thousand steps down (and back up). Out via Salem, back via Namakkal so you ride the hairpins once each way and never repeat road.",
+  "type": "loop",
+  "days": "2 days",
+  "added": "2026-09-15",
+  "totalKm": 622,
+  "hours": "13–15 hrs",
+  "hairpins": 70,
+  "difficulty": "Demanding",
+  "bestSeason": "Sep – Feb",
+  "startsAt": "Bangalore",
+  "tags": ["hairpins", "Eastern Ghats", "waterfall", "temple", "weekend", "Tamil Nadu", "motorcycle"],
+  "credit": { "name": "@walterwhite007 on Instagram", "note": "'Feeling brave? Kolli Hills, Tamil Nadu — also called The Mountain of Death'" },
+  "waypoints": [
+    { "name": "Bangalore", "lat": 12.9716, "lng": 77.5946 },
+    { "name": "Krishnagiri", "lat": 12.5200, "lng": 78.2100 },
+    { "name": "Salem", "lat": 11.6640, "lng": 78.1460 },
+    { "name": "Rasipuram", "lat": 11.4600, "lng": 78.1850 },
+    { "name": "Karavalli", "lat": 11.3300, "lng": 78.3000 },
+    { "name": "Semmedu", "lat": 11.2500, "lng": 78.3500 },
+    { "name": "Namakkal", "lat": 11.2200, "lng": 78.1670 },
+    { "name": "Dharmapuri", "lat": 12.1300, "lng": 78.1600 }
+  ],
+  "segments": [
+    { "km": 90, "road": "NH 44 via Hosur to Krishnagiri", "note": "Day 1. Six-lane; leave by 5 AM to clear Hosur before the trucks.", "surface": "tarmac" },
+    { "km": 120, "road": "NH 44 Krishnagiri – Dharmapuri – Salem", "note": "Fast and dull; breakfast at Dharmapuri. Fuel in Salem.", "surface": "tarmac" },
+    { "km": 30, "road": "Salem – Rasipuram (NH 44 / SH)", "note": "Silk-weaving town; last proper shops before the hill.", "surface": "tarmac" },
+    { "km": 25, "road": "Rasipuram → Sendamangalam → Karavalli", "note": "Two-lane through paddy to the base of the ghat. Top up here — nothing on the climb.", "surface": "tarmac" },
+    { "km": 27, "road": "Karavalli – Semmedu ghat road", "note": "The 70 hairpins, numbered on stone markers. Bends 15, 21, 35, 52 and 66 are the tight, blind ones. 40–60 minutes if you don't stop; you will stop.", "hairpins": 70, "surface": "tarmac" },
+    { "km": 55, "road": "Semmedu → Arapaleeswarar temple → Agaya Gangai → down the Senthamangalam side → Namakkal", "note": "Day 2. Falls are a 1,000-step descent from the temple car park — budget two hours. The Namakkal-side descent is gentler and the road down is better surfaced.", "surface": "tarmac" },
+    { "km": 105, "road": "Namakkal – Salem – Dharmapuri (NH 44)", "note": "Namakkal fort and the Anjaneyar statue if you want a stop; otherwise the highway north.", "surface": "tarmac" },
+    { "km": 170, "road": "Dharmapuri – Krishnagiri – Hosur – Bangalore", "note": "Home. Hosur toll traffic after 5 PM is the last obstacle.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "The Karavalli ghat — 70 hairpins in 27 km, the densest sequence of bends in South India, with the plains dropping away behind every third turn.",
+    "Agaya Gangai — a 300 ft waterfall in a gorge below the Arapaleeswarar temple; the thousand steps back up are the real workout of the trip.",
+    "Seekuparai and Selur Nadu viewpoints — the plateau's edge, 1,000 m straight down to the Namakkal plains.",
+    "Vasalurpatty boat house and the Semmedu botanical garden for the lazy afternoon in between.",
+    "Namakkal fort on the way home — a hill fort on a single rock in the middle of the town."
+  ],
+  "offroad": {
+    "rating": 1,
+    "summary": "All tarmac, but the ghat is the point. Seventy hairpins on a road that buses, tempo travellers and coffee lorries share; the riding challenge is line discipline, not surface.",
+    "notes": [
+      "Hairpins are tight enough that a bus takes the entire road — stop before the apex if you hear a horn, don't try to squeeze.",
+      "Gravel washes onto the inside line at the numbered bends after rain; brake before, not in, the corner.",
+      "Fog sits on the top 20 hairpins in the early morning Nov–Jan — headlight on, visibility can drop to 20 m.",
+      "Descending the same road is harder than climbing it: engine braking, second gear, and rest the brakes at the viewpoints.",
+      "Agaya Gangai steps are steep and wet — trainers in the bag; riding boots will hurt."
+    ]
+  },
+  "timings": [
+    "Arapaleeswarar temple: 6 AM – 12 PM and 4 – 7 PM. Agaya Gangai path is open 24 hours but do the steps only in daylight.",
+    "Boat house 6 AM – 6 PM (₹5, life jackets mandatory). Botanical garden 8 AM – 8 PM (₹20).",
+    "No permits or ghat closures; the road is open at night but fog and unlit bends make that a bad idea.",
+    "Fuel: Salem, Rasipuram, Sendamangalam, Semmedu (one pump on top), Namakkal. Fill at Rasipuram before the climb.",
+    "Stay: TTDC and homestays around Semmedu and Solakadu; book ahead in Dec–Jan."
+  ],
+  "cautions": [
+    "The 'Mountain of Death' name is folklore, but the accident record on the ghat is real — mostly overtaking on blind bends. Don't.",
+    "Monsoon (Jun–Aug) brings landslides on the Karavalli side; the road has been closed for weeks at a time.",
+    "Namakkal-side road (Senthamangalam) is the easier descent if you're tired on day 2.",
+    "Day 1 is 290 km plus the ghat; don't attempt it as a one-day return — it has been done, and it's the riders who do that who end up in the folklore."
+  ],
+  "photos": [
+    { "commons": "Agaya Gangai.JPG", "caption": "Agaya Gangai falls, Kolli Hills" },
+    { "commons": "Agayagangai-at-kollimalai.JPG", "caption": "Agaya Gangai in full flow" },
+    { "commons": "Clouds over eastern ghats at Boyapalem.JPG", "caption": "Cloud over the Eastern Ghats" },
+    { "commons": "Namakkal Fort (2).jpg", "caption": "Namakkal fort on the way home" },
+    { "commons": "Yercaud hills.jpg", "caption": "The Shevaroy hills near Salem — Kolli's neighbour across the plain" }
+  ],
+  "sources": [
+    { "title": "Kolli Hills ghat road guide — Mandakashayam", "url": "https://mandakashayam.com/kollimalai-a-complete-travel-guide-to-kolli-hills/" },
+    { "title": "70 continuous hairpin bends of Kolli Malai — Be On The Road", "url": "https://www.beontheroad.com/2010/10/70-continuous-hairpin-bends-of-kolli.html" },
+    { "title": "Kolli Hills road — Dangerous Roads", "url": "https://www.dangerousroads.org/asia/india/3311-kolli-hills-road.html" }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "kailasagiri-kaiwara-ride",
+  "title": "Kailasagiri Cave Temple & Kaiwara",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bangalore → Hoskote → H Cross → Kaiwara (Bheema-Bakasura Betta, 500 steps) → Kailasagiri hand-cut cave temple → Chintamani → Devanahalli → Bangalore. ~180 km, a half-day loop east of the city.",
+  "summary": "The easy one in the collection: a Sunday loop east of Bangalore built around Kailasagiri, a hill outside Chintamani where a cave has been cut by hand into the rock and lined with shrines — Vallabha Ganapati, Chaturmukhalingeshwara and Jagadambe — reached by a short stone-paved walk you do barefoot. Pair it with Kaiwara, 7 km away, where the Bheema-Bakasura Betta climb (about 500 steps) earns a view over the Kolar plains. Go out on the Hoskote–H Cross road and come back through Devanahalli so you never repeat tarmac.",
+  "type": "loop",
+  "days": "Half day",
+  "added": "2026-09-15",
+  "totalKm": 183,
+  "hours": "5–6 hrs",
+  "difficulty": "Easy",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Bangalore",
+  "tags": ["cave temple", "hill", "steps", "day loop", "Kolar", "motorcycle"],
+  "credit": { "name": "@the_pretty_indian & @gopravasa on Instagram", "note": "'50 km from Bengaluru — a cave temple, a hilltop view'; it's nearer 75 km, but the point stands" },
+  "waypoints": [
+    { "name": "Bangalore", "lat": 12.9716, "lng": 77.5946 },
+    { "name": "Hoskote", "lat": 13.0707, "lng": 77.7980 },
+    { "name": "H Cross", "lat": 13.2650, "lng": 77.9650 },
+    { "name": "Kaiwara", "lat": 13.3450, "lng": 78.0620 },
+    { "name": "Kailasagiri", "lat": 13.3916, "lng": 78.0254 },
+    { "name": "Chintamani", "lat": 13.4000, "lng": 78.0600 },
+    { "name": "Devanahalli", "lat": 13.2470, "lng": 77.7130 }
+  ],
+  "segments": [
+    { "km": 25, "road": "Old Madras Road (NH 75) to Hoskote", "note": "The only dull bit; get it done before the traffic wakes up.", "surface": "tarmac" },
+    { "km": 30, "road": "Hoskote – Sidlaghatta road to H Cross", "note": "Two-lane state road through mulberry and grape country; watch for tractors and silk-cocoon lorries.", "surface": "tarmac" },
+    { "km": 22, "road": "H Cross – Kaiwara road", "note": "Quiet rural road. Kaiwara is the Yogi Narayana ashram town; the Bheema-Bakasura Betta steps start behind it.", "surface": "tarmac" },
+    { "km": 8, "road": "Kaiwara – Kailasagiri", "note": "Short hop through the hills. Park at the base; the cave is a 10-minute walk up a stone path, barefoot.", "surface": "tarmac / stone path" },
+    { "km": 8, "road": "Kailasagiri – Chintamani", "note": "Lunch stop. Chintamani has proper fuel and food.", "surface": "tarmac" },
+    { "km": 50, "road": "Chintamani – Sidlaghatta – Devanahalli", "note": "The return leg on a different road: open plateau, windmills on the ridges, very little traffic.", "surface": "tarmac" },
+    { "km": 40, "road": "Devanahalli – Bangalore (NH 44)", "note": "Fast airport highway home.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "Kailasagiri's hand-cut cave — a low, cool tunnel through the rock with shrines set into the walls, unlike any other temple this close to the city.",
+    "Bheema-Bakasura Betta at Kaiwara — 500 steps to a rock summit with the Kolar plains laid out below; do it first, before the sun is up properly.",
+    "The Chintamani–Devanahalli plateau road — empty, straight, and lined with wind turbines."
+  ],
+  "offroad": {
+    "rating": 1,
+    "summary": "Tarmac end to end. This is a road-bike loop; the only 'trail' is the stone path at Kailasagiri and the steps at Kaiwara.",
+    "notes": [
+      "The stone path at Kailasagiri gets hot by midday — footwear comes off at the base, so carry socks or go early.",
+      "Rural roads have unmarked speed breakers at every village; hold 60 and look ahead.",
+      "Kaiwara's steps are steep and uneven; not one for riding boots."
+    ]
+  },
+  "timings": [
+    "Kailasagiri cave temple is open through the day; go before 10 AM for cool stone and empty paths.",
+    "No permits or fees beyond small parking charges.",
+    "Fuel: Hoskote, Chintamani, Devanahalli — no gaps to worry about."
+  ],
+  "cautions": [
+    "Weekend crowds at Kaiwara ashram around festivals; the hill itself stays quiet.",
+    "The Hoskote stretch of NH 75 has heavy truck traffic — the earlier the better."
+  ],
+  "photos": [
+    { "commons": "Green View from Kailasagiri Chintamani 02.jpg", "caption": "View from Kailasagiri, Chintamani" },
+    { "commons": "Chintamani 001.jpg", "caption": "Chintamani town" },
+    { "commons": "Chintamani Parshvanath Jain temple.jpg", "caption": "Parshvanath Jain temple, Chintamani" }
+  ],
+  "sources": [
+    { "title": "Kaiwara & Kailasagiri one-day trip guide — Travel Twosome", "url": "https://traveltwosome.com/kaiwara-kailasagiri-one-day-trip-guide/" },
+    { "title": "Kailasagiri cave temple, Kolar — Atmanirvana", "url": "https://atmanirvana.com/chintamani-kailasagiri-cave-temple-kolar/" }
+  ]
+}

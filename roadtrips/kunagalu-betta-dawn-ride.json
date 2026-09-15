@@ -1,0 +1,69 @@
+{
+  "slug": "kunagalu-betta-dawn-ride",
+  "title": "Kunagalu Betta Dawn Ride",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bangalore → Bidadi → Ramanagara → Kunagalu Betta (sunrise trek through a bat cave) → Revanasiddeshwara Betta → Harohalli → Bangalore. ~135 km, out before dawn, back for lunch.",
+  "summary": "A pre-dawn sprint down Mysore Road to Ramanagara, then a left onto the Kanakapura road to Kunagalu Betta — a granite hillock 2 km out of town with an ancient Nandi halfway up, a pitch-black cave you crawl through with a torch, and a Hanuman temple on the summit. Thirty minutes up, sunrise over the Sholay boulders, thirty minutes down. The return avoids the highway entirely: Revanasiddeshwara's monolith temple, then village roads across to Harohalli and the Kanakapura road home.",
+  "type": "loop",
+  "days": "Half day (start 4:30 AM)",
+  "added": "2026-09-15",
+  "totalKm": 136,
+  "hours": "5–6 hrs",
+  "difficulty": "Easy",
+  "bestSeason": "Oct – Mar",
+  "startsAt": "Bangalore",
+  "tags": ["sunrise", "cave", "trek", "granite", "Ramanagara", "half day", "motorcycle"],
+  "credit": { "name": "@the_vextro on Instagram", "note": "'Kunagalu Betta ride — unexpected' — a night ride out of Bangalore to the hill" },
+  "waypoints": [
+    { "name": "Bangalore", "lat": 12.9716, "lng": 77.5946 },
+    { "name": "Bidadi", "lat": 12.7970, "lng": 77.3840 },
+    { "name": "Ramanagara", "lat": 12.7170, "lng": 77.2830 },
+    { "name": "Kunagalu Betta", "lat": 12.6890, "lng": 77.3179 },
+    { "name": "Revanasiddeshwara Betta", "lat": 12.6300, "lng": 77.3400 },
+    { "name": "Harohalli", "lat": 12.6800, "lng": 77.4750 }
+  ],
+  "segments": [
+    { "km": 30, "road": "Mysore Road / NH 275 to Bidadi", "note": "Empty at 4:30 AM. Fuel at the Bidadi pumps if the tank is low.", "surface": "tarmac" },
+    { "km": 12, "road": "NH 275 to Ramanagara", "note": "Boulders start to loom out of the dark on both sides.", "surface": "tarmac" },
+    { "km": 8, "road": "Ramanagara – Kanakapura road, left to Kunagalu", "note": "Park at the base of the hillock. Muddy trail to the Nandi, then the cave, then the summit — 30 min up.", "surface": "tarmac / mud trail" },
+    { "km": 14, "road": "Kanakapura road to Revanasiddeshwara Betta", "note": "Monolith hill with the cave temple; motorable road most of the way, a few steps to the shrine.", "surface": "tarmac" },
+    { "km": 22, "road": "Village roads Revanasiddeshwara → Harohalli", "note": "Single-lane roads through farmland — this is the bit worth the detour. Navigate by map; some stretches are broken.", "surface": "narrow tarmac / broken" },
+    { "km": 50, "road": "Harohalli – Kanakapura Road (NH 948) – Bangalore", "note": "Wide and quick. Breakfast at one of the Kanakapura Road dhabas.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "Sunrise from the Hanuman temple on Kunagalu Betta, with Ramadevara Betta and the whole boulder field lit up gold.",
+    "The cave stretch — cold, dark, smells of bats, and drops you out just below the summit.",
+    "Revanasiddeshwara Betta's cave shrine on a single monolith, usually empty at 8 AM.",
+    "The village road across to Harohalli instead of the highway back through Ramanagara."
+  ],
+  "offroad": {
+    "rating": 1,
+    "summary": "Tarmac with a muddy trek. The only riding challenge is the broken village road between Revanasiddeshwara and Harohalli.",
+    "notes": [
+      "Kunagalu trail is loose soil and rock — fine in trainers, miserable in riding boots. Swap at the bike.",
+      "Bring a proper torch for the cave; a phone light is not enough and the floor is uneven.",
+      "The Revanasiddeshwara–Harohalli road has potholes and cattle at every village; keep it under 50."
+    ]
+  },
+  "timings": [
+    "No entry fee or permit; park at the base of Kunagalu Betta. Trailhead is unmarked — locals will point.",
+    "Leave Bangalore by 4:30 AM to be on the summit for a 6:15 sunrise.",
+    "Fuel: Bidadi, Ramanagara, Harohalli. Nothing needed in between."
+  ],
+  "cautions": [
+    "Riding NH 275 in the dark: watch for trucks stopped on the shoulder without lights.",
+    "The cave section is not for anyone claustrophobic; there's a walk-around.",
+    "Summer (Mar–May) makes the bare granite brutal by 9 AM — be off the hill by then."
+  ],
+  "photos": [
+    { "commons": "Ramanagara Hills (10306067976).jpg", "caption": "Granite boulders around Ramanagara" },
+    { "commons": "Revana siddeshwara Betta.JPG", "caption": "Revanasiddeshwara Betta monolith" },
+    { "commons": "Revanasiddeshwara temple.jpg", "caption": "Revanasiddeshwara temple" },
+    { "commons": "SRS hills, Ramanagara.jpg", "caption": "SRS hills, Ramanagara" }
+  ],
+  "sources": [
+    { "title": "Kunagalu Betta trek — The Loapers (May 2026)", "url": "https://www.theloapers.com/2026/05/kunagalu-betta-trek-ramanagara-cave.html" },
+    { "title": "Places of interest — Ramanagara district administration", "url": "https://ramanagara.nic.in/en/places-of-interest/" }
+  ]
+}

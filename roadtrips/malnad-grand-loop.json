@@ -1,0 +1,90 @@
+{
+  "slug": "malnad-grand-loop",
+  "title": "Malnad Grand Loop",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bangalore → Hassan → Belur → Chikkamagaluru → Mudigere → Kalasa → Maidaadi sunset viewpoint → Sringeri → Agumbe → Sakleshpur → Hosahalli Gudda → Bangalore. ~830 km over 3 days through coffee, shola grassland and the wettest ghats in Karnataka.",
+  "summary": "Three days that cover everything the Instagram tier-lists argue about — Chikkamagaluru (fine), Mudigere (better), Kalasa and Agumbe (the S-tier). Out via the Hassan–Belur highway, then the road gets interesting: the Charmadi-side climb to Mudigere, the Kalasa valley with the Maidaadi ridge above it for sunset, Sringeri's temple town, and Agumbe's 14-hairpin ghat with the Arabian Sea on the horizon. Home via Sakleshpur and the dirt track up Hosahalli Gudda, the grassland 'shooting point' every reel is filmed on. Two proper dirt sections, one long trek, and more coffee than is sensible.",
+  "type": "loop",
+  "days": "3 days",
+  "added": "2026-09-15",
+  "totalKm": 830,
+  "hours": "20–22 hrs",
+  "hairpins": 14,
+  "difficulty": "Demanding",
+  "bestSeason": "Sep – Jan",
+  "startsAt": "Bangalore",
+  "tags": ["Western Ghats", "coffee estates", "grassland", "sunset viewpoint", "dirt track", "Agumbe ghat", "multi-day", "motorcycle"],
+  "credit": { "name": "@offbeatatlas, @mud_travellers, @ka13traveller_ and a Google Maps pin for Maidaadi", "note": "four separate reels — the Bengaluru→Chikkamagaluru route card, the Malnad tier list, Hosahalli Gudda, and the Maidaadi viewpoint — stitched into one loop" },
+  "waypoints": [
+    { "name": "Bangalore", "lat": 12.9716, "lng": 77.5946 },
+    { "name": "Hassan", "lat": 13.0050, "lng": 76.1000 },
+    { "name": "Belur", "lat": 13.1650, "lng": 75.8650 },
+    { "name": "Chikkamagaluru", "lat": 13.3160, "lng": 75.7750 },
+    { "name": "Mudigere", "lat": 13.1300, "lng": 75.6400 },
+    { "name": "Kalasa", "lat": 13.2350, "lng": 75.3600 },
+    { "name": "Maidaadi", "lat": 13.1646, "lng": 75.3973 },
+    { "name": "Sringeri", "lat": 13.4200, "lng": 75.2500 },
+    { "name": "Agumbe", "lat": 13.5030, "lng": 75.0930 },
+    { "name": "Sakleshpur", "lat": 12.9400, "lng": 75.7800 },
+    { "name": "Hosahalli Gudda", "lat": 12.8118, "lng": 75.7203 }
+  ],
+  "segments": [
+    { "km": 185, "road": "NH 75 via Nelamangala → Yediyur → Channarayapatna → Hassan", "note": "Day 1. Four-lane and fast; breakfast at Yediyur. The reel's 30/65/50/40 km splits are about right.", "surface": "tarmac" },
+    { "km": 38, "road": "Hassan – Belur (SH 21)", "note": "Chennakeshava temple — 20 minutes for the carvings is worth it even on a bike trip.", "surface": "tarmac" },
+    { "km": 25, "road": "Belur – Chikkamagaluru", "note": "Coffee begins. Chikkamagaluru is fuel, lunch, and the turn towards the hills; Mullayanagiri is a 20 km detour if you want the state's highest road.", "surface": "tarmac" },
+    { "km": 45, "road": "Chikkamagaluru → Aldur → Mudigere", "note": "Estate roads, shaded, twisty, and quiet. Night 1 in a Mudigere homestay.", "surface": "tarmac" },
+    { "km": 45, "road": "Mudigere → Kottigehara → Kalasa", "note": "Day 2. The Charmadi junction at Kottigehara, then the valley road into Kalasa with Kudremukh on the skyline.", "surface": "tarmac" },
+    { "km": 12, "road": "Kalasa – Kanive road to Maidaadi", "note": "Narrow estate road, then a rough final stretch to the ridge. Time it for sunset — arrive 30 min early.", "surface": "narrow tarmac / rough track" },
+    { "km": 50, "road": "Maidaadi → Kalasa → Horanadu → Sringeri", "note": "Night 2 in Sringeri. The Horanadu road runs along the Bhadra through thick forest.", "surface": "tarmac, broken patches" },
+    { "km": 30, "road": "Sringeri – Agumbe", "note": "Day 3. Agumbe's 14 hairpins drop towards the coast — ride to the sunset point and come back up; it is the best ghat in this part of the state.", "hairpins": 14, "surface": "tarmac" },
+    { "km": 150, "road": "Agumbe → Koppa → Balehonnur → Kottigehara → Sakleshpur", "note": "The long interior road back east: estate after estate, almost no traffic, fuel at Koppa and Kottigehara.", "surface": "tarmac, patchy" },
+    { "km": 20, "road": "Sakleshpur – Hosahalli village (Bisle road)", "note": "Turn off the Bisle Ghat road for the shooting point. Last 2 km is rough dirt; locals have dug trenches across the final few hundred metres.", "surface": "dirt track" },
+    { "km": 230, "road": "Sakleshpur – Hassan – NH 75 – Bangalore", "note": "Home run. Dinner at Hassan, then the highway.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "Maidaadi ridge at sunset — an unfenced grass edge above the Kalasa valley with cloud pouring through the gaps in the Kudremukh range.",
+    "Agumbe ghat — 14 hairpins through rainforest, with the sunset viewpoint at the top looking straight out to the Arabian Sea.",
+    "Hosahalli Gudda's grassland dirt track — the one from the reel, a bare ridge of green with a broken watchtower on top.",
+    "Belur's Chennakeshava temple and Sringeri's Sharada Peetham — two stops that give the loop a spine beyond coffee.",
+    "The Agumbe–Koppa–Balehonnur interior road: 150 km of estate roads with nobody on them."
+  ],
+  "offroad": {
+    "rating": 3,
+    "summary": "Mostly narrow estate tarmac with two dirt sections that decide what bike you bring: the rough track up to Maidaadi and the 2 km of dug-up dirt at Hosahalli Gudda. An ADV does both; a road bike walks the last kilometre of each.",
+    "notes": [
+      "Hosahalli Gudda: the final 200–300 m has deliberate trenches — even 4x4s stop. Park where the track turns bad and walk. The watchtower has no proper steps; don't climb it in riding gear.",
+      "Maidaadi approach: red-soil track with ruts; slick after rain. Ride up in daylight so you know the line for the descent in the dark after sunset.",
+      "Agumbe ghat: moss on the shaded hairpins even in dry months, and the buses use the whole road. Downhill in second gear.",
+      "The Horanadu–Sringeri and Balehonnur roads have monsoon damage every year; expect gravel in the corners through November.",
+      "Luggage: soft bags — you'll be walking with them at homestays without parking, and hard cases catch on estate gates."
+    ]
+  },
+  "timings": [
+    "Maidaadi has no formal timings or fee; Google lists 8 AM opening. Reviewers say arrive 30 minutes before sunset and note there is no fencing at the edge.",
+    "Hosahalli Gudda: no gate or fee at the time of writing; allow 1–1.5 hours from Sakleshpur including the walk.",
+    "Belur temple: 7:30 AM – 7:30 PM. Sringeri temple closes for the afternoon (roughly 2–4 PM).",
+    "Fuel: Hassan, Chikkamagaluru, Mudigere, Kalasa, Sringeri, Koppa, Kottigehara, Sakleshpur — never more than 60 km between pumps.",
+    "Book Mudigere and Sringeri stays ahead on long weekends; Kalasa homestays fill for Horanadu pilgrims."
+  ],
+  "cautions": [
+    "Agumbe gets over 7,000 mm of rain a year — Jun–Sep the ghat is fog, landslides and leeches. Ride it Oct–Jan.",
+    "Elephants cross the Sakleshpur–Bisle road and the Mudigere–Kottigehara stretch at dusk. Don't ride the estate roads after dark.",
+    "Maidaadi ridge is unfenced; the drop is real and the grass hides the edge in mist.",
+    "Day 3 is 430 km with a trek in the middle — start Agumbe at first light or split it with a night in Sakleshpur."
+  ],
+  "photos": [
+    { "commons": "Kudremukh National Park.jpg", "caption": "Kudremukh range above the Kalasa valley" },
+    { "commons": "Agumbe Banner.jpg", "caption": "Agumbe rainforest" },
+    { "commons": "Chennakeshava Temple, Belur (50358426721).jpg", "caption": "Chennakeshava temple, Belur" },
+    { "commons": "Kalaseshwara Temple, Kalasa.jpg", "caption": "Kalaseshwara temple, Kalasa" },
+    { "commons": "View from the top of mullayanagiri peak.jpg", "caption": "From Mullayanagiri — the optional detour above Chikkamagaluru" },
+    { "commons": "Mountains of Kudremukh.jpg", "caption": "Shola grassland in the Kudremukh hills" },
+    { "commons": "Kudremukh Lakya dam lake.jpg", "caption": "Lakya dam, Kudremukh" }
+  ],
+  "sources": [
+    { "title": "Maidaadi sunset viewpoint — Bynekaadu", "url": "https://bynekaadu.com/the-magic-of-sunset-at-maidaadi-sunset-viewpoint/" },
+    { "title": "Hosahalli Gudda shooting point — eNidhi India", "url": "https://www.enidhi.net/2024/01/hosahalli-gudda-shooting-point.html" },
+    { "title": "Monsoon drive to Hosahalli Gudda — Sarathy the Traveler", "url": "https://www.sarathythetraveler.com/2021/08/monsoon-drive-to-hosahalli-gutta-and.html" }
+  ]
+}

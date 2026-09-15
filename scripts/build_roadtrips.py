@@ -53,10 +53,17 @@ def photo_credit(p: dict) -> str:
 
 
 # ---------------------------------------------------------------- route svg
-W, H, PAD = 900, 640, 92
+W, PAD = 900, 92
+H = 640  # set per trip in route_svg (taller for many waypoints)
 BOX = dict(x0=PAD, y0=PAD + 20, x1=W - PAD, y1=H - 178)
 LEGEND_X0 = W - 215
 MIN_SEP = 118
+
+
+def set_canvas(n):
+    global H, BOX
+    H = 640 if n <= 8 else (760 if n <= 11 else 860)
+    BOX = dict(x0=PAD, y0=PAD + 20, x1=W - PAD, y1=H - 178)
 
 
 def fit_to_box(pts):
@@ -70,37 +77,44 @@ def fit_to_box(pts):
 
 
 def project(wps, legend_bottom):
-    """Geographic shape, radially compressed so a far-away start city doesn't
-    squash the loop, then nudged apart so labels don't pile up."""
-    mid_lat = sum(w["lat"] for w in wps) / len(wps)
+    """Geographic shape, gently compressed so a far-away start city doesn't
+    squash the loop, then nudged apart so labels don't pile up. The nudging is
+    damped and springs back toward the true position so big loops keep their shape."""
+    n = len(wps)
+    mid_lat = sum(w["lat"] for w in wps) / n
     kx = math.cos(math.radians(mid_lat))
     pts = [[w["lng"] * kx, -w["lat"]] for w in wps]
-    cx = sum(p[0] for p in pts) / len(pts); cy = sum(p[1] for p in pts) / len(pts)
+    cx = sum(p[0] for p in pts) / n; cy = sum(p[1] for p in pts) / n
     max_r = max(math.hypot(p[0] - cx, p[1] - cy) for p in pts) or 1
+    power = 0.5 if n <= 8 else 0.7          # compress less when there are many stops
     out = []
     for x, y in pts:
         dx, dy = x - cx, y - cy
         r = math.hypot(dx, dy) / max_r
-        k = 0 if r == 0 else (r ** 0.5) / r
+        k = 0 if r == 0 else (r ** power) / r
         out.append([cx + dx * k, cy + dy * k])
     pts = fit_to_box(out)
-    for _ in range(60):
-        for i in range(len(pts)):
-            for j in range(i + 1, len(pts)):
+    orig = [p[:] for p in pts]
+    area = (BOX["x1"] - BOX["x0"]) * (BOX["y1"] - BOX["y0"])
+    min_sep = min(MIN_SEP, 0.75 * math.sqrt(area / n))
+    for _ in range(80):
+        for i in range(n):
+            for j in range(i + 1, n):
                 dx = pts[j][0] - pts[i][0]; dy = pts[j][1] - pts[i][1]
                 d = math.hypot(dx, dy) or 0.01
-                if d < MIN_SEP:
-                    push = (MIN_SEP - d) / 2; ux, uy = dx / d, dy / d
+                if d < min_sep:
+                    push = (min_sep - d) * 0.25; ux, uy = dx / d, dy / d
                     pts[i][0] -= ux * push; pts[i][1] -= uy * push
                     pts[j][0] += ux * push; pts[j][1] += uy * push
-        for p in pts:
+        for p, o in zip(pts, orig):
+            p[0] += (o[0] - p[0]) * 0.02; p[1] += (o[1] - p[1]) * 0.02   # spring back
             p[0] = max(BOX["x0"], min(BOX["x1"], p[0]))
             p[1] = max(BOX["y0"], min(BOX["y1"], p[1]))
-            if p[0] > LEGEND_X0 - 40 and p[1] < legend_bottom + 30:
-                if LEGEND_X0 - 40 - p[0] > legend_bottom + 30 - p[1]:
+            if p[0] > LEGEND_X0 - 130 and p[1] < legend_bottom + 30:
+                if LEGEND_X0 - 130 - p[0] > legend_bottom + 30 - p[1]:
                     p[1] = legend_bottom + 30
                 else:
-                    p[0] = LEGEND_X0 - 40
+                    p[0] = LEGEND_X0 - 130
     return pts
 
 
@@ -119,16 +133,49 @@ def smooth_path(pts, closed):
     return d
 
 
-def label_geom(name, p, cx, cy):
+def _label_candidates(name, p, cx, cy):
+    """Candidate label placements in preference order: away-from-centre side, then above/below, then the other side."""
     dx, dy = p[0] - cx, p[1] - cy
     dl = math.hypot(dx, dy) or 1; dx /= dl; dy /= dl
     w = len(name) * 8.4 + 22
+    right = (p[0] + 24, p[1] + dy * 10, "start")
+    left = (p[0] - 24, p[1] + dy * 10, "end")
+    above = (p[0], p[1] - 30, "middle")
+    below = (p[0], p[1] + 32, "middle")
     if abs(dx) < 0.4:
-        tx, ty, anchor = p[0], p[1] + (-30 if dy < 0 else 32), "middle"
+        order = [above, below, right, left] if dy < 0 else [below, above, right, left]
     else:
-        tx, ty, anchor = p[0] + (24 if dx > 0 else -24), p[1] + dy * 10, ("start" if dx > 0 else "end")
-    rx = tx - w / 2 if anchor == "middle" else (tx - 9 if anchor == "start" else tx - w + 9)
-    return tx, ty, anchor, rx, w
+        order = [right, above, below, left] if dx > 0 else [left, above, below, right]
+    out = []
+    for tx, ty, anchor in order:
+        rx = tx - w / 2 if anchor == "middle" else (tx - 9 if anchor == "start" else tx - w + 9)
+        if rx < 12 or rx + w > W - 12 or ty - 13 < 8 or ty + 13 > H - 8:
+            continue
+        out.append((tx, ty, anchor, rx, w))
+    return out or [(p[0], p[1] + 32, "middle", max(12, min(W - 12 - w, p[0] - w / 2)), w)]
+
+
+def _overlaps(a, b, pad=4):
+    return not (a[0] + a[2] + pad < b[0] or b[0] + b[2] + pad < a[0] or a[1] + a[3] + pad < b[1] or b[1] + b[3] + pad < a[1])
+
+
+def place_labels(wps, pts, cx, cy):
+    """Greedy: for each node pick the first candidate that doesn't overlap placed labels, pins, or the legend."""
+    placed = []
+    obstacles = [(p[0] - 14, p[1] - 14, 28, 28) for p in pts]
+    obstacles.append((LEGEND_X0 - 10, 8, W - LEGEND_X0 + 10, len(wps) * 17 + 56))
+    for w, p in zip(wps, pts):
+        cands = _label_candidates(w["name"], p, cx, cy)
+        chosen = None
+        for tx, ty, anchor, rx, lw in cands:
+            rect = (rx, ty - 13, lw, 26)
+            if not any(_overlaps(rect, o) for o in obstacles) and not any(_overlaps(rect, q["rect"]) for q in placed):
+                chosen = (tx, ty, anchor, rx, lw); break
+        if chosen is None:
+            chosen = cands[0]
+        tx, ty, anchor, rx, lw = chosen
+        placed.append({"tx": tx, "ty": ty, "anchor": anchor, "rx": rx, "w": lw, "rect": (rx, ty - 13, lw, 26)})
+    return placed
 
 
 def seg_label_pos(a, b, cx, cy, force=None):
@@ -143,6 +190,7 @@ def seg_label_pos(a, b, cx, cy, force=None):
 
 def route_svg(t: dict) -> str:
     wps = t["waypoints"]
+    set_canvas(len(wps))
     legend_h = len(wps) * 17 + 46
     pts = project(wps, 18 + legend_h)
     closed = t.get("type", "loop") == "loop"
@@ -150,10 +198,9 @@ def route_svg(t: dict) -> str:
     path = smooth_path(pts, closed)
     uid = re.sub(r"[^a-z0-9]", "", t["slug"].lower())
 
-    rects = []
-    for w, p in zip(wps, pts):
-        tx, ty, _, rx, lw = label_geom(w["name"], p, cx, cy)
-        rects.append((rx + lw / 2, ty, lw))
+    labels = place_labels(wps, pts, cx, cy)
+    rects = [(l["rx"] + l["w"] / 2, l["ty"], l["w"]) for l in labels]
+    rects += [(p[0], p[1], 30) for p in pts]   # pins count as obstacles for km labels too
 
     segs = []
     for i, s in enumerate(t.get("segments", [])):
@@ -162,14 +209,15 @@ def route_svg(t: dict) -> str:
             break
         lx, ly = seg_label_pos(a, b, cx, cy)
         k = 1
-        while k <= 4 and any(abs(rx - lx) < (rw / 2 + 34) and abs(ry - ly) < 26 for rx, ry, rw in rects):
-            lx, ly = seg_label_pos(a, b, cx, cy, 24 + k * 18); k += 1
+        while k <= 5 and any(abs(rx - lx) < (rw / 2 + 34) and abs(ry - ly) < 26 for rx, ry, rw in rects):
+            lx, ly = seg_label_pos(a, b, cx, cy, 24 + k * 16); k += 1
+        rects.append((lx, ly, 60))
         segs.append(f'<g class="seg"><rect x="{lx-30:.1f}" y="{ly-11:.1f}" width="60" height="22" rx="11"/>'
                     f'<text x="{lx:.1f}" y="{ly+4:.1f}">~{s["km"]} km</text></g>')
 
     nodes = []
-    for i, (w, p) in enumerate(zip(wps, pts)):
-        tx, ty, anchor, rx, lw = label_geom(w["name"], p, cx, cy)
+    for i, (w, p, l) in enumerate(zip(wps, pts, labels)):
+        tx, ty, anchor, rx, lw = l["tx"], l["ty"], l["anchor"], l["rx"], l["w"]
         nodes.append(
             f'<g class="node"><rect x="{rx:.1f}" y="{ty-13:.1f}" width="{lw:.1f}" height="26" rx="13" class="lbg"/>'
             f'<text x="{tx:.1f}" y="{ty+5:.1f}" text-anchor="{anchor}" class="lbl">{esc(w["name"])}</text>'
