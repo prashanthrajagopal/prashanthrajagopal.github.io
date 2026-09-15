@@ -95,9 +95,16 @@ nav:
       - Local: wiki/astra/deployment/local.md
       - macOS: wiki/astra/deployment/macos.md
       - GCP: wiki/astra/deployment/gcp.md
+  # ROADTRIPS_NAV_START
+  - Road Trips:
+    - roadtrips/index.md
+    - "Valparai – Athirappilly Forest Loop": roadtrips/valparai-athirappilly-loop.md
+    - "The Nilgiri Loop": roadtrips/nilgiri-loop.md
+  # ROADTRIPS_NAV_END
 
 extra_css:
   - stylesheets/prashantr-theme.css
+  - stylesheets/roadtrips.css
 
 extra_javascript:
   - javascripts/header-brand.js

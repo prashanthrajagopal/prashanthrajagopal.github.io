@@ -1,0 +1,37 @@
+{
+  "_comment": "Copy this file to trips/<slug>.json (files starting with _ are ignored). Delete keys you don't need except the required ones: slug, title, region, country, tagline, summary, type, days, totalKm, hours, difficulty, bestSeason, waypoints.",
+  "slug": "my-new-trip",
+  "title": "My New Trip",
+  "region": "South India",
+  "country": "India",
+  "tagline": "One-line hook shown on the card: A → B → C, X km, what makes it special.",
+  "summary": "Two or three sentences describing the ride.",
+  "type": "loop",
+  "_type_options": "loop (returns to start; segments = number of waypoints) or one-way (segments = waypoints - 1)",
+  "days": "1–2 days",
+  "added": "2026-09-15",
+  "totalKm": 0,
+  "hours": "0–0 hrs",
+  "hairpins": 0,
+  "difficulty": "Easy | Moderate | Demanding | Expert",
+  "bestSeason": "Oct – Mar",
+  "startsAt": "City",
+  "tags": ["hairpins", "forest road"],
+  "credit": { "name": "@who_posted_it", "url": "https://...", "note": "where you found the route" },
+  "waypoints": [
+    { "name": "Start", "lat": 0.0, "lng": 0.0 },
+    { "name": "Next", "lat": 0.0, "lng": 0.0 }
+  ],
+  "segments": [
+    { "km": 0, "road": "Road name / NH number", "note": "What the leg is like", "hairpins": 0, "surface": "tarmac | mixed | gravel | dirt" }
+  ],
+  "highlights": ["Things worth stopping for"],
+  "offroad": { "rating": 0, "summary": "0–5 scale: 0 = pure tarmac, 5 = proper off-road", "notes": ["Surface, tyres, luggage, skills needed"] },
+  "timings": ["Forest closures, check posts, permits, fuel stops"],
+  "cautions": ["Wildlife, weather, traffic, anything that bites"],
+  "photos": [
+    { "commons": "Exact Wikimedia Commons file name.jpg", "caption": "What it shows" },
+    { "url": "https://images.unsplash.com/...", "link": "https://unsplash.com/photos/...", "credit": "Photographer on Unsplash", "caption": "What it shows" }
+  ],
+  "sources": [{ "title": "Where a fact came from", "url": "https://..." }]
+}

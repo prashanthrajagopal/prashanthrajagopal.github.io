@@ -1,0 +1,81 @@
+{
+  "slug": "valparai-athirappilly-loop",
+  "title": "Valparai – Athirappilly Forest Loop",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Coimbatore → Pollachi → Valparai (40 hairpins) → Malakkappara forest road → Athirappilly Falls → Thrissur → Palakkad → Coimbatore. ~400 km in a day, billed as South India's most dangerous road.",
+  "summary": "A one-day loop that climbs the famous 40-hairpin Valparai ghat, then takes the narrow Valparai–Malakkappara–Athirappilly road across the Anamalai and Sholayar forests — 85–90 km of single-lane tarmac with no fuel, no phone signal and a very real chance of elephants. It drops to Athirappilly Falls, Kerala's biggest waterfall, and returns to Coimbatore across the plains via Thrissur and the Palakkad gap.",
+  "type": "loop",
+  "days": "1 day (long)",
+  "added": "2026-09-15",
+  "totalKm": 390,
+  "hours": "11–13 hrs",
+  "hairpins": 40,
+  "difficulty": "Demanding",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Coimbatore",
+  "tags": ["forest road", "hairpins", "waterfall", "tea estates", "check posts", "loop", "motorcycle"],
+  "credit": { "name": "@withgowtham on Instagram / YouTube", "note": "'South India's most dangerous road — 400 km in a 1-day trip'" },
+  "waypoints": [
+    { "name": "Coimbatore", "lat": 11.0168, "lng": 76.9558, "icon": "city" },
+    { "name": "Pollachi", "lat": 10.6588, "lng": 77.0085, "icon": "forest" },
+    { "name": "Valparai", "lat": 10.3271, "lng": 76.9553, "icon": "tea" },
+    { "name": "Malakkappara", "lat": 10.3105, "lng": 76.8378, "icon": "forest" },
+    { "name": "Athirappilly", "lat": 10.2851, "lng": 76.5698, "icon": "water" },
+    { "name": "Thrissur", "lat": 10.5276, "lng": 76.2144, "icon": "temple" },
+    { "name": "Palakkad", "lat": 10.7867, "lng": 76.6548, "icon": "fort" }
+  ],
+  "segments": [
+    { "km": 42, "road": "Coimbatore – Pollachi (NH 83)", "note": "Flat, fast, coconut country. Have breakfast in Pollachi; it's the last big town before the hills.", "surface": "tarmac" },
+    { "km": 65, "road": "Pollachi – Aliyar dam – Valparai ghat (SH 78)", "note": "The 40 numbered hairpins start after Aliyar dam. Loop view point at hairpin 9. Lion-tailed macaques near the top.", "hairpins": 40, "surface": "tarmac" },
+    { "km": 22, "road": "Valparai – Sholayar dam – Malakkappara", "note": "Tea estates give way to forest. Tamil Nadu forest check post; Kerala check post at Malakkappara.", "surface": "narrow tarmac" },
+    { "km": 65, "road": "Malakkappara – Sholayar – Vazhachal – Athirappilly", "note": "The 'dangerous' bit: single lane, blind bends, sheer drops, monsoon damage, elephants. No fuel, no signal, no food until Vazhachal.", "surface": "narrow, broken in places" },
+    { "km": 58, "road": "Athirappilly – Chalakudy – Thrissur (SH 21 / NH 544)", "note": "Back on wide roads. Athirappilly Falls viewpoint is a short walk from the parking.", "surface": "tarmac" },
+    { "km": 78, "road": "Thrissur – Palakkad (NH 544)", "note": "Four-lane highway through the Palakkad gap. Fast.", "surface": "tarmac" },
+    { "km": 55, "road": "Palakkad – Walayar – Coimbatore (NH 544)", "note": "Kerala–Tamil Nadu border at Walayar; traffic thickens into Coimbatore.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "The 40 hairpins from Aliyar dam to Valparai — each one numbered, with the Loop view point looking back over the dam.",
+    "Valparai tea estates and the Sholayar reservoir, one of the deepest dams in Asia.",
+    "The Malakkappara–Athirappilly forest road: 60-odd km of canopy, hornbills, gaur and the occasional elephant.",
+    "Athirappilly Falls — 80 ft wide, thundering in the months right after the monsoon.",
+    "Vadakkunnathan Temple in Thrissur and Palakkad Fort if you have daylight to spare."
+  ],
+  "offroad": {
+    "rating": 3,
+    "summary": "Tarmac all the way, but the forest stretch is single-lane, badly patched in places and completely unsupported. This is where an ADV with decent ground clearance and knobbly-ish tyres earns its keep.",
+    "notes": [
+      "Valparai ghat hairpins are tight but well-surfaced; the danger is estate buses and Tempo Travellers taking the whole road.",
+      "Malakkappara–Athirappilly: potholes and landslide scars, moss on the shaded sections, and gravel at the culverts. Standing on the pegs helps.",
+      "Zero fuel between Valparai and Chalakudy (~120 km). Fill to the brim in Valparai.",
+      "Zero mobile signal in the forest; download offline maps for the whole loop.",
+      "Ride in a group of at least two bikes on the forest stretch — a breakdown there is a long wait."
+    ]
+  },
+  "timings": [
+    "Forest check posts on the Valparai–Athirappilly road allow two-wheelers roughly 6:00 AM – 4:00 PM only (four-wheelers until 6:00 PM). Be at the Valparai side check post well before 3 PM.",
+    "No advance permit; small entry fee (₹20–30 for two-wheelers) and ID check at the check posts.",
+    "The forest road is closed intermittently after landslides in the monsoon (Jun–Sep) — check current status before leaving Pollachi.",
+    "Fuel: Pollachi, Valparai (last before the forest), then Chalakudy / Athirappilly town. Palakkad and Coimbatore are plentiful."
+  ],
+  "cautions": [
+    "Elephants and gaur on the forest road — this stretch has regular human–wildlife incidents. Stop, engine off, reverse if needed. Never get between a calf and the herd.",
+    "Do not attempt the forest crossing in rain or fog; the drops are unguarded.",
+    "Leave Coimbatore by 5 AM to make the check-post cut-off with time for the falls.",
+    "The 'most dangerous road' tag is about isolation and wildlife more than the surface — respect it."
+  ],
+  "photos": [
+    { "commons": "Valparai Ghat Road 40 Hairpin bends - panoramio (3).jpg", "caption": "The 40-hairpin Valparai ghat road" },
+    { "commons": "Tea Estates in Valparai.jpg", "caption": "Tea estates, Valparai" },
+    { "commons": "Sholayar reserve forest.jpg", "caption": "Sholayar reserve forest on the Malakkappara road" },
+    { "commons": "Athirapally Falls to Valparai Route (14828915020).jpg", "caption": "The forest road between Athirappilly and Valparai" },
+    { "commons": "Athirapally Water falls.jpg", "caption": "Athirappilly Falls" },
+    { "commons": "Vadakkumnathan Temple.jpg", "caption": "Vadakkunnathan Temple, Thrissur" },
+    { "commons": "Palakkad fort palakkad.jpg", "caption": "Palakkad Fort" },
+    { "commons": "Lush Green Pollachi.jpg", "caption": "Coconut country around Pollachi" }
+  ],
+  "sources": [
+    { "title": "Valparai to Athirapally forest route — check-post timings & travel guide (Mandakashayam)", "url": "https://mandakashayam.com/valparai-to-athirapally-forest-route/" },
+    { "title": "Valparai to Athirapally road guide: wildlife, safety & check post (Exoticamp)", "url": "https://www.exoticamp.com/blogs/valparai-to-athirapally-road-guide-wildlife-safety-and-checkpost" }
+  ]
+}

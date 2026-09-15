@@ -33,6 +33,9 @@ jobs:
       - name: Sync latest blog on homepage
         run: python scripts/sync_latest_blog.py
 
+      - name: Generate Road Trips pages
+        run: python scripts/build_roadtrips.py
+
       - name: Build site
         run: zensical build --clean
 

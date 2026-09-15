@@ -1,0 +1,83 @@
+{
+  "slug": "nilgiri-loop",
+  "title": "The Nilgiri Loop",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bangalore → Dimbam ghat → Kotagiri → Coonoor → Ooty → Gudalur → Mudumalai → Bandipur → Bangalore. 610 km, two tiger reserves and a 27-hairpin climb.",
+  "summary": "A clockwise loop out of Bangalore that climbs into the Nilgiris the hard way — up the Dimbam ghat from the Sathyamangalam forests — rides the tea-estate ridge from Kotagiri to Ooty, drops through Gudalur, and comes home along the Mudumalai–Bandipur elephant corridor. Doable as a very long single day (14–16 hours of riding) but far better as two days with a night in Coonoor or Ooty.",
+  "type": "loop",
+  "days": "1–2 days",
+  "added": "2026-09-15",
+  "totalKm": 610,
+  "hours": "14–16 hrs",
+  "hairpins": 27,
+  "difficulty": "Moderate",
+  "bestSeason": "Oct – Mar",
+  "startsAt": "Bangalore",
+  "tags": ["tea estates", "hairpins", "tiger reserves", "ghat roads", "loop", "motorcycle"],
+  "credit": { "name": "@odesseyofduo_4.9.25 & @sheidu_khan on Instagram", "note": "the 'Nilgiri Loop' reel that started this entry — 610 km, 27 hairpins (yes, they counted)" },
+  "waypoints": [
+    { "name": "Bangalore", "lat": 12.9716, "lng": 77.5946, "icon": "city" },
+    { "name": "Dimbam", "lat": 11.6010, "lng": 77.2210, "icon": "ghat" },
+    { "name": "Kotagiri", "lat": 11.4218, "lng": 76.8617, "icon": "tea" },
+    { "name": "Coonoor", "lat": 11.3530, "lng": 76.7959, "icon": "tea" },
+    { "name": "Ooty", "lat": 11.4102, "lng": 76.6950, "icon": "mountain" },
+    { "name": "Gudalur", "lat": 11.5031, "lng": 76.4932, "icon": "forest" },
+    { "name": "Mudumalai", "lat": 11.5677, "lng": 76.5475, "icon": "elephant" },
+    { "name": "Bandipur", "lat": 11.6663, "lng": 76.6318, "icon": "elephant" }
+  ],
+  "segments": [
+    { "km": 215, "road": "NH 948 via Kanakapura → Malavalli → Kollegal → Chamarajanagar → Sathyamangalam road", "note": "Fast, mostly two-lane. Fuel up at Chamarajanagar. The last 30 km before Dimbam run through Sathyamangalam Tiger Reserve.", "surface": "tarmac" },
+    { "km": 55, "road": "Dimbam ghat → Thalavadi → Kotagiri road", "note": "The 27 hairpins are on the Dimbam climb. Narrow, blind corners, buses cutting the apex. Then rolling plateau to Kotagiri.", "hairpins": 27, "surface": "tarmac" },
+    { "km": 20, "road": "Kotagiri – Coonoor road", "note": "Tea estates both sides; stop at the Kotagiri view points. Foggy after noon.", "surface": "tarmac" },
+    { "km": 20, "road": "Coonoor – Ooty (NH 181 ghat)", "note": "Runs beside the Nilgiri Mountain Railway. Heavy tourist traffic on weekends.", "surface": "tarmac" },
+    { "km": 50, "road": "Ooty – Naduvattam – Gudalur (NH 181)", "note": "Long descent, some broken patches after monsoon. Pykara falls and Naduvattam viewpoint en route.", "surface": "mixed" },
+    { "km": 15, "road": "Gudalur – Theppakadu (NH 181)", "note": "Enter Mudumalai Tiger Reserve. 40 km/h, no stopping, no horn.", "surface": "tarmac" },
+    { "km": 15, "road": "Theppakadu – Bandipur check post (NH 181 / NH 766)", "note": "Elephant corridor; the most likely stretch for an elephant on the road.", "surface": "tarmac" },
+    { "km": 220, "road": "Bandipur → Gundlupet → Mysore ring road → NH 275 Bangalore", "note": "Clear Bandipur before the two-wheeler cut-off. The Mysore–Bangalore expressway is fast and dull.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "The Dimbam climb — 27 numbered hairpins rising out of the Sathyamangalam forest with the plains behind you.",
+    "Kotagiri to Coonoor ridge road through tea estates; Kodanad and Catherine Falls viewpoints are short detours.",
+    "Coonoor–Ooty alongside the toy train line; Lamb's Rock and Dolphin's Nose near Coonoor.",
+    "Pykara Falls and the Naduvattam viewpoint on the Ooty–Gudalur descent.",
+    "Mudumalai and Bandipur — riding through two tiger reserves back-to-back, elephants and gaur likely at dusk."
+  ],
+  "offroad": {
+    "rating": 2,
+    "summary": "This is a tarmac loop — the challenge is the ghat sections, not dirt. Any road bike handles it; an ADV or scrambler just makes the broken patches easier.",
+    "notes": [
+      "Dimbam ghat: tight hairpins with loose gravel on the inside line after rain. Keep to your lane — buses use the whole road.",
+      "Ooty–Gudalur descent has potholed stretches and washed-out edges after the monsoon (Jun–Sep). Ride in the tyre tracks.",
+      "Optional dirt detour: the Masinagudi–Ooty 'Kalhatti ghat' (36 hairpins, very steep, one lane) instead of Gudalur — only in dry weather and only if you're confident with steep low-speed hairpins.",
+      "Fog and wet roads in Coonoor/Ooty from mid-afternoon; moss on the shaded corners is slippery.",
+      "Luggage: soft panniers or a tail bag; hard cases make the hairpin lane-share with buses tighter than you'd like."
+    ]
+  },
+  "timings": [
+    "Bandipur & Mudumalai forest stretch is CLOSED to all traffic 9:00 PM – 6:00 AM every day (Karnataka HC order). Two-wheelers are restricted earlier on the Bandipur side, roughly from 6:00 PM — plan to clear Bandipur by late afternoon.",
+    "Sathyamangalam forest (before Dimbam) has check posts; night riding is discouraged and elephants cross the road.",
+    "No permits needed. Carry ID; forest check posts may ask.",
+    "Fuel: Chamarajanagar and Sathyamangalam before the climb; Kotagiri, Coonoor, Ooty, Gudalur on the plateau; Gundlupet after Bandipur. Nothing inside the reserves."
+  ],
+  "cautions": [
+    "Wild elephants on the road in Sathyamangalam, Mudumalai and Bandipur — stop, kill the engine, give way, never overtake a herd.",
+    "Ooty–Coonoor weekend traffic can add an hour; start the loop before 5 AM if attempting it in one day.",
+    "Cold: Ooty drops to single digits in Dec–Jan mornings. Layers and a neck gaiter.",
+    "The 14–16 hour figure is riding time only. Two riders in the source reel did it; most people should split it."
+  ],
+  "photos": [
+    { "commons": "Glenmorgan Tea estate, Ooty.jpg", "caption": "Glenmorgan tea estate near Ooty" },
+    { "commons": "NH-209-Dimbam Ghat.jpg", "caption": "Dimbam ghat hairpins on the old NH 209 (now NH 948)" },
+    { "commons": "Mettupalayam view point in Kotagiri - Ooty Road IMG 20180827 175744990.jpg", "caption": "View point on the Kotagiri–Ooty road" },
+    { "commons": "Singara Tea Estate, Coonoor.jpg", "caption": "Singara tea estate, Coonoor" },
+    { "commons": "Nilgiri Mountain Railway-NMR X 37396 (Neela Kurinji)-Hillgrove Railway Station-WUS05787.jpg", "caption": "Nilgiri Mountain Railway at Hillgrove" },
+    { "commons": "Tea Plantation @ Gudalur - ooty Road - panoramio (3).jpg", "caption": "Tea plantations on the Gudalur–Ooty road" },
+    { "commons": "Niligiris seen from Bokkapuram,Mudumalai,Elephant corridor,Western Ghats.jpg", "caption": "The Nilgiris from Bokkapuram, Mudumalai elephant corridor" },
+    { "commons": "Deers in Bandipur Forest, Karnataka, India.jpg", "caption": "Spotted deer beside the road, Bandipur" }
+  ],
+  "sources": [
+    { "title": "Ooty–Mysore road: Bandipur & Mudumalai timings and night ban (OotyMade)", "url": "https://ootymade.com/pages/ooty-mysore-road-bandipur-mudumalai-timings-night-ban" },
+    { "title": "Why environmentalists don't want night traffic in Bandipur (The News Minute)", "url": "https://www.thenewsminute.com/karnataka/explained-why-environmentalists-don-t-want-vehicles-enter-bandipur-forest-night-110107" }
+  ]
+}

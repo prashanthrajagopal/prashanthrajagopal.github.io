@@ -2,13 +2,13 @@
 
 {% block extrahead %}
   <!-- Open Graph -->
-  <meta property="og:type" content="{% if page and page.meta and page.meta.date %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{{ page.title | default(config.site_name) }}">
-  <meta property="og:description" content="{{ page.meta.description | default(config.site_description) }}">
+  <meta property="og:type" content="{% if page and page.meta and page.meta.date is defined and page.meta.date %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.site_name }}{% endif %}">
+  <meta property="og:description" content="{% if page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
   <meta property="og:url" content="{{ page.canonical_url }}">
   <meta property="og:site_name" content="prashanthr.net">
   <meta property="og:locale" content="en_US">
-  {% if page and page.meta and page.meta.date %}
+  {% if page and page.meta and page.meta.date is defined and page.meta.date %}
   <meta property="article:author" content="Prashanth Rajagopal">
   <meta property="article:published_time" content="{{ page.meta.date }}">
   {% endif %}
@@ -16,8 +16,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@prashanthrajagopal">
-  <meta name="twitter:title" content="{{ page.title | default(config.site_name) }}">
-  <meta name="twitter:description" content="{{ page.meta.description | default(config.site_description) }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.site_name }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
 
   <!-- Canonical -->
   <link rel="canonical" href="{{ page.canonical_url }}">
@@ -48,5 +48,7 @@
     <a href="/wiki/astra/">Astra</a>
     <span class="pr-footer-sep">·</span>
     <a href="/blog/">Blog</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/roadtrips/">Road Trips</a>
   </div>
 {% endblock %}
