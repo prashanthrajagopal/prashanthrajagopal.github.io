@@ -21,9 +21,18 @@ hide:
     <button type="button" class="pr-filter-chip" data-filter="diy">DIY</button>
     <button type="button" class="pr-filter-chip" data-filter="iot">IoT</button>
     <button type="button" class="pr-filter-chip" data-filter="electronics">Electronics</button>
+    <button type="button" class="pr-filter-chip" data-filter="motorcycles">Motorcycles</button>
   </div>
 
   <div class="blog-posts-list">
+    <a class="blog-post-row" href="posts/my-ducati-didnt-sign-up-for-e20/" data-tags="motorcycles ducati e20 india">
+      <span class="post-date">15 Sep 2026</span>
+      <div>
+        <h3>My Ducati didn't sign up for E20, and neither did I</h3>
+        <p>Every pump in India went E20 — premium grades included. The only ethanol-free petrol left costs ₹168 a litre and is sold at three working pumps in Bengaluru.</p>
+      </div>
+      <span class="post-tag tag-architecture">Motorcycles</span>
+    </a>
     <a class="blog-post-row" href="posts/the-100kmph-build-list/" data-tags="diy rc-cars electronics india">
       <span class="post-date">2 Apr 2026</span>
       <div>

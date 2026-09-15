@@ -4,6 +4,7 @@
 
 ## Blog
 
+- [My Ducati didn't sign up for E20, and neither did I](https://prashanthr.net/blog/posts/my-ducati-didnt-sign-up-for-e20/): India's E20 rollout, why E10-rated bikes suffer, and hunting for ethanol-free XP100 / Speed 100 in Bengaluru.
 - [LiteLLM and the trust chain nobody audits](https://prashanthr.net/blog/posts/litellm-and-the-trust-chain-nobody-audits/): A compromised security scanner led to malicious PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.
 - [The 10ms lie we all tell](https://prashanthr.net/blog/posts/the-10ms-lie-we-all-tell/): Cache discipline as architecture discipline — every cache is a bet, and we only count the wins.
 - [What Rails taught me about supervision](https://prashanthr.net/blog/posts/what-rails-taught-me-about-supervision/): How Puma, Sidekiq, and a decade of Rails shaped Astra's actor supervision tree.
@@ -42,6 +43,6 @@
 - Author: Prashanth Rajagopal, software architect with 15+ years building production systems
 - Astra: autonomous agent OS — microkernel, actor model, DAG-based task graph, 16 microservices, chat agents, Slack integration
 - Tech stack: Go (Astra kernel), Ruby/Rails, Python, TypeScript
-- Interests: distributed systems, IoT, Home Assistant, RC cars, electronics, ESP32
+- Interests: distributed systems, IoT, Home Assistant, RC cars, electronics, ESP32, motorcycles
 - Site built with Zensical (MkDocs Material)
 - Location: India

@@ -24,11 +24,11 @@ hide:
         <a class="pr-section-link" href="blog/">All posts <span aria-hidden="true">→</span></a>
       </div>
       <!-- LATEST_BLOG_AUTOGEN_START -->
+      <a class="pr-recent-row" href="blog/posts/my-ducati-didnt-sign-up-for-e20/"><span class="post-date">15 Sep 2026</span><span class="pr-recent-title-text">My Ducati didn&#x27;t sign up for E20, and neither did I</span><span class="post-tag tag-architecture">Motorcycles</span></a>
       <a class="pr-recent-row" href="blog/posts/the-100kmph-build-list/"><span class="post-date">2 Apr 2026</span><span class="pr-recent-title-text">The 100km/h build list: every part, every reason</span><span class="post-tag tag-architecture">DIY</span></a>
       <a class="pr-recent-row" href="blog/posts/litellm-and-the-trust-chain-nobody-audits/"><span class="post-date">26 Mar 2026</span><span class="pr-recent-title-text">LiteLLM and the trust chain nobody audits</span><span class="post-tag tag-architecture">Security</span></a>
       <a class="pr-recent-row" href="blog/posts/sandboxes-arent-security-theater/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">Sandboxes aren&#x27;t security theater</span><span class="post-tag tag-astra">Astra</span></a>
       <a class="pr-recent-row" href="blog/posts/scheduling-without-losing-your-mind/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">Scheduling without losing your mind</span><span class="post-tag tag-astra">Astra</span></a>
-      <a class="pr-recent-row" href="blog/posts/the-10ms-lie-we-all-tell/"><span class="post-date">24 Mar 2026</span><span class="pr-recent-title-text">The 10ms lie we all tell</span><span class="post-tag tag-architecture">Architecture</span></a>
   <!-- LATEST_BLOG_AUTOGEN_END -->
     </div>
   </div>
