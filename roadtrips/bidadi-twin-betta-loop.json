@@ -1,0 +1,85 @@
+{
+  "slug": "bidadi-twin-betta-loop",
+  "title": "Bidadi Twin-Betta Loop",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bidadi → Byramangala backwaters → Narasimhaswamy Betta (fort-hill trek) → Kanakapura → Gavi Ranganatha Betta (cave temple, mud track to the top) → Kanva reservoir → Ramanagara → Manchanabele backwaters → Bidadi. ~140 km of village roads, two hill temples, two dirt sections.",
+  "summary": "A one-day loop out of Bidadi that strings together two little-visited hill temples south of Bangalore — Shri Narasimhaswamy Betta, a fort hill above Vadedoddi with stone steps and ruined ramparts, and Gavi Ranganatha (Gaviranga) Betta near Singarajapura, where the shrine sits in a cave behind a pond and a mud track climbs the hill. Between them the route deliberately stays off the Mysore highway: reservoir bund roads at Byramangala and Kanva, the granite-boulder country around Ramanagara, and a finish through the Manchanabele backwaters where the tarmac gives out into dirt. Short enough to start at 6 AM and be home for dinner, with about two hours of walking.",
+  "type": "loop",
+  "days": "1 day (incl. ~2 hrs of trekking)",
+  "added": "2026-09-15",
+  "totalKm": 140,
+  "hours": "7–9 hrs",
+  "difficulty": "Moderate",
+  "bestSeason": "Sep – Feb",
+  "startsAt": "Bidadi",
+  "tags": ["hill temples", "trek", "fort", "cave temple", "backwaters", "dirt track", "day loop", "motorcycle"],
+  "credit": { "name": "Instagram location tag — Narasimha Swamy Hill Temple, Bidadi & Gavi", "note": "the two pins that started this; the loop around them is my own" },
+  "waypoints": [
+    { "name": "Bidadi", "lat": 12.7970, "lng": 77.3840 },
+    { "name": "Byramangala", "lat": 12.7520, "lng": 77.3860 },
+    { "name": "Narasimhaswamy Betta", "lat": 12.6066, "lng": 77.3651 },
+    { "name": "Kanakapura", "lat": 12.5480, "lng": 77.4200 },
+    { "name": "Gavi Ranganatha Betta", "lat": 12.5465, "lng": 77.2700 },
+    { "name": "Kanva Reservoir", "lat": 12.7030, "lng": 77.2050 },
+    { "name": "Ramanagara", "lat": 12.7170, "lng": 77.2830 },
+    { "name": "Manchanabele", "lat": 12.8980, "lng": 77.3650 }
+  ],
+  "segments": [
+    { "km": 8, "road": "Bidadi – Byramangala road", "note": "Leave the highway immediately. Narrow road along the Byramangala reservoir bund — pelicans and painted storks in winter, best at first light.", "surface": "tarmac" },
+    { "km": 24, "road": "Byramangala → Kanchugaranahalli → village roads to Vadedoddi", "note": "Single-lane village roads through ragi fields and eucalyptus. Navigate by map to 'Shri Narasimhaswamy Betta'; the last km is a concrete road behind an arch, often locked — park outside and walk.", "surface": "narrow tarmac / concrete" },
+    { "km": 14, "road": "Vadedoddi – Kanakapura", "note": "Back to a proper road. Kanakapura is the fuel and lunch stop — the only real town on the loop.", "surface": "tarmac" },
+    { "km": 22, "road": "Kanakapura – Channapatna road, turn for Haniyuru / Singarajapura", "note": "Rolling farmland with granite outcrops. Mud road up the hill to the temple; a stone-step trail if you'd rather walk it.", "surface": "tarmac, then mud track" },
+    { "km": 26, "road": "Haniyuru → Channapatna → Kanva dam road", "note": "Channapatna (toy town) is the only busy bit. Turn off for Kanva — quiet bund road along the reservoir with hills all round.", "surface": "tarmac" },
+    { "km": 12, "road": "Kanva – Ramanagara", "note": "Into the boulder country that Sholay was shot in. Ramadevara Betta is a short detour if daylight allows (closes 5:30 PM).", "surface": "tarmac" },
+    { "km": 18, "road": "Ramanagara – Manchanabele road", "note": "Broken village road, then the dam. Dirt tracks around the backwaters — the loop's proper off-road section.", "surface": "broken tarmac / dirt" },
+    { "km": 16, "road": "Manchanabele – Bidadi", "note": "Quiet run back to Bidadi through farmland, past the Big Banyan Tree turn-off.", "surface": "tarmac" }
+  ],
+  "highlights": [
+    "Shri Narasimhaswamy Betta — an hour's climb up ancient stone steps past overgrown fort walls to a small temple and pool on top; almost nobody but villagers goes.",
+    "Gavi Ranganatha Betta — Rishyashringa's cave shrine behind a pond, Bhairaveshwara temple alongside, and a 360° view over Mari Betta, SRS hills and the lake below.",
+    "Byramangala and Kanva reservoirs — two bund roads that most riders skip, both empty at dawn.",
+    "Ramanagara's granite boulders on the Kanva road — Sholay country without the Sholay traffic.",
+    "Manchanabele backwaters at sunset — dirt tracks down to the water with Savandurga on the skyline."
+  ],
+  "offroad": {
+    "rating": 3,
+    "summary": "Mostly single-lane village tarmac with two genuine dirt sections: the mud track up Gavi Ranganatha Betta and the backwater trails at Manchanabele. Both are fine on an ADV or scrambler in the dry; on a road bike walk the hill and stop at the dam.",
+    "notes": [
+      "Gavi Ranganatha mud road: loose red soil and rock steps; rideable in dry months, slick as soap after rain. Low tyre pressures help.",
+      "Manchanabele backwater tracks: soft sand near the water's edge, ruts from 4x4s. Turn around before the ground goes dark and wet — bikes sink.",
+      "Narasimhaswamy Betta: no riding above the arch. The trek is 30–60 min up with loose soil on the descent — proper shoes, not riding boots.",
+      "Village roads near Vadedoddi: unmarked speed breakers, cattle, and sudden gravel patches where the surface has been dug up.",
+      "Carry a tyre-plug kit; there is nothing between Kanakapura and Ramanagara."
+    ]
+  },
+  "timings": [
+    "Gavi Ranganatha cave shrine is opened only on Saturdays and festival days — ride it on a Saturday if you want to go inside; the hill and outer temple are open daily (roughly till 6 PM).",
+    "Narasimhaswamy Betta temple opens around 8 AM; the gate road may be locked — park outside and walk.",
+    "Ramadevara Betta closes at 5:30 PM. Manchanabele dam area is best left before dark; no lighting.",
+    "Fuel: Bidadi at the start, Kanakapura mid-loop, Ramanagara near the end. Locals near Narasimhaswamy Betta sell bottled petrol in a pinch.",
+    "No permits. Both hill temples are free; small parking fee at Gavi Ranganatha."
+  ],
+  "cautions": [
+    "Gavi Ranganatha's hill is surrounded by forest — bears visit the artificial pond. Don't linger after dusk, don't leave food out.",
+    "The Narasimhaswamy Betta pool is polluted by offerings; carry your own water for the trek.",
+    "Monsoon (Jun–Aug) makes both dirt sections unrideable and the stone steps slippery; the reservoirs are prettiest right after, in Sep–Oct.",
+    "Google Maps will try to put you back on the Mysore highway between Channapatna and Bidadi — ignore it and follow the Kanva/Ramanagara/Manchanabele legs."
+  ],
+  "photos": [
+    { "commons": "Ramanagara Hills (10306067976).jpg", "caption": "Granite boulder country around Ramanagara" },
+    { "commons": "Byramangala.jpg", "caption": "Byramangala reservoir near Bidadi" },
+    { "commons": "Kanva dam.jpg", "caption": "Kanva reservoir, Channapatna" },
+    { "commons": "SRS hills, Ramanagara.jpg", "caption": "SRS hills — visible from the top of Gavi Ranganatha Betta" },
+    { "commons": "Ramadevara Betta Hill (1), Karnataka.png", "caption": "Ramadevara Betta, the optional detour near Ramanagara" },
+    { "commons": "Sathanur, Kanakapura, Karnataka.jpg", "caption": "Farmland south of Kanakapura" },
+    { "commons": "Savandurga Hill 01.jpg", "caption": "Savandurga monolith on the skyline from the Manchanabele backwaters" }
+  ],
+  "sources": [
+    { "title": "Sri Narasimhaswamy Betta trek — Aravind Gundumane", "url": "https://aravindgundumane.com/2025/02/sri-narasimhaswamy-betta-trek/" },
+    { "title": "Shri Narasimhaswamy Betta scouting trek — The Loapers (Feb 2026)", "url": "https://www.theloapers.com/2026/03/shri-narasimhaswamy-betta-trek-scouting.html" },
+    { "title": "Gavi Ranganatha Swamy Temple (Gavi Rangana Betta) — Punith B M", "url": "https://medium.com/@punith/gavi-ranganatha-swamy-temple-gavi-rangana-betta-627a08c820c" },
+    { "title": "Gavi Ranganatha Swamy Temple — Tripoto", "url": "https://www.tripoto.com/karnataka/trips/it-is-not-down-on-any-map-true-places-never-are-ramanagara-channapatna-5f94795f868cd" },
+    { "title": "Places of interest — Ramanagara district administration", "url": "https://ramanagara.nic.in/en/places-of-interest/" }
+  ]
+}
