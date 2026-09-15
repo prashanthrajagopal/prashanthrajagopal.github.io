@@ -101,8 +101,9 @@ NUM_RECENT = 5
 
 
 def build_card(posts: list[dict]) -> str:
-    """Newest post as a featured card, the rest as compact rows with a one-line description."""
+    """Newest post as a featured card beside the hero, the next ones as a card grid below it."""
     lines = [f"  {MARK_START}"]
+    grid = []
     for i, p in enumerate(posts[:NUM_RECENT]):
         href = html.escape(f"blog/posts/{p['slug']}/", quote=True)
         title_e = html.escape(p["title"])
@@ -113,22 +114,29 @@ def build_card(posts: list[dict]) -> str:
         if i == 0:
             lines.append(
                 f'      <a class="pr-featured-post" href="{href}">'
-                f'<span class="pr-featured-meta"><span class="post-tag {tag}">{cat_e}</span>'
-                f'<span class="post-date">{date_e}</span></span>'
+                f'<span class="pr-featured-meta"><span class="pr-featured-label">Latest post</span>'
+                f'<span class="post-tag {tag}">{cat_e}</span><span class="post-date">{date_e}</span></span>'
                 f'<span class="pr-featured-title">{title_e}</span>'
                 f'<span class="pr-featured-desc">{desc_e}</span>'
                 f'<span class="pr-featured-cta">Read the post <span aria-hidden="true">&rarr;</span></span>'
                 f"</a>"
             )
         else:
-            lines.append(
-                f'      <a class="pr-recent-row" href="{href}">'
-                f'<span class="post-date">{date_e}</span>'
-                f'<span class="pr-recent-body"><span class="pr-recent-title-text">{title_e}</span>'
-                f'<span class="pr-recent-desc">{desc_e}</span></span>'
-                f'<span class="post-tag {tag}">{cat_e}</span>'
+            grid.append(
+                f'        <a class="pr-post-card" href="{href}">'
+                f'<span class="pr-card-meta"><span class="post-tag {tag}">{cat_e}</span>'
+                f'<span class="post-date">{date_e}</span></span>'
+                f'<span class="pr-post-card-title">{title_e}</span>'
+                f'<span class="pr-post-card-desc">{desc_e}</span>'
                 f"</a>"
             )
+    lines.append(
+        '      <div class="pr-recent-head"><h2 class="pr-recent-title">More writing</h2>'
+        '<a class="pr-section-link" href="blog/">All posts <span aria-hidden="true">&rarr;</span></a></div>'
+    )
+    lines.append('      <div class="pr-recent-grid">')
+    lines.extend(grid)
+    lines.append("      </div>")
     lines.append(f"  {MARK_END}")
     return "\n".join(lines)
 

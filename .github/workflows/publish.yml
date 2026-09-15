@@ -39,6 +39,9 @@ jobs:
       - name: Build site
         run: zensical build --clean
 
+      - name: Version CSS/JS links
+        run: python scripts/cache_bust_assets.py
+
       - name: Sitemap and robots.txt
         run: python scripts/generate_sitemap.py
         env:
