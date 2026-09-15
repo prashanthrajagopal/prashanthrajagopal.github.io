@@ -31,7 +31,7 @@ hide:
         <h3>My Ducati didn't sign up for E20, and neither did I</h3>
         <p>Every pump in India went E20 — premium grades included. The only ethanol-free petrol left costs ₹168 a litre and is sold at three working pumps in Bengaluru.</p>
       </div>
-      <span class="post-tag tag-architecture">Motorcycles</span>
+      <span class="post-tag tag-motorcycles">Motorcycles</span>
     </a>
     <a class="blog-post-row" href="posts/the-100kmph-build-list/" data-tags="diy rc-cars electronics india">
       <span class="post-date">2 Apr 2026</span>
@@ -47,7 +47,7 @@ hide:
         <h3>LiteLLM and the trust chain nobody audits</h3>
         <p>A compromised security scanner, stolen PyPI credentials, and a .pth file that ran on every Python startup. Three hours, 3.4 million daily downloads.</p>
       </div>
-      <span class="post-tag tag-architecture">Security</span>
+      <span class="post-tag tag-security">Security</span>
     </a>
     <a class="blog-post-row" href="posts/the-10ms-lie-we-all-tell/" data-tags="architecture caching astra">
       <span class="post-date">24 Mar 2026</span>

@@ -55,11 +55,18 @@ def _excerpt(body: str) -> str:
     return para
 
 
+TAG_CLASSES = {
+    "astra": "tag-astra",
+    "security": "tag-security",
+    "rails": "tag-rails",
+    "diy": "tag-diy",
+    "motorcycles": "tag-motorcycles",
+}
+
+
 def _tag_class(category: str) -> str:
-    c = (category or "").lower()
-    if "astra" in c:
-        return "tag-astra"
-    return "tag-architecture"
+    """Chip colour per category; Architecture/Systems/Infrastructure share the blue."""
+    return TAG_CLASSES.get((category or "").lower(), "tag-architecture")
 
 
 def load_post(path: Path) -> dict | None:
@@ -86,6 +93,7 @@ def load_post(path: Path) -> dict | None:
         "category": str(category),
         "slug": path.stem,
         "excerpt": _excerpt(body),
+        "description": " ".join(str(fm.get("description") or "").split()),
     }
 
 
@@ -93,19 +101,34 @@ NUM_RECENT = 5
 
 
 def build_card(posts: list[dict]) -> str:
+    """Newest post as a featured card, the rest as compact rows with a one-line description."""
     lines = [f"  {MARK_START}"]
-    for p in posts[:NUM_RECENT]:
+    for i, p in enumerate(posts[:NUM_RECENT]):
         href = html.escape(f"blog/posts/{p['slug']}/", quote=True)
         title_e = html.escape(p["title"])
         cat_e = html.escape(p["category"])
+        date_e = html.escape(p["date_display"])
+        desc_e = html.escape(p["description"] or p["excerpt"])
         tag = _tag_class(p["category"])
-        lines.append(
-            f'      <a class="pr-recent-row" href="{href}">'
-            f'<span class="post-date">{html.escape(p["date_display"])}</span>'
-            f'<span class="pr-recent-title-text">{title_e}</span>'
-            f'<span class="post-tag {tag}">{cat_e}</span>'
-            f"</a>"
-        )
+        if i == 0:
+            lines.append(
+                f'      <a class="pr-featured-post" href="{href}">'
+                f'<span class="pr-featured-meta"><span class="post-tag {tag}">{cat_e}</span>'
+                f'<span class="post-date">{date_e}</span></span>'
+                f'<span class="pr-featured-title">{title_e}</span>'
+                f'<span class="pr-featured-desc">{desc_e}</span>'
+                f'<span class="pr-featured-cta">Read the post <span aria-hidden="true">&rarr;</span></span>'
+                f"</a>"
+            )
+        else:
+            lines.append(
+                f'      <a class="pr-recent-row" href="{href}">'
+                f'<span class="post-date">{date_e}</span>'
+                f'<span class="pr-recent-body"><span class="pr-recent-title-text">{title_e}</span>'
+                f'<span class="pr-recent-desc">{desc_e}</span></span>'
+                f'<span class="post-tag {tag}">{cat_e}</span>'
+                f"</a>"
+            )
     lines.append(f"  {MARK_END}")
     return "\n".join(lines)
 
