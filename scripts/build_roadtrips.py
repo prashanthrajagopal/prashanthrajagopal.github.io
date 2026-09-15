@@ -5,6 +5,7 @@ Generate the Road Trips section from roadtrips/*.json.
   roadtrips/<slug>.json  →  docs/roadtrips/<slug>.md  (+ <slug>-route.svg)
                          →  docs/roadtrips/index.md   (card grid)
                          →  nav block in mkdocs.yml between the ROADTRIPS_NAV markers
+                         →  homepage strip in docs/index.md between the ROADTRIPS_HOME markers
 
 Run before `zensical build` / `zensical serve`. No dependencies beyond the stdlib.
 Files in roadtrips/ starting with "_" are ignored (the _template.json lives there).
@@ -24,6 +25,9 @@ DATA = ROOT / "roadtrips"
 OUT = ROOT / "docs" / "roadtrips"
 MKDOCS = ROOT / "mkdocs.yml"
 NAV_START, NAV_END = "  # ROADTRIPS_NAV_START", "  # ROADTRIPS_NAV_END"
+HOME = ROOT / "docs" / "index.md"
+HOME_START, HOME_END = "<!-- ROADTRIPS_HOME_START -->", "<!-- ROADTRIPS_HOME_END -->"
+HOME_TRIPS = 3
 
 esc = html.escape
 
@@ -398,6 +402,39 @@ def validate(t: dict, f: Path):
         print(f"  ! {f.name}: {len(t['segments'])} segments but {expect} expected", file=sys.stderr)
 
 
+def home_card(t: dict) -> str:
+    kv = [f"<b>{t['totalKm']}</b> km", f"<b>{esc(t['hours'])}</b>"]
+    if t.get("hairpins"):
+        kv.append(f"<b>{t['hairpins']}</b> hairpins")
+    kv.append(f"<b>{esc(t['difficulty'])}</b>")
+    return (f'        <a class="pr-trip-card" href="roadtrips/{t["slug"]}/">'
+            f'<span class="pr-trip-map"><img src="roadtrips/{t["slug"]}-route.svg" alt="Route map of {esc(t["title"])}" '
+            f'width="{W}" height="{H}" loading="lazy"><span class="rt-badge">{esc(t["region"])}</span></span>'
+            f'<span class="pr-trip-body"><span class="pr-trip-title">{esc(t["title"])}</span>'
+            f'<span class="pr-trip-desc">{esc(t["tagline"])}</span>'
+            f'<span class="rt-kv">{"".join(f"<span>{x}</span>" for x in kv)}</span></span></a>')
+
+
+def update_home(trips):
+    """Newest trips as a card strip on the homepage, below the blog cards."""
+    text = HOME.read_text(encoding="utf-8")
+    if HOME_START not in text or HOME_END not in text:
+        print("build_roadtrips.py: home markers not found in docs/index.md, skipping homepage strip", file=sys.stderr)
+        return
+    block = [
+        HOME_START,
+        '      <div class="pr-recent-head"><h2 class="pr-recent-title">Road trips</h2>'
+        '<a class="pr-section-link" href="roadtrips/">All trips <span aria-hidden="true">&rarr;</span></a></div>',
+        '      <div class="pr-trips-grid">',
+        *[home_card(t) for t in trips[:HOME_TRIPS]],
+        "      </div>",
+        f"  {HOME_END}",
+    ]
+    new = re.sub(re.escape(HOME_START) + r".*?" + re.escape(HOME_END), lambda _m: "\n".join(block), text, flags=re.S)
+    if new != text:
+        HOME.write_text(new, encoding="utf-8")
+
+
 def update_nav(trips):
     text = MKDOCS.read_text(encoding="utf-8")
     if NAV_START not in text or NAV_END not in text:
@@ -433,6 +470,7 @@ def main():
         if stale.name not in keep and stale.suffix in (".md", ".svg"):
             stale.unlink()
     update_nav(trips)
+    update_home(trips)
     print(f"Road Trips: {len(trips)} trips → docs/roadtrips/")
 
 
