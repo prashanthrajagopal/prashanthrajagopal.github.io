@@ -46,3 +46,12 @@ I didn't skip Kubernetes because I don't respect it. I skipped it because **the 
 Maybe your project is different. Maybe your team is already three people and production is next Tuesday. In that case, reach for the tool that matches the fire you're standing in. For me, this month, the fire was design clarity — and Kubernetes doesn't help with that. It waits until you're ready to **operationalize** what you already believe.
 
 Thanks for reading.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="litellm-and-the-trust-chain-nobody-audits.md"><span class="pr-related-title">LiteLLM and the trust chain nobody audits</span><span class="pr-related-desc">A compromised security scanner led to malicious LiteLLM PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.</span></a>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="the-10ms-lie-we-all-tell.md"><span class="pr-related-title">The 10ms lie we all tell</span><span class="pr-related-desc">That cache hit on the whiteboard is measuring the wrong thing. Cache discipline is architecture discipline — every cache is a bet, and we only count the wins.</span></a>
+</aside>
+<!-- RELATED_END -->

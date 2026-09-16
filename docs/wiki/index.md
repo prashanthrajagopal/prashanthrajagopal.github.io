@@ -11,16 +11,16 @@ This wiki is the **technical companion** to [prashanthr.net](https://prashanthr.
 
 | Who | Start here |
 |-----|------------|
-| **Astra contributors** | [Astra overview](../astra/) → [Architecture overview](../astra/architecture/overview/) → [Reference](../astra/reference/) |
-| **Operators / SRE** | [Operations](../astra/operations/) → runbooks → [Deployment](../astra/deployment/) |
+| **Astra contributors** | [Astra overview](../astra/) → [Architecture overview](astra/architecture/overview.md) → [Reference](astra/reference/index.md) |
+| **Operators / SRE** | [Operations](astra/operations/index.md) → runbooks → [Deployment](astra/deployment/index.md) |
 | **Readers of the blog** | [Blog](../blog/) — longer essays; wiki is structured reference |
 | **Site contributors** | [Site contributing](getting-started.md) — Zensical, frontmatter, CI |
 
 ## How to read the Astra docs
 
 1. **[Astra home](../astra/)** — vision, goals, non-goals, scale targets.
-2. **[Architecture → Overview](../astra/architecture/overview/)** — layers, data flow, Kubernetes layout.
-3. **[Glossary](../astra/glossary.md)** — terms and acronyms.
+2. **[Architecture → Overview](astra/architecture/overview.md)** — layers, data flow, Kubernetes layout.
+3. **[Glossary](astra/glossary.md)** — terms and acronyms.
 4. Deep dives: kernel, task graph, scheduler, services, memory, LLM routing as needed.
 
 For **Astra**, the authoritative spec is **`docs/PRD.md`** in the [Astra repository](https://github.com/prashanthrajagopal/astra) (or your fork). This wiki summarises and diagrams it; if something disagrees with the PRD, **the PRD wins**.

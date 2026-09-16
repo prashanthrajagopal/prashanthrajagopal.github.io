@@ -69,3 +69,12 @@ If your agent's memory is a single vector database, here's what you don't have:
 None of this is a critique of pgvector specifically — pgvector is the right call for the semantic layer, and running it inside Postgres means it shares the transaction model and durability guarantees of the rest of Astra's state. The critique is of treating it as the whole answer.
 
 Memory is a spectrum from "what am I holding right now" to "what is vaguely related to this concept." Vector search lives at one end. An agent needs the whole thing.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="chat-is-the-easy-part.md"><span class="pr-related-title">Chat is the easy part</span><span class="pr-related-desc">What it actually took to bolt WebSocket streaming onto Astra — and why the session model matters more than the protocol.</span></a>
+  <a class="pr-related-item" href="why-im-building-astra.md"><span class="pr-related-title">Why I'm building Astra</span><span class="pr-related-desc">Fifteen years of shipping production systems, and agents still don't have a real OS. Astra is a microkernel-style substrate for autonomous agents.</span></a>
+</aside>
+<!-- RELATED_END -->

@@ -66,3 +66,12 @@ You can't `git blame` a resistor. You can't add a retry loop to a broken solder 
 That forced humility — *measure, don't guess* — is the most transferable thing I've gotten from hardware. It's also the thing that software development's tooling actively works against, by making it easy to add more logs, more assertions, more observability, without ever requiring you to form a precise hypothesis first.
 
 Every software engineer should own a multimeter. Not because they'll need to debug circuits. Because it teaches you what debugging actually is — and it's not adding print statements until something looks different.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="the-100kmph-build-list.md"><span class="pr-related-title">The 100km/h build list: every part, every reason</span><span class="pr-related-desc">A full custom 1/8 scale RC buggy built entirely by hand — chassis kit, motor, ESC, batteries, and every bolt chosen individually. The complete parts list for a 100km/h build sourced from India.</span></a>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="dead-letters-are-a-feature.md"><span class="pr-related-title">Dead letters are a feature, not a failure</span><span class="pr-related-desc">Designing for task exhaustion with dead-letter queues and retry budgets makes your system more honest than pretending everything succeeds.</span></a>
+</aside>
+<!-- RELATED_END -->

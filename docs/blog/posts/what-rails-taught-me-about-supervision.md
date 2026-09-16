@@ -63,3 +63,12 @@ The systems that survive are the ones where crashing is a handled case, not a su
 Astra doesn't pretend agents won't fail. It gives them supervisors. That decision traces back, through a decade of Erlang reading, through OTP design docs, all the way to watching a Puma worker segfault at 2am and come back three seconds later like nothing happened.
 
 Thanks, Rails. I owe you more than I usually admit.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="ruby-in-2026.md"><span class="pr-related-title">Ruby in 2026: still boring, still right</span><span class="pr-related-desc">Rails isn't trendy and it isn't dead. Boring technology choices compound, and the Ruby ecosystem does more right than the hype cycle admits.</span></a>
+  <a class="pr-related-item" href="litellm-and-the-trust-chain-nobody-audits.md"><span class="pr-related-title">LiteLLM and the trust chain nobody audits</span><span class="pr-related-desc">A compromised security scanner led to malicious LiteLLM PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.</span></a>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+</aside>
+<!-- RELATED_END -->

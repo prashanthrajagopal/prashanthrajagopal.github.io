@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-I wrote about [the pain of getting RC car parts in India](../rc-cars-and-the-india-parts-problem/) a couple of months ago. The conclusion was clear: if you want anything beyond toy-grade, you're importing. Since then I've gone deeper — and in the opposite direction from what most people do. No ready-to-run car. No pre-built electronics. I'm building the entire thing by hand, bolt by bolt, solder joint by solder joint, from a competition chassis kit and individually chosen components.
+I wrote about [the pain of getting RC car parts in India](rc-cars-and-the-india-parts-problem.md) a couple of months ago. The conclusion was clear: if you want anything beyond toy-grade, you're importing. Since then I've gone deeper — and in the opposite direction from what most people do. No ready-to-run car. No pre-built electronics. I'm building the entire thing by hand, bolt by bolt, solder joint by solder joint, from a competition chassis kit and individually chosen components.
 
 This is the full parts list for a **1/8 scale 4WD electric buggy that should touch 100km/h**.
 
@@ -183,7 +183,7 @@ The Tekno EB48 2.2 kit includes a spur gear but you need to buy a pinion separat
 
 ## Spare parts — order before you need them
 
-The lesson from [the first post](../rc-cars-and-the-india-parts-problem/): **when something breaks at 100km/h, you cannot wait 4-6 weeks for shipping**. Order spares with the kit.
+The lesson from [the first post](rc-cars-and-the-india-parts-problem.md): **when something breaks at 100km/h, you cannot wait 4-6 weeks for shipping**. Order spares with the kit.
 
 - **2× front A-arms, 2× rear A-arms** — first thing that snaps
 - **1× steering rack assembly** — tie rods bend on hard impacts
@@ -208,3 +208,12 @@ This is a build, not an unboxing. My plan:
 8. **Speed tuning** — gear up one tooth at a time. GPS speed checks. Motor temp checks. Repeat until 100.
 
 I'll document the build as I go. Probably with more profanity than technical precision, but the data will be clean.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="rc-cars-and-the-india-parts-problem.md"><span class="pr-related-title">My first RC car build: an engineer's guide to pain in India</span><span class="pr-related-desc">Approaching RC cars like a software person — choosing a platform, brushless ESCs, LiPo safety, and the uniquely Indian challenge of getting parts at all.</span></a>
+  <a class="pr-related-item" href="my-ducati-didnt-sign-up-for-e20.md"><span class="pr-related-title">My Ducati didn't sign up for E20, and neither did I</span><span class="pr-related-desc">India went E20 at nearly every pump — premium grades included. The only ethanol-free petrol left is 100-octane, costs ₹168 a litre, and is out of stock across most of Bengaluru.</span></a>
+  <a class="pr-related-item" href="what-electronics-taught-me-about-debugging.md"><span class="pr-related-title">What electronics taught me about debugging software</span><span class="pr-related-desc">Oscilloscopes, multimeters, and tracing signals through a circuit — the hardware debugging mindset that transfers directly to distributed systems debugging.</span></a>
+</aside>
+<!-- RELATED_END -->

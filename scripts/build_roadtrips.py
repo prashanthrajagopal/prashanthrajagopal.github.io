@@ -280,6 +280,43 @@ def chips(items):
     return "".join(f'<span class="rt-chip">{esc(x)}</span>' for x in items)
 
 
+def trip_jsonld(t: dict) -> str:
+    """TouristTrip + itinerary so search engines get the route, distance and stops."""
+    url = f"https://prashanthr.net/roadtrips/{t['slug']}/"
+    itinerary = [
+        {
+            "@type": "Place",
+            "name": w["name"],
+            "geo": {"@type": "GeoCoordinates", "latitude": w["lat"], "longitude": w["lng"]},
+        }
+        for w in t["waypoints"]
+    ]
+    data = {
+        "@context": "https://schema.org",
+        "@type": "TouristTrip",
+        "@id": url + "#trip",
+        "name": t["title"],
+        "description": t["summary"],
+        "url": url,
+        "image": f"https://prashanthr.net/assets/og/trip-{t['slug']}.png",
+        "touristType": ["Motorcycling", "Road trip"],
+        "itinerary": {"@type": "ItemList", "numberOfItems": len(itinerary),
+                      "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": pl}
+                                          for i, pl in enumerate(itinerary)]},
+        "subjectOf": {"@type": "CreativeWork", "author": {"@id": "https://prashanthr.net/#person"}},
+        "provider": {"@id": "https://prashanthr.net/#person"},
+    }
+    if t.get("totalKm"):
+        data["distance"] = f"{t['totalKm']} km"
+    if t.get("startsAt"):
+        data["departureLocation"] = {"@type": "Place", "name": t["startsAt"]}
+    if t.get("bestSeason"):
+        data["temporalCoverage"] = t["bestSeason"]
+    return ('<script type="application/ld+json">'
+            + json.dumps(data, ensure_ascii=False)
+            + "</script>")
+
+
 def trip_page(t: dict) -> str:
     hero = (t.get("photos") or [None])[0]
     wps = t["waypoints"]
@@ -395,6 +432,7 @@ hide:
     if sources:
         md += f"\n## Sources &amp; further reading\n\n{sources}\n"
     md += '\n<p class="rt-back"><a href="../">← All road trips</a></p>\n'
+    md += "\n" + trip_jsonld(t) + "\n"
     return md
 
 

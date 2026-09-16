@@ -50,3 +50,12 @@ I'm not claiming every deployment hits single-digit milliseconds on day one. I *
 The kernel's first 10ms — really, every **Send** on a live actor — should be **lookup, enqueue, done**. Boot can be slow. Planning can be slow. The world can be slow. But the moment you decide "this message has arrived," that decision had better be almost free.
 
 Everything else is commentary. Possibly Ruby-flavoured commentary elsewhere. Not in the mailbox path.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="chat-is-the-easy-part.md"><span class="pr-related-title">Chat is the easy part</span><span class="pr-related-desc">What it actually took to bolt WebSocket streaming onto Astra — and why the session model matters more than the protocol.</span></a>
+  <a class="pr-related-item" href="the-approval-gate-nobody-wants.md"><span class="pr-related-title">The approval gate nobody wants (until they do)</span><span class="pr-related-desc">Building dual-approval and plan gates into an autonomous agent system — the tension between speed and not letting agents terraform destroy prod.</span></a>
+</aside>
+<!-- RELATED_END -->

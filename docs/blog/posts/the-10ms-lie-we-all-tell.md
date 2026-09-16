@@ -52,3 +52,12 @@ Here's the thing about that "< 1ms" on the whiteboard: it's measuring the wrong 
 I'm not anti-cache. I cache aggressively in Astra where the contract is clear. But I've stopped pretending that adding a cache is free. Every cache is a bet. The 10ms lie is that we only count the wins.
 
 The honest version: caching makes your system faster *and* less correct, and your job is to decide how much of each you can afford.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="litellm-and-the-trust-chain-nobody-audits.md"><span class="pr-related-title">LiteLLM and the trust chain nobody audits</span><span class="pr-related-desc">A compromised security scanner led to malicious LiteLLM PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.</span></a>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="what-rails-taught-me-about-supervision.md"><span class="pr-related-title">What Rails taught me about supervision</span><span class="pr-related-desc">Puma, Sidekiq, and the art of not staying dead — how a decade of Rails taught me that restart is the first answer, not the last resort.</span></a>
+</aside>
+<!-- RELATED_END -->

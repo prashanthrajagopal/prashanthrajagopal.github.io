@@ -115,7 +115,6 @@ extra_css:
 extra_javascript:
   - javascripts/header-brand.js
   - javascripts/blog-filter.js
-  - javascripts/structured-data.js
 
 extra:
   generator: false

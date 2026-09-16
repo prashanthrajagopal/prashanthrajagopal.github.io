@@ -57,3 +57,12 @@ Constraints make you design better. The ₹15,000 Awair removes every constraint
 There's also a privacy argument, and it's not paranoia — it's architecture. A sensor that publishes to your local MQTT broker cannot be bricked by a company going under, cannot have its data harvested, and cannot require a subscription to access data it already collected. The business model of commercial IoT is incompatible with long-term data ownership. Local-first isn't a philosophy, it's an engineering requirement if you want your sensors to still work in five years.
 
 The ESP32 with open firmware and local MQTT is more reliable, more private, and significantly more interesting to build than anything you can buy at a retail markup. That the components cost less is almost beside the point — though it does make the decision easier.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="home-assistant-ruined-my-light-switches.md"><span class="pr-related-title">Home Assistant ruined my light switches</span><span class="pr-related-desc">From smart bulbs to a full Home Assistant setup — MQTT, Zigbee, automations that work, and the ones that spectacularly don't.</span></a>
+  <a class="pr-related-item" href="the-100kmph-build-list.md"><span class="pr-related-title">The 100km/h build list: every part, every reason</span><span class="pr-related-desc">A full custom 1/8 scale RC buggy built entirely by hand — chassis kit, motor, ESC, batteries, and every bolt chosen individually. The complete parts list for a 100km/h build sourced from India.</span></a>
+  <a class="pr-related-item" href="rc-cars-and-the-india-parts-problem.md"><span class="pr-related-title">My first RC car build: an engineer's guide to pain in India</span><span class="pr-related-desc">Approaching RC cars like a software person — choosing a platform, brushless ESCs, LiPo safety, and the uniquely Indian challenge of getting parts at all.</span></a>
+</aside>
+<!-- RELATED_END -->

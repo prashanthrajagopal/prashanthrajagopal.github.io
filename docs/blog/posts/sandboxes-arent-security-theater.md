@@ -72,3 +72,12 @@ Security engineering is asking uncomfortable questions. What can escape this bou
 Sandboxes aren't theater when they're built with the same discipline as the rest of the system. They're theater when they exist to satisfy an audit rather than to contain a failure.
 
 The agent ecosystem is young enough that we get to set these norms. I'd rather set them honestly than optimistically.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="litellm-and-the-trust-chain-nobody-audits.md"><span class="pr-related-title">LiteLLM and the trust chain nobody audits</span><span class="pr-related-desc">A compromised security scanner led to malicious LiteLLM PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.</span></a>
+  <a class="pr-related-item" href="the-approval-gate-nobody-wants.md"><span class="pr-related-title">The approval gate nobody wants (until they do)</span><span class="pr-related-desc">Building dual-approval and plan gates into an autonomous agent system — the tension between speed and not letting agents terraform destroy prod.</span></a>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+</aside>
+<!-- RELATED_END -->

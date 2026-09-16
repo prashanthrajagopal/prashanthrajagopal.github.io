@@ -72,3 +72,12 @@ Package managers are built on a trust model that assumes the publisher is who th
 The agent ecosystem is building on top of this. Every agent framework, every tool library, every LLM integration pulls from the same registries with the same trust model. The trust chain is longer than it's ever been — your agent trusts your platform, which trusts its dependencies, which trust their CI, which trusts its tools, which trust their maintainers' credentials — and **the length of the chain is the attack surface.**
 
 Three hours. That's all it took. The question isn't whether this will happen again. It's whether your architecture survives it when it does.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="the-approval-gate-nobody-wants.md"><span class="pr-related-title">The approval gate nobody wants (until they do)</span><span class="pr-related-desc">Building dual-approval and plan gates into an autonomous agent system — the tension between speed and not letting agents terraform destroy prod.</span></a>
+  <a class="pr-related-item" href="sandboxes-arent-security-theater.md"><span class="pr-related-title">Sandboxes aren't security theater</span><span class="pr-related-desc">WASM, Docker, Firecracker — the spectrum of sandboxing when agents run tools you didn't write. Deny by default, allow by exception.</span></a>
+  <a class="pr-related-item" href="why-im-building-astra.md"><span class="pr-related-title">Why I'm building Astra</span><span class="pr-related-desc">Fifteen years of shipping production systems, and agents still don't have a real OS. Astra is a microkernel-style substrate for autonomous agents.</span></a>
+</aside>
+<!-- RELATED_END -->

@@ -57,3 +57,12 @@ The systems I've seen that called themselves autonomous and had no governance we
 Astra's approval system is designed to be the infrastructure that earns the system more autonomy over time, not to be the ceiling. An agent that operates cleanly within its gates accumulates a record. That record justifies expanding the scope. An agent that needs a gate removed because it's "too slow" has a different kind of record.
 
 Nobody wants approval gates. Right up until they do.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="litellm-and-the-trust-chain-nobody-audits.md"><span class="pr-related-title">LiteLLM and the trust chain nobody audits</span><span class="pr-related-desc">A compromised security scanner led to malicious LiteLLM PyPI packages that harvested credentials and spread through Kubernetes clusters in three hours.</span></a>
+  <a class="pr-related-item" href="why-im-building-astra.md"><span class="pr-related-title">Why I'm building Astra</span><span class="pr-related-desc">Fifteen years of shipping production systems, and agents still don't have a real OS. Astra is a microkernel-style substrate for autonomous agents.</span></a>
+  <a class="pr-related-item" href="sandboxes-arent-security-theater.md"><span class="pr-related-title">Sandboxes aren't security theater</span><span class="pr-related-desc">WASM, Docker, Firecracker — the spectrum of sandboxing when agents run tools you didn't write. Deny by default, allow by exception.</span></a>
+</aside>
+<!-- RELATED_END -->

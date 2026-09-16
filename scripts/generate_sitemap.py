@@ -6,6 +6,7 @@ Uses every .../index.html under site/ (excludes standalone 404.html).
 from __future__ import annotations
 
 import os
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,6 +24,62 @@ def esc_xml(s: str) -> str:
     )
 
 
+ROOT = Path(__file__).resolve().parent.parent
+DOCS = ROOT / "docs"
+_git_cache: dict[Path, str] = {}
+
+
+def source_for(path: str) -> Path | None:
+    """Map a built URL path back to the file that actually authors it."""
+    rel = path.strip("/")
+    if not rel:
+        return DOCS / "index.md"
+    parts = rel.split("/")
+    if parts[:2] == ["roadtrips"] and len(parts) == 2:
+        data = ROOT / "roadtrips" / f"{parts[1]}.json"   # trip pages are generated from JSON
+        if data.is_file():
+            return data
+    for candidate in (DOCS / f"{rel}.md", DOCS / rel / "index.md"):
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def last_modified(path: str, fallback: Path) -> str:
+    """Last git commit date of the source file; falls back to file mtime."""
+    src = source_for(path)
+    if src is not None:
+        if src not in _git_cache:
+            try:
+                out = subprocess.run(
+                    ["git", "log", "-1", "--format=%cI", "--", str(src.relative_to(ROOT))],
+                    cwd=ROOT, capture_output=True, text=True, timeout=20,
+                )
+                _git_cache[src] = out.stdout.strip()[:10] if out.returncode == 0 else ""
+            except Exception:
+                _git_cache[src] = ""
+        if _git_cache[src]:
+            return _git_cache[src]
+    return datetime.fromtimestamp(fallback.stat().st_mtime, tz=timezone.utc).strftime("%Y-%m-%d")
+
+
+def rank(path: str) -> tuple[str, str]:
+    """(changefreq, priority) — newest, most linkable content first."""
+    if path == "/":
+        return "daily", "1.0"
+    if path in ("/blog/", "/roadtrips/", "/astra/"):
+        return "weekly", "0.9"
+    if path.startswith("/blog/posts/"):
+        return "monthly", "0.9"
+    if path.startswith("/roadtrips/"):
+        return "monthly", "0.8"
+    if path.startswith("/blog/"):
+        return "weekly", "0.5"          # archive / category pages
+    if path.startswith("/wiki/astra/"):
+        return "monthly", "0.7"
+    return "monthly", "0.6"
+
+
 def main() -> None:
     if not SITE.is_dir():
         print("generate_sitemap.py: site/ not found — run zensical build first", file=sys.stderr)
@@ -36,16 +93,9 @@ def main() -> None:
             path = "/"
         else:
             path = "/" + parent.as_posix().strip("/") + "/"
-        lastmod = datetime.fromtimestamp(
-            html.stat().st_mtime, tz=timezone.utc
-        ).strftime("%Y-%m-%d")
-        if path == "/":
-            priority = "1.0"
-        elif path.startswith("/blog"):
-            priority = "0.85"
-        else:
-            priority = "0.7"
-        entries.append((path, lastmod, "weekly", priority))
+        lastmod = last_modified(path, html)
+        changefreq, priority = rank(path)
+        entries.append((path, lastmod, changefreq, priority))
 
     entries.sort(key=lambda x: x[0])
 
@@ -74,6 +124,8 @@ def main() -> None:
         "User-agent: GPTBot\nAllow: /\n\n"
         "User-agent: ClaudeBot\nAllow: /\n\n"
         "User-agent: PerplexityBot\nAllow: /\n\n"
+        "User-agent: Google-Extended\nAllow: /\n\n"
+        "User-agent: CCBot\nAllow: /\n\n"
         f"Sitemap: {BASE}/sitemap.xml\n",
         encoding="utf-8",
     )

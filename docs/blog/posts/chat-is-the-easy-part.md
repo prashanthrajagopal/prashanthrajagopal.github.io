@@ -60,3 +60,12 @@ WebSocket framing, JSON serialization, token streaming — none of that is hard.
 The answer, in the end, was to treat chat not as a special case but as a degenerate case: a task graph where the user is the trigger for every phase. **The session is the persistent state; the DAG is what happens inside a turn.** Once that framing clicked, the rest was plumbing.
 
 The hardest thing to build is almost never the thing that looked hard at the start.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="agent-memory-is-not-a-vector-database.md"><span class="pr-related-title">Agent memory is not a vector database</span><span class="pr-related-desc">Working memory, episodic memory, and semantic search are three different things. pgvector is one layer, not the whole story.</span></a>
+  <a class="pr-related-item" href="why-im-building-astra.md"><span class="pr-related-title">Why I'm building Astra</span><span class="pr-related-desc">Fifteen years of shipping production systems, and agents still don't have a real OS. Astra is a microkernel-style substrate for autonomous agents.</span></a>
+</aside>
+<!-- RELATED_END -->

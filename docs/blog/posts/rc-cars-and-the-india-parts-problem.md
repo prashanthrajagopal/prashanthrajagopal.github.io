@@ -67,3 +67,12 @@ I could buy a pre-built car. I could also use a managed Kubernetes service and n
 What the build gives you is the same thing it always gives you: the satisfaction of understanding the system end to end. Every part I sourced, every servo I replaced, every LiPo I safely charged and stored — it's earned in a way that `git push` never quite captures.
 
 The hobby is rewarding *because* it's hard. The India parts problem is part of the hobby.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="the-100kmph-build-list.md"><span class="pr-related-title">The 100km/h build list: every part, every reason</span><span class="pr-related-desc">A full custom 1/8 scale RC buggy built entirely by hand — chassis kit, motor, ESC, batteries, and every bolt chosen individually. The complete parts list for a 100km/h build sourced from India.</span></a>
+  <a class="pr-related-item" href="my-ducati-didnt-sign-up-for-e20.md"><span class="pr-related-title">My Ducati didn't sign up for E20, and neither did I</span><span class="pr-related-desc">India went E20 at nearly every pump — premium grades included. The only ethanol-free petrol left is 100-octane, costs ₹168 a litre, and is out of stock across most of Bengaluru.</span></a>
+  <a class="pr-related-item" href="what-electronics-taught-me-about-debugging.md"><span class="pr-related-title">What electronics taught me about debugging software</span><span class="pr-related-desc">Oscilloscopes, multimeters, and tracing signals through a circuit — the hardware debugging mindset that transfers directly to distributed systems debugging.</span></a>
+</aside>
+<!-- RELATED_END -->

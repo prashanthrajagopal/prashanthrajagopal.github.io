@@ -54,3 +54,12 @@ Performance benchmarks get argued about on social media. The real moat that Ruby
 That's worth more than a faster JSON serializer.
 
 If I had to pick one language to ride into the sunset with, it's still Ruby. The others are tools; Ruby is the one I argue about at parties.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="what-rails-taught-me-about-supervision.md"><span class="pr-related-title">What Rails taught me about supervision</span><span class="pr-related-desc">Puma, Sidekiq, and the art of not staying dead — how a decade of Rails taught me that restart is the first answer, not the last resort.</span></a>
+  <a class="pr-related-item" href="my-ducati-didnt-sign-up-for-e20.md"><span class="pr-related-title">My Ducati didn't sign up for E20, and neither did I</span><span class="pr-related-desc">India went E20 at nearly every pump — premium grades included. The only ethanol-free petrol left is 100-octane, costs ₹168 a litre, and is out of stock across most of Bengaluru.</span></a>
+  <a class="pr-related-item" href="the-100kmph-build-list.md"><span class="pr-related-title">The 100km/h build list: every part, every reason</span><span class="pr-related-desc">A full custom 1/8 scale RC buggy built entirely by hand — chassis kit, motor, ESC, batteries, and every bolt chosen individually. The complete parts list for a 100km/h build sourced from India.</span></a>
+</aside>
+<!-- RELATED_END -->

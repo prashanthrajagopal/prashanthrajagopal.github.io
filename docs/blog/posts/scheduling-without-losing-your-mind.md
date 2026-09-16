@@ -73,3 +73,12 @@ Scheduling becomes manageable when you stop pretending it's a solved problem and
 What it can do is make reasonable decisions with current information, detect when those decisions were wrong, and correct them quickly. That's it. That's the whole job.
 
 Build for that, and you'll keep your mind. Build for perfection, and the 3am pages will take it from you.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="chat-is-the-easy-part.md"><span class="pr-related-title">Chat is the easy part</span><span class="pr-related-desc">What it actually took to bolt WebSocket streaming onto Astra — and why the session model matters more than the protocol.</span></a>
+  <a class="pr-related-item" href="agent-memory-is-not-a-vector-database.md"><span class="pr-related-title">Agent memory is not a vector database</span><span class="pr-related-desc">Working memory, episodic memory, and semantic search are three different things. pgvector is one layer, not the whole story.</span></a>
+  <a class="pr-related-item" href="dead-letters-are-a-feature.md"><span class="pr-related-title">Dead letters are a feature, not a failure</span><span class="pr-related-desc">Designing for task exhaustion with dead-letter queues and retry budgets makes your system more honest than pretending everything succeeds.</span></a>
+</aside>
+<!-- RELATED_END -->

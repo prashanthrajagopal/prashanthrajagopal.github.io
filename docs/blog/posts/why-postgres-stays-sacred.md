@@ -57,3 +57,12 @@ Calling Postgres sacred doesn't mean I worship the schema or refuse to change it
 Everything else in the stack is allowed to lie, within tolerance. Caches are lies with TTLs. Replicas are lies with lag. In-memory state is a lie that ends when the process does. Postgres is where the lies stop.
 
 That's why it stays sacred.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="chat-is-the-easy-part.md"><span class="pr-related-title">Chat is the easy part</span><span class="pr-related-desc">What it actually took to bolt WebSocket streaming onto Astra — and why the session model matters more than the protocol.</span></a>
+  <a class="pr-related-item" href="agent-memory-is-not-a-vector-database.md"><span class="pr-related-title">Agent memory is not a vector database</span><span class="pr-related-desc">Working memory, episodic memory, and semantic search are three different things. pgvector is one layer, not the whole story.</span></a>
+</aside>
+<!-- RELATED_END -->

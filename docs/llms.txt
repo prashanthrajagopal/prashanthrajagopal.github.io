@@ -38,6 +38,11 @@
 - [Systems](https://prashanthr.net/wiki/systems/): Caching, streaming, consistency, observability reference notes.
 - [Ruby & Rails](https://prashanthr.net/wiki/rails/): Philosophy, Active Record, Hotwire reference.
 
+## Feeds
+
+- [RSS feed](https://prashanthr.net/feed.xml): new posts.
+- [Road trips](https://prashanthr.net/roadtrips/): route sheets with generated maps, leg distances, off-road notes and timings.
+
 ## Key facts
 
 - Author: Prashanth Rajagopal, software architect with 15+ years building production systems

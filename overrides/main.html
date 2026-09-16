@@ -1,29 +1,156 @@
 {% extends "base.html" %}
 
+{% block htmltitle %}
+  {% set pg = page | default({}) %}
+  {% set purl = pg.url | default("") %}
+  <title>{% if purl == "" %}Prashanth Rajagopal — distributed systems, agents &amp; Astra{% else %}{{ pg.title | default(config.site_name) }} — prashanthr.net{% endif %}</title>
+{% endblock %}
+
 {% block extrahead %}
-  <!-- Open Graph -->
-  <meta property="og:type" content="{% if page and page.meta and page.meta.date is defined and page.meta.date %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.site_name }}{% endif %}">
-  <meta property="og:description" content="{% if page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
-  <meta property="og:url" content="{{ page.canonical_url }}">
-  <meta property="og:site_name" content="prashanthr.net">
-  <meta property="og:locale" content="en_US">
-  {% if page and page.meta and page.meta.date is defined and page.meta.date %}
-  <meta property="article:author" content="Prashanth Rajagopal">
-  <meta property="article:published_time" content="{{ page.meta.date }}">
+  {% set pg = page | default({}) %}
+  {% set meta = pg.meta | default({}) %}
+  {% set purl = pg.url | default("") %}
+  {% set slug = purl | trim("/") | split("/") | last %}
+  {% set is_post = "blog/posts/" in purl %}
+  {% set is_trip = "roadtrips/" in purl and purl != "roadtrips/" %}
+  {% set title = pg.title | default(config.site_name) %}
+  {% set desc = meta.description | default(config.site_description) %}
+  {% set canonical = pg.canonical_url | default("https://prashanthr.net/") %}
+  {% if is_post %}
+    {% set og_image = "https://prashanthr.net/assets/og/blog-" ~ slug ~ ".png" %}
+  {% elif is_trip %}
+    {% set og_image = "https://prashanthr.net/assets/og/trip-" ~ slug ~ ".png" %}
+  {% else %}
+    {% set og_image = "https://prashanthr.net/assets/og/default.png" %}
   {% endif %}
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@prashanthrajagopal">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.site_name }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.meta and page.meta.description %}{{ page.meta.description }}{% else %}{{ config.site_description }}{% endif %}">
-
-  <!-- Canonical -->
-  <link rel="canonical" href="{{ page.canonical_url }}">
-
-  <!-- Author -->
   <meta name="author" content="Prashanth Rajagopal">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="alternate" type="application/rss+xml" title="Prashanth Rajagopal — blog" href="https://prashanthr.net/feed.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% if is_post %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:site_name" content="prashanthr.net">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ title }}">
+  {% if is_post %}
+  <meta property="article:author" content="Prashanth Rajagopal">
+  <meta property="article:published_time" content="{{ meta.date | default("") }}">
+  <meta property="article:section" content="{{ (meta.categories | default(["Blog"]))[0] }}">
+  {% for tag in meta.tags | default([]) %}
+  <meta property="article:tag" content="{{ tag }}">
+  {% endfor %}
+  {% endif %}
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@prashanthrajagopal">
+  <meta name="twitter:creator" content="@prashanthrajagopal">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ desc }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+  <meta name="twitter:image:alt" content="{{ title }}">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://prashanthr.net/#person",
+        "name": "Prashanth Rajagopal",
+        "url": "https://prashanthr.net",
+        "jobTitle": "Software Architect",
+        "description": "Software architect with 15+ years building production systems; building Astra, an operating system for autonomous agents.",
+        "sameAs": [
+          "https://github.com/prashanthrajagopal",
+          "https://twitter.com/prashanthrajagopal"
+        ],
+        "knowsAbout": [
+          "Distributed Systems", "Agent Infrastructure", "Autonomous Agents", "Actor Model",
+          "Ruby on Rails", "Go", "PostgreSQL", "Caching", "IoT", "Home Automation", "Electronics", "Motorcycling"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://prashanthr.net/#website",
+        "url": "https://prashanthr.net",
+        "name": "prashanthr.net",
+        "alternateName": "Prashanth Rajagopal",
+        "description": {{ config.site_description | tojson }},
+        "inLanguage": "en",
+        "publisher": { "@id": "https://prashanthr.net/#person" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://prashanthr.net/search/?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": {{ (canonical ~ "#webpage") | tojson }},
+        "url": {{ canonical | tojson }},
+        "name": {{ title | tojson }},
+        "description": {{ desc | tojson }},
+        "isPartOf": { "@id": "https://prashanthr.net/#website" },
+        "inLanguage": "en",
+        "primaryImageOfPage": { "@type": "ImageObject", "url": {{ og_image | tojson }} }
+      }{% if is_post %},
+      {
+        "@type": "BlogPosting",
+        "@id": {{ (canonical ~ "#post") | tojson }},
+        "headline": {{ title | tojson }},
+        "description": {{ desc | tojson }},
+        "url": {{ canonical | tojson }},
+        "mainEntityOfPage": { "@id": {{ (canonical ~ "#webpage") | tojson }} },
+        "datePublished": {{ (meta.date | default("")) | string | tojson }},
+        "dateModified": {{ (meta.date | default("")) | string | tojson }},
+        "author": { "@id": "https://prashanthr.net/#person" },
+        "publisher": { "@id": "https://prashanthr.net/#person" },
+        "image": { "@type": "ImageObject", "url": {{ og_image | tojson }}, "width": 1200, "height": 630 },
+        "articleSection": {{ ((meta.categories | default(["Blog"]))[0]) | tojson }},
+        "keywords": {{ (meta.tags | default([])) | join(", ") | tojson }},
+        "isPartOf": { "@type": "Blog", "@id": "https://prashanthr.net/blog/#blog", "name": "Prashanth Rajagopal's blog" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": {{ (canonical ~ "#breadcrumb") | tojson }},
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prashanthr.net/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://prashanthr.net/blog/" },
+          { "@type": "ListItem", "position": 3, "name": {{ title | tojson }}, "item": {{ canonical | tojson }} }
+        ]
+      }{% elif is_trip %},
+      {
+        "@type": "BreadcrumbList",
+        "@id": {{ (canonical ~ "#breadcrumb") | tojson }},
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prashanthr.net/" },
+          { "@type": "ListItem", "position": 2, "name": "Road Trips", "item": "https://prashanthr.net/roadtrips/" },
+          { "@type": "ListItem", "position": 3, "name": {{ title | tojson }}, "item": {{ canonical | tojson }} }
+        ]
+      }{% elif purl == "blog/" %},
+      {
+        "@type": "Blog",
+        "@id": "https://prashanthr.net/blog/#blog",
+        "url": "https://prashanthr.net/blog/",
+        "name": "Prashanth Rajagopal's blog",
+        "description": "Long-form writing on distributed systems, architecture, agent infrastructure, Rails, Go, IoT and electronics.",
+        "inLanguage": "en",
+        "author": { "@id": "https://prashanthr.net/#person" },
+        "publisher": { "@id": "https://prashanthr.net/#person" }
+      }{% endif %}
+    ]
+  }
+  </script>
 {% endblock %}
 
 {% block fonts %}
@@ -50,5 +177,7 @@
     <a href="/blog/">Blog</a>
     <span class="pr-footer-sep">·</span>
     <a href="/roadtrips/">Road Trips</a>
+    <span class="pr-footer-sep">·</span>
+    <a href="/feed.xml">RSS</a>
   </div>
 {% endblock %}

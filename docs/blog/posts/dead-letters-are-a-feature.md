@@ -65,3 +65,12 @@ That last one matters more than it sounds. If your dead letters are gone — eit
 Designing for task exhaustion isn't pessimism. It's acknowledging that some tasks will fail for reasons outside your control, that you want a record when they do, and that "we'll know about it when the data goes missing" is not a monitoring strategy.
 
 The honest system admits what it doesn't know. The dead-letter queue is where it puts those admissions.
+
+<!-- RELATED_START -->
+<aside class="pr-related" markdown="0">
+  <h2 class="pr-related-head">Related reading</h2>
+  <a class="pr-related-item" href="scheduling-without-losing-your-mind.md"><span class="pr-related-title">Scheduling without losing your mind</span><span class="pr-related-desc">Heartbeats, sharded schedulers, at-least-once delivery, and load shedding — the parts of distributed scheduling that nobody draws on the whiteboard.</span></a>
+  <a class="pr-related-item" href="chat-is-the-easy-part.md"><span class="pr-related-title">Chat is the easy part</span><span class="pr-related-desc">What it actually took to bolt WebSocket streaming onto Astra — and why the session model matters more than the protocol.</span></a>
+  <a class="pr-related-item" href="kernels-first-10ms.md"><span class="pr-related-title">The kernel's first 10ms</span><span class="pr-related-desc">What runs between process alive and message delivered in Astra's actor kernel — and why what you keep out of the hot path matters more than what you put in.</span></a>
+</aside>
+<!-- RELATED_END -->
