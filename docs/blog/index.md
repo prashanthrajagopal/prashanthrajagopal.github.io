@@ -25,6 +25,14 @@ hide:
   </div>
 
   <div class="blog-posts-list">
+    <a class="blog-post-row" href="posts/everything-i-bolted-onto-my-scrambler/" data-tags="motorcycles ducati scrambler evotech india">
+      <span class="post-date">28 Sep 2026</span>
+      <div>
+        <h3>Everything I bolted onto my Scrambler, and why</h3>
+        <p>Sliders, guards, braided lines, Denali lights and a ThunderBox. All imported, all there for a reason.</p>
+      </div>
+      <span class="post-tag tag-motorcycles">Motorcycles</span>
+    </a>
     <a class="blog-post-row" href="posts/my-ducati-didnt-sign-up-for-e20/" data-tags="motorcycles ducati e20 india">
       <span class="post-date">15 Sep 2026</span>
       <div>
