@@ -61,3 +61,4 @@
 .md-typeset .rt-gallery figcaption a { font-size: 0.7rem; color: var(--pr-text-tertiary); }
 .md-typeset ul.rt-sources { font-size: 0.85rem; color: var(--pr-text-secondary); }
 .md-typeset .rt-back { margin-top: 2rem; font-weight: 500; }
+.rt-badge-ridden { left: auto; right: 10px; background: var(--pr-accent); color: #0a0a0b; }

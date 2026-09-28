@@ -1,0 +1,123 @@
+{
+  "slug": "manchanabele-at-5am",
+  "title": "Manchanabele at 5 AM",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Two Ducatis, one windscreen. A pre-dawn run from Bengaluru along Magadi Road to a still reservoir with Savandurga on the horizon.",
+  "summary": "A short, early-morning out-and-back from Bengaluru to the Manchanabele reservoir on the Arkavathy, on a Scrambler with a Desert X for company. Empty city roads at five, fast open stretches on Magadi Road, winding village tarmac and a red-earth track down to the water.",
+  "type": "out-and-back",
+  "days": "Half a morning",
+  "added": "2026-09-28",
+  "ridden": "2026-09-27",
+  "story": "manchanabele-at-5am.md",
+  "totalKm": 38,
+  "hours": "~1 hr",
+  "difficulty": "Easy",
+  "bestSeason": "Oct – Mar",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "dawn ride",
+    "reservoir",
+    "ducati",
+    "scrambler",
+    "desert x",
+    "short ride"
+  ],
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.989,
+      "lng": 77.5085
+    },
+    {
+      "name": "Tavarekere",
+      "lat": 12.9567,
+      "lng": 77.393
+    },
+    {
+      "name": "Manchanabele",
+      "lat": 12.8669,
+      "lng": 77.3344
+    }
+  ],
+  "segments": [
+    {
+      "km": 22,
+      "road": "Magadi Road",
+      "note": "Empty at five. Flyovers, then the city thins out and the road opens up for the fast bits.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 16,
+      "road": "Village roads to the reservoir",
+      "note": "Narrow, winding tarmac through villages, ending in a red-earth track down to the water.",
+      "surface": "mixed"
+    }
+  ],
+  "highlights": [
+    "Bengaluru at 5 AM with the roads to yourself",
+    "The open stretches of Magadi Road at first light",
+    "A flat-calm reservoir with Savandurga on the horizon",
+    "Mist on the far shore and reeds along the water's edge"
+  ],
+  "offroad": {
+    "rating": 1,
+    "summary": "Tarmac all the way except the last red-earth track to the shore.",
+    "notes": [
+      "The last stretch is packed earth with ruts and loose gravel, easy on any road bike ridden gently",
+      "Turns to paste when wet; park on firm ground, not the grassy edge",
+      "Road-biased dual-sport tyres (the Scrambler's Pirelli MT60 RS) are plenty"
+    ]
+  },
+  "timings": [
+    "Leave around 5 AM for empty roads and dawn light at the water",
+    "The dam area is listed as open 6 AM – 6 PM, entry free",
+    "Fuel up in the city; there's nothing you need to rely on near the reservoir"
+  ],
+  "cautions": [
+    "Do not enter the water: the reservoir bed has sudden drop-offs, boulders and deep slush, and many people have drowned here",
+    "Dawn is cold on a naked bike; layer up",
+    "Village stretch has livestock, speed breakers and early-morning foot traffic",
+    "No windscreen means wind blast on the fast sections; expect neck and shoulder fatigue"
+  ],
+  "photos": [
+    {
+      "local": "manchanabele/wide-sky.jpg",
+      "caption": "The Scrambler at the water's edge under the dawn sky"
+    },
+    {
+      "local": "manchanabele/scrambler-at-the-waterline.jpg",
+      "caption": "Red earth, still water, green hills"
+    },
+    {
+      "local": "manchanabele/reservoir-portrait.jpg",
+      "caption": "Across the reservoir towards Savandurga"
+    },
+    {
+      "local": "manchanabele/reeds-and-pylons.jpg",
+      "caption": "Reeds, hills and pylons"
+    },
+    {
+      "local": "manchanabele/barkbusters-and-mud.jpg",
+      "caption": "Barkbusters, mud and a red tank"
+    },
+    {
+      "local": "manchanabele/low-angle-savandurga.jpg",
+      "caption": "Low angle on the shore"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Manchanabele — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Manchanabele"
+    },
+    {
+      "title": "Savandurga — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Savandurga"
+    },
+    {
+      "title": "Manchanabele Dam — Trawell.in",
+      "url": "https://www.trawell.in/karnataka/bangalore/manchanabele-dam"
+    }
+  ]
+}

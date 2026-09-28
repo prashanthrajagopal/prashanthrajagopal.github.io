@@ -7,7 +7,7 @@
   "tagline": "One-line hook shown on the card: A → B → C, X km, what makes it special.",
   "summary": "Two or three sentences describing the ride.",
   "type": "loop",
-  "_type_options": "loop (returns to start; segments = number of waypoints) or one-way (segments = waypoints - 1)",
+  "_type_options": "loop (returns to start; segments = number of waypoints), one-way or out-and-back (segments = waypoints - 1; out-and-back shows distance as each way)",
   "days": "1–2 days",
   "added": "2026-09-15",
   "totalKm": 0,
@@ -17,6 +17,9 @@
   "bestSeason": "Oct – Mar",
   "startsAt": "City",
   "tags": ["hairpins", "forest road"],
+  "_ridden": "Optional, for trips you have actually done: ridden (YYYY-MM-DD) + story (<slug>.md, a Markdown ride report in roadtrips/, rendered above the route sheet). Own photos: {\"local\": \"<slug>/<file>.jpg\"} served from docs/assets/roadtrips/.",
+  "ridden": "2026-09-27",
+  "story": "my-new-trip.md",
   "credit": { "name": "@who_posted_it", "url": "https://...", "note": "where you found the route" },
   "waypoints": [
     { "name": "Start", "lat": 0.0, "lng": 0.0 },

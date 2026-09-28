@@ -28,7 +28,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install Zensical
-        run: pip install zensical pyyaml
+        run: pip install "zensical==0.0.63" pyyaml  # 0.0.64+ enables the blog plugin: breaks on authors and changes post URLs
 
       - name: Sync latest blog on homepage
         run: python scripts/sync_latest_blog.py

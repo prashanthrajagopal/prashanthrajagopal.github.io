@@ -9,6 +9,11 @@ Generate the Road Trips section from roadtrips/*.json.
 
 Run before `zensical build` / `zensical serve`. No dependencies beyond the stdlib.
 Files in roadtrips/ starting with "_" are ignored (the _template.json lives there).
+
+Ridden trips: set "ridden": "YYYY-MM-DD" and "story": "<slug>.md" (a Markdown ride report kept
+next to the JSON in roadtrips/). The story is rendered at the top of the trip page, above the
+route sheet, and the card gets a "Ridden" badge. Own photos use {"local": "<slug>/<file>.jpg"},
+served from docs/assets/roadtrips/.
 """
 from __future__ import annotations
 
@@ -33,6 +38,8 @@ esc = html.escape
 
 # ---------------------------------------------------------------- photos
 def photo_src(p: dict, width: int = 1600) -> str:
+    if p.get("local"):
+        return f"/assets/roadtrips/{p['local']}"
     if p.get("commons"):
         name = re.sub(r"^File:", "", p["commons"]).replace(" ", "_")
         return f"https://commons.wikimedia.org/wiki/Special:FilePath/{quote(name)}?width={width}"
@@ -40,6 +47,8 @@ def photo_src(p: dict, width: int = 1600) -> str:
 
 
 def photo_link(p: dict) -> str:
+    if p.get("local"):
+        return photo_src(p)
     if p.get("commons"):
         name = re.sub(r"^File:", "", p["commons"]).replace(" ", "_")
         return f"https://commons.wikimedia.org/wiki/File:{quote(name)}"
@@ -49,6 +58,8 @@ def photo_link(p: dict) -> str:
 def photo_credit(p: dict) -> str:
     if p.get("credit"):
         return p["credit"]
+    if p.get("local"):
+        return "Photo: Prashanth Rajagopal"
     return "Wikimedia Commons · free licence, see file page" if p.get("commons") else "Source"
 
 
@@ -228,7 +239,7 @@ def route_svg(t: dict) -> str:
         f'<tspan x="{W-190}" dy="{0 if i == 0 else 17}"><tspan class="lnum">{i+1}</tspan>  {esc(w["name"])}</tspan>'
         for i, w in enumerate(wps))
 
-    stats = [("Total", f'{t["totalKm"]} km'), ("Ride time", t["hours"])]
+    stats = [("Each way" if t.get("type") == "out-and-back" else "Total", f'{t["totalKm"]} km'), ("Ride time", t["hours"])]
     if t.get("hairpins"):
         stats.append(("Hairpins", str(t["hairpins"])))
     stats.append(("Difficulty", t["difficulty"]))
@@ -317,12 +328,28 @@ def trip_jsonld(t: dict) -> str:
             + "</script>")
 
 
+def load_story(t: dict) -> str:
+    if not t.get("story"):
+        return ""
+    text = (DATA / t["story"]).read_text(encoding="utf-8")
+    if text.startswith("---"):
+        text = text.split("---", 2)[2]
+    return text.strip()
+
+
+def ridden_label(t: dict) -> str:
+    y, m, d = (int(x) for x in t["ridden"].split("-"))
+    months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+    return f"Ridden {d} {months[m-1]} {y}"
+
+
 def trip_page(t: dict) -> str:
     hero = (t.get("photos") or [None])[0]
+    story = load_story(t)
     wps = t["waypoints"]
     closed = t.get("type", "loop") == "loop"
 
-    tiles = [("Distance", f'{t["totalKm"]} km'), ("Ride time", t["hours"])]
+    tiles = [("Each way" if t.get("type") == "out-and-back" else "Distance", f'{t["totalKm"]} km'), ("Ride time", t["hours"])]
     if t.get("hairpins"):
         tiles.append(("Hairpins", str(t["hairpins"])))
     tiles += [("Difficulty", t["difficulty"]), ("Best season", t["bestSeason"])]
@@ -383,7 +410,7 @@ def trip_page(t: dict) -> str:
     header = one_block(f'''
 <div class="rt-hero"{hero_style}>
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">{esc(t["region"])} · {esc(t["country"])} · {esc(t["days"])}</div>
+<div class="pr-eyebrow">{esc(t["region"])} · {esc(t["country"])} · {esc(ridden_label(t) if t.get("ridden") else t["days"])}</div>
 <h1 class="rt-title">{esc(t["title"])}</h1>
 <p class="rt-tagline">{esc(t["tagline"])}</p>
 <div class="rt-tags">{chips(t.get("tags", []))}</div>
@@ -417,7 +444,7 @@ hide:
 
 {header}
 
-## The route
+{story + chr(10) + chr(10) if story else ""}## The route
 
 <img class="rt-map" src="{t["slug"]}-route.svg" alt="Schematic route map of {esc(t["title"])}" width="{W}" height="{H}">
 
@@ -427,7 +454,7 @@ hide:
 
 {side}
 '''
-    if gallery:
+    if gallery and not story:   # a ride report already places its photos inline
         md += f"\n## Along the way\n\n{gallery}\n"
     if sources:
         md += f"\n## Sources &amp; further reading\n\n{sources}\n"
@@ -439,12 +466,13 @@ hide:
 def card(t: dict) -> str:
     hero = (t.get("photos") or [None])[0]
     style = f' style="background-image:url(\'{esc(photo_src(hero, 900))}\')"' if hero else ""
-    kv = [f"<b>{t['totalKm']}</b> km", f"<b>{esc(t['hours'])}</b>"]
+    kv = [f"<b>{t['totalKm']}</b> km" + (" each way" if t.get("type") == "out-and-back" else ""), f"<b>{esc(t['hours'])}</b>"]
     if t.get("hairpins"):
         kv.append(f"<b>{t['hairpins']}</b> hairpins")
     kv += [f"<b>{esc(t['difficulty'])}</b>", esc(t["days"])]
     return (f'<a class="rt-card" href="{t["slug"]}/">'
-            f'<div class="rt-card-photo"{style}><span class="rt-badge">{esc(t["region"])}</span></div>'
+            f'<div class="rt-card-photo"{style}><span class="rt-badge">{esc(t["region"])}</span>'
+            + ('<span class="rt-badge rt-badge-ridden">Ridden</span>' if t.get("ridden") else "") + '</div>'
             f'<div class="rt-card-body"><h3>{esc(t["title"])}</h3><p>{esc(t["tagline"])}</p>'
             f'<div class="rt-kv">{"".join(f"<span>{x}</span>" for x in kv)}</div></div></a>')
 
@@ -463,15 +491,15 @@ hide:
 <div class="rt-head">
 <div class="pr-eyebrow">A personal collection</div>
 <h1 class="rt-title">Roads worth the detour</h1>
-<p class="rt-intro">Road trips and motorcycle loops I've collected from reels, forums and friends, each turned into a proper route sheet: a generated route graphic, leg-by-leg distances, off-road and motorcycling notes, forest check-post timings, and free-licensed photos of the places along the way.</p>
-<div class="rt-stats"><div><b>{len(trips)}</b><span>trips</span></div><div><b>{total_km:,}</b><span>km of road</span></div><div><b>{len(regions)}</b><span>{"region" if len(regions) == 1 else "regions"}</span></div></div>
+<p class="rt-intro">Road trips and motorcycle loops I've collected from reels, forums and friends, each turned into a proper route sheet: a generated route graphic, leg-by-leg distances, off-road and motorcycling notes, forest check-post timings, and free-licensed photos of the places along the way. The ones marked <b>Ridden</b> are trips I've actually done, with a ride report and my own photos.</p>
+<div class="rt-stats"><div><b>{len(trips)}</b><span>trips</span></div><div><b>{sum(1 for t in trips if t.get("ridden"))}</b><span>ridden</span></div><div><b>{total_km:,}</b><span>km of road</span></div><div><b>{len(regions)}</b><span>{"region" if len(regions) == 1 else "regions"}</span></div></div>
 </div>
 
 <div class="rt-grid">
 {cards}
 </div>
 
-<p class="rt-note">Route graphics are schematic, not to scale — always ride with a live map. Photos are free-licensed (mostly Wikimedia Commons) and link back to their source.</p>
+<p class="rt-note">Route graphics are schematic, not to scale — always ride with a live map. Collected-route photos are free-licensed (mostly Wikimedia Commons) and link back to their source; photos on ridden trips are my own.</p>
 '''
 
 
@@ -490,7 +518,7 @@ def validate(t: dict, f: Path):
 
 def home_card(t: dict) -> str:
     set_canvas(len(t["waypoints"]))  # route SVG height varies with the number of stops
-    kv = [f"<b>{t['totalKm']}</b> km", f"<b>{esc(t['hours'])}</b>"]
+    kv = [f"<b>{t['totalKm']}</b> km" + (" each way" if t.get("type") == "out-and-back" else ""), f"<b>{esc(t['hours'])}</b>"]
     if t.get("hairpins"):
         kv.append(f"<b>{t['hairpins']}</b> hairpins")
     kv.append(f"<b>{esc(t['difficulty'])}</b>")
