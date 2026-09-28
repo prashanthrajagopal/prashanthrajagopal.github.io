@@ -213,7 +213,7 @@ I'll document the build as I go. Probably with more profanity than technical pre
 <aside class="pr-related" markdown="0">
   <h2 class="pr-related-head">Related reading</h2>
   <a class="pr-related-item" href="rc-cars-and-the-india-parts-problem.md"><span class="pr-related-title">My first RC car build: an engineer's guide to pain in India</span><span class="pr-related-desc">Approaching RC cars like a software person — choosing a platform, brushless ESCs, LiPo safety, and the uniquely Indian challenge of getting parts at all.</span></a>
-  <a class="pr-related-item" href="everything-i-bolted-onto-my-scrambler.md"><span class="pr-related-title">Everything I bolted onto my Scrambler, and why</span><span class="pr-related-desc">Sliders, guards, filters, braided lines, Denali DL4 and DL2 lights and a Healtech ThunderBox. Every part on my Ducati Scrambler was imported, and every one of them is there for a reason.</span></a>
+  <a class="pr-related-item" href="everything-i-bolted-onto-my-scrambler.md"><span class="pr-related-title">Everything I bolted onto my Scrambler, and why</span><span class="pr-related-desc">Sliders, guards, filters, braided lines, Denali DL4 and DL2 lights and a Healtech ThunderBox. Every part on my Ducati Scrambler was imported and fitted by me on my balcony, torqued to spec.</span></a>
   <a class="pr-related-item" href="my-ducati-didnt-sign-up-for-e20.md"><span class="pr-related-title">My Ducati didn't sign up for E20, and neither did I</span><span class="pr-related-desc">India went E20 at nearly every pump — premium grades included. The only ethanol-free petrol left is 100-octane, costs ₹168 a litre, and is out of stock across most of Bengaluru.</span></a>
 </aside>
 <!-- RELATED_END -->

@@ -89,7 +89,7 @@ The manual says ten. The pump says twenty. Only one of them was written with my 
 <!-- RELATED_START -->
 <aside class="pr-related" markdown="0">
   <h2 class="pr-related-head">Related reading</h2>
-  <a class="pr-related-item" href="everything-i-bolted-onto-my-scrambler.md"><span class="pr-related-title">Everything I bolted onto my Scrambler, and why</span><span class="pr-related-desc">Sliders, guards, filters, braided lines, Denali DL4 and DL2 lights and a Healtech ThunderBox. Every part on my Ducati Scrambler was imported, and every one of them is there for a reason.</span></a>
+  <a class="pr-related-item" href="everything-i-bolted-onto-my-scrambler.md"><span class="pr-related-title">Everything I bolted onto my Scrambler, and why</span><span class="pr-related-desc">Sliders, guards, filters, braided lines, Denali DL4 and DL2 lights and a Healtech ThunderBox. Every part on my Ducati Scrambler was imported and fitted by me on my balcony, torqued to spec.</span></a>
   <a class="pr-related-item" href="the-100kmph-build-list.md"><span class="pr-related-title">The 100km/h build list: every part, every reason</span><span class="pr-related-desc">A full custom 1/8 scale RC buggy built entirely by hand — chassis kit, motor, ESC, batteries, and every bolt chosen individually. The complete parts list for a 100km/h build sourced from India.</span></a>
   <a class="pr-related-item" href="rc-cars-and-the-india-parts-problem.md"><span class="pr-related-title">My first RC car build: an engineer's guide to pain in India</span><span class="pr-related-desc">Approaching RC cars like a software person — choosing a platform, brushless ESCs, LiPo safety, and the uniquely Indian challenge of getting parts at all.</span></a>
 </aside>

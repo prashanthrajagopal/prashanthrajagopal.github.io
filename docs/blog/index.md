@@ -25,6 +25,14 @@ hide:
   </div>
 
   <div class="blog-posts-list">
+    <a class="blog-post-row" href="posts/krovu-building-an-elite-strength-tracker/" data-tags="architecture ios swift krovu offline-first">
+      <span class="post-date">29 Sep 2026</span>
+      <div>
+        <h3>Krovu: building an elite strength tracker</h3>
+        <p>Per-field sync, on-device training math, on-device form analysis and an App Review rejection. The engineering behind Krovu.</p>
+      </div>
+      <span class="post-tag tag-architecture">Engineering</span>
+    </a>
     <a class="blog-post-row" href="posts/everything-i-bolted-onto-my-scrambler/" data-tags="motorcycles ducati scrambler evotech india">
       <span class="post-date">28 Sep 2026</span>
       <div>
