@@ -1,7 +1,7 @@
 ---
 title: "Everything I bolted onto my Scrambler, and why"
 date: 2026-09-28
-description: Sliders, guards, filters, braided lines, Denali DL4 and DL2 lights and a Healtech ThunderBox. Every part on my Ducati Scrambler was imported, and every one of them is there for a reason.
+description: Sliders, guards, filters, braided lines, Denali DL4 and DL2 lights and a Healtech ThunderBox. Every part on my Ducati Scrambler was imported and fitted by me on my balcony, torqued to spec.
 authors:
   - prashanth
 categories:
@@ -24,6 +24,20 @@ This is the full list, and the reasoning behind each part.
 <!-- more -->
 
 ![The Scrambler on red earth, showing the headlight guard, sliders and handguards](../../assets/roadtrips/manchanabele/barkbusters-and-mud.jpg)
+
+## The balcony workshop
+
+I wanted to fit every one of these parts myself. Not because a workshop couldn't do it, but because I wanted to know exactly what was on the bike, how it was mounted, and how tight every bolt was.
+
+That decision came with a problem: I don't have a garage. So the bike went up to my balcony, which became a workshop for as long as the build took. A Ducati on a balcony is not a sentence I expected to write, but here we are.
+
+The second problem showed up the moment I opened the first box. I didn't have the tools. The basic kit that comes with the bike is fine for tightening a mirror and not much else. So before any part went on, there was a tool-shopping detour.
+
+The biggest item on that list was torque wrenches, plural. **On a Ducati, everything has a torque spec.** Every bolt, from the little ones holding a guard to an axle nut, has a number in the manual, and those numbers cover a range that one wrench can't do accurately.
+
+It's the closest thing a motorcycle has to a typed interface. Under-tighten and the part rattles loose on the first bad road. Over-tighten and you strip a thread in an aluminium casting, and now you're importing *another* part. **"Tight enough" is not a value. The spec is.**
+
+It took longer than a workshop would have. I also know every bolt on this bike, and I know each one is right.
 
 ## Sliders are cheap. Ducati parts are not.
 
@@ -92,6 +106,7 @@ Buying every part from abroad teaches a few things quickly:
 - **Buy by exact model and year.** Evotech lists parts by part number and fitment range. Check it twice, because a return means another round trip through customs.
 - **Batch your orders.** Each shipment carries its own shipping cost and customs overhead. One larger order hurts less than five small ones.
 - **Protection first, then the fun stuff.** The sliders and guards went on before anything cosmetic. A bike in pieces waiting for a Ducati part to arrive is a bike you're not riding.
+- **Budget for tools, not just parts.** If you're doing it yourself, the torque wrenches, sockets and bits are part of the build cost. Buy them before the parts arrive, not after.
 - **Keep the stock parts.** The original tail, filters and lines are worth holding on to, for future you or a future buyer.
 
 ## The full list
@@ -105,7 +120,7 @@ Buying every part from abroad teaches a few things quickly:
 | Lighting & power | Denali DL4 and DL2 with dimmer controller, Healtech ThunderBox TB-U02 |
 | Rear end | Evotech tail tidy, Puig tyre hugger, Ducati rear mudguard |
 
-Nothing on the list makes the Scrambler a different bike. It makes it the same bike, harder to hurt, easier to live with, and ready for a 5 AM start. That was the whole spec.
+Nothing on the list makes the Scrambler a different bike. It makes it the same bike, harder to hurt, easier to live with, and ready for a 5 AM start. Every part was imported, fitted on a balcony, and torqued to spec by hand. That was the whole spec.
 
 <!-- RELATED_START -->
 <aside class="pr-related" markdown="0">
