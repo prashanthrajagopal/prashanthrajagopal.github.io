@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Ramanagara_Hills_%2810306067976%29.jpg?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · 1 day (incl. ~2 hrs of trekking)</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Bidadi Twin-Betta Loop</h1>
 <p class="rt-tagline">Bidadi → Byramangala backwaters → Narasimhaswamy Betta (fort-hill trek) → Kanakapura → Gavi Ranganatha Betta (cave temple, mud track to the top) → Kanva reservoir → Ramanagara → Manchanabele backwaters → Bidadi. ~140 km of village roads, two hill temples, two dirt sections.</p>
 <div class="rt-tags"><span class="rt-chip">hill temples</span><span class="rt-chip">trek</span><span class="rt-chip">fort</span><span class="rt-chip">cave temple</span><span class="rt-chip">backwaters</span><span class="rt-chip">dirt track</span><span class="rt-chip">day loop</span><span class="rt-chip">motorcycle</span></div>

@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Agaya_Gangai.JPG?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · 2 days</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Kolli Hills — 70 Hairpins</h1>
 <p class="rt-tagline">Bangalore → Krishnagiri → Salem → Rasipuram → Karavalli → 70 continuous hairpins to Semmedu → Agaya Gangai falls → Namakkal → Dharmapuri → Bangalore. ~620 km over two days to the &#x27;Mountain of Death&#x27;.</p>
 <div class="rt-tags"><span class="rt-chip">hairpins</span><span class="rt-chip">Eastern Ghats</span><span class="rt-chip">waterfall</span><span class="rt-chip">temple</span><span class="rt-chip">weekend</span><span class="rt-chip">Tamil Nadu</span><span class="rt-chip">motorcycle</span></div>

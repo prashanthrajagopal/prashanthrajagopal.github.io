@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Ramanagara_Hills_%2810306067976%29.jpg?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · Half day (start 4:30 AM)</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Kunagalu Betta Dawn Ride</h1>
 <p class="rt-tagline">Bangalore → Bidadi → Ramanagara → Kunagalu Betta (sunrise trek through a bat cave) → Revanasiddeshwara Betta → Harohalli → Bangalore. ~135 km, out before dawn, back for lunch.</p>
 <div class="rt-tags"><span class="rt-chip">sunrise</span><span class="rt-chip">cave</span><span class="rt-chip">trek</span><span class="rt-chip">granite</span><span class="rt-chip">Ramanagara</span><span class="rt-chip">half day</span><span class="rt-chip">motorcycle</span></div>

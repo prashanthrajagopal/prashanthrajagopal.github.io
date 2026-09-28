@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Valparai_Ghat_Road_40_Hairpin_bends_-_panoramio_%283%29.jpg?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · 1 day (long)</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Valparai – Athirappilly Forest Loop</h1>
 <p class="rt-tagline">Coimbatore → Pollachi → Valparai (40 hairpins) → Malakkappara forest road → Athirappilly Falls → Thrissur → Palakkad → Coimbatore. ~400 km in a day, billed as South India&#x27;s most dangerous road.</p>
 <div class="rt-tags"><span class="rt-chip">forest road</span><span class="rt-chip">hairpins</span><span class="rt-chip">waterfall</span><span class="rt-chip">tea estates</span><span class="rt-chip">check posts</span><span class="rt-chip">loop</span><span class="rt-chip">motorcycle</span></div>

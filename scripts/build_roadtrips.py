@@ -338,7 +338,9 @@ def load_story(t: dict) -> str:
 
 
 def ridden_label(t: dict) -> str:
-    """ "ridden" may be YYYY-MM-DD or just YYYY-MM when the exact day isn't known."""
+    """ "ridden" may be YYYY-MM-DD, YYYY-MM when the exact day isn't known, or true when there's no date."""
+    if t["ridden"] is True:
+        return "Ridden"
     parts = [int(x) for x in t["ridden"].split("-")]
     months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
     if len(parts) == 2:
@@ -496,7 +498,7 @@ hide:
 <div class="rt-head">
 <div class="pr-eyebrow">A personal collection</div>
 <h1 class="rt-title">Roads worth the detour</h1>
-<p class="rt-intro">Road trips and motorcycle loops I've collected from reels, forums and friends, each turned into a proper route sheet: a generated route graphic, leg-by-leg distances, off-road and motorcycling notes, forest check-post timings, and free-licensed photos of the places along the way. The ones marked <b>Ridden</b> are trips I've actually done, with a ride report and my own photos.</p>
+<p class="rt-intro">Road trips and motorcycle loops I've collected from reels, forums and friends, each turned into a proper route sheet: a generated route graphic, leg-by-leg distances, off-road and motorcycling notes, forest check-post timings, and free-licensed photos of the places along the way. The ones marked <b>Ridden</b> are trips I've actually done; some come with a ride report and my own photos.</p>
 <div class="rt-stats"><div><b>{len(trips)}</b><span>trips</span></div><div><b>{sum(1 for t in trips if t.get("ridden"))}</b><span>ridden</span></div><div><b>{total_km:,}</b><span>km of road</span></div><div><b>{len(regions)}</b><span>{"region" if len(regions) == 1 else "regions"}</span></div></div>
 </div>
 

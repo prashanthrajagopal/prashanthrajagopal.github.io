@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Kudremukh_National_Park.jpg?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · 3 days</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Malnad Grand Loop</h1>
 <p class="rt-tagline">Bangalore → Hassan → Belur → Chikkamagaluru → Mudigere → Kalasa → Maidaadi sunset viewpoint → Sringeri → Agumbe → Sakleshpur → Hosahalli Gudda → Bangalore. ~830 km over 3 days through coffee, shola grassland and the wettest ghats in Karnataka.</p>
 <div class="rt-tags"><span class="rt-chip">Western Ghats</span><span class="rt-chip">coffee estates</span><span class="rt-chip">grassland</span><span class="rt-chip">sunset viewpoint</span><span class="rt-chip">dirt track</span><span class="rt-chip">Agumbe ghat</span><span class="rt-chip">multi-day</span><span class="rt-chip">motorcycle</span></div>

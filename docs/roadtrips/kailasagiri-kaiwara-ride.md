@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Green_View_from_Kailasagiri_Chintamani_02.jpg?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · Half day</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Kailasagiri Cave Temple &amp; Kaiwara</h1>
 <p class="rt-tagline">Bangalore → Hoskote → H Cross → Kaiwara (Bheema-Bakasura Betta, 500 steps) → Kailasagiri hand-cut cave temple → Chintamani → Devanahalli → Bangalore. ~180 km, a half-day loop east of the city.</p>
 <div class="rt-tags"><span class="rt-chip">cave temple</span><span class="rt-chip">hill</span><span class="rt-chip">steps</span><span class="rt-chip">day loop</span><span class="rt-chip">Kolar</span><span class="rt-chip">motorcycle</span></div>

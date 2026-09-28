@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Pothundi_Dam.JPG?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · 4 days</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">Nelliyampathy &amp; Munnar Back-Door Loop</h1>
 <p class="rt-tagline">Bangalore → Coimbatore → Palakkad → Nenmara → Pothundi dam → Nelliyampathy → Pollachi → Udumalpet → Chinnar → Marayoor → Munnar → Anachal glass bridge → Bodimettu ghat → Theni → Dindigul → Salem → Bangalore. ~1,260 km over four days, entering and leaving Munnar by its two quiet roads.</p>
 <div class="rt-tags"><span class="rt-chip">Western Ghats</span><span class="rt-chip">hill stations</span><span class="rt-chip">ghat roads</span><span class="rt-chip">wildlife sanctuary</span><span class="rt-chip">tea estates</span><span class="rt-chip">multi-day</span><span class="rt-chip">Kerala</span><span class="rt-chip">motorcycle</span></div>

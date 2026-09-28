@@ -7,7 +7,7 @@ hide:
 
 <div class="rt-hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Glenmorgan_Tea_estate%2C_Ooty.jpg?width=1600')">
 <div class="rt-hero-inner">
-<div class="pr-eyebrow">South India · India · 1–2 days</div>
+<div class="pr-eyebrow">South India · India · Ridden</div>
 <h1 class="rt-title">The Nilgiri Loop</h1>
 <p class="rt-tagline">Bangalore → Dimbam ghat → Kotagiri → Coonoor → Ooty → Gudalur → Mudumalai → Bandipur → Bangalore. 610 km, two tiger reserves and a 27-hairpin climb.</p>
 <div class="rt-tags"><span class="rt-chip">tea estates</span><span class="rt-chip">hairpins</span><span class="rt-chip">tiger reserves</span><span class="rt-chip">ghat roads</span><span class="rt-chip">loop</span><span class="rt-chip">motorcycle</span></div>
