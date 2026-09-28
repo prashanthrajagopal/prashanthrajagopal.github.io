@@ -113,7 +113,7 @@ The Scrambler has no windscreen and a lot of attitude. On a morning like this, t
 
 ## The route
 
-<img class="rt-map" src="manchanabele-at-5am-route.svg" alt="Schematic route map of Manchanabele at 5 AM" width="900" height="640">
+<img class="rt-map" src="manchanabele-at-5am-route.svg" alt="Schematic route map of Manchanabele at 5 AM" width="900" height="760">
 
 <p class="rt-note">Schematic map generated from waypoint coordinates — the shape follows the geography (compressed so long legs don't squash the loop), distances are labelled per leg. Not a navigation map. <a href="manchanabele-at-5am-route.svg" download>Download the graphic</a>.</p>
 

@@ -338,8 +338,12 @@ def load_story(t: dict) -> str:
 
 
 def ridden_label(t: dict) -> str:
-    y, m, d = (int(x) for x in t["ridden"].split("-"))
+    """ "ridden" may be YYYY-MM-DD or just YYYY-MM when the exact day isn't known."""
+    parts = [int(x) for x in t["ridden"].split("-")]
     months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
+    if len(parts) == 2:
+        return f"Ridden {months[parts[1]-1]} {parts[0]}"
+    y, m, d = parts
     return f"Ridden {d} {months[m-1]} {y}"
 
 
@@ -454,7 +458,8 @@ hide:
 
 {side}
 '''
-    if gallery and not story:   # a ride report already places its photos inline
+    own_photos = any(p.get("local") for p in t.get("photos", []))
+    if gallery and not (story and own_photos):   # a ride report with own photos places them inline
         md += f"\n## Along the way\n\n{gallery}\n"
     if sources:
         md += f"\n## Sources &amp; further reading\n\n{sources}\n"

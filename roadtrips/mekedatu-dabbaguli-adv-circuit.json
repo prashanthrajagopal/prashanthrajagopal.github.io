@@ -1,0 +1,195 @@
+{
+  "slug": "mekedatu-dabbaguli-adv-circuit",
+  "title": "Mekedatu & Dabbaguli ADV Circuit",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Bidadi thatte idli → Kanakapura → Chunchi Falls → Sangama (Kaveri–Arkavathy confluence) → a dirt trail to the Dabbaguli riverside on the Tamil Nadu border → home via Anekal. A one-day ADV loop, skipping the highways.",
+  "summary": "A one-day adventure loop around south-west Bengaluru that skips the highways for backroads and forest. Breakfast at Bidadi, down the Kanakapura road to Chunchi Falls and the Sangama confluence and the Mekedatu gorge, then east through Kodihalli to a rocky, muddy trail into the Cauvery forest that ends at the raw riverbank at Dabbaguli. The return swings east along the Tamil Nadu border and comes back into the city via Anekal.",
+  "type": "loop",
+  "days": "1 day",
+  "added": "2026-09-28",
+  "ridden": "2026-08",
+  "story": "mekedatu-dabbaguli-adv-circuit.md",
+  "totalKm": 290,
+  "hours": "9–11 hrs",
+  "difficulty": "Moderate",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "adv",
+    "solo",
+    "dirt trail",
+    "river",
+    "forest",
+    "day ride"
+  ],
+  "credit": {
+    "name": "@roadhawk.vlogs",
+    "url": "https://www.instagram.com/roadhawk.vlogs/"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Bidadi",
+      "lat": 12.7967,
+      "lng": 77.3854
+    },
+    {
+      "name": "Harohalli",
+      "lat": 12.6837,
+      "lng": 77.4745
+    },
+    {
+      "name": "Kanakapura",
+      "lat": 12.5462,
+      "lng": 77.4198
+    },
+    {
+      "name": "Chunchi Falls",
+      "lat": 12.39,
+      "lng": 77.44
+    },
+    {
+      "name": "Sangama",
+      "lat": 12.3,
+      "lng": 77.43
+    },
+    {
+      "name": "Kodihalli",
+      "lat": 12.433,
+      "lng": 77.5
+    },
+    {
+      "name": "Dabbaguli",
+      "lat": 12.24,
+      "lng": 77.56
+    },
+    {
+      "name": "Anekal",
+      "lat": 12.7105,
+      "lng": 77.6955
+    }
+  ],
+  "segments": [
+    {
+      "km": 35,
+      "road": "Mysore Road (NH 275)",
+      "note": "Out of the city early; stop at Bidadi for thatte idli.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 25,
+      "road": "Bidadi – Harohalli backroad",
+      "note": "Quiet cross-country road that skips the highway.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 20,
+      "road": "Kanakapura Road (NH 948)",
+      "note": "Fast, wide stretch into Kanakapura. Last reliable fuel for a while.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 25,
+      "road": "Kanakapura – Sangama road",
+      "note": "Winding road south through scrub and hills. Detour to Chunchi Falls on the way.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 14,
+      "road": "Chunchi Falls → Sangama",
+      "note": "Short, twisty run down to the confluence.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 25,
+      "road": "Back north, then east via village roads",
+      "note": "Retrace towards Kanakapura, then cut east to Kodihalli.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 35,
+      "road": "Kodihalli → forest trail",
+      "note": "Village roads, then about 10 km of rocky, muddy dirt trail down to the river. The same trail brings you back out.",
+      "surface": "dirt"
+    },
+    {
+      "km": 75,
+      "road": "Border villages → Anekal",
+      "note": "Back up the trail, then backroads along the Karnataka–Tamil Nadu border to Anekal.",
+      "surface": "mixed"
+    },
+    {
+      "km": 37,
+      "road": "Anekal – Hosur Road",
+      "note": "Back into the city from the south-east.",
+      "surface": "tarmac"
+    }
+  ],
+  "highlights": [
+    "Thatte idli at Bidadi for breakfast",
+    "Chunchi Falls, spilling down a rock face in dozens of streams",
+    "Sangama, where the Arkavathy joins the Kaveri, and the Mekedatu gorge downstream",
+    "About 20 km of dirt trail (in and out) through the Cauvery forest",
+    "The raw, undeveloped riverbank at Dabbaguli",
+    "Whole loop avoids the big highways once you're past Bidadi"
+  ],
+  "offroad": {
+    "rating": 3,
+    "summary": "Mostly tarmac, with a proper dirt section: about 10 km each way of rocky, muddy trail to Dabbaguli.",
+    "notes": [
+      "Loose rock and ruts on the forest trail; stand on the pegs and keep momentum",
+      "Turns to mud after rain; road-biased tyres will struggle in the wet",
+      "Ride it with at least one other bike; there's little phone signal or help on the trail",
+      "Adventure bikes and scramblers are ideal; skip it on a low-slung road bike"
+    ]
+  },
+  "timings": [
+    "Dabbaguli: listed open 8 AM – 5 PM, two-wheeler entry about ₹30",
+    "Sangama: public buses to Mekedatu stop by about 5:30 PM",
+    "Fuel up at Kanakapura; nothing reliable between there and Anekal",
+    "Plan to be out of the forest well before dark"
+  ],
+  "cautions": [
+    "Do not enter the river at Dabbaguli: it has wild crocodiles",
+    "Rocks at Sangama and Mekedatu are steep and slippery, and currents are dangerous, especially after the monsoon",
+    "Wildlife sanctuary area: watch for elephants and other animals on the trail",
+    "Carry water, a puncture kit and a tow strap; the trail is remote"
+  ],
+  "photos": [
+    {
+      "local": "mekedatu-dabbaguli/chunchi-falls.jpg",
+      "caption": "Chunchi Falls"
+    },
+    {
+      "local": "mekedatu-dabbaguli/mekedatu-gorge.jpg",
+      "caption": "The Kaveri cutting through the rocks at Mekedatu"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Dabbaguli: Off-Road Getaway Near Bangalore — TripHippies",
+      "url": "https://www.triphippies.com/dabbaguli/"
+    },
+    {
+      "title": "Sangama & Mekedatu — Trawell.in",
+      "url": "https://www.trawell.in/karnataka/bangalore/sangama-mekedatu"
+    },
+    {
+      "title": "Chunchi Falls — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chunchi_Falls"
+    },
+    {
+      "title": "Kodihalli, Kanakapura — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kodihalli,_Kanakapura"
+    },
+    {
+      "title": "Shri Renuukamba Thatte Idli, Bidadi — Tripadvisor",
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g7909305-d8857226-Reviews-Shri_Renuukamba_Thatte_Idli-Bidadi_Ramanagara_District_Karnataka.html"
+    }
+  ]
+}
