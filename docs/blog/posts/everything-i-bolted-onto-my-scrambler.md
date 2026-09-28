@@ -29,9 +29,13 @@ This is the full list, and the reasoning behind each part.
 
 I wanted to fit every one of these parts myself. Not because a workshop couldn't do it, but because I wanted to know exactly what was on the bike, how it was mounted, and how tight every bolt was.
 
-That decision came with a problem: I don't have a garage. So the bike went up to my balcony, which became a workshop for as long as the build took. A Ducati on a balcony is not a sentence I expected to write, but here we are.
+That decision came with a problem: I don't have a garage. So the bike went up to my balcony, which became a workshop for as long as the build took. A Ducati parked under the clothes-peg hanger, next to the AC unit and the mop, is not a sentence I expected to write, but here we are.
+
+![The Scrambler parked on a high-rise balcony, with the city spread out behind the railing](../../assets/blog/scrambler-build/balcony-bike.jpg)
 
 The second problem showed up the moment I opened the first box. I didn't have the tools. The basic kit that comes with the bike is fine for tightening a mirror and not much else. So before any part went on, there was a tool-shopping detour.
+
+![Working on the Scrambler on the balcony, crouched beside the tank](../../assets/blog/scrambler-build/balcony-workshop.jpg)
 
 The biggest item on that list was torque wrenches, plural. **On a Ducati, everything has a torque spec.** Every bolt, from the little ones holding a guard to an axle nut, has a number in the manual, and those numbers cover a range that one wrench can't do accurately.
 
