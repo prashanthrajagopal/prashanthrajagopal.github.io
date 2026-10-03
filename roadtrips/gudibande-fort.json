@@ -1,0 +1,125 @@
+{
+  "slug": "gudibande-fort",
+  "title": "Gudibande Fort",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Devanahalli → Chikkaballapur → Gudibande. ~95 km, a 17th-century hill fort with 19 rock-cut rainwater tanks.",
+  "summary": "Gudibande Fort crowns a conical granite hill above a small town and lake in Chikkaballapur district. It was built in the 17th century by the local chieftain Byre Gowda, remembered as a Robin Hood who robbed the rich to help the poor. Around 400 broad stone steps climb through gateways and seven levels of walls past a chain of linked rock ponds to the Rameshwara temple on top. The ride is almost all on smooth NH 44, with a short run on district roads at the end.",
+  "type": "out-and-back",
+  "days": "Half day",
+  "added": "2026-10-03",
+  "totalKm": 95,
+  "hours": "~2–2.5 hrs",
+  "difficulty": "Easy",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "fort",
+    "history",
+    "hill",
+    "lake",
+    "nh44"
+  ],
+  "credit": {
+    "name": "@twoofusonwheels on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Devanahalli",
+      "lat": 13.25,
+      "lng": 77.71
+    },
+    {
+      "name": "Chikkaballapur",
+      "lat": 13.43,
+      "lng": 77.72
+    },
+    {
+      "name": "Gudibande",
+      "lat": 13.67,
+      "lng": 77.7
+    }
+  ],
+  "segments": [
+    {
+      "km": 38,
+      "road": "NH 44 (Bellary Road / airport road)",
+      "note": "City exit and the fast airport highway to Devanahalli.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 22,
+      "road": "NH 44",
+      "note": "Four-lane highway past the Nandi Hills turn-off to Chikkaballapur.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 35,
+      "road": "NH 44, then district road to Gudibande",
+      "note": "More highway north, then a left onto quieter district roads through farmland to Gudibande town and its lake; narrow lanes lead to the foot of the hill.",
+      "surface": "tarmac"
+    }
+  ],
+  "highlights": [
+    "17th-century hill fort of Byre Gowda, the local 'Robin Hood'",
+    "19 rock ponds and tanks ('dhones') linked so overflow fed the next, holding ~3 lakh litres",
+    "Seven levels of walls, gateways and sentry posts on the way up",
+    "Rameshwara (Shiva) temple at the summit, said to hold one of the 108 Jyotirlingas",
+    "Views over Gudibande Lake and the plains to Varlakonda"
+  ],
+  "offroad": {
+    "rating": 0,
+    "summary": "Paved all the way to the base of the hill; the climb is on foot.",
+    "notes": [
+      "Last stretch is narrow town lanes to the foothill — park near the base",
+      "Above the steps there is a short scramble over rock to the top"
+    ]
+  },
+  "timings": [
+    "No formal entry fee or permit reported; at most a nominal local fee",
+    "~400 stone steps, ~45 minutes to the top at an easy pace",
+    "Leave Bengaluru by ~6–7 am to climb before the heat",
+    "Fuel and food are on NH 44 and in Chikkaballapur; carry water for the climb"
+  ],
+  "cautions": [
+    "Exposed rock near the top is slippery when wet — avoid in heavy rain",
+    "Little shade on the hill; carry water and sun cover",
+    "Stray dogs reported around the town lanes"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Gudibande (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Gudibande"
+    },
+    {
+      "title": "Gudibande: Fort with a rainwater harvesting system built by 'Robin Hood' (30 Stades)",
+      "url": "https://30stades.com/travel/gudibande-fort-with-a-rainwater-harvesting-system-built-by-robin-hood-7601613"
+    },
+    {
+      "title": "Gudibande Fort Trek (Backpackers United)",
+      "url": "https://backpackersunited.in/trek/gudibande-fort-trek"
+    },
+    {
+      "title": "Journeys across Karnataka: Gudibande Fort",
+      "url": "https://karnatakatravel.blogspot.com/2011/11/gudibande-fort.html"
+    },
+    {
+      "title": "Bangalore to Vatadahosahalli Lake and Gudibande Fort (Revolving Compass)",
+      "url": "https://revolvingcompass.com/?p=8863"
+    },
+    {
+      "title": "Bengaluru to Gudibande (Rome2Rio)",
+      "url": "https://www.rome2rio.com/s/Bengaluru/Gudibande"
+    },
+    {
+      "title": "Latitude and longitude of Gudibanda",
+      "url": "https://latitude.to/articles-by-country/in/india/153956/gudibanda"
+    }
+  ]
+}

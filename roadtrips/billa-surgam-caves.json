@@ -1,0 +1,136 @@
+{
+  "slug": "billa-surgam-caves",
+  "title": "Billa Surgam Caves",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Anantapur → Gooty → Dhone → Billa Surgam Caves. ~345 km, a limestone gorge and caves with an Ice Age past.",
+  "summary": "Billa Surgam is a partly unroofed limestone cave system in the Erramala hills near Betamcherla, in Andhra Pradesh's Nandyal district (formerly Kurnool). The roof collapsed in places and left a meandering gorge about 250 m long with three natural rock bridges across it. This is most likely the canyon-like scene in the reel. Robert Bruce Foote excavated the caves in 1884 and found Pleistocene animal bones and Upper Palaeolithic tools. Getting there is a long NH 44 run across the Deccan plateau, with rough kutcha roads at the end.",
+  "type": "out-and-back",
+  "days": "2 days",
+  "added": "2026-10-03",
+  "totalKm": 345,
+  "hours": "~6 hrs",
+  "difficulty": "Demanding",
+  "bestSeason": "Nov – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "caves",
+    "gorge",
+    "andhra pradesh",
+    "long ride",
+    "history"
+  ],
+  "credit": {
+    "name": "@nomad_sarva on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Anantapur",
+      "lat": 14.6819,
+      "lng": 77.6006
+    },
+    {
+      "name": "Gooty",
+      "lat": 15.1214,
+      "lng": 77.634
+    },
+    {
+      "name": "Dhone",
+      "lat": 15.396,
+      "lng": 77.872
+    },
+    {
+      "name": "Billa Surgam Caves",
+      "lat": 15.437,
+      "lng": 78.1853
+    }
+  ],
+  "segments": [
+    {
+      "km": 210,
+      "road": "NH 44",
+      "note": "Long, straight four-lane highway north past Chikkaballapur and Penukonda onto the dry Anantapur plateau.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 52,
+      "road": "NH 44",
+      "note": "More fast highway, with Gooty's hill fort showing on the right as you near town.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 43,
+      "road": "NH 44",
+      "note": "Highway to Dhone, the last good fuel and food stop before the caves.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 40,
+      "road": "Dhone–Betamcherla road + village track",
+      "note": "About 36 km east to Betamcherla, then a few km of kutcha road towards K.K. Kottala and the caves.",
+      "surface": "mixed"
+    }
+  ],
+  "highlights": [
+    "A meandering, partly unroofed limestone gorge spanned by natural rock bridges",
+    "Named chambers such as the Cathedral, Chapter House and Purgatory, explored since Foote's 1884 excavations",
+    "One of South India's most important Upper Palaeolithic sites",
+    "Easy to combine with Belum Caves or Yaganti, also in Nandyal district, on the second day"
+  ],
+  "offroad": {
+    "rating": 2,
+    "summary": "Highway nearly all the way. The approach roads from Betamcherla and Palkuru are reported as kutcha tracks.",
+    "notes": [
+      "The last few km are unpaved and can rut badly after rain.",
+      "On a road bike, ride the final stretch slowly or park at the village and walk.",
+      "Upgrades to the access road have been proposed, so conditions may have changed."
+    ]
+  },
+  "timings": [
+    "About 6 hrs each way from Bengaluru with fuel and food stops",
+    "Stay overnight in Dhone, Betamcherla or Kurnool and ride back on day 2",
+    "Reported opening hours are 10:30 am – 6 pm with a ~₹50 ticket. Check locally before relying on this."
+  ],
+  "cautions": [
+    "Plateau heat is fierce from March to May. Start at dawn and carry plenty of water.",
+    "The site is remote with few facilities. Fuel up in Dhone.",
+    "The caves are dark and uneven inside, so bring a torch and sturdy shoes",
+    "This is a protected archaeological site: don't remove or disturb anything"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Billa Surgam – Grotto Map",
+      "url": "https://grottomap.org/en/entrance/7oLVyOoI/billa_surgam"
+    },
+    {
+      "title": "Just 280 km from Hyderabad lie Billasurgam Caves older than time – Siasat",
+      "url": "https://www.siasat.com/just-280-km-from-hyderabad-lie-billasurgam-caves-older-than-time-3204723/"
+    },
+    {
+      "title": "All About Millenia-Old Billasurgam Caves – Outlook Traveller",
+      "url": "https://www.outlooktraveller.com/destinations/india/billasurgam-caves-near-kurnool-and-hyderabad-in-andhra-pradesh"
+    },
+    {
+      "title": "Billasurgam caves expected to get facelift – Hyderabad First",
+      "url": "https://www.hyderabadfirst.in/?p=20990"
+    },
+    {
+      "title": "Dhone – Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dhone"
+    },
+    {
+      "title": "Bangalore to Bethamcherla – EaseMyTrip",
+      "url": "https://www.easemytrip.com/cabs/bangalore-to-bethamcherla-cab-booking/"
+    },
+    {
+      "title": "Billa Surgam Caves guide – Unstumbled",
+      "url": "https://theunstumbled.com/billa-surgam-caves/"
+    }
+  ]
+}

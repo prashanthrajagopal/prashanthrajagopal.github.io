@@ -1,0 +1,117 @@
+{
+  "slug": "thimmappa-betta",
+  "title": "Thimmappa Betta",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Bidadi → Ramanagara → Kutgal → Thimmappa Betta. ~63 km, ride up onto sheet rock beneath giant twin boulders.",
+  "summary": "Thimmappana Betta, also called Kootagal or Thimmappa Swamy Betta, is a granite hill near Kutgal village, about 10 km from Ramanagara. A good road runs to the Thimmappa Swamy temple at its base, and from there bikes can climb onto the bare sheet rock towards the hill's two giant standing boulders. It is a quiet alternative to Nandi Hills for a sunrise breakfast ride.",
+  "type": "out-and-back",
+  "days": "Half day",
+  "added": "2026-10-03",
+  "totalKm": 63,
+  "hours": "~1.5 hrs",
+  "difficulty": "Easy",
+  "bestSeason": "Nov – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "breakfast ride",
+    "sunrise",
+    "twin rocks",
+    "sheet rock",
+    "ramanagara"
+  ],
+  "credit": {
+    "name": "@twoofusonwheels on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Bidadi",
+      "lat": 12.7967,
+      "lng": 77.3836
+    },
+    {
+      "name": "Ramanagara",
+      "lat": 12.7209,
+      "lng": 77.2799
+    },
+    {
+      "name": "Thimmappa Betta",
+      "lat": 12.7801,
+      "lng": 77.2353
+    }
+  ],
+  "segments": [
+    {
+      "km": 35,
+      "road": "NH275 (Bengaluru–Mysuru road)",
+      "note": "Fast run out of the city on the expressway or its service road.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 14,
+      "road": "NH275",
+      "note": "Past Bidadi to the Ramanagara traffic signal; turn right.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 14,
+      "road": "Village roads via Kutgal",
+      "note": "Through one or two villages with a few potholes to the temple at the base, then a short climb onto the rock.",
+      "surface": "mixed"
+    }
+  ],
+  "highlights": [
+    "Two huge standing boulders above the parking rock",
+    "Riding onto open sheet rock, rare this close to Bengaluru",
+    "Thimmappa Swamy temple at the base",
+    "Two viewpoints, one by the temple and one ~15 min walk away"
+  ],
+  "offroad": {
+    "rating": 2,
+    "summary": "Tarmac to the base, then a short climb on bare granite that most bikes manage in the dry.",
+    "notes": [
+      "A rider reports a Royal Enfield Himalayan climbing it easily, hopping one small water pipe",
+      "The final stretch to the rocks is on foot",
+      "Granite gets slippery when wet; heavy or low-powered bikes need care"
+    ]
+  },
+  "timings": [
+    "Open 6 AM – 5 PM",
+    "Entry ~₹20 per motorcycle, ~₹50 per car",
+    "Arrive before sunrise for the best light"
+  ],
+  "cautions": [
+    "Avoid riding on the rock in the rain",
+    "No facilities on the hill; carry water, eat on Mysuru road",
+    "Steep rock faces around the boulders",
+    "No alcohol allowed; go in a group rather than solo"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Thimmappana Betta Twin Rocks, Ramanagara – eNidhi India Travel Blog",
+      "url": "https://www.enidhi.net/2017/09/thimmappana-betta-twin-rocks-ramanagara.html"
+    },
+    {
+      "title": "A very short ride to Thimmappa Swamy Betta from Bangalore – xBhp",
+      "url": "https://www.xbhp.com/talkies/tourer/37583-a-very-short-ride-to-thimmappa-swamy-betta-from-bangalore"
+    },
+    {
+      "title": "Thimmappana Betta, Bangalore – Trawell.in",
+      "url": "https://www.trawell.in/karnataka/bangalore/thimmappana-betta"
+    },
+    {
+      "title": "Thimappana Betta – Praveen Musafir",
+      "url": "https://praveenmusafir.com/karnataka/bangalore/thimappana-betta/"
+    },
+    {
+      "title": "Thimmappana Betta – Tripoto",
+      "url": "https://www.tripoto.com/trip/thimmappana-betta-breakfast-getaways-weekend-rides-5ae0d1e84f24b"
+    }
+  ]
+}

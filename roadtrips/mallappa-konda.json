@@ -1,0 +1,125 @@
+{
+  "slug": "mallappa-konda",
+  "title": "Mallappa Konda",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Hoskote → Malur → Bangarpet → Mallappa Konda. ~115 km, a ~4 km hairpin ghat to a tri-state viewpoint.",
+  "summary": "Mallappa Konda is a ~1,090 m hill in the Eastern Ghats in Gudupalle mandal near Kuppam, Andhra Pradesh, close to where Karnataka, Andhra Pradesh and Tamil Nadu meet. The ride runs east through Kolar district's farmland and lakes past Bangarpet, then climbs a ~4 km stretch of tight switchbacks to a small Malleswara Swamy shrine on top. The summit has wide views over all three states and no shops or fencing, so it stays quiet and unspoilt.",
+  "type": "out-and-back",
+  "days": "1 day",
+  "added": "2026-10-03",
+  "totalKm": 115,
+  "hours": "~2.5 hrs",
+  "difficulty": "Moderate",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "hairpins",
+    "ghat road",
+    "viewpoint",
+    "temple",
+    "tri-state",
+    "andhra pradesh"
+  ],
+  "credit": {
+    "name": "@twoofusonwheels on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Hoskote",
+      "lat": 13.0707,
+      "lng": 77.7982
+    },
+    {
+      "name": "Malur",
+      "lat": 13.0037,
+      "lng": 77.9383
+    },
+    {
+      "name": "Bangarpet",
+      "lat": 12.9918,
+      "lng": 78.1777
+    },
+    {
+      "name": "Mallappa Konda",
+      "lat": 12.7664,
+      "lng": 78.2372
+    }
+  ],
+  "segments": [
+    {
+      "km": 30,
+      "road": "NH75 (Old Madras Road)",
+      "note": "City exit east through KR Puram to Hoskote; heavy traffic unless you leave early.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 22,
+      "road": "Hoskote–Malur road",
+      "note": "Two-lane country road through farmland.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 33,
+      "road": "Malur–Bangarpet road",
+      "note": "Rural Kolar district stretch past fields and lakes.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 30,
+      "road": "Village roads via Kamasamudram, then the ghat",
+      "note": "Quiet roads into Andhra Pradesh, a short rough patch, then ~4 km of hairpins up to the top.",
+      "surface": "mixed"
+    }
+  ],
+  "highlights": [
+    "~4 km of tight switchbacks climbing the ridge",
+    "Summit views where Karnataka, Andhra Pradesh and Tamil Nadu meet",
+    "Small Malleswara Swamy shrine at the top",
+    "Paddy fields and lakes along the approach through Kolar district"
+  ],
+  "offroad": {
+    "rating": 1,
+    "summary": "Almost all tarmac; the ghat itself is paved, with only a short rough patch on the approach.",
+    "notes": [
+      "A rider reports roughly 100 m of broken road before the climb",
+      "Ghat road from the foothill to the top was described as in good shape",
+      "Any bike handles it; tight hairpins reward smooth low-gear riding"
+    ]
+  },
+  "timings": [
+    "Leave Bengaluru by ~6 AM to clear Old Madras Road traffic",
+    "Shrine has no fixed hours; visit between sunrise and sunset",
+    "Sunrise and late afternoon give the best light and views"
+  ],
+  "cautions": [
+    "No shops, food or water at the top; carry your own",
+    "Google Maps may suggest poor shortcuts on the village roads; stick to main roads",
+    "No fencing at the summit edges",
+    "Crossing into Andhra Pradesh: fuel up in Karnataka before Bangarpet"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Mallappa Konda View Point: Confluence of 3 South Indian States (Tripoto)",
+      "url": "https://www.tripoto.com/trip/mallappa-konda-view-point-confluence-of-3-south-indian-states-616fc0736cad8"
+    },
+    {
+      "title": "Mallapa Konda (1,091 m) – PeakVisor",
+      "url": "https://peakvisor.com/peak/mallapa-konda.html"
+    },
+    {
+      "title": "Mallappa Konda Shivling – Dharmik Vibes",
+      "url": "https://blog.dharmikvibes.com/p/mallappa-konda-shivling-the-sacred-tri-state-confluence"
+    },
+    {
+      "title": "Must Visit Viewpoint Near Bengaluru under 100 km | Mallappa Konda Hills (YouTube)",
+      "url": "https://www.youtube.com/watch?v=zIx8ZN9OzIw"
+    }
+  ]
+}

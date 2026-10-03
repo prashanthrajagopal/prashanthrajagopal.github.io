@@ -1,0 +1,42 @@
+---
+title: "Kaurava Kunda Betta"
+description: "Bengaluru → Devanahalli → Chikkaballapur → Kaurava Kunda. ~70 km, a granite twin hill near Isha Adiyogi with a short scramble to a 360° summit."
+hide:
+  - toc
+---
+
+<div class="rt-hero">
+<div class="rt-hero-inner">
+<div class="pr-eyebrow">South India · India · Half day</div>
+<h1 class="rt-title">Kaurava Kunda Betta</h1>
+<p class="rt-tagline">Bengaluru → Devanahalli → Chikkaballapur → Kaurava Kunda. ~70 km, a granite twin hill near Isha Adiyogi with a short scramble to a 360° summit.</p>
+<div class="rt-tags"><span class="rt-chip">hill</span><span class="rt-chip">trek</span><span class="rt-chip">granite</span><span class="rt-chip">sunrise</span><span class="rt-chip">adiyogi</span><span class="rt-chip">nh44</span></div>
+</div>
+</div>
+<div class="rt-tiles"><div class="rt-tile"><span>Each way</span><b>70 km</b></div><div class="rt-tile"><span>Ride time</span><b>~2 hrs</b></div><div class="rt-tile"><span>Difficulty</span><b>Moderate</b></div><div class="rt-tile"><span>Best season</span><b>Oct – Feb</b></div><div class="rt-tile"><span>Start</span><b>Bengaluru</b></div></div>
+<p class="rt-summary">An easy NH 44 run north past Devanahalli and the Nandi Hills turn-off brings you to Kaurava Kunda, a rocky twin hill off the Isha Adiyogi road near Chikkaballapur. Local lore ties the twin peaks to the Kauravas and Pandavas of the Mahabharata. A path of sandy steps climbs to a small Shiva temple partway up, then granite slabs and scrub lead to an open summit plateau with views over Nandi Hills, Skandagiri and the Chikkaballapur plains. Riders have pushed ADV bikes onto the rock, but most people park at the base and walk.</p>
+<p class="rt-credit">Route idea: @trailson39t on Instagram</p>
+
+## The route
+
+<img class="rt-map" src="kaurava-kunda-betta-route.svg" alt="Schematic route map of Kaurava Kunda Betta" width="900" height="640">
+
+<p class="rt-note">Schematic map generated from waypoint coordinates — the shape follows the geography (compressed so long legs don't squash the loop), distances are labelled per leg. Not a navigation map. <a href="kaurava-kunda-betta-route.svg" download>Download the graphic</a>.</p>
+
+<div class="rt-panel">
+<h3>Leg by leg</h3>
+<div class="rt-table-wrap"><table class="rt-segs"><thead><tr><th>#</th><th>Leg</th><th>Dist</th><th>Notes</th></tr></thead><tbody><tr><td>1</td><td><b>Bengaluru → Devanahalli</b><div class="rt-road">NH 44 (Bellary Road / airport road)</div></td><td class="rt-km">38 km</td><td>City exit and the fast, wide airport highway past Kempegowda Airport to Devanahalli. <span class="rt-chip">tarmac</span></td></tr><tr><td>2</td><td><b>Devanahalli → Chikkaballapur</b><div class="rt-road">NH 44</div></td><td class="rt-km">22 km</td><td>Four-lane highway past the Nandi Hills turn-off to Chikkaballapur. <span class="rt-chip">tarmac</span></td></tr><tr><td>3</td><td><b>Chikkaballapur → Kaurava Kunda Betta</b><div class="rt-road">Isha Adiyogi road / village roads</div></td><td class="rt-km">10 km</td><td>~10 km of smaller roads towards Isha Adiyogi; the last stretch to the trailhead is a village track. <span class="rt-chip">mixed</span></td></tr></tbody></table></div>
+</div>
+
+<div class="rt-cols">
+<div><div class="rt-panel "><h3>Highlights</h3><ul><li>Twin granite peaks tied by local legend to the Kauravas and Pandavas</li><li>Small Shiva temple and mantapa partway up the hill</li><li>360° summit plateau looking over Nandi Hills, Skandagiri and the Chikkaballapur plains</li><li>Pairs well with the 112 ft Adiyogi bust at Sadhguru Sannidhi, Avalagurki, a few km away</li></ul></div><div class="rt-panel rt-offroad"><h3>Off-road &amp; motorcycling notes</h3><div class="rt-rating" aria-label="Off-road rating 2 of 5"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div><p class="rt-lead">The ride is paved almost to the base; the off-road part is the rock itself, which most riders walk rather than ride.</p><ul><li>Approach to the trailhead is a short village track</li><li>Upper hill is open granite slab with loose sand, slippery even when dry</li><li>Riding onto the rock (as some ADV riders do) is technical and best left to experienced riders with a spotter</li></ul></div></div>
+<div><div class="rt-panel rt-timings"><h3>Timings, permits &amp; fuel</h3><ul><li>No formal entry fee is reported for independent visitors; commercial trek groups bundle &#x27;~forest permits&#x27; into their price, so check locally</li><li>Trek is ~5 km round trip, ~2–3 hrs up and down</li><li>Start from Bengaluru by ~5 am for sunrise on top; it gets hot and shadeless by late morning</li><li>Isha Adiyogi (Avalagurki) is open ~6 am – 8 pm, free entry, with the light show at ~7 pm</li></ul></div><div class="rt-panel rt-caution"><h3>Cautions</h3><ul><li>Granite slabs dusted with sand are slippery — wear proper boots for the walk</li><li>Locals warn of leopards in the area; avoid going alone or after dark</li><li>No water on the trail — carry at least 1.5 litres per person</li><li>No drinking or smoking at the temple; carry your litter back</li></ul></div></div>
+</div>
+
+## Sources &amp; further reading
+
+<ul class="rt-sources"><li><a href="https://www.tripoto.com/trip/trekking-destination-near-bangalore-kaurava-kunda-ride-trek-5d2757396c5ab" rel="noopener">Trekking Destination near Bangalore – Kaurava Kunda Ride &amp; Trek (Tripoto)</a></li><li><a href="https://www.adventurenation.com/trip/kaurava-kunda-night-trek" rel="noopener">Kaurava Kunda Night Trek (Adventure Nation)</a></li><li><a href="https://gochaarana.com/treks/kaurava-kunda-trek/" rel="noopener">Kaurava Kunda Trek (Go Chaarana)</a></li><li><a href="https://backpackersunited.in/tour/Kauravakunda-trek" rel="noopener">Kaurava Kunda Trek (Backpackers United)</a></li><li><a href="https://www.theweek.in/news/india/2023/01/10/vice-president-to-unveil-112-feet-adiyogi-statue-at-chikkaballap.amp.html" rel="noopener">Vice President to unveil 112-feet Adiyogi statue at Chikkaballapura (The Week)</a></li><li><a href="https://wanderlog.com/place/details/13556449/isha-foundation-chikkaballapura" rel="noopener">Isha Foundation Chikkaballapura (Wanderlog)</a></li><li><a href="https://www.trawell.in/karnataka/bangalore/isha-yoga-center-chikkaballapura" rel="noopener">Isha Yoga Center – Chikkaballapura (Trawell)</a></li><li><a href="https://en.wikipedia.org/wiki/Chikkaballapur" rel="noopener">Chikkaballapur (Wikipedia)</a></li></ul>
+
+<p class="rt-back"><a href="../">← All road trips</a></p>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TouristTrip", "@id": "https://prashanthr.net/roadtrips/kaurava-kunda-betta/#trip", "name": "Kaurava Kunda Betta", "description": "An easy NH 44 run north past Devanahalli and the Nandi Hills turn-off brings you to Kaurava Kunda, a rocky twin hill off the Isha Adiyogi road near Chikkaballapur. Local lore ties the twin peaks to the Kauravas and Pandavas of the Mahabharata. A path of sandy steps climbs to a small Shiva temple partway up, then granite slabs and scrub lead to an open summit plateau with views over Nandi Hills, Skandagiri and the Chikkaballapur plains. Riders have pushed ADV bikes onto the rock, but most people park at the base and walk.", "url": "https://prashanthr.net/roadtrips/kaurava-kunda-betta/", "image": "https://prashanthr.net/assets/og/trip-kaurava-kunda-betta.png", "touristType": ["Motorcycling", "Road trip"], "itinerary": {"@type": "ItemList", "numberOfItems": 4, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Place", "name": "Bengaluru", "geo": {"@type": "GeoCoordinates", "latitude": 12.9716, "longitude": 77.5946}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Place", "name": "Devanahalli", "geo": {"@type": "GeoCoordinates", "latitude": 13.25, "longitude": 77.71}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Place", "name": "Chikkaballapur", "geo": {"@type": "GeoCoordinates", "latitude": 13.43, "longitude": 77.72}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Place", "name": "Kaurava Kunda Betta", "geo": {"@type": "GeoCoordinates", "latitude": 13.48, "longitude": 77.69}}}]}, "subjectOf": {"@type": "CreativeWork", "author": {"@id": "https://prashanthr.net/#person"}}, "provider": {"@id": "https://prashanthr.net/#person"}, "distance": "70 km", "departureLocation": {"@type": "Place", "name": "Bengaluru"}, "temporalCoverage": "Oct – Feb"}</script>

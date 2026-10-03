@@ -1,0 +1,112 @@
+{
+  "slug": "yathirajaswami-betta",
+  "title": "Yathirajaswamy Betta",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Bidadi → Ramanagara → Yathirajaswamy Betta. ~58 km, a bare granite hillock with a cave shrine and old fort remains.",
+  "summary": "Yathirajaswamy Betta, also called Kote Betta, is a bare granite hillock near Thimmasandra village, about 8 km north of Ramanagara off the Ramanagara–Magadi road. Bikes are parked in a mango orchard at the base, and rock-cut steps lead up in about 20–30 minutes to a small cave temple of Yathiraja (Ramanujacharya) beside a perennial spring, with traces of an old fort on top. From the summit you get a 360-degree view over Ramanagara's boulder hills.",
+  "type": "out-and-back",
+  "days": "Half day",
+  "added": "2026-10-03",
+  "totalKm": 58,
+  "hours": "~1.5 hrs",
+  "difficulty": "Easy",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "breakfast ride",
+    "short hike",
+    "granite",
+    "cave temple",
+    "ramanagara"
+  ],
+  "credit": {
+    "name": "@twoofusonwheels on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Bidadi",
+      "lat": 12.7967,
+      "lng": 77.3836
+    },
+    {
+      "name": "Ramanagara",
+      "lat": 12.7209,
+      "lng": 77.2799
+    },
+    {
+      "name": "Yathirajaswamy Betta",
+      "lat": 12.7894,
+      "lng": 77.2761
+    }
+  ],
+  "segments": [
+    {
+      "km": 35,
+      "road": "NH275 (Bengaluru–Mysuru road)",
+      "note": "Fast run out of the city on the expressway or its service road.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 14,
+      "road": "NH275",
+      "note": "Past Bidadi to the Ramanagara traffic signal; turn right towards Magadi.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 9,
+      "road": "Ramanagara–Magadi road, then village road",
+      "note": "~8 km towards Magadi, left towards Koonumuddanahalli, hill on the right after ~1 km.",
+      "surface": "tarmac"
+    }
+  ],
+  "highlights": [
+    "Short climb on rock-cut steps to a whitewashed cave shrine",
+    "Perennial spring beside the temple",
+    "Remains of an old fort on the summit",
+    "360-degree views over Ramanagara's granite hills"
+  ],
+  "offroad": {
+    "rating": 0,
+    "summary": "Paved all the way; the hill itself is climbed on foot, not ridden.",
+    "notes": [
+      "Bikes park at the base in a mango orchard",
+      "A Google Maps interior route via Dharapura skips Ramanagara town on village roads"
+    ]
+  },
+  "timings": [
+    "Open all day; no entry hours",
+    "~20–30 min climb up, about an hour in total on the hill",
+    "Early morning is best, before the rock heats up"
+  ],
+  "cautions": [
+    "Steep, near-vertical faces near the summit; stay on the steps",
+    "Temple is often locked with no priest present",
+    "No shops at the base; carry water",
+    "Litter from picnics around the base; carry yours back"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Shri Yathiraja Swamy Betta, Ramanagar – Team G Square",
+      "url": "https://www.teamgsquare.com/2016/05/shri-yathiraja-swamy-betta-ramanagar.html"
+    },
+    {
+      "title": "Yathiraja Swamy Betta – Treks and Travels",
+      "url": "https://aravindgundumane.com/2020/12/yathiraja-swamy-betta/"
+    },
+    {
+      "title": "Yathirajaswamy Kotte Betta Trek – The Loapers",
+      "url": "https://www.theloapers.com/2026/03/yathirajaswamy-kotte-betta-trek-peace.html"
+    },
+    {
+      "title": "Yathirajaswamy Betta Hiking Point (Kote Betta) – Trip.com",
+      "url": "https://www.trip.com/travel-guide/attraction/ramanagara/yathirajaswamy-betta-hiking-point-142807481/"
+    }
+  ]
+}

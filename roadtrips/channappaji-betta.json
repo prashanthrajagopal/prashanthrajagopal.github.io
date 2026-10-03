@@ -1,0 +1,109 @@
+{
+  "slug": "channappaji-betta",
+  "title": "Channappaji Betta",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Ramanagara → Channapatna → Kodamballi → Channappaji Betta. ~78 km, a red-earth off-road climb to a hilltop temple.",
+  "summary": "A short weekend off-road ride to Channappaji Betta, a small hill just east of Kodamballi village in Channapatna taluk, close to where Bengaluru South (Ramanagara) district meets Mandya district. The highway run to Channapatna is quick. From there the Channapatna–Halaguru road (SH-94) runs through farmland to Kodamballi, and an off-road trail of loose red earth climbs from the base village to a small temple at the top. Walkers can also hike up from neighbouring Ballapatna village.",
+  "type": "out-and-back",
+  "days": "Half day",
+  "added": "2026-10-03",
+  "totalKm": 78,
+  "hours": "~2 hrs",
+  "difficulty": "Moderate",
+  "bestSeason": "Oct – Feb",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "offroad",
+    "red earth",
+    "hilltop temple",
+    "channapatna",
+    "weekend"
+  ],
+  "credit": {
+    "name": "@trailson39t on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Ramanagara",
+      "lat": 12.7209,
+      "lng": 77.2799
+    },
+    {
+      "name": "Channapatna",
+      "lat": 12.6518,
+      "lng": 77.2089
+    },
+    {
+      "name": "Channappaji Betta",
+      "lat": 12.546,
+      "lng": 77.225
+    }
+  ],
+  "segments": [
+    {
+      "km": 50,
+      "road": "NH 275 (Bengaluru–Mysuru)",
+      "note": "Fast four-lane highway out of the city. Use the expressway or the old road through Bidadi.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 13,
+      "road": "NH 275 (Bengaluru–Mysuru)",
+      "note": "Short hop past Ramanagara's granite hills to Channapatna.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 15,
+      "road": "SH-94 (Channapatna–Halaguru) + village trail",
+      "note": "About 13 km of rural state highway to Kodamballi, then the off-road climb to the temple on loose red earth.",
+      "surface": "mixed"
+    }
+  ],
+  "highlights": [
+    "Off-road climb on red earth to a small hilltop temple",
+    "Wide views over Channapatna's farmland from the top",
+    "Kodamballi lake and the old Ganga-era Maraleshwara temple in the village below",
+    "Short enough for a morning ride with breakfast on the way back"
+  ],
+  "offroad": {
+    "rating": 3,
+    "summary": "A moderate-to-difficult trail of loose red earth and rock from the base village to the summit temple. It suits an ADV like the KTM 390 Adventure.",
+    "notes": [
+      "The final climb is unpaved and loose in places, so stand on the pegs and keep momentum.",
+      "Red earth turns slick after rain. Avoid it when wet unless you run knobby tyres.",
+      "Ride up with a buddy, because help is far off on the trail."
+    ]
+  },
+  "timings": [
+    "Leave Bengaluru by 6 am to ride the trail before the heat builds",
+    "About 2 hrs each way including the trail section",
+    "Allow 30–60 min on the hill"
+  ],
+  "cautions": [
+    "Small village temple and farmland: ride slowly through settlements and keep noise down",
+    "Expect no fuel or food on the hill. Fill up in Channapatna.",
+    "Hikers and campers use the hill too, so watch for people on blind sections",
+    "Carry your trash back down"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Kodamballi – Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kodamballi"
+    },
+    {
+      "title": "Kodamballi – villageinfo.in",
+      "url": "https://villageinfo.in/karnataka/bengaluru-south/channapatna/kodamballi/"
+    },
+    {
+      "title": "Channappaji Betta, Kodambahalli – worldorgs listing",
+      "url": "https://in.worldorgs.com/catalog/kodambahalli/park/channappaji-betta"
+    }
+  ]
+}

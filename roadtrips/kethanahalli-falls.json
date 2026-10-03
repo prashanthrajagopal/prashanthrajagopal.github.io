@@ -1,0 +1,115 @@
+{
+  "slug": "kethanahalli-falls",
+  "title": "Kethanahalli Falls",
+  "region": "South India",
+  "country": "India",
+  "tagline": "Bengaluru → Devanahalli → Chikkaballapur → Kethanahalli Falls. ~78 km, a monsoon waterfall at the end of a rough rocky trail.",
+  "summary": "Kethanahalli Falls, also called Vivekananda Falls, is a seasonal two-tier waterfall of roughly 90 ft tucked among the hills north of Chikkaballapur. The ride up NH 44 is easy highway; the fun starts past Kethanahalli village, where farm tracks give way to a moderately tough off-road trail of loose rock, steep ruts and slick patches. The falls only really run during and after the monsoon — outside that window you may find a dry rock face.",
+  "type": "out-and-back",
+  "days": "Half day",
+  "added": "2026-10-03",
+  "totalKm": 78,
+  "hours": "~2–2.5 hrs",
+  "difficulty": "Demanding",
+  "bestSeason": "Jul – Nov",
+  "startsAt": "Bengaluru",
+  "tags": [
+    "waterfall",
+    "offroad",
+    "monsoon",
+    "adv",
+    "trail"
+  ],
+  "credit": {
+    "name": "@trailson39t on Instagram"
+  },
+  "waypoints": [
+    {
+      "name": "Bengaluru",
+      "lat": 12.9716,
+      "lng": 77.5946
+    },
+    {
+      "name": "Devanahalli",
+      "lat": 13.25,
+      "lng": 77.71
+    },
+    {
+      "name": "Chikkaballapur",
+      "lat": 13.43,
+      "lng": 77.72
+    },
+    {
+      "name": "Kethanahalli Falls",
+      "lat": 13.5193,
+      "lng": 77.708
+    }
+  ],
+  "segments": [
+    {
+      "km": 38,
+      "road": "NH 44 (Bellary Road / airport road)",
+      "note": "City exit and the fast airport highway to Devanahalli.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 22,
+      "road": "NH 44",
+      "note": "Four-lane highway past the Nandi Hills turn-off to Chikkaballapur.",
+      "surface": "tarmac"
+    },
+    {
+      "km": 18,
+      "road": "Village roads via Kethanahalli, then trail",
+      "note": "~17 km of rural roads to Kethanahalli village, then a rough trail of loose rock, steep ruts and slick ground; the last ~1 km to the falls is on foot.",
+      "surface": "dirt"
+    }
+  ],
+  "highlights": [
+    "Two-tier seasonal waterfall, ~90 ft, roaring in the monsoon",
+    "Ringed by the Nandi group of hills — Brahmagiri, Skandagiri, Divyagiri and others",
+    "A genuine off-road trail barely an hour and a half from the city",
+    "Countryside to rock-garden transition makes it good ADV practice"
+  ],
+  "offroad": {
+    "rating": 3,
+    "summary": "Moderately tough: loose rocks, steep rutted climbs and slick sections that get much harder when wet.",
+    "notes": [
+      "Trail is unmarked; locals in Kethanahalli are the best guide to the way in",
+      "Wet rock and mud in the monsoon — exactly when the falls flow — make it slippery",
+      "The final stretch to the falls is not rideable; park and walk ~1 km",
+      "Knobby or dual-sport tyres strongly recommended"
+    ]
+  },
+  "timings": [
+    "Free entry; usually listed as ~7 am – 5 pm",
+    "Falls flow only during and shortly after the monsoon (roughly Jun – Oct/Nov); can be dry otherwise",
+    "Fuel up in Chikkaballapur — nothing beyond the town",
+    "No food at the falls; eat in Chikkaballapur"
+  ],
+  "cautions": [
+    "Risky solo — ride with at least one other bike",
+    "Leopards and sloth bears are reported in the surrounding hills; don't linger after dusk",
+    "Flash flow after heavy rain — stay off the rocks at the lip of the falls",
+    "Carry out all litter"
+  ],
+  "photos": [],
+  "sources": [
+    {
+      "title": "Vivekananda Falls / Kethanahalli Falls (Trawell)",
+      "url": "https://www.trawell.in/karnataka/bangalore/vivekananda-falls-kethanahalli-falls"
+    },
+    {
+      "title": "Kethenahalli waterfalls insane trek (Tripoto)",
+      "url": "https://www.tripoto.com/karnataka/trips/kethenahalli-waterfalls-insane-trek-56fe3b0475c71"
+    },
+    {
+      "title": "Kethanahalli Falls (Wanderlog)",
+      "url": "https://wanderlog.com/place/details/7133770/kethanahalli-falls"
+    },
+    {
+      "title": "Chikkaballapur (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Chikkaballapur"
+    }
+  ]
+}
